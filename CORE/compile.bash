@@ -8,26 +8,21 @@
 
 if [ "$#" -eq 1 ]
 then
-	BENCH_COMPILATION=$1																			# The first parameter if the bench must be compiled
-																									#		2 choices: true or false
+	BENCH_COMPILATION=$1											# The first parameter if the bench must be compiled
+																	#		2 choices: true or false
 else
-	BENCH_COMPILATION=true																			# By default, Benches and Design Files are compiled
+	BENCH_COMPILATION=true											# By default, Benches and Design Files are compiled
 fi
 
-PROJECT_PATH="/tp/xph2app/xph2app001/CSI2A_Project"													# Path of the Project Directory
-LIB_NAME="LIB_MSK_MODULATOR"																		# Name of the Library 
+PROJECT_PATH="/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE"		# Path of the Project Directory
+LIB_NAME="LIB_CORE"													# Name of the Library 
 #VHDL_FILES=`ls -l vhd/ | awk {'print$9'} | grep .vhd`
-																									# List of the different VHDL Files describing the design
-VHDL_FILES="	rom.vhd												
-				lut_i.vhd 
-				lut_q.vhd 
-				counter.vhd 
-				encoder.vhd 
-				converter_s2p.vhd 
-				msk_modulator.vhd"
-BENCH_FILES="msk_modulator_bench.vhd"																# List of the different VHDL Files used for the bench
-OPT_VCOM="-work" #+acc																				# List of the different options of ModelSim used for Compilation
-LOG_FILE="mylog.log"																				# Name of the log file
+																	# List of the different VHDL Files describing the design
+VHDL_FILES="	fetch.vhd
+				core.vhd"
+BENCH_FILES="	fetch_bench.vhd"									# List of the different VHDL Files used for the bench
+OPT_VCOM="+acc -work" #+acc											# List of the different options of ModelSim used for Compilation
+LOG_FILE="mylog.log"												# Name of the log file
 
 ##################################################
 #
