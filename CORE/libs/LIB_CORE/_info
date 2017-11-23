@@ -22,14 +22,83 @@ L6
 VQiK01o6AUn<6XElN9O8063
 Z6 OL;C;10.2c;57
 32
-Z7 !s110 1511451040
+Z7 !s110 1511453561
 Z8 o+acc -work LIB_CORE
 Z9 tOptimize_1164 0 Explicit 1 IgnoreVitalErrors 1 Show_VitalChecksWarnings 0
 !s100 o<cnVZPSgB`UPBj91AeAc2
 !i10b 1
-!s108 1511451040.500805
+!s108 1511453561.875720
 !s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/core.vhd|
 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/core.vhd|
+!i111 0
+Ecore_bench
+w1511453430
+R1
+R2
+R3
+R4
+R5
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
+l0
+L6
+V0kW=i]4dUX[lTDGMRJ:Gf1
+!s100 0_=214`2=YckDi:f6jU@D0
+R6
+32
+Z10 !s110 1511453562
+!i10b 1
+!s108 1511453562.109024
+!s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
+!i111 0
+R8
+R9
+Edecode
+w1511453314
+R1
+R2
+R3
+R4
+R5
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+l0
+L6
+V^@OEgD0kRZZf:lX7Iak1b3
+R6
+32
+R7
+R8
+R9
+!s100 :XkY>1Q1?TT_T1hjcGDT^1
+!i10b 1
+!s108 1511453561.827217
+!s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+!i111 0
+Edecode_bench
+w1511453390
+R1
+R2
+R3
+R4
+R5
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+l0
+L6
+VeUXm9BAJ4H>SWQ_nV9^RL1
+R6
+32
+R10
+R8
+R9
+!s100 eT?ef9gja0X;NfcUSe7^I2
+!i10b 1
+!s108 1511453562.060880
+!s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
 !i111 0
 Efetch
 w1511449181
@@ -50,7 +119,7 @@ R9
 R7
 !s100 z2MF98VYSXWThkJSoohd13
 !i10b 1
-!s108 1511451040.396599
+!s108 1511453561.757844
 !s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
 !i111 0
@@ -66,14 +135,14 @@ F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd
 l0
 L6
 VJmh?I8B2:150L;Ae8daRN2
-!s100 me>8cHEc@jF_o8d<lIoc@0
 R6
 32
-R7
+R8
+R9
+R10
+!s100 me>8cHEc@jF_o8d<lIoc@0
 !i10b 1
-!s108 1511451040.692453
+!s108 1511453562.012084
 !s90 +acc|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
 !i111 0
-R8
-R9
