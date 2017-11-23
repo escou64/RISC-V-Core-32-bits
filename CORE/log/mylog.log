@@ -1,3 +1,4 @@
+
 Modifying /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/config/modelsim.ini
 Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
@@ -22,5 +23,5 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STD_LOGIC_UNSIGNED
 -- Compiling entity fetch_bench
 
-Total Errors :	1
-Total Warningss :	1
+Total Errors :	0
+Total Warnings :	0
