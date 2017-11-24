@@ -2,9 +2,100 @@ m255
 K4
 z2
 13
-cModel Technology
-d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
-!s112 0.1
+!s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
+cModel Technology
+Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
+Edecode_bench
+w1511510487
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+l0
+L6
+VlEHWLLd2R3XRz<cA`?K4l2
+!s100 mocKYndZAe^YZ@M[7^4iD3
+Z5 OV;C;10.5c;63
+32
+Z6 !s110 1511562494
+!i10b 1
+Z7 !s108 1511562494.000000
+!s90 -work|LIB_CORE_BENCH|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
+!s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
+!i113 1
+Z8 o-work LIB_CORE_BENCH
+Z9 tExplicit 1 CvgOpt 0
+Eregisterfile_bench
+Z10 w1511561685
+Z11 DPx14 lib_core_bench 23 riscv_core_config_bench 0 22 DF75A_?him`9b@BmJlUgg1
+Z12 DPx8 lib_core 17 riscv_core_config 0 22 3BNl=]cf`P5J5jBzcf[mY3
+Z13 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+R4
+R0
+Z14 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
+Z15 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
+l0
+L13
+VeTiN:OaD8GCkLI2oKR6Bf2
+!s100 `NIM^e@4R@4hBgKW7_kDM2
+R5
+32
+R6
+!i10b 1
+R7
+Z16 !s90 -work|LIB_CORE_BENCH|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
+Z17 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
+!i113 1
+R8
+R9
+Abench_arch
+R11
+R12
+R13
+R1
+R2
+R3
+R4
+DEx4 work 18 registerfile_bench 0 22 eTiN:OaD8GCkLI2oKR6Bf2
+l37
+L15
+VH2GPP0@m_G0mSFYc]j7M^1
+!s100 :?6n:Q6OoIC6LIF6E>8030
+R5
+32
+R6
+!i10b 1
+R7
+R16
+R17
+!i113 1
+R8
+R9
+Priscv_core_config_bench
+w1511543000
+R0
+8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
+F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
+l0
+L1
+VDF75A_?him`9b@BmJlUgg1
+!s100 a7_9JoS`0>19biT6eUJUA3
+R5
+32
+R6
+!i10b 1
+R7
+!s90 -work|LIB_CORE_BENCH|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!i113 1
+R8
+R9

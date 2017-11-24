@@ -1,0 +1,379 @@
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:14:02 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/registerfile1/i_rstn \
+sim:/registerfile_bench/registerfile1/i_clk \
+sim:/registerfile_bench/registerfile1/i_rs1 \
+sim:/registerfile_bench/registerfile1/i_rs2 \
+sim:/registerfile_bench/registerfile1/o_rs1_data \
+sim:/registerfile_bench/registerfile1/o_rs2_data \
+sim:/registerfile_bench/registerfile1/i_write \
+sim:/registerfile_bench/registerfile1/i_rd \
+sim:/registerfile_bench/registerfile1/i_data \
+sim:/registerfile_bench/registerfile1/registers
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /registerfile_bench/registerfile1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 1  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 70 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 80 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 90 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 120 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 130 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 140 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 160 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 170 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 180 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 190 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 200 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 220 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 230 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 240 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 250 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 260 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 270 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 280 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 290 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 310 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 320 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 330 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 340 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 350 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 360 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 370 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 380 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 390 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 400 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 410 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 420 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 430 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 440 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 460 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 470 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 480 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 490 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 510 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 520 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 530 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 540 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 560 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 570 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 580 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 590 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# End time: 18:18:37 on Nov 24,2017, Elapsed time: 0:04:35
+# Errors: 0, Warnings: 62
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:18:37 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/sig_rstn \
+sim:/registerfile_bench/sig_clk \
+sim:/registerfile_bench/sig_rs1 \
+sim:/registerfile_bench/sig_rs2 \
+sim:/registerfile_bench/sig_rs1_data \
+sim:/registerfile_bench/sig_rs2_data \
+sim:/registerfile_bench/sig_write \
+sim:/registerfile_bench/sig_rd \
+sim:/registerfile_bench/sig_data
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# End time: 18:19:59 on Nov 24,2017, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 1
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:19:59 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/sig_rstn \
+sim:/registerfile_bench/sig_clk \
+sim:/registerfile_bench/sig_rs1 \
+sim:/registerfile_bench/sig_rs2 \
+sim:/registerfile_bench/sig_rs1_data \
+sim:/registerfile_bench/sig_rs2_data \
+sim:/registerfile_bench/sig_write \
+sim:/registerfile_bench/sig_rd \
+sim:/registerfile_bench/sig_data
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# End time: 18:20:48 on Nov 24,2017, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 1
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:20:48 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/sig_rstn \
+sim:/registerfile_bench/sig_clk \
+sim:/registerfile_bench/sig_rs1 \
+sim:/registerfile_bench/sig_rs2 \
+sim:/registerfile_bench/sig_rs1_data \
+sim:/registerfile_bench/sig_rs2_data \
+sim:/registerfile_bench/sig_write \
+sim:/registerfile_bench/sig_rd \
+sim:/registerfile_bench/sig_data
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+add wave -position insertpoint  \
+sim:/registerfile_bench/registerfile1/registers
+restart
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# End time: 18:36:43 on Nov 24,2017, Elapsed time: 0:15:55
+# Errors: 0, Warnings: 2
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:36:43 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/sig_rstn \
+sim:/registerfile_bench/sig_clk \
+sim:/registerfile_bench/sig_rs1 \
+sim:/registerfile_bench/sig_rs2 \
+sim:/registerfile_bench/sig_rs1_data \
+sim:/registerfile_bench/sig_rs2_data \
+sim:/registerfile_bench/sig_write \
+sim:/registerfile_bench/sig_rd \
+sim:/registerfile_bench/sig_data
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+run
+add wave -position insertpoint  \
+sim:/registerfile_bench/registerfile1/registers
+restart
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# End time: 18:38:44 on Nov 24,2017, Elapsed time: 0:02:01
+# Errors: 0, Warnings: 2
+# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
+# Start time: 18:38:44 on Nov 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+add wave -position insertpoint  \
+sim:/registerfile_bench/sig_rstn \
+sim:/registerfile_bench/sig_clk \
+sim:/registerfile_bench/sig_rs1 \
+sim:/registerfile_bench/sig_rs2 \
+sim:/registerfile_bench/sig_rs1_data \
+sim:/registerfile_bench/sig_rs2_data \
+sim:/registerfile_bench/sig_write \
+sim:/registerfile_bench/sig_rd \
+sim:/registerfile_bench/sig_data
+add wave -position insertpoint  \
+sim:/registerfile_bench/registerfile1/registers
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
