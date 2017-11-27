@@ -1,6 +1,6 @@
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:14:02 on Nov 24,2017
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:15:04 on Nov 25,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -9,230 +9,33 @@ vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
 # Loading ieee.numeric_std(body)
 # Loading lib_core.riscv_core_config
 # Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
 # Loading lib_core.registerfile(registerfile_arch)
-add wave -position insertpoint  \
-sim:/registerfile_bench/registerfile1/i_rstn \
-sim:/registerfile_bench/registerfile1/i_clk \
-sim:/registerfile_bench/registerfile1/i_rs1 \
-sim:/registerfile_bench/registerfile1/i_rs2 \
-sim:/registerfile_bench/registerfile1/o_rs1_data \
-sim:/registerfile_bench/registerfile1/o_rs2_data \
-sim:/registerfile_bench/registerfile1/i_write \
-sim:/registerfile_bench/registerfile1/i_rd \
-sim:/registerfile_bench/registerfile1/i_data \
-sim:/registerfile_bench/registerfile1/registers
+# Loading lib_core.decode(decode_arch)
+add wave -position insertpoint sim:/decode_bench/decode1/*
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /registerfile_bench/registerfile1
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /registerfile_bench/registerfile1
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /registerfile_bench/registerfile1
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /registerfile_bench/registerfile1
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 3  Instance: /decode_bench/decode1
 run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 60 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 60 ns  Iteration: 1  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 60 ns  Iteration: 1  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 70 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 80 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 90 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 100 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 110 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 120 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 130 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 140 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 150 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 160 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 170 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 180 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 190 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 200 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 210 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 220 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 230 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 240 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 250 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 260 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 270 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 280 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 290 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 300 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 310 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 320 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 330 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 340 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 350 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 360 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 370 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 380 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 390 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 400 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 410 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 420 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 430 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 440 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 450 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 460 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 470 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 480 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 490 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 500 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 510 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 520 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 530 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 540 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 550 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 560 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 570 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 580 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 590 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 600 ns  Iteration: 0  Instance: /registerfile_bench/registerfile1
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# End time: 18:18:37 on Nov 24,2017, Elapsed time: 0:04:35
-# Errors: 0, Warnings: 62
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:18:37 on Nov 24,2017
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:17:07 on Nov 25,2017, Elapsed time: 0:02:03
+# Errors: 0, Warnings: 7
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:17:07 on Nov 25,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -241,85 +44,182 @@ vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
 # Loading ieee.numeric_std(body)
 # Loading lib_core.riscv_core_config
 # Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
 # Loading lib_core.registerfile(registerfile_arch)
-add wave -position insertpoint  \
-sim:/registerfile_bench/sig_rstn \
-sim:/registerfile_bench/sig_clk \
-sim:/registerfile_bench/sig_rs1 \
-sim:/registerfile_bench/sig_rs2 \
-sim:/registerfile_bench/sig_rs1_data \
-sim:/registerfile_bench/sig_rs2_data \
-sim:/registerfile_bench/sig_write \
-sim:/registerfile_bench/sig_rd \
-sim:/registerfile_bench/sig_data
+# Loading lib_core.decode(decode_arch)
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-run
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# End time: 18:19:59 on Nov 24,2017, Elapsed time: 0:01:22
-# Errors: 0, Warnings: 1
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:19:59 on Nov 24,2017
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading lib_core.riscv_core_config
-# Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# Loading lib_core.registerfile(registerfile_arch)
-add wave -position insertpoint  \
-sim:/registerfile_bench/sig_rstn \
-sim:/registerfile_bench/sig_clk \
-sim:/registerfile_bench/sig_rs1 \
-sim:/registerfile_bench/sig_rs2 \
-sim:/registerfile_bench/sig_rs1_data \
-sim:/registerfile_bench/sig_rs2_data \
-sim:/registerfile_bench/sig_write \
-sim:/registerfile_bench/sig_rd \
-sim:/registerfile_bench/sig_data
-run
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# End time: 18:20:48 on Nov 24,2017, Elapsed time: 0:00:49
-# Errors: 0, Warnings: 1
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:20:48 on Nov 24,2017
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading lib_core.riscv_core_config
-# Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# Loading lib_core.registerfile(registerfile_arch)
-add wave -position insertpoint  \
-sim:/registerfile_bench/sig_rstn \
-sim:/registerfile_bench/sig_clk \
-sim:/registerfile_bench/sig_rs1 \
-sim:/registerfile_bench/sig_rs2 \
-sim:/registerfile_bench/sig_rs1_data \
-sim:/registerfile_bench/sig_rs2_data \
-sim:/registerfile_bench/sig_write \
-sim:/registerfile_bench/sig_rd \
-sim:/registerfile_bench/sig_data
-run
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-add wave -position insertpoint  \
-sim:/registerfile_bench/registerfile1/registers
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 3  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 35 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 45 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 55 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 60 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 65 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 70 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 75 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 80 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 85 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 90 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 95 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ns  Iteration: 0  Instance: /decode_bench/decode1
 restart
+add wave -position insertpoint  \
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# End time: 18:36:43 on Nov 24,2017, Elapsed time: 0:15:55
-# Errors: 0, Warnings: 2
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:36:43 on Nov 24,2017
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 3  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 35 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 45 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 55 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 60 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 65 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 70 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 75 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 80 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 85 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 90 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 95 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ns  Iteration: 0  Instance: /decode_bench/decode1
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 105 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 110 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 115 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 120 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 125 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 130 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 135 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 140 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 145 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 150 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 155 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 160 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 165 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 170 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 175 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 180 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 185 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 190 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 195 ns  Iteration: 0  Instance: /decode_bench/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 0  Instance: /decode_bench/decode1
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:19:54 on Nov 25,2017, Elapsed time: 0:02:47
+# Errors: 0, Warnings: 74
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:19:54 on Nov 25,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -328,31 +228,45 @@ vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
 # Loading ieee.numeric_std(body)
 # Loading lib_core.riscv_core_config
 # Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
 # Loading lib_core.registerfile(registerfile_arch)
+# Loading lib_core.decode(decode_arch)
 add wave -position insertpoint  \
-sim:/registerfile_bench/sig_rstn \
-sim:/registerfile_bench/sig_clk \
-sim:/registerfile_bench/sig_rs1 \
-sim:/registerfile_bench/sig_rs2 \
-sim:/registerfile_bench/sig_rs1_data \
-sim:/registerfile_bench/sig_rs2_data \
-sim:/registerfile_bench/sig_write \
-sim:/registerfile_bench/sig_rd \
-sim:/registerfile_bench/sig_data
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
 run
-add wave -position insertpoint  \
-sim:/registerfile_bench/registerfile1/registers
-restart
 run
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# End time: 18:38:44 on Nov 24,2017, Elapsed time: 0:02:01
-# Errors: 0, Warnings: 2
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 18:38:44 on Nov 24,2017
+run
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:22:54 on Nov 25,2017, Elapsed time: 0:03:00
+# Errors: 0, Warnings: 5
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:22:54 on Nov 25,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -361,19 +275,174 @@ vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
 # Loading ieee.numeric_std(body)
 # Loading lib_core.riscv_core_config
 # Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
 # Loading lib_core.registerfile(registerfile_arch)
+# Loading lib_core.decode(decode_arch)
 add wave -position insertpoint  \
-sim:/registerfile_bench/sig_rstn \
-sim:/registerfile_bench/sig_clk \
-sim:/registerfile_bench/sig_rs1 \
-sim:/registerfile_bench/sig_rs2 \
-sim:/registerfile_bench/sig_rs1_data \
-sim:/registerfile_bench/sig_rs2_data \
-sim:/registerfile_bench/sig_write \
-sim:/registerfile_bench/sig_rd \
-sim:/registerfile_bench/sig_data
-add wave -position insertpoint  \
-sim:/registerfile_bench/registerfile1/registers
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+run
+run
+run
+run
+run
+run
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:25:31 on Nov 25,2017, Elapsed time: 0:02:37
+# Errors: 0, Warnings: 5
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:25:31 on Nov 25,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+# Loading lib_core.decode(decode_arch)
+add wave -position insertpoint  \
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:32:56 on Nov 25,2017, Elapsed time: 0:07:25
+# Errors: 0, Warnings: 3
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:32:56 on Nov 25,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+# Loading lib_core.decode(decode_arch)
+add wave -position insertpoint  \
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /decode_bench/registerfile1
+run
+run
+vsim LIB_CORE_BENCH.decode_bench(bench_arch)
+# End time: 23:33:48 on Nov 25,2017, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 4
+# vsim LIB_CORE_BENCH.decode_bench(bench_arch) 
+# Start time: 23:33:48 on Nov 25,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading lib_core.riscv_core_config
+# Loading LIB_CORE_BENCH.riscv_core_config_bench
+# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
+# Loading lib_core.registerfile(registerfile_arch)
+# Loading lib_core.decode(decode_arch)
+add wave -position insertpoint  \
+sim:/decode_bench/decode1/i_rstn \
+sim:/decode_bench/decode1/i_clk \
+sim:/decode_bench/decode1/i_pc \
+sim:/decode_bench/decode1/i_inst \
+sim:/decode_bench/decode1/i_validity \
+sim:/decode_bench/decode1/o_pc \
+sim:/decode_bench/decode1/o_inst \
+sim:/decode_bench/decode1/o_rs1 \
+sim:/decode_bench/decode1/o_rs2 \
+sim:/decode_bench/decode1/o_validity \
+sim:/decode_bench/decode1/o_rs1select \
+sim:/decode_bench/decode1/o_rs2select \
+sim:/decode_bench/decode1/i_rs1 \
+sim:/decode_bench/decode1/i_rs2 \
+sim:/decode_bench/decode1/s_rs1 \
+sim:/decode_bench/decode1/s_rs2 \
+sim:/decode_bench/decode1/s_validity
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 23:34:40 on Nov 25,2017, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 3

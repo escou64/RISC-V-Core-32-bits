@@ -23,7 +23,7 @@ architecture registerfile_arch of registerfile is
 
 	begin
 
-		process(i_clk, i_rstn)
+		seq : process(i_clk, i_rstn)
 			begin
 			if (i_rstn = '0') then
 				for I in 0 to c_NREGISTERS - 1 loop
@@ -34,7 +34,7 @@ architecture registerfile_arch of registerfile is
 					registers(to_integer(unsigned(i_rdselect))) <= i_data;
 				end if;
 			end if;
-		end process;
+		end process seq;
 
 		o_rs1 <= registers(to_integer(unsigned(i_rs1select)));
 		o_rs2 <= registers(to_integer(unsigned(i_rs2select)));
