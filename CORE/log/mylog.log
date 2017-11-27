@@ -1,9 +1,10 @@
 
 Model Technology ModelSim - Intel FPGA Edition vmap 10.5c Lib Mapping Utility 2017.01 Jan 23 2017
 vmap LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/libs/LIB_CORE 
+Copying /opt/intelFPGA/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 Modifying modelsim.ini
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -12,10 +13,10 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CO
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Compiling package RISCV_CORE_CONFIG
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -26,10 +27,10 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.v
 -- Loading package RISCV_CORE_CONFIG
 -- Compiling entity decode
 -- Compiling architecture decode_arch of decode
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -40,20 +41,20 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/register
 -- Loading package RISCV_CORE_CONFIG
 -- Compiling entity registerfile
 -- Compiling architecture registerfile_arch of registerfile
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Model Technology ModelSim - Intel FPGA Edition vmap 10.5c Lib Mapping Utility 2017.01 Jan 23 2017
 vmap LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/libs/LIB_CORE_BENCH 
 Modifying modelsim.ini
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd 
 -- Loading package STANDARD
 -- Compiling package RISCV_CORE_CONFIG_BENCH
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -65,10 +66,10 @@ vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/
 -- Loading package RISCV_CORE_CONFIG_BENCH
 -- Compiling entity registerfile_bench
 -- Compiling architecture bench_arch of registerfile_bench
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 08:46:59 on Nov 26,2017
+Start time: 11:59:48 on Nov 27,2017
 vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -80,7 +81,7 @@ vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/
 -- Loading package RISCV_CORE_CONFIG_BENCH
 -- Compiling entity decode_bench
 -- Compiling architecture bench_arch of decode_bench
-End time: 08:46:59 on Nov 26,2017, Elapsed time: 0:00:00
+End time: 11:59:48 on Nov 27,2017, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 Errors: 0, Warnings: 0

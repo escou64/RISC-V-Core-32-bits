@@ -9,9 +9,9 @@ z2
 cModel Technology
 Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
 Edecode_bench
-Z1 w1511649166
+Z1 w1511780284
 Z2 DPx14 lib_core_bench 23 riscv_core_config_bench 0 22 DF75A_?him`9b@BmJlUgg1
-Z3 DPx8 lib_core 17 riscv_core_config 0 22 b4:?;;jBMI8b1I`E^YPm_2
+Z3 DPx8 lib_core 17 riscv_core_config 0 22 _jEKP6ko^ARoAV`2YRLkS2
 Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z5 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z6 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
@@ -26,9 +26,9 @@ VzXjcEHV03NkZ9T6z6:Qem0
 !s100 oLf07DNk=>36`L<jF@DgP0
 Z11 OV;C;10.5c;63
 32
-Z12 !s110 1511682419
+Z12 !s110 1511780388
 !i10b 1
-Z13 !s108 1511682419.000000
+Z13 !s108 1511780388.000000
 Z14 !s90 -work|LIB_CORE_BENCH|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
 Z15 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
 !i113 1
@@ -43,10 +43,10 @@ R6
 R7
 R8
 DEx4 work 12 decode_bench 0 22 zXjcEHV03NkZ9T6z6:Qem0
-l63
+l69
 L15
-VE>i68gGS5R<oS_jo9k7hL2
-!s100 ?33XZGW32M]BjoKFYbMJ_0
+V3HP1LE=eTC>O]9<=kEcko1
+!s100 9F1m>@R@h6J;7CZz[n0201
 R11
 32
 R12

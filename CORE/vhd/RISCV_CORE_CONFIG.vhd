@@ -8,9 +8,9 @@ package RISCV_CORE_CONFIG is
 	constant c_NREGISTERS			: integer := 32;
 	constant c_SELECTREGISTERBITS	: integer := 5;
 
-	constant c_OPCODE32_OP_IMM	: std_logic_vector(6 downto 0) := "0010011";
 	constant c_OPCODE32_LUI		: std_logic_vector(6 downto 0) := "0110111";
 	constant c_OPCODE32_AUIPC	: std_logic_vector(6 downto 0) := "0010111";
+	constant c_OPCODE32_OP_IMM	: std_logic_vector(6 downto 0) := "0010011";
 	constant c_OPCODE32_OP		: std_logic_vector(6 downto 0) := "0110011";
 
 	constant c_FUNC3_ADDI		: std_logic_vector(2 downto 0) := "000";
