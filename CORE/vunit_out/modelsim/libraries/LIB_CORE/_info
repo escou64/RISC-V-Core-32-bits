@@ -2,221 +2,363 @@ m255
 K4
 z2
 13
+cModel Technology
+d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
-cModel Technology
-Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
-Edecode
-Z1 w1511779213
-Z2 DPx8 lib_core 17 riscv_core_config 0 22 7IMLng39dHVi1z]eRS;iN0
-Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R0
-Z8 8/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
-Z9 F/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+Ealu
+Z0 w1512379316
+Z1 DPx8 lib_core 17 riscv_core_config 0 22 U`HDG_m7C6dK1?8j7Bo1M0
+Z2 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
+Z5 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z7 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
+Z8 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd
+Z9 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd
 l0
 L9
-VGB3cBlC?^JClTz_X::5K32
-!s100 9K1YMG8Y9Lng_Ne1>3RaX0
-Z10 OV;C;10.5c;63
+V_0j`=RhAR;eYh5<;:cbJc0
+Z10 OL;C;10.2c;57
 33
-Z11 !s110 1511784441
-!i10b 1
-Z12 !s108 1511784441.000000
-Z13 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
-Z14 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
-!i113 1
+Z11 !s110 1512379514
+Z12 !s108 1512379514.895936
+Z13 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd|
+Z14 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd|
 Z15 o-quiet -2008 -work LIB_CORE
-Z16 tExplicit 1 CvgOpt 0
-Adecode_arch
+Z16 tExplicit 1
+!s100 I]P1M]FDoS:H;UFgg3;LI1
+!i10b 1
+!i111 0
+Aalu_arch
+R1
 R2
 R3
 R4
 R5
 R6
-R7
-DEx4 work 6 decode 0 22 GB3cBlC?^JClTz_X::5K32
-l43
-L29
-Vkn7YI7FizBQQ=Ph@NM7R`1
-!s100 i:1LgmfMCZNU]6<D_84;:0
+DEx4 work 3 alu 0 22 _0j`=RhAR;eYh5<;:cbJc0
+l21
+L17
+Vg_8e6O2oW?Bchd6BEFchU3
 R10
 33
 R11
-!i10b 1
 R12
 R13
 R14
-!i113 1
+R15
+R16
+!s100 2Z=Wj9>m_O5XN=ScgQL?W2
+!i10b 1
+!i111 0
+Edecode
+Z17 w1512382531
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z18 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+Z19 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+l0
+L9
+VSQW1RQojzXzz3dI5T_;7H3
+R10
+33
+Z20 !s110 1512383041
+Z21 !s108 1512383041.051726
+Z22 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+Z23 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+R15
+R16
+!s100 A=kLe9dm17QMOk`Djeoci3
+!i10b 1
+!i111 0
+Adecode_arch
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 decode 0 22 SQW1RQojzXzz3dI5T_;7H3
+l43
+L29
+VcD9^fc_NA]cL71=W2>Ann1
+R10
+33
+R20
+R21
+R22
+R23
+R15
+R16
+!s100 ?iMBTB0iYXn?T_2I:5OOe2
+!i10b 1
+!i111 0
+Eexecute
+Z24 w1512385198
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z25 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd
+Z26 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd
+l0
+L9
+VHNIekJd[jYRdb;:802<cF2
+!s100 fHlo^<9z_N]zZ1?Eo:V0n1
+R10
+33
+Z27 !s110 1512385203
+!i10b 1
+Z28 !s108 1512385202.971697
+Z29 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd|
+Z30 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd|
+!i111 0
+R15
+R16
+Aexecute_arch
+R1
+R2
+R3
+R4
+R5
+R6
+Z31 DEx4 work 7 execute 0 22 HNIekJd[jYRdb;:802<cF2
+l51
+L27
+V5EAijlFg?70heZh@GWJWz3
+!s100 7khQf9ezjHJbYS=:De<VV2
+R10
+33
+R27
+!i10b 1
+R28
+R29
+R30
+!i111 0
 R15
 R16
 Efetch
-Z17 w1511780637
+Z32 w1512374495
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-R0
-Z18 8/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd
-Z19 F/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd
+Z33 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd
+Z34 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd
 l0
 L9
-VW<g:iNOXnl8S=4nfdiM[H3
-!s100 73SUabN8lC^@YOf?=:DQ[0
+V2CL27lOlL<DjM6lDKDlL>0
 R10
 33
 R11
-!i10b 1
-R12
-Z20 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
-Z21 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
-!i113 1
+Z35 !s108 1512379514.560860
+Z36 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
+Z37 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd|
 R15
 R16
+!s100 i:Je4C?HaYn@Dh4:l9D9b0
+!i10b 1
+!i111 0
 Afetch_arch
+R1
 R2
 R3
 R4
 R5
 R6
-R7
-DEx4 work 5 fetch 0 22 W<g:iNOXnl8S=4nfdiM[H3
+DEx4 work 5 fetch 0 22 2CL27lOlL<DjM6lDKDlL>0
 l24
 L19
-Vn@R_K73=c[27i?Ci<MnOE2
-!s100 XhAfI]]V9YjHA9Rea@emn2
+VCPGO3_mKO3]D<C=NcLSEX3
 R10
 33
 R11
-!i10b 1
-R12
-R20
-R21
-!i113 1
+R35
+R36
+R37
 R15
 R16
-Epc_counter
-R17
+!s100 Zc]QCk;U9DMbMdi0Y>3Jn1
+!i10b 1
+!i111 0
+Ememory_access
+w1512379388
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-R0
-Z22 8/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd
-Z23 F/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd
+Z38 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd
+Z39 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd
 l0
 L9
-Va5HGjG@5zLG?WS9LHUaMe3
-!s100 Mk4Z7zUWUk7jVIC[LjiL32
+VRTm`_FabXFb7j:0gnIH;f0
 R10
 33
-R11
-!i10b 1
-R12
-Z24 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd|
-Z25 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd|
-!i113 1
+Z40 !s110 1512379459
+Z41 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd|
 R15
 R16
-Apc_counter_arch
+Z42 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd|
+!s100 6=LJ9CdQ]?YX`6^iYni7d1
+!i10b 1
+!s108 1512379459.136675
+!i111 0
+Amemory_access_arch
+DPx8 lib_core 17 riscv_core_config 0 22 B;k>6PKi9kdEWVzJF`ZL11
+R2
+R3
+R4
+R5
+R6
+DEx4 work 13 memory_access 0 22 zDhLBSZmURY[R]Y:0f=bo3
+l22
+L20
+Vj8[SQQ1bXm@Z<=<z>Hz4g0
+R10
+33
+R41
+R15
+R16
+w1512374542
+R42
+!s110 1512375746
+!s108 1512375746.907126
+!s100 :3?5`B<LQj70W`IXE8TX^0
+!i10b 1
+!i111 0
+Epc_counter
+Z43 w1512374446
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-DEx4 work 10 pc_counter 0 22 a5HGjG@5zLG?WS9LHUaMe3
+Z44 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd
+Z45 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd
+l0
+L9
+VYzTSzMGM:W2jj1WW>86H=2
+R10
+33
+R11
+Z46 !s108 1512379514.820344
+Z47 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd|
+Z48 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd|
+R15
+R16
+!s100 @=R_Ac=zzZ23b^mONRE9J2
+!i10b 1
+!i111 0
+Apc_counter_arch
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 pc_counter 0 22 YzTSzMGM:W2jj1WW>86H=2
 l20
 L16
-VPdiJioWSlz^gko>l@9A9i2
-!s100 34l^nkYC^Uk:Zkl`;zj8E3
+VU:9QeKz7XZRFJJCF?f]IE1
 R10
 33
 R11
-!i10b 1
-R12
-R24
-R25
-!i113 1
+R46
+R47
+R48
 R15
 R16
+!s100 =B9jk[_G^nEI0I1fbXXm70
+!i10b 1
+!i111 0
 Eregisterfile
-Z26 w1511774635
+Z49 w1512371493
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-R0
-Z27 8/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
-Z28 F/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
+Z50 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
+Z51 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
 l0
 L9
-V1L<hIm:I5OB<l6U62fQ_C0
-!s100 PGCH^F?7EWaf6_`TbecFl2
+V<LF2l3@fNJQ:=NJg12TV10
 R10
 33
-R11
-!i10b 1
-R12
-Z29 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
-Z30 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
-!i113 1
+R40
+Z52 !s108 1512379459.047633
+Z53 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
+Z54 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
 R15
 R16
+!s100 AHQ11RTS=>AC>ioU:R<jI1
+!i10b 1
+!i111 0
 Aregisterfile_arch
+R1
 R2
 R3
 R4
 R5
 R6
-R7
-DEx4 work 12 registerfile 0 22 1L<hIm:I5OB<l6U62fQ_C0
+DEx4 work 12 registerfile 0 22 <LF2l3@fNJQ:=NJg12TV10
 l24
 L20
-VoEahZ`8d^R5P`g?C4gIol3
-!s100 ;g7Rla4?olj3?VWWnF81@0
+V;X@=ZIbUGKNaXzlCa_Czz1
 R10
 33
-R11
-!i10b 1
-R12
-R29
-R30
-!i113 1
+R40
+R52
+R53
+R54
 R15
 R16
+!s100 Rak4R9_5c8EZe@f^]Uefe0
+!i10b 1
+!i111 0
 Priscv_core_config
+R2
 R3
 R4
 R5
 R6
+w1512379386
 R7
-w1511772458
-R0
-8/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd
-F/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd
 l0
 L6
-V7IMLng39dHVi1z]eRS;iN0
-!s100 6kzkAV_[9=7`zkhW9T_hb3
+VU`HDG_m7C6dK1?8j7Bo1M0
 R10
 33
-R11
-!i10b 1
-R12
-!s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd|
-!s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd|
-!i113 1
 R15
 R16
+!s100 ^dz2;UmU3>fFTHk?9]8^72
+!s110 1512379458
+!i10b 1
+!s108 1512379458.953159
+!s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd|
+!i111 0

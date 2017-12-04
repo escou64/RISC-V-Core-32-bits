@@ -10,11 +10,11 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
---library vunit_lib;
---context vunit_lib.vunit_context;
+library vunit_lib;
+context vunit_lib.vunit_context;
 
 entity tb_alu is 
-	--generic (runner_cfg : string);
+	generic (runner_cfg : string);
 end entity tb_alu;
 
 architecture bench_arch of tb_alu is
@@ -42,7 +42,7 @@ architecture bench_arch of tb_alu is
 							o_result	=> alu_result);
 		process
 			begin
-				--test_runner_setup(runner, runner_cfg);
+				test_runner_setup(runner, runner_cfg);
 				wait for HALF_PERIOD;
 				alu_op1 <= "00000000000000000000000000000011";
 				wait for HALF_PERIOD;
@@ -65,8 +65,44 @@ architecture bench_arch of tb_alu is
 				assert alu_result = "00000000000000000000000000110000" report "Problem in the register value !" severity error;
 
 				wait for HALF_PERIOD;
-				assert false report "End of the Simulation !" severity failure;
-				--test_runner_cleanup(runner);				
+				alu_sel <= "101";
+				alu_amount <= "00000";
+				wait for HALF_PERIOD;
+				assert alu_result = alu_op1 report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				alu_amount <= "10000";
+				wait for HALF_PERIOD;
+				assert alu_result =  "00000000000000000000000000000000" report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				alu_op1 <= "11000000000000000000000000000011";
+				wait for HALF_PERIOD;
+				assert alu_result =  "00000000000000001100000000000000" report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				alu_op1 <= "11000000000000000000000000000000";
+				alu_signed <= '1';
+				wait for HALF_PERIOD;
+				assert alu_result =  "11111111111111111100000000000000" report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				alu_op1 <= "00010000000000000000000000000011";
+				alu_op2 <= "00110000000000000000000000000001";
+				alu_sel <= "111";
+				wait for HALF_PERIOD;
+				assert alu_result = "00010000000000000000000000000001" report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				alu_op1 <= "00010000000000000000000000000011";
+				alu_op2 <= "00110000000000000000000000000001";
+				alu_sel <= "110";
+				wait for HALF_PERIOD;
+				assert alu_result = "00110000000000000000000000000011" report "Problem in the register value !" severity error;
+
+				wait for HALF_PERIOD;
+				--assert false report "End of the Simulation !" severity failure;
+				test_runner_cleanup(runner);				
 		end process;
 end bench_arch;
 

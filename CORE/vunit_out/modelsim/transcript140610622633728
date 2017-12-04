@@ -1,0 +1,94 @@
+# do /tp/xph3app/xph3app606/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/tcl_read_eval_loop.tcl 
+# vsim -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf {-g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_decode(bench_arch) 
+# //  ModelSim SE-64 10.2c Jul 18 2013 Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/registerfile1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/registerfile1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 15 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 15 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# Break in Subprogram vunit_stop at /tp/xph3app/xph3app606/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /tp/xph3app/xph3app606/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10 
+# vsim -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf {-g/tb_registerfile/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_registerfile(bench_arch) 
+# Break in Subprogram vunit_stop at /tp/xph3app/xph3app606/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /tp/xph3app/xph3app606/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10 
+# vsim -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/modelsim/vsim.wlf {-g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_alu(bench_arch) 
+# ** Error: Problem in the register value !
+#    Time: 30 ns  Iteration: 0  Process: /tb_alu/line__44 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
+# Break in Process line__44 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd line 60
+# Stopped at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd line 60 
+# 
+# Stack trace result from 'tb' command 
+#  /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd 60 [address 7feff04b990b] Process line__44
+#  
+# 
+# Surrounding code from 'see' command 
+#   55 : 				assert alu_result = "00110000000000000000000000000011" report "Problem in the register value !" severity error;
+#   56 : 
+#   57 : 				wait for HALF_PERIOD;
+#   58 : 				alu_sel <= "001";
+#   59 : 				wait for HALF_PERIOD;
+# ->60 : 				assert alu_result = alu_op1 report "Problem in the register value !" severity error;
+#   61 : 
+#   62 : 				wait for HALF_PERIOD;
+#   63 : 				alu_amount <= "00100";
+#   64 : 				wait for HALF_PERIOD;
+#  

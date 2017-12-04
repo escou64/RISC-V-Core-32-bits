@@ -6,7 +6,7 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity decode is port (	i_rstn			: in std_logic;
+entity decode is port (				i_rstn			: in std_logic;
 						i_clk			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
@@ -42,7 +42,7 @@ architecture decode_arch of decode is
 	signal s_rs2_dependency : std_logic_vector(1 downto 0);
 	begin
 
-		s_validity_inputs <= i_validity_ftch AND i_validity_wbck;
+		s_validity_inputs <= i_validity_ftch OR i_validity_wbck;
 		o_rs1select <= s_rs1select;
 		o_rs2select <= s_rs2select;
 		s_rs1 <= i_rs1;
@@ -50,12 +50,12 @@ architecture decode_arch of decode is
 
 		comb1 : process(i_clk, i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
 			begin
-				--if (i_inst(1 downto 0) /= "11") then
-				--	s_rs1select <= "00000";
-				--	s_rs2select <= "00000";
-				--	s_rdselect <= "00000";
-				--	s_validity_global <= '0';
-				--elsif (i_inst(4 downto 2) /= "111") then
+				if (i_inst(1 downto 0) /= "11") then
+					s_rs1select <= "00000";
+					s_rs2select <= "00000";
+					s_rdselect <= "00000";
+					s_validity_global <= '0';
+				else 
 					case i_inst(6 downto 0) is
 						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>					-- U-type Format
 										s_rs1select <= "00000";
@@ -78,12 +78,7 @@ architecture decode_arch of decode is
 										s_rdselect <= "00000";
 										s_validity_global <= '0';
 					end case;
-				--else
-				--	s_rs1select <= "00000";
-				--	s_rs2select <= "00000";
-				--	s_rdselect <= "00000";
-				--	s_validity_global <= '0';
-				--end if;
+				end if;
 		end process comb1;
 	
 		comb2 : process(i_clk, s_previous_rd, s_rs1select, s_rs2select)

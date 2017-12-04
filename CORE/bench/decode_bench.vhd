@@ -10,11 +10,11 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
---library vunit_lib;
---context vunit_lib.vunit_context;
+library vunit_lib;
+context vunit_lib.vunit_context;
 
 entity tb_decode is 
-	--generic (runner_cfg : string);
+	generic (runner_cfg : string);
 end entity tb_decode;
 
 architecture bench_arch of tb_decode is
@@ -105,7 +105,7 @@ architecture bench_arch of tb_decode is
 
 		process
 			begin
-				--test_runner_setup(runner, runner_cfg);				
+				test_runner_setup(runner, runner_cfg);				
 				wait for HALF_PERIOD*5;
 				
 				-- Verifications for Reset
@@ -154,8 +154,8 @@ architecture bench_arch of tb_decode is
 				ftch_inst <= "0000000" & "10101" & "01111" & c_FUNC3_ADD & "01111" & c_OPCODE32_OP;				
 				wait for PERIOD*5;
 
-				assert false report "End of the Simulation !" severity failure;
-				--test_runner_cleanup(runner);
+				--assert false report "End of the Simulation !" severity failure;
+				test_runner_cleanup(runner);
 		end process;
 end bench_arch;
 

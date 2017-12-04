@@ -1,0 +1,29 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+Priscv_core_config_bench
+w1511770165
+Z1 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon/bench/RISCV_CORE_CONFIG_BENCH.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon/bench/RISCV_CORE_CONFIG_BENCH.vhd
+l0
+L1
+V<83RXcF1^o_JR??@W8iSo2
+!s100 >A0Tanbc67nGhmM0@_HW>3
+Z2 OL;C;10.2c;57
+32
+!s110 1512383409
+!i10b 1
+!s108 1512383409.061243
+!s90 +acc|-work|LIB_CORE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/brouillon/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!i111 0
+o+acc -work LIB_CORE_BENCH
+Z3 tExplicit 1

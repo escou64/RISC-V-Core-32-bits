@@ -10,11 +10,11 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
---library vunit_lib;
---context vunit_lib.vunit_context;
+library vunit_lib;
+context vunit_lib.vunit_context;
 
 entity tb_registerfile is 
-	--generic (runner_cfg : string);
+	generic (runner_cfg : string);
 end entity tb_registerfile;
 
 architecture bench_arch of tb_registerfile is
@@ -54,7 +54,7 @@ architecture bench_arch of tb_registerfile is
 
 		process
 			begin
-				--test_runner_setup(runner, runner_cfg);
+				test_runner_setup(runner, runner_cfg);
 				wait for HALF_PERIOD*5;
 				sig_rstn <= '0';
 				wait for PERIOD*5;
@@ -64,7 +64,7 @@ architecture bench_arch of tb_registerfile is
 				wait for PERIOD*5;
 				sig_rdselect <= (others => '1');
 				wait for PERIOD*5;
-				--test_runner_cleanup(runner);
+				test_runner_cleanup(runner);
 		end process;
 end bench_arch;
 

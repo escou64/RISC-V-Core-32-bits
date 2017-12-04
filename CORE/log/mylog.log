@@ -1,10 +1,6 @@
 
-Model Technology ModelSim - Intel FPGA Edition vmap 10.5c Lib Mapping Utility 2017.01 Jan 23 2017
-vmap LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/libs/LIB_CORE 
-Modifying modelsim.ini
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd 
+Modifying /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/config/modelsim.ini
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -12,11 +8,7 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/RISCV_CO
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Compiling package RISCV_CORE_CONFIG
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd 
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -26,11 +18,7 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/register
 -- Loading package RISCV_CORE_CONFIG
 -- Compiling entity registerfile
 -- Compiling architecture registerfile_arch of registerfile
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd 
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -40,11 +28,7 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.v
 -- Loading package RISCV_CORE_CONFIG
 -- Compiling entity decode
 -- Compiling architecture decode_arch of decode
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd 
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -52,13 +36,9 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package RISCV_CORE_CONFIG
--- Compiling entity alu
--- Compiling architecture alu_arch of alu
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.vhd 
+-- Compiling entity fetch
+-- Compiling architecture fetch_arch of fetch
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -66,23 +46,13 @@ vcom -work LIB_CORE /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package RISCV_CORE_CONFIG
--- Compiling entity execute
--- Compiling architecture execute_arch of execute
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vmap 10.5c Lib Mapping Utility 2017.01 Jan 23 2017
-vmap LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/libs/LIB_CORE_BENCH 
-Modifying modelsim.ini
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd 
+-- Compiling entity pc_counter
+-- Compiling architecture pc_counter_arch of pc_counter
+Modifying /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/config/modelsim.ini
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Compiling package RISCV_CORE_CONFIG_BENCH
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd 
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -91,13 +61,9 @@ vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/
 -- Loading package NUMERIC_STD
 -- Loading package RISCV_CORE_CONFIG
 -- Loading package RISCV_CORE_CONFIG_BENCH
--- Compiling entity tb_registerfile
--- Compiling architecture bench_arch of tb_registerfile
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd 
+** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd(13): Library vunit_lib not found.
+** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd(14): near "context": syntax error
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -106,32 +72,8 @@ vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/
 -- Loading package NUMERIC_STD
 -- Loading package RISCV_CORE_CONFIG
 -- Loading package RISCV_CORE_CONFIG_BENCH
--- Compiling entity tb_decode
--- Compiling architecture bench_arch of tb_decode
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
-Start time: 12:24:32 on Nov 28,2017
-vcom -work LIB_CORE_BENCH /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd 
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Loading package RISCV_CORE_CONFIG
--- Loading package RISCV_CORE_CONFIG_BENCH
--- Compiling entity tb_alu
--- Compiling architecture bench_arch of tb_alu
-End time: 12:24:32 on Nov 28,2017, Elapsed time: 0:00:00
-Errors: 0, Warnings: 0
+** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd(13): Library vunit_lib not found.
+** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd(14): near "context": syntax error
 
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
-Errors: 0, Warnings: 0
+Total Errors :	4
+Total Warnings :	0

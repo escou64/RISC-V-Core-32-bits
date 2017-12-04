@@ -26,10 +26,10 @@ architecture alu_arch of alu is
 					s_result <= i_op1 + i_op2;	
 				when "001" =>		-- SLL
 					for I in 31 downto 0 loop
-						if I > to_integer(unsigned(i_amount)) then
-							s_result(I) <= i_op1(I - to_integer(unsigned(i_amount)));
-						else
+						if I < to_integer(unsigned(i_amount)) then
 							s_result(I) <= '0';
+						else	
+							s_result(I) <= i_op1(I - to_integer(unsigned(i_amount)));
 						end if;
 					end loop;
 				when "010" =>		-- SLT

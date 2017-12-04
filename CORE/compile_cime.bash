@@ -18,13 +18,15 @@ PROJECT_PATH="/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE"		# Path of the Pr
 LIB_NAME="LIB_CORE"													# Name of the Library 
 #VHDL_FILES=`ls -l vhd/ | awk {'print$9'} | grep .vhd`
 																	# List of the different VHDL Files describing the design
-VHDL_FILES="	fetch.vhd
+VHDL_FILES="	RISCV_CORE_CONFIG.vhd
+				registerfile.vhd
 				decode.vhd
-				core.vhd"
+				fetch.vhd
+				counter_calculation.vhd"
 																	# List of the different VHDL Files used for the bench
-BENCH_FILES="	fetch_bench.vhd
-				decode_bench.vhd
-				core_bench.vhd"									
+BENCH_FILES="	RISCV_CORE_CONFIG_BENCH.vhd
+				registerfile_bench.vhd
+				decode_bench.vhd"									
 OPT_VCOM="+acc -work" #+acc											# List of the different options of ModelSim used for Compilation
 LOG_FILE="mylog.log"												# Name of the log file
 
@@ -66,8 +68,8 @@ then
 
 	for bench in ${BENCH_FILES}
 	do
-		vcom ${OPT_VCOM} ${LIB_NAME} ${PROJECT_PATH}/bench/${bench}	>> ${PROJECT_PATH}/log/${LOG_FILE}	# Compile all the VHDL files contained on the VHDL_FILES variable
-																									# Use the options on OPT_VCOM variable
+		vcom ${OPT_VCOM} ${LIB_NAME}_BENCH ${PROJECT_PATH}/bench/${bench}	>> ${PROJECT_PATH}/log/${LOG_FILE}	# Compile all the VHDL files contained on the VHDL_FILES variable
+																												# Use the options on OPT_VCOM variable
 	done
 fi
 
