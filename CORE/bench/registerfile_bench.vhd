@@ -10,9 +10,14 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
-entity registerfile_bench is end registerfile_bench;
+--library vunit_lib;
+--context vunit_lib.vunit_context;
 
-architecture bench_arch of registerfile_bench is
+entity tb_registerfile is 
+	--generic (runner_cfg : string);
+end entity tb_registerfile;
+
+architecture bench_arch of tb_registerfile is
 	component registerfile port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -49,6 +54,7 @@ architecture bench_arch of registerfile_bench is
 
 		process
 			begin
+				--test_runner_setup(runner, runner_cfg);
 				wait for HALF_PERIOD*5;
 				sig_rstn <= '0';
 				wait for PERIOD*5;
@@ -58,7 +64,7 @@ architecture bench_arch of registerfile_bench is
 				wait for PERIOD*5;
 				sig_rdselect <= (others => '1');
 				wait for PERIOD*5;
-
+				--test_runner_cleanup(runner);
 		end process;
 end bench_arch;
 

@@ -8,8 +8,8 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
-Edecode
-Z1 w1511779213
+Ealu
+Z1 w1511868268
 Z2 DPx8 lib_core 17 riscv_core_config 0 22 _jEKP6ko^ARoAV`2YRLkS2
 Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
@@ -17,34 +17,34 @@ Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z8 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
-Z9 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+Z8 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd
+Z9 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd
 l0
 L9
-VAPJDlc:>M>>Gn:ZB8:D@C0
-!s100 9K1YMG8Y9Lng_Ne1>3RaX0
+VCIOn:I:l@6lNGNoSzKAHQ1
+!s100 TYS<N^L1dUOi8Y>J4a0ld0
 Z10 OV;C;10.5c;63
 32
-Z11 !s110 1511780388
+Z11 !s110 1511868272
 !i10b 1
-Z12 !s108 1511780388.000000
-Z13 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
-Z14 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+Z12 !s108 1511868272.000000
+Z13 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd|
+Z14 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/alu.vhd|
 !i113 1
 Z15 o-work LIB_CORE
 Z16 tExplicit 1 CvgOpt 0
-Adecode_arch
+Aalu_arch
 R2
 R3
 R4
 R5
 R6
 R7
-DEx4 work 6 decode 0 22 APJDlc:>M>>Gn:ZB8:D@C0
-l43
-L29
-Va4Ude:An5kXUm^oUb<WDm3
-!s100 i:1LgmfMCZNU]6<D_84;:0
+DEx4 work 3 alu 0 22 CIOn:I:l@6lNGNoSzKAHQ1
+l21
+L17
+VQ7iXX1UPnjT_[N`IX2;`i0
+!s100 MlicHYJ<?mIgGUaR;UZU?1
 R10
 32
 R11
@@ -55,8 +55,8 @@ R14
 !i113 1
 R15
 R16
-Eregisterfile
-Z17 w1511774635
+Edecode
+Z17 w1511792105
 R2
 R3
 R4
@@ -64,8 +64,102 @@ R5
 R6
 R7
 R0
-Z18 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
-Z19 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
+Z18 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+Z19 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd
+l0
+L9
+V@MU>4WfS^HEk@g?2FT>RY2
+!s100 9894BNZn9VA4m=ezZU=?l0
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+Z21 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/decode.vhd|
+!i113 1
+R15
+R16
+Adecode_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 6 decode 0 22 @MU>4WfS^HEk@g?2FT>RY2
+l43
+L29
+V?bZ<GJSSc=Afjob<P6WVD3
+!s100 0Li>D1f>aUQ9?W600cC1f0
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16
+Eexecute
+Z22 w1511863603
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z23 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.vhd
+Z24 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.vhd
+l0
+L9
+VF?^7caJ<@DZHcM@l6m`AP0
+!s100 FlNYi8R=DWanXU0zJ8ODK0
+R10
+32
+R11
+!i10b 1
+R12
+Z25 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.vhd|
+Z26 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/execute.vhd|
+!i113 1
+R15
+R16
+Aexecute_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 7 execute 0 22 F?^7caJ<@DZHcM@l6m`AP0
+l36
+L27
+VU]KZD:O32OG89VBUSXX:b1
+!s100 294NJ>Ik98aP;mS4VV?4h0
+R10
+32
+R11
+!i10b 1
+R12
+R25
+R26
+!i113 1
+R15
+R16
+Eregisterfile
+Z27 w1511774635
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z28 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
+Z29 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd
 l0
 L9
 V]=j_IKOnYjXliO8EH2[h;1
@@ -75,8 +169,8 @@ R10
 R11
 !i10b 1
 R12
-Z20 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
-Z21 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
+Z30 !s90 -work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
+Z31 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd|
 !i113 1
 R15
 R16
@@ -97,8 +191,8 @@ R10
 R11
 !i10b 1
 R12
-R20
-R21
+R30
+R31
 !i113 1
 R15
 R16

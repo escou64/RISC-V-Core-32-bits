@@ -10,9 +10,14 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
-entity decode_bench is end decode_bench;
+--library vunit_lib;
+--context vunit_lib.vunit_context;
 
-architecture bench_arch of decode_bench is
+entity tb_decode is 
+	--generic (runner_cfg : string);
+end entity tb_decode;
+
+architecture bench_arch of tb_decode is
 	component registerfile port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -39,8 +44,8 @@ architecture bench_arch of decode_bench is
 							o_rs2select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 							i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-							o_rs1_dependency: out std_logic_vector(2 downto 0);
-							o_rs2_dependency: out std_logic_vector(2 downto 0));
+							o_rs1_dependency: out std_logic_vector(1 downto 0);
+							o_rs2_dependency: out std_logic_vector(1 downto 0));
 	end component;
 
 
@@ -63,8 +68,8 @@ architecture bench_arch of decode_bench is
 	signal dcde_rs1			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_rs2			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_validity	: std_logic;
-	signal dcde_rs1_dependency	: std_logic_vector(2 downto 0);
-	signal dcde_rs2_dependency	: std_logic_vector(2 downto 0);
+	signal dcde_rs1_dependency	: std_logic_vector(1 downto 0);
+	signal dcde_rs2_dependency	: std_logic_vector(1 downto 0);
 
 	begin
 		registerfile1 : registerfile port map (	i_rstn		=> rstn,
@@ -100,17 +105,48 @@ architecture bench_arch of decode_bench is
 
 		process
 			begin
+				--test_runner_setup(runner, runner_cfg);				
 				wait for HALF_PERIOD*5;
+				
+				-- Verifications for Reset
 				rstn <= '0';
 				wait for PERIOD;
-				assert dcde_inst = "00000000000000000000000000000001" report "Problem for resetting !" severity error;
+				assert dcde_inst = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
+				assert dcde_pc = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
+				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
+				assert dcde_validity = '0' report "Problem for resetting !" severity error;
+				assert regf_rs1select = "00000" report "Problem for resetting !" severity error;
+				assert regf_rs2select = "00000" report "Problem for resetting !" severity error;
+
 				wait for PERIOD*5;
 				rstn <= '1';
 				wait for PERIOD*5;
+
+				-- Verifications for different valid instructions
 				ftch_inst <= "0000000" & "00000" & "11111" & c_FUNC3_ADD & "01110" & c_OPCODE32_OP;
-				wait for PERIOD;
+				wait for HALF_PERIOD;
+				assert regf_rs1select = "11111" report "Problem to generate the register number !" severity error;
+				assert regf_rs2select = "00000" report "Problem to generate the register number !" severity error;
+				wait for HALF_PERIOD;
+				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
+				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
+				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
+
 				ftch_inst <= "0000000" & "10000" & "01110" & c_FUNC3_ADD & "01111" & c_OPCODE32_OP;
-				wait for PERIOD;
+				wait for HALF_PERIOD;
+				assert regf_rs1select = "01110" report "Problem to generate the register number !" severity error;
+				assert regf_rs2select = "10000" report "Problem to generate the register number !" severity error;
+				wait for HALF_PERIOD;
+				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
+				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
+				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
+
+				
 				ftch_inst <= "0000000" & "10000" & "01111" & c_FUNC3_ADD & "11111" & c_OPCODE32_OP;	
 				wait for PERIOD;
 				ftch_inst <= "0000000" & "01111" & "01110" & c_FUNC3_ADD & "10101" & c_OPCODE32_OP;
@@ -119,6 +155,7 @@ architecture bench_arch of decode_bench is
 				wait for PERIOD*5;
 
 				assert false report "End of the Simulation !" severity failure;
+				--test_runner_cleanup(runner);
 		end process;
 end bench_arch;
 

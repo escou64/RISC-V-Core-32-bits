@@ -19,12 +19,15 @@ LIB_NAME="LIB_CORE"													# Name of the Library
 #VHDL_FILES=`ls -l vhd/ | awk {'print$9'} | grep .vhd`
 																	# List of the different VHDL Files describing the design
 VHDL_FILES="	RISCV_CORE_CONFIG.vhd
+				registerfile.vhd
 				decode.vhd
-				registerfile.vhd"
+				alu.vhd
+				execute.vhd"
 																	# List of the different VHDL Files used for the bench
 BENCH_FILES="	RISCV_CORE_CONFIG_BENCH.vhd
 				registerfile_bench.vhd
-				decode_bench.vhd"
+				decode_bench.vhd
+				alu_bench.vhd"
 													
 OPT_VCOM="-work" #+acc												# List of the different options of ModelSim used for Compilation
 LOG_FILE="mylog.log"												# Name of the log file

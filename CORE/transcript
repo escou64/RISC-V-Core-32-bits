@@ -1,6 +1,6 @@
-vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# vsim LIB_CORE_BENCH.registerfile_bench(bench_arch) 
-# Start time: 11:59:59 on Nov 27,2017
+vsim LIB_CORE_BENCH.tb_alu(bench_arch)
+# vsim LIB_CORE_BENCH.tb_alu(bench_arch) 
+# Start time: 12:24:45 on Nov 28,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -9,127 +9,25 @@ vsim LIB_CORE_BENCH.registerfile_bench(bench_arch)
 # Loading ieee.numeric_std(body)
 # Loading lib_core.riscv_core_config
 # Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.registerfile_bench(bench_arch)
-# Loading lib_core.registerfile(registerfile_arch)
-vsim LIB_CORE_BENCH.decode_bench
-# End time: 12:00:10 on Nov 27,2017, Elapsed time: 0:00:11
-# Errors: 0, Warnings: 0
-# vsim LIB_CORE_BENCH.decode_bench 
-# Start time: 12:00:10 on Nov 27,2017
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading ieee.numeric_std(body)
-# Loading lib_core.riscv_core_config
-# Loading LIB_CORE_BENCH.riscv_core_config_bench
-# Loading LIB_CORE_BENCH.decode_bench(bench_arch)
-# Loading lib_core.registerfile(registerfile_arch)
-# Loading lib_core.decode(decode_arch)
-add wave -position insertpoint sim:/decode_bench/decode1/*
+# Loading LIB_CORE_BENCH.tb_alu(bench_arch)
+# Loading lib_core.alu(alu_arch)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/tb_alu/alu_op1 \
+sim:/tb_alu/alu_op2 \
+sim:/tb_alu/alu_signed \
+sim:/tb_alu/alu_amount \
+sim:/tb_alu/alu_sel \
+sim:/tb_alu/alu_result
 run -all
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /decode_bench/registerfile1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 10 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 15 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 20 ns  Iteration: 1  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 25 ns  Iteration: 0  Instance: /decode_bench/decode1
-# ** Error: Problem for resetting !
-#    Time: 35 ns  Iteration: 0  Instance: /decode_bench
+# ** Error: Problem in the register value !
+#    Time: 30 ns  Iteration: 0  Instance: /tb_alu
+# ** Error: Problem in the register value !
+#    Time: 40 ns  Iteration: 0  Instance: /tb_alu
 # ** Failure: End of the Simulation !
-#    Time: 225 ns  Iteration: 0  Process: /decode_bench/line__102 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
-# Break in Process line__102 at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd line 121
-# End time: 12:03:08 on Nov 27,2017, Elapsed time: 0:02:58
-# Errors: 1, Warnings: 49
+#    Time: 45 ns  Iteration: 0  Process: /tb_alu/line__44 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
+# Break in Process line__44 at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd line 68
+# End time: 12:25:57 on Nov 28,2017, Elapsed time: 0:01:12
+# Errors: 3, Warnings: 1

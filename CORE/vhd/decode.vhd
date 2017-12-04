@@ -21,8 +21,8 @@ entity decode is port (	i_rstn			: in std_logic;
 						o_rs2select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-						o_rs1_dependency: out std_logic_vector(2 downto 0);
-						o_rs2_dependency: out std_logic_vector(2 downto 0));
+						o_rs1_dependency: out std_logic_vector(1 downto 0);
+						o_rs2_dependency: out std_logic_vector(1 downto 0));
 
 end decode;
 
@@ -38,8 +38,8 @@ architecture decode_arch of decode is
 
     type regfile is array (0 to 2) of std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_previous_rd : regfile;
-	signal s_rs1_dependency : std_logic_vector(2 downto 0);
-	signal s_rs2_dependency : std_logic_vector(2 downto 0);
+	signal s_rs1_dependency : std_logic_vector(1 downto 0);
+	signal s_rs2_dependency : std_logic_vector(1 downto 0);
 	begin
 
 		s_validity_inputs <= i_validity_ftch AND i_validity_wbck;
@@ -50,12 +50,12 @@ architecture decode_arch of decode is
 
 		comb1 : process(i_clk, i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
 			begin
-				if (i_inst(1 downto 0) /= "11") then
-					s_rs1select <= "00000";
-					s_rs2select <= "00000";
-					s_rdselect <= "00000";
-					s_validity_global <= '0';
-				elsif (i_inst(4 downto 2) /= "111") then
+				--if (i_inst(1 downto 0) /= "11") then
+				--	s_rs1select <= "00000";
+				--	s_rs2select <= "00000";
+				--	s_rdselect <= "00000";
+				--	s_validity_global <= '0';
+				--elsif (i_inst(4 downto 2) /= "111") then
 					case i_inst(6 downto 0) is
 						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>					-- U-type Format
 										s_rs1select <= "00000";
@@ -78,17 +78,17 @@ architecture decode_arch of decode is
 										s_rdselect <= "00000";
 										s_validity_global <= '0';
 					end case;
-				else
-					s_rs1select <= "00000";
-					s_rs2select <= "00000";
-					s_rdselect <= "00000";
-					s_validity_global <= '0';
-				end if;
+				--else
+				--	s_rs1select <= "00000";
+				--	s_rs2select <= "00000";
+				--	s_rdselect <= "00000";
+				--	s_validity_global <= '0';
+				--end if;
 		end process comb1;
 	
 		comb2 : process(i_clk, s_previous_rd, s_rs1select, s_rs2select)
 			begin
-				for I in 2 downto 0 loop
+				for I in 1 downto 0 loop
 					if s_rs1select = s_previous_rd(I) then
 						s_rs1_dependency(I) <= '1';	--std_logic_vector(to_unsigned(I, s_rs1_dependency'length));
 					else
