@@ -103,7 +103,7 @@ architecture core_arch of core is
 
 	signal s_imem_addr	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_imem_data	: std_logic_vector(c_NBITS - 1 downto 0);
-	
+		
 
 	begin
 

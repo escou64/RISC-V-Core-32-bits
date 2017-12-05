@@ -11,3 +11,5 @@
 	- Utilisation de constantes pour l'initialisation/ le pas du pc
 		-> Plus facilement modifiable si nécessaire
 		-> Même méthode à utiliser pour l'initialisation des différents registres au cours d'un reset ?
+	/!\ Maintenant que le fichier top (core.vhd) a été créé, il faut penser a bien y modifier les interfaces quand cela est nécessaire
+
