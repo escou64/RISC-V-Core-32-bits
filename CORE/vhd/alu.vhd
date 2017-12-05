@@ -22,9 +22,9 @@ architecture alu_arch of alu is
 		comb1 : process (i_op1, i_op2, i_signed, i_amount, i_sel)
 			begin
 			case i_sel is
-				when "000" =>		-- ADD SUB
+				when c_ALU_ADD =>		-- ADD SUB
 					s_result <= i_op1 + i_op2;	
-				when "001" =>		-- SLL
+				when c_ALU_SLL =>		-- SLL
 					for I in 31 downto 0 loop
 						if I < to_integer(unsigned(i_amount)) then
 							s_result(I) <= '0';
@@ -32,23 +32,23 @@ architecture alu_arch of alu is
 							s_result(I) <= i_op1(I - to_integer(unsigned(i_amount)));
 						end if;
 					end loop;
-				when "010" =>		-- SLT
+				when c_ALU_SLT =>		-- SLT
 					s_result(c_NBITS - 1 downto 1) <= (others => '0');
 					if (signed(i_op1) < signed(i_op2)) then
 						s_result(0) <= '1';
 					else   
 						s_result(0) <= '0';
 					end if;
-				when "011" =>		-- SLTU
+				when c_ALU_SLTU =>		-- SLTU
 					s_result(c_NBITS - 1 downto 1) <= (others => '0');
 					if (unsigned(i_op1) < unsigned(i_op2)) then
 						s_result(0) <= '1';
 					else   
 						s_result(0) <= '0';
 					end if;
-				when "100" =>		-- XOR
+				when c_ALU_XOR =>		-- XOR
 					s_result <= i_op1 XOR i_op2;
-				when "101" =>		-- SRL SRA
+				when c_ALU_SR =>		-- SRL SRA
 					for I in 0 to 31 loop
 						if I < (31 - to_integer(unsigned(i_amount)) + 1) then
 							s_result(I) <= i_op1(I + to_integer(unsigned(i_amount)));
@@ -60,9 +60,9 @@ architecture alu_arch of alu is
 							end if;
 						end if;
 					end loop;
-				when "110" =>		-- OR
+				when c_ALU_OR =>		-- OR
 					s_result <= i_op1 OR i_op2;
-				when "111" =>		-- AND
+				when c_ALU_AND =>		-- AND
 					s_result <= i_op1 AND i_op2;
 				when others =>
 					s_result <= (others => '0');

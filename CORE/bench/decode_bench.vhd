@@ -44,8 +44,8 @@ architecture bench_arch of tb_decode is
 							o_rs2select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 							i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-							o_rs1_dependency: out std_logic_vector(1 downto 0);
-							o_rs2_dependency: out std_logic_vector(1 downto 0));
+							o_rs1_dependency: out std_logic_vector(2 downto 0);
+							o_rs2_dependency: out std_logic_vector(2 downto 0));
 	end component;
 
 
@@ -68,8 +68,8 @@ architecture bench_arch of tb_decode is
 	signal dcde_rs1			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_rs2			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_validity	: std_logic;
-	signal dcde_rs1_dependency	: std_logic_vector(1 downto 0);
-	signal dcde_rs2_dependency	: std_logic_vector(1 downto 0);
+	signal dcde_rs1_dependency	: std_logic_vector(2 downto 0);
+	signal dcde_rs2_dependency	: std_logic_vector(2 downto 0);
 
 	begin
 		registerfile1 : registerfile port map (	i_rstn		=> rstn,

@@ -6,7 +6,7 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity decode is port (				i_rstn			: in std_logic;
+entity decode is port (	i_rstn			: in std_logic;
 						i_clk			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
@@ -21,8 +21,8 @@ entity decode is port (				i_rstn			: in std_logic;
 						o_rs2select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-						o_rs1_dependency: out std_logic_vector(1 downto 0);
-						o_rs2_dependency: out std_logic_vector(1 downto 0));
+						o_rs1_dependency: out std_logic_vector(2 downto 0);
+						o_rs2_dependency: out std_logic_vector(2 downto 0));
 
 end decode;
 
@@ -38,11 +38,11 @@ architecture decode_arch of decode is
 
     type regfile is array (0 to 2) of std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_previous_rd : regfile;
-	signal s_rs1_dependency : std_logic_vector(1 downto 0);
-	signal s_rs2_dependency : std_logic_vector(1 downto 0);
+	signal s_rs1_dependency : std_logic_vector(2 downto 0);
+	signal s_rs2_dependency : std_logic_vector(2 downto 0);
 	begin
 
-		s_validity_inputs <= i_validity_ftch OR i_validity_wbck;
+		s_validity_inputs <= i_validity_ftch AND i_validity_wbck;
 		o_rs1select <= s_rs1select;
 		o_rs2select <= s_rs2select;
 		s_rs1 <= i_rs1;
@@ -83,7 +83,7 @@ architecture decode_arch of decode is
 	
 		comb2 : process(i_clk, s_previous_rd, s_rs1select, s_rs2select)
 			begin
-				for I in 1 downto 0 loop
+				for I in 2 downto 0 loop
 					if s_rs1select = s_previous_rd(I) then
 						s_rs1_dependency(I) <= '1';	--std_logic_vector(to_unsigned(I, s_rs1_dependency'length));
 					else

@@ -22,11 +22,11 @@ proc _vunit_source_init_files_after_load {} {
 
 proc vunit_load {{vsim_extra_args ""}} {
     set vsim_failed [catch {
-        eval vsim ${vsim_extra_args} {-modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf {/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_registerfile/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_registerfile(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH}
+        eval vsim ${vsim_extra_args} {-modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf {/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_registerfile/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_registerfile(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH}
     }]
 
     if {${vsim_failed}} {
-       echo Command 'vsim ${vsim_extra_args} -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf {/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_registerfile/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_registerfile(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH' failed
+       echo Command 'vsim ${vsim_extra_args} -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf {/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_registerfile/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_registerfile(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH' failed
        echo Bad flag from vsim_extra_args?
        return 1
     }
@@ -125,7 +125,7 @@ proc vunit_compile {} {
     set cmd_show {/usr/bin/python -u run.py --compile}
     puts "Re-compiling using command ${cmd_show}"
 
-    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
+    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/media/data/Projects/RISC-V-Core-32-bits/CORE', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
 
     while {[gets $chan line] >= 0} {
         puts $line
