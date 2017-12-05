@@ -1,0 +1,13 @@
+2017/12/05: escou64
+	- Utilisation de boucles entre sortie/ entrée:
+			-> Pour counter_calculation, rebouclage du pc pour calculer pc suivant
+				-> L'entrée "i_pc" devient inutile
+			-> Pour execute, rebouclage du rd pour éviter la création de bulle lors de la dépendance de données
+				-> L'entrée "i_rd_exec" devient inutile
+	- Pour la dépendance de données, un registre rd est placé en fin de writeback pour être réutilisé dans execute
+	- Les signaux validity indiquent une erreur à '0'
+		-> C'est un AND et non un OR qui est utilisé dans le calcul de validité, pour propager la moindre erreur de validité
+	- Dans fetch, pas de signaux intermédiaire "s_*" nécessaires entre les entrées et les sorties
+	- Utilisation de constantes pour l'initialisation/ le pas du pc
+		-> Plus facilement modifiable si nécessaire
+		-> Même méthode à utiliser pour l'initialisation des différents registres au cours d'un reset ?

@@ -16,7 +16,6 @@ entity execute is port (i_rstn			: in std_logic;
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs1_dependency: in std_logic_vector(2 downto 0);
 						i_rs2_dependency: in std_logic_vector(2 downto 0);
-						i_rd_exec		: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -40,7 +39,7 @@ architecture execute_arch of execute is
 	signal s_validity_global : std_logic;
 	signal s_rs1 : std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_rs2 : std_logic_vector(c_NBITS - 1 downto 0);
-	--signal s_rd : std_logic_vector(c_NBITS - 1 downto 0); 
+	signal s_rd_final : std_logic_vector(c_NBITS - 1 downto 0); 
 	
 	signal s_op1	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_op2	: std_logic_vector(c_NBITS - 1 downto 0);
@@ -60,12 +59,12 @@ architecture execute_arch of execute is
 
 	s_validity_inputs <= i_validity_dcde AND i_validity_wbck;
 
-	s_rs1 <=	i_rd_exec when i_rs1_dependency(0) = '1' else
+	s_rs1 <=	s_rd_final when i_rs1_dependency(0) = '1' else
 				i_rd_accm when i_rs1_dependency(1) = '1' else
 				i_rd_wbck when i_rs1_dependency(2) = '1' else
 				i_rs1;
 
-	s_rs2 <=	i_rd_exec when i_rs2_dependency(0) = '1' else
+	s_rs2 <=	s_rd_final when i_rs2_dependency(0) = '1' else
 				i_rd_accm when i_rs2_dependency(1) = '1' else
 				i_rd_wbck when i_rs1_dependency(2) = '1' else
 				i_rs2 ;	
@@ -135,13 +134,15 @@ architecture execute_arch of execute is
 			if i_rstn = '0' then
 				o_pc		<= (others => '0');
 				o_inst		<= (others => '0');
-				o_rd		<= (others => '0');
+				s_rd_final	<= (others => '0');
 				o_validity	<= '0';
 			elsif (i_clk'event) and (i_clk = '1') then
 				o_pc		<= i_pc;
 				o_inst		<= i_inst;
-				o_rd		<= s_result;
+				s_rd_final	<= s_result;
 				o_validity	<= s_validity_global;
 			end if;
 	end process seq;
+
+	o_rd <= s_rd_final;
 end execute_arch;

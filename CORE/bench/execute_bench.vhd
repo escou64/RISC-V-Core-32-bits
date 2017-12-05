@@ -28,7 +28,6 @@ architecture bench_arch of tb_execute is
 								i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rs1_dependency: in std_logic_vector(2 downto 0);
 								i_rs2_dependency: in std_logic_vector(2 downto 0);
-								i_rd_exec		: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -67,7 +66,6 @@ architecture bench_arch of tb_execute is
 										i_rs2				=> dcde_rs2,
 										i_rs1_dependency	=> dcde_rs1_dependency,
 										i_rs2_dependency	=> dcde_rs2_dependency,
-										i_rd_exec			=> exec_rd,
 										i_rd_accm			=> accm_rd,
 										i_rd_wbck			=> wbck_rd,
 										o_pc				=> exec_pc,

@@ -6,14 +6,14 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity pc_counter is port (			i_rstn			: in std_logic;
-						i_clk			: in std_logic;
-						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
+entity counter_calculation is port (	i_rstn			: in std_logic;
+										i_clk			: in std_logic;
+										i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
+										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
 
-end pc_counter;
+end counter_calculation;
 
-architecture pc_counter_arch of pc_counter is
+architecture counter_calculation_arch of counter_calculation is
 
 	signal s_pc : std_logic_vector(c_NBITS - 1 downto 0);
 	
@@ -21,15 +21,15 @@ architecture pc_counter_arch of pc_counter is
 		
 		comb : process(i_clk, i_pc)
 			begin
-				s_pc <=i_pc + "0100";
+			s_pc <=	i_pc + c_PC_STEP;
 		end process comb;
 
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then
-					o_pc <= (others => '0');
+					o_pc <= c_PC_INIT;
 				elsif (i_clk'event and i_clk = '1') then
 					o_pc <= s_pc;
 				end if;
 		end process seq;
-end pc_counter_arch;
+end counter_calculation_arch;
