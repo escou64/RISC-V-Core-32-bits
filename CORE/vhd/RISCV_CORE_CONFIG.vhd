@@ -9,11 +9,17 @@ package RISCV_CORE_CONFIG is
 	constant c_SELECTREGISTERBITS	: integer := 5;
 	
 	constant c_OPCODE32_LUI		: std_logic_vector(6 downto 0) := "0110111";
-	constant c_OPCODE32_AUIPC	: std_logic_vector(6 downto 0) := "0010111";	
+	constant c_OPCODE32_AUIPC	: std_logic_vector(6 downto 0) := "0010111";
+	constant c_OPCODE32_JAL		: std_logic_vector(6 downto 0) := "1101111";
+	constant c_OPCODE32_JALR	: std_logic_vector(6 downto 0) := "1100111";
+	constant c_OPCODE32_BRANCH	: std_logic_vector(6 downto 0) := "1100011";
+	constant c_OPCODE32_LOAD	: std_logic_vector(6 downto 0) := "0000011";
+	constant c_OPCODE32_STORE	: std_logic_vector(6 downto 0) := "0100011";	
 	constant c_OPCODE32_OP_IMM	: std_logic_vector(6 downto 0) := "0010011";
 	constant c_OPCODE32_OP		: std_logic_vector(6 downto 0) := "0110011";
-	constant c_OPCODE32_LOAD	: std_logic_vector(6 downto 0) := "0000011";
-	constant c_OPCODE32_STORE	: std_logic_vector(6 downto 0) := "0100011";
+	constant c_OPCODE32_MISC_MEM: std_logic_vector(6 downto 0) := "0001111";
+	constant c_OPCODE32_SYSTEM	: std_logic_vector(6 downto 0) := "1110011";
+
 
 	constant c_FUNC3_ADDI		: std_logic_vector(2 downto 0) := "000";
 	constant c_FUNC3_SLTI		: std_logic_vector(2 downto 0) := "010";

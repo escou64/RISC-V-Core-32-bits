@@ -36,7 +36,7 @@ architecture decode_arch of decode is
 	signal s_validity_inputs : std_logic;
 	signal s_validity_global : std_logic;
 
-    type regfile is array (0 to 2) of std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
+    type regfile is array (2 downto 0) of std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_previous_rd : regfile;
 	signal s_rs1_dependency : std_logic_vector(2 downto 0);
 	signal s_rs2_dependency : std_logic_vector(2 downto 0);

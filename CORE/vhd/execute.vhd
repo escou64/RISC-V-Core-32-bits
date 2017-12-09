@@ -66,12 +66,12 @@ architecture execute_arch of execute is
 
 	s_rs2 <=	s_rd_final when i_rs2_dependency(0) = '1' else
 				i_rd_accm when i_rs2_dependency(1) = '1' else
-				i_rd_wbck when i_rs1_dependency(2) = '1' else
+				i_rd_wbck when i_rs2_dependency(2) = '1' else
 				i_rs2 ;	
 
 	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, s_rs1, s_rs2)
 		begin
-		if s_validity_inputs = '0' then
+		if s_validity_inputs = '1' then
 			if (i_inst(1 downto 0) /= "11") then
 				s_validity_global	<= '0';
 				s_op1				<= (others => '0');	
@@ -97,19 +97,19 @@ architecture execute_arch of execute is
 						s_sel				<= c_ALU_ADD;
 					when c_OPCODE32_OP_IMM =>
 						s_validity_global	<= s_validity_inputs;
-						s_sel <= i_inst(14 downto 12);
-						s_op1 <= s_rs1;
-						s_op2(11 downto 0) <= i_inst(31 downto 20);
+						s_sel				<= i_inst(14 downto 12);
+						s_op1				<= s_rs1;
+						s_op2(11 downto 0)	<= i_inst(31 downto 20);
 						s_op2(31 downto 12) <= (others => i_inst(31));
 						s_signed			<= i_inst(30);
 						s_amount			<= i_inst(24 downto 20);
 					when c_OPCODE32_OP =>
 						s_validity_global	<= s_validity_inputs;
-						s_sel <= i_inst(14 downto 12);
-						s_op1 <= s_rs1;
-						s_op2 <= s_rs2;
-						s_signed	<= i_inst(30);
-						s_amount	<= s_rs2(4 downto 0);
+						s_sel				<= i_inst(14 downto 12);
+						s_op1				<= s_rs1;
+						s_op2				<= s_rs2;
+						s_signed			<= i_inst(30);
+						s_amount			<= s_rs2(4 downto 0);
 					when others =>
 						s_validity_global	<= '0';
 						s_op1				<= (others => '0');	

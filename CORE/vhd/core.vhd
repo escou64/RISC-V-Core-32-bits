@@ -14,7 +14,7 @@ entity core is port (	i_rstn			: in std_logic;
 						o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_dwrite		: out std_logic;
 						i_ddata			: out std_logic_vector(c_NBITS - 1 downto 0));
-end core;
+end entity core;
 
 architecture core_arch of core is
 	
