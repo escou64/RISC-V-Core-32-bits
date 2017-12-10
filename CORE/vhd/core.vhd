@@ -78,6 +78,7 @@ architecture core_arch of core is
 							i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_validity		: out std_logic);		
 	end component;
@@ -86,6 +87,7 @@ architecture core_arch of core is
 									i_clk			: in std_logic;
 									i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_validity_exec	: in std_logic;
 									i_validity_wbck	: in std_logic;
@@ -138,6 +140,7 @@ architecture core_arch of core is
 	signal s_exec_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_validity	: std_logic;
+	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0);
 
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
@@ -223,6 +226,7 @@ architecture core_arch of core is
 										i_rd_wbck			=> s_wbck_rd,
 										o_pc				=> s_exec_pc,
 										o_inst				=> s_exec_inst,
+										o_rs2				=> s_exec_rs2,
 										o_rd				=> s_exec_rd,
 										o_validity			=> s_exec_validity);
 
@@ -230,6 +234,7 @@ architecture core_arch of core is
 													i_clk			=> s_clk,
 													i_pc			=> s_exec_pc,
 													i_inst			=> s_exec_inst,
+													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
 													i_validity_exec	=> s_exec_validity,
 													i_validity_wbck	=> s_wbck_validity,

@@ -20,6 +20,7 @@ entity execute is port (i_rstn			: in std_logic;
 						i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+						o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_validity		: out std_logic);		
 end entity execute;
@@ -132,13 +133,15 @@ architecture execute_arch of execute is
 	seq : process (i_rstn, i_clk)
 		begin
 			if i_rstn = '0' then
-				o_pc		<= (others => '0');
-				o_inst		<= (others => '0');
-				s_rd_final	<= (others => '0');
+				o_pc		<= c_PC_INIT;
+				o_inst		<= c_REG_INIT;
+				o_rs2		<= c_REG_INIT;
+				s_rd_final	<= c_REG_INIT;
 				o_validity	<= '0';
 			elsif (i_clk'event) and (i_clk = '1') then
 				o_pc		<= i_pc;
 				o_inst		<= i_inst;
+				o_rs2		<= s_rs2;
 				s_rd_final	<= s_result;
 				o_validity	<= s_validity_global;
 			end if;

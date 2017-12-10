@@ -104,17 +104,19 @@ architecture bench_arch of tb_decode is
 		clk <= not (clk) after HALF_PERIOD;
 
 		process
+			variable v_value_regfile : std_logic_vector(c_NBITS - 1 downto 0) := c_REG_INIT;
+			variable v_address_regfile : std_logic_vector(4 downto 0) := "00000";
 			begin
 				test_runner_setup(runner, runner_cfg);				
-				wait for HALF_PERIOD*5;
+				wait for QUARTER_PERIOD*5;
 				
 				-- Verifications for Reset
 				rstn <= '0';
 				wait for PERIOD;
-				assert dcde_inst = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
-				assert dcde_pc = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
-				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
-				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem for resetting !" severity error;
+				assert dcde_inst = c_REG_INIT report "Problem for resetting !" severity error;
+				assert dcde_pc = c_PC_INIT report "Problem for resetting !" severity error;
+				assert dcde_rs1 = c_REG_INIT report "Problem for resetting !" severity error;
+				assert dcde_rs2 = c_REG_INIT report "Problem for resetting !" severity error;
 				assert dcde_validity = '0' report "Problem for resetting !" severity error;
 				assert regf_rs1select = "00000" report "Problem for resetting !" severity error;
 				assert regf_rs2select = "00000" report "Problem for resetting !" severity error;
@@ -122,6 +124,17 @@ architecture bench_arch of tb_decode is
 				wait for PERIOD*5;
 				rstn <= '1';
 				wait for PERIOD*5;
+
+				--Writing differents datas in regfile
+				regf_write <= '1';
+				for I in 0 to c_NREGISTERS - 1 loop
+					regf_data <= v_value_regfile;
+					regf_rdselect <= v_address_regfile;
+					wait for PERIOD;
+					v_value_regfile := v_value_regfile + "1";
+					v_address_regfile := v_address_regfile + "1";
+				end loop;
+				regf_write <= '0';
 
 				-- Verifications for different valid instructions
 				ftch_inst <= "0000000" & "00000" & "11111" & c_FUNC3_ADD & "01110" & c_OPCODE32_OP;
@@ -131,7 +144,7 @@ architecture bench_arch of tb_decode is
 				wait for HALF_PERIOD;
 				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
 				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
-				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_rs1 = "000000000000000000000000000011111" report "Problem in the register value !" severity error;
 				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
@@ -142,17 +155,39 @@ architecture bench_arch of tb_decode is
 				wait for HALF_PERIOD;
 				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
 				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
-				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
-				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert dcde_rs1 = "000000000000000000000000000001110" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000010000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
+				--Writing differents datas in regfile
+				regf_write <= '1';
+				v_value_regfile := "00000000000000000000000000000010";
+				v_address_regfile := "00000";
+				for I in 0 to c_NREGISTERS - 1 loop
+					regf_data <= v_value_regfile;
+					regf_rdselect <= v_address_regfile;
+					wait for PERIOD;
+					v_value_regfile := v_value_regfile + "10";
+					v_address_regfile := v_address_regfile + "1";
+				end loop;
+				regf_write <= '0';
 				
-				ftch_inst <= "0000000" & "10000" & "01111" & c_FUNC3_ADD & "11111" & c_OPCODE32_OP;	
+
+				ftch_inst <= "0000000" & "00000" & "01111" & c_FUNC3_ADD & "11111" & c_OPCODE32_OP;	
 				wait for PERIOD;
-				ftch_inst <= "0000000" & "01111" & "01110" & c_FUNC3_ADD & "10101" & c_OPCODE32_OP;
+				assert dcde_rs1 = "000000000000000000000000000100000" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+
+				ftch_inst <= "0000000" & "01010" & "01110" & c_FUNC3_ORI & "10101" & c_OPCODE32_OP;
 				wait for PERIOD;
-				ftch_inst <= "0000000" & "10101" & "01111" & c_FUNC3_ADD & "01111" & c_OPCODE32_OP;				
+				assert dcde_rs1 = "000000000000000000000000000011110" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000010110" report "Problem in the register value !" severity error;
+
+				ftch_inst <= "000000010101" & "01011" & c_FUNC3_ADDI & "01111" & c_OPCODE32_OP_IMM;				
 				wait for PERIOD*5;
+				assert dcde_rs1 = "000000000000000000000000000011000" report "Problem in the register value !" severity error;
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+
 
 				--assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);

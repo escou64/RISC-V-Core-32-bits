@@ -34,8 +34,8 @@ architecture fetch_arch of fetch is
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then
-					o_pc <= (others => '0');
-					o_inst <= (others => '0');
+					o_pc <= c_PC_INIT;
+					o_inst <= c_REG_INIT;
 					o_validity <= '0';
 				elsif (i_clk'event and i_clk = '1') then
 					o_pc <= i_pc;

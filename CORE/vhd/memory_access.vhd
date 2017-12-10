@@ -10,6 +10,7 @@ entity memory_access is port (	i_rstn			: in std_logic;
 								i_clk			: in std_logic;
 								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_validity_exec	: in std_logic;
 								i_validity_wbck	: in std_logic;
@@ -51,8 +52,8 @@ architecture memory_access_arch of memory_access is
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then
-					o_pc <= (others => '0');
-					o_inst <= (others => '0');
+					o_pc	<= c_PC_INIT;
+					o_inst	<= c_REG_INIT;
 				elsif (i_clk'event and i_clk = '1') then
 					o_pc <= i_pc;
 					o_inst <= i_inst;

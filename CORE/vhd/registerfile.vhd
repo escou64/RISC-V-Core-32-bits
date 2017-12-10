@@ -27,7 +27,7 @@ architecture registerfile_arch of registerfile is
 			begin
 			if (i_rstn = '0') then
 				for I in 0 to c_NREGISTERS - 1 loop
-					s_registers(I) <= (others => '0');
+					s_registers(I) <= c_REG_INIT;
 				end loop;
 			elsif (i_clk'event and i_clk = '1') then
 				if ((i_write = '1') and (to_integer(unsigned(i_rdselect)) /= 0)) then				

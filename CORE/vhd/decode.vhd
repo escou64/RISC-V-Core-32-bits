@@ -100,10 +100,10 @@ architecture decode_arch of decode is
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then
-					o_pc <= (others => '0');
-					o_inst <= (others => '0');
-					o_rs1 <= (others => '0');
-					o_rs2 <= (others => '0');
+					o_pc <= c_PC_INIT;
+					o_inst <= c_REG_INIT;
+					o_rs1 <= c_REG_INIT;
+					o_rs2 <= c_REG_INIT;
 					o_validity <= '0';
 
 					o_rs1_dependency <= (others => '0');

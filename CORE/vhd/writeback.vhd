@@ -65,7 +65,7 @@ architecture writeback_arch of writeback is
 	seq : process (i_clk, i_rstn)
 		begin
 		if i_rstn = '0' then
-			o_rd <= (others => '0');
+			o_rd <= c_REG_INIT;
 		elsif (i_clk'event) and (i_clk = '1') then
 			o_rd <= i_rd;
 		end if;

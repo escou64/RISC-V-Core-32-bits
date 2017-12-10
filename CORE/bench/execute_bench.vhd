@@ -32,6 +32,7 @@ architecture bench_arch of tb_execute is
 								i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_validity		: out std_logic);
 	end component;
@@ -52,6 +53,7 @@ architecture bench_arch of tb_execute is
 
 	signal exec_pc			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal exec_rs2			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_rd			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_validity	: std_logic;
 	begin
@@ -70,6 +72,7 @@ architecture bench_arch of tb_execute is
 										i_rd_wbck			=> wbck_rd,
 										o_pc				=> exec_pc,
 										o_inst				=> exec_inst,
+										o_rs2				=> exec_rs2,
 										o_rd				=> exec_rd,
 										o_validity			=> exec_validity);
 
@@ -78,7 +81,7 @@ architecture bench_arch of tb_execute is
 		process
 			begin
 				test_runner_setup(runner, runner_cfg);				
-				wait for HALF_PERIOD;
+				wait for QUARTER_PERIOD;
 				
 				-- Verifications for Reset
 				rstn <= '0';
