@@ -46,8 +46,20 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package RISCV_CORE_CONFIG
--- Compiling entity pc_counter
--- Compiling architecture pc_counter_arch of pc_counter
+-- Compiling entity counter_calculation
+-- Compiling architecture counter_calculation_arch of counter_calculation
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package RISCV_CORE_CONFIG
+-- Compiling entity memory_access
+-- Compiling architecture memory_access_arch of memory_access
+** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is xph3app606@cimeld19.
+** Warning: (vlib-34) Library already exists at "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/libs/LIB_CORE_BENCH".
 Modifying /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/config/modelsim.ini
 Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package STANDARD
@@ -74,6 +86,18 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package RISCV_CORE_CONFIG_BENCH
 ** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd(13): Library vunit_lib not found.
 ** Error: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd(14): near "context": syntax error
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package RISCV_CORE_CONFIG
+-- Loading package RISCV_CORE_CONFIG_BENCH
+-- Compiling entity tb_memory_access
+-- Compiling architecture bench_arch of tb_memory_access
 
 Total Errors :	4
-Total Warnings :	0
+Total Warnings :	2
