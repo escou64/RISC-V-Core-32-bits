@@ -23,7 +23,6 @@ architecture bench_arch of tb_fetch is
 							i_clk			: in std_logic;
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_validity_wbck	: in std_logic;
 							o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -38,7 +37,7 @@ architecture bench_arch of tb_fetch is
 	signal s_ftch_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_validity	: std_logic;
-	signal s_wbck_validity	: std_logic									:= '1';
+	--signal s_wbck_validity	: std_logic									:= '1';
 
 
 	begin
@@ -46,7 +45,6 @@ architecture bench_arch of tb_fetch is
 									i_clk			=> s_clk,	
 									i_pc			=> s_calc_pc,
 									i_idata			=> s_imem_data,
-									i_validity_wbck	=> s_wbck_validity,
 									o_iaddress		=> s_imem_addr,
 									o_pc			=> s_ftch_pc,
 									o_inst			=> s_ftch_inst,

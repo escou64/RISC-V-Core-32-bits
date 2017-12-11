@@ -6,22 +6,21 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity memory_access is port (        i_rstn                        : in std_logic;
-                                                                i_clk                        : in std_logic;
-                                                                i_pc                        : in std_logic_vector(c_NBITS - 1 downto 0);
-                                                                i_inst                        : in std_logic_vector(c_NBITS - 1 downto 0);
-                                                                i_rs2                        : in std_logic_vector(c_NBITS - 1 downto 0);
-                                                                i_rd                        : in std_logic_vector(c_NBITS - 1 downto 0);
-                                                                i_validity_exec        : in std_logic;
-                                                                i_validity_wbck        : in std_logic;
-                                                                o_daddress                : out std_logic_vector(c_NBITS - 1 downto 0);
-                                                                o_ddata                        : out std_logic_vector(c_NBITS - 1 downto 0);
-                                                                o_dwrite                : out std_logic;
-                                                                i_ddata                        : in std_logic_vector(c_NBITS - 1 downto 0);       
-                                                                o_pc                        : out std_logic_vector(c_NBITS - 1 downto 0);
-                                                                o_inst                        : out std_logic_vector(c_NBITS - 1 downto 0);
-                                                                o_rd                        : out std_logic_vector(c_NBITS - 1 downto 0);
-                                                                o_validity                : out std_logic );
+entity memory_access is port (	i_rstn          : in std_logic;
+                                i_clk           : in std_logic;
+                                i_pc            : in std_logic_vector(c_NBITS - 1 downto 0);
+                                i_inst          : in std_logic_vector(c_NBITS - 1 downto 0);
+                                i_rs2           : in std_logic_vector(c_NBITS - 1 downto 0);
+                                i_rd            : in std_logic_vector(c_NBITS - 1 downto 0);
+                                i_validity_exec : in std_logic;
+                                o_daddress      : out std_logic_vector(c_NBITS - 1 downto 0);
+                                o_ddata         : out std_logic_vector(c_NBITS - 1 downto 0);
+                                o_dwrite        : out std_logic;
+                                i_ddata         : in std_logic_vector(c_NBITS - 1 downto 0);       
+                                o_pc            : out std_logic_vector(c_NBITS - 1 downto 0);
+                                o_inst          : out std_logic_vector(c_NBITS - 1 downto 0);
+                                o_rd            : out std_logic_vector(c_NBITS - 1 downto 0);
+                                o_validity      : out std_logic );
 end memory_access;
 
 architecture memory_access_arch of memory_access is
@@ -31,7 +30,7 @@ architecture memory_access_arch of memory_access is
         signal s_rd : std_logic_vector(c_NBITS - 1 downto 0);
 
         begin
-                s_validity_inputs <= i_validity_exec AND i_validity_wbck;
+                s_validity_inputs <= i_validity_exec; -- AND i_validity_wbck;
                 o_daddress <= i_rd;
                 o_ddata <= i_rs2;
 

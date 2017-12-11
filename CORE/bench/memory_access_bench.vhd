@@ -27,8 +27,7 @@ architecture bench_arch of tb_memory_access is
 									i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_validity_exec		: in std_logic;
-									i_validity_wbck		: in std_logic;
+									i_validity_exec	: in std_logic;
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
@@ -57,7 +56,7 @@ architecture bench_arch of tb_memory_access is
 	signal s_accm_validity	: std_logic;
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0);
 
-	signal s_wbck_validity	: std_logic									:= '1';
+	--signal s_wbck_validity	: std_logic									:= '1';
 
 	begin
 		memory_access1 : memory_access port map (	i_rstn			=> s_rstn,
@@ -66,8 +65,7 @@ architecture bench_arch of tb_memory_access is
 													i_inst			=> s_exec_inst,
 													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
-													i_validity_exec	=> s_exec_validity,
-													i_validity_wbck	=> s_wbck_validity,
+													i_validity_exec	=> s_exec_validity,													
 													o_daddress		=> s_dmem_daddress,
 													o_ddata			=> s_dmem_oddata,
 													o_dwrite		=> s_dmem_dwrite,
@@ -115,7 +113,7 @@ architecture bench_arch of tb_memory_access is
 					s_exec_rs2		<= v_exec_rs2;
 					s_exec_rd		<= v_exec_rd;
 					s_dmem_iddata	<= v_dmem_iddata;
-					s_wbck_validity	<= '1';
+					--s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';				
 					wait for HALF_PERIOD;
 					assert s_dmem_daddress = s_exec_rd report "Problem for loading 1!" severity error;
@@ -145,7 +143,7 @@ architecture bench_arch of tb_memory_access is
 					s_exec_rs2		<= v_exec_rs2;
 					s_exec_rd		<= v_exec_rd;
 					s_dmem_iddata	<= v_dmem_iddata;
-					s_wbck_validity	<= '1';
+					--s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';
 					wait for HALF_PERIOD;
 					assert s_dmem_daddress = s_exec_rd report "Problem for storing 1!" severity error;
@@ -176,7 +174,7 @@ architecture bench_arch of tb_memory_access is
 					s_exec_rs2		<= v_exec_rs2;
 					s_exec_rd		<= v_exec_rd;
 					s_dmem_iddata	<= v_dmem_iddata;
-					s_wbck_validity	<= '1';
+					--s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';
 					wait for HALF_PERIOD;
 					assert s_dmem_daddress = s_exec_rd report "Problem 1!" severity error;

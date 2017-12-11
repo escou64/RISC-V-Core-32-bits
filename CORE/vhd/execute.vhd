@@ -11,7 +11,6 @@ entity execute is port (i_rstn			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_validity_dcde	: in std_logic;
-						i_validity_wbck	: in std_logic;
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs1_dependency: in std_logic_vector(2 downto 0);
@@ -58,7 +57,7 @@ architecture execute_arch of execute is
 							i_sel		=> s_sel,
 							o_result	=> s_result);
 
-	s_validity_inputs <= i_validity_dcde AND i_validity_wbck;
+	s_validity_inputs <= i_validity_dcde; -- AND i_invalidation;
 
 	s_rs1 <=	s_rd_final when i_rs1_dependency(0) = '1' else
 				i_rd_accm when i_rs1_dependency(1) = '1' else

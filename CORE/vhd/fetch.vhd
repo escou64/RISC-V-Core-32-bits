@@ -10,7 +10,6 @@ entity fetch is port (	i_rstn			: in std_logic;
 						i_clk			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity_wbck	: in std_logic;
 						o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -40,7 +39,7 @@ architecture fetch_arch of fetch is
 				elsif (i_clk'event and i_clk = '1') then
 					o_pc <= i_pc;
 					o_inst <= i_idata;
-					o_validity <= i_validity_wbck;
+					o_validity <= '1';
 				end if;
 		end process seq;
 end fetch_arch;

@@ -23,7 +23,6 @@ architecture bench_arch of tb_execute is
 								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_validity_dcde	: in std_logic;
-								i_validity_wbck	: in std_logic;
 								i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rs1_dependency: in std_logic_vector(2 downto 0);
@@ -42,7 +41,7 @@ architecture bench_arch of tb_execute is
 	signal dcde_pc			: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal dcde_inst		: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal dcde_validity	: std_logic												:= '1';
-	signal wbck_validity	: std_logic												:= '1';											
+	--signal wbck_validity	: std_logic												:= '1';											
 	signal dcde_rs1			: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal dcde_rs2			: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal dcde_rs1_dependency	: std_logic_vector(2 downto 0)						:= "000";
@@ -63,7 +62,6 @@ architecture bench_arch of tb_execute is
 										i_pc				=> dcde_pc,
 										i_inst				=> dcde_inst,
 										i_validity_dcde		=> dcde_validity,
-										i_validity_wbck		=> wbck_validity,
 										i_rs1				=> dcde_rs1,
 										i_rs2				=> dcde_rs2,
 										i_rs1_dependency	=> dcde_rs1_dependency,

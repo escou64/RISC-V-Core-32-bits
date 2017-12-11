@@ -27,8 +27,8 @@ architecture bench_arch of tb_writeback is
 								o_write			: out std_logic;
 								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic;
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0));
+								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_validity		: out std_logic);
 	end component;
 
 	component registerfile port (	i_rstn		: in std_logic;

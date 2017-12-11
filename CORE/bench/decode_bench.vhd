@@ -34,6 +34,8 @@ architecture bench_arch of tb_decode is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_ftch	: in std_logic;
+							i_validity_exec	: in std_logic;
+							i_validity_accm	: in std_logic;
 							i_validity_wbck	: in std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -62,6 +64,8 @@ architecture bench_arch of tb_decode is
 	signal ftch_pc			: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
 	signal ftch_inst		: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');	--"11111111111111111111111111100011";
 	signal ftch_validity	: std_logic												:= '1';
+	signal exec_validity	: std_logic												:= '1';
+	signal accm_validity	: std_logic												:= '1';
 	signal wbck_validity	: std_logic												:= '1';											
 	signal dcde_pc			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_inst		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -87,6 +91,8 @@ architecture bench_arch of tb_decode is
 									i_pc		=> ftch_pc,		
 									i_inst		=> ftch_inst,		
 									i_validity_ftch	=> ftch_validity,
+									i_validity_exec => exec_validity,
+									i_validity_accm => accm_validity,
 									i_validity_wbck => wbck_validity,	
 									o_pc		=> dcde_pc,		
 									o_inst		=> dcde_inst,		

@@ -30,7 +30,6 @@ architecture bench_arch of tb_top is
 							i_clk			: in std_logic;
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_validity_wbck	: in std_logic;
 							o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -42,6 +41,8 @@ architecture bench_arch of tb_top is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_ftch	: in std_logic;
+							i_validity_exec	: in std_logic;
+							i_validity_accm	: in std_logic;
 							i_validity_wbck	: in std_logic;	
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -72,7 +73,6 @@ architecture bench_arch of tb_top is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_dcde	: in std_logic;
-							i_validity_wbck	: in std_logic;
 							i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rs1_dependency: in std_logic_vector(2 downto 0);
@@ -93,7 +93,6 @@ architecture bench_arch of tb_top is
 									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_validity_exec	: in std_logic;
-									i_validity_wbck	: in std_logic;
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
@@ -113,8 +112,8 @@ architecture bench_arch of tb_top is
 								o_write			: out std_logic;
 								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic;
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0));
+								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_validity		: out std_logic);
 	end component;
 
 	signal s_rstn	: std_logic		:= '1';
@@ -149,7 +148,7 @@ architecture bench_arch of tb_top is
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_dwrite	: std_logic;
-	signal s_dmem_iddata	: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_dmem_iddata	: std_logic_vector(c_NBITS - 1 downto 0)	:= "00000000000000000000000000000000";
 	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_validity	: std_logic;
@@ -171,7 +170,6 @@ architecture bench_arch of tb_top is
 									i_clk			=> s_clk,	
 									i_pc			=> s_calc_pc,
 									i_idata			=> s_imem_data,
-									i_validity_wbck	=> s_wbck_validity,
 									o_iaddress		=> s_imem_addr,
 									o_pc			=> s_ftch_pc,
 									o_inst			=> s_ftch_inst,
@@ -192,6 +190,8 @@ architecture bench_arch of tb_top is
 									i_pc				=> s_ftch_pc,		
 									i_inst				=> s_ftch_inst,		
 									i_validity_ftch		=> s_ftch_validity,
+									i_validity_exec		=> s_exec_validity,
+									i_validity_accm		=> s_accm_validity,
 									i_validity_wbck		=> s_wbck_validity,	
 									o_pc				=> s_dcde_pc,		
 									o_inst				=> s_dcde_inst,		
@@ -210,7 +210,6 @@ architecture bench_arch of tb_top is
 										i_pc				=> s_dcde_pc,
 										i_inst				=> s_dcde_inst,
 										i_validity_dcde		=> s_dcde_validity,
-										i_validity_wbck		=> s_wbck_validity,
 										i_rs1				=> s_dcde_rs1,
 										i_rs2				=> s_dcde_rs2,
 										i_rs1_dependency	=> s_dcde_rs1_dependency,
@@ -230,7 +229,6 @@ architecture bench_arch of tb_top is
 													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
 													i_validity_exec	=> s_exec_validity,
-													i_validity_wbck	=> s_wbck_validity,
 													o_daddress		=> s_dmem_daddress,
 													o_ddata			=> s_dmem_oddata,
 													o_dwrite		=> s_dmem_dwrite,
@@ -249,8 +247,8 @@ architecture bench_arch of tb_top is
 											o_write			=> s_regf_write,
 											o_rdselect		=> s_regf_rdselect,
 											o_data			=> s_regf_data,
-											o_validity		=> s_wbck_validity,
-											o_rd			=> s_wbck_rd);
+											o_rd			=> s_wbck_rd,
+											o_validity		=> s_wbck_validity);
 
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
