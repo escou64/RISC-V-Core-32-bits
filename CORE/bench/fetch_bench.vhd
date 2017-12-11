@@ -5,100 +5,87 @@ use ieee.numeric_std.all;
 
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
---use LIB_CORE.registerfile.all;
+--use LIB_CORE.all;
 
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
+
 library vunit_lib;
 context vunit_lib.vunit_context;
 
-entity tb_writeback is 
+entity tb_fetch is 
 	generic (runner_cfg : string);
-end entity tb_writeback;
+end entity tb_fetch;
 
-architecture bench_arch of tb_writeback is
-	component writeback port (	i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_validity_accm	: in std_logic;
-								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-								o_write			: out std_logic;
-								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic;
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0));
+architecture bench_arch of tb_fetch is
+	component fetch port (	i_rstn			: in std_logic;
+							i_clk			: in std_logic;
+							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_validity_wbck	: in std_logic;
+							o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_validity		: out std_logic);
 	end component;
 
-	component registerfile port (	i_rstn		: in std_logic;
-									i_clk		: in std_logic;
-									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);
-									i_write		: in std_logic;
-									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));
+	signal s_rstn			: std_logic									:= '1';
+	signal s_clk			: std_logic									:= '1';
+	signal s_calc_pc		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_PC_INIT;
+	signal s_imem_addr		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_imem_data		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
+	signal s_ftch_pc		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_ftch_inst		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_ftch_validity	: std_logic;
+	signal s_wbck_validity	: std_logic									:= '1';
 
-	end component;
-	
-	signal rstn	: std_logic		:= '1';
-	signal clk	: std_logic		:= '1';
-
-	signal s_regf_rs1select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "00000";
-	signal s_regf_rs2select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "00000";
-	signal s_regf_rs1		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_regf_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_PC_INIT;
-	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_REG_INIT;
-	signal s_accm_validity	: std_logic												:= '0';
-	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_REG_INIT;
-
-	signal s_regf_write		: std_logic;
-	signal s_regf_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-	signal s_regf_data		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_validity	: std_logic;
 
 	begin
+		fetch1 : fetch port map (	i_rstn			=> s_rstn,
+									i_clk			=> s_clk,	
+									i_pc			=> s_calc_pc,
+									i_idata			=> s_imem_data,
+									i_validity_wbck	=> s_wbck_validity,
+									o_iaddress		=> s_imem_addr,
+									o_pc			=> s_ftch_pc,
+									o_inst			=> s_ftch_inst,
+									o_validity		=> s_ftch_validity);
 
-		registerfile1 : registerfile port map (	i_rstn		=> rstn,
-												i_clk		=> clk,	
-												i_rs1select	=> s_regf_rs1select,
-												i_rs2select	=> s_regf_rs2select,
-												o_rs1		=> s_regf_rs1,
-												o_rs2		=> s_regf_rs2,
-												i_write		=> s_regf_write,
-												i_rdselect	=> s_regf_rdselect,
-												i_data		=> s_regf_data);
-	
-		writeback1 : writeback port map (	i_rstn			=> rstn,
-											i_clk			=> clk,
-											i_pc			=> s_accm_pc,
-											i_inst			=> s_accm_inst,
-											i_validity_accm	=> s_accm_validity,
-											i_rd			=> s_accm_rd,
-											o_write			=> s_regf_write,
-											o_rdselect		=> s_regf_rdselect,
-											o_data			=> s_regf_data,
-											o_validity		=> s_wbck_validity,
-											o_rd			=> s_wbck_rd);
-
-		clk <= not (clk) after HALF_PERIOD;
+		s_clk <= not (s_clk) after HALF_PERIOD;
 
 		process
+			variable v_calc_pc		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_PC_INIT;
+			variable v_imem_data	: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
+
 			begin
-				test_runner_setup(runner, runner_cfg);				
+				test_runner_setup(runner, runner_cfg);
+				s_rstn <= '1';			
 				wait for QUARTER_PERIOD;
 				
 				-- Verifications for Reset
-				rstn <= '0';
+				s_rstn <= '0';
+				wait for HALF_PERIOD;
+				assert s_ftch_pc = c_PC_INIT report "Problem for resetting 1" severity error;
+				assert s_ftch_inst = c_REG_INIT report "Problem for resetting 2" severity error;
+				assert s_ftch_validity = '0' report "Problem for resetting 3" severity error;
+				wait for HALF_PERIOD;
+				s_rstn <= '1';
 				wait for PERIOD;
-				assert s_wbck_rd = c_REG_INIT report "Problem for resetting !" severity error;
-				rstn <= '1';
-				wait for PERIOD;
-								
+
+				for I in 0 to 20 loop
+					s_calc_pc		<= v_calc_pc;
+					s_imem_data		<= v_imem_data;
+					wait for HALF_PERIOD;
+					assert s_imem_addr = s_calc_pc report "Problem for accessing instruction memory" severity error;
+					wait for HALF_PERIOD;
+					assert s_ftch_pc = s_calc_pc report "Problem for fetching instruction 1" severity error;
+					assert s_ftch_inst = s_imem_data report "Problem for fetching instruction 2" severity error;
+					assert s_ftch_validity = '1' report "Problem for fetching instruction 3" severity error;
+
+					v_calc_pc	:= v_calc_pc + "1011";
+					v_imem_data	:= v_imem_data + "10110";
+				end loop;			
 				-- assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);
 		end process;

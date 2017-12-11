@@ -22,11 +22,14 @@ VHDL_FILES="	RISCV_CORE_CONFIG.vhd
 				registerfile.vhd
 				decode.vhd
 				fetch.vhd
-				counter_calculation.vhd"
+				counter_calculation.vhd
+				memory_access.vhd"
+
 																	# List of the different VHDL Files used for the bench
 BENCH_FILES="	RISCV_CORE_CONFIG_BENCH.vhd
 				registerfile_bench.vhd
-				decode_bench.vhd"									
+				decode_bench.vhd
+				memory_access_bench.vhd"									
 OPT_VCOM="+acc -work" #+acc											# List of the different options of ModelSim used for Compilation
 LOG_FILE="mylog.log"												# Name of the log file
 

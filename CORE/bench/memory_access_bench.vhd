@@ -21,18 +21,18 @@ end entity tb_memory_access;
 	
 architecture bench_arch of tb_memory_access is
 	
-	component memory_access port (	i_rstn			: in std_logic;
+	component memory_access port (					i_rstn			: in std_logic;
 									i_clk			: in std_logic;
 									i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_validity_exec	: in std_logic;
-									i_validity_wbck	: in std_logic;
+									i_validity_exec		: in std_logic;
+									i_validity_wbck		: in std_logic;
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
-									i_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);		
+									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
 									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -88,18 +88,18 @@ architecture bench_arch of tb_memory_access is
 
 		begin
 				test_runner_setup(runner, runner_cfg);
-				wait for QUARTER_PERIOD;
-				
+				s_rstn <= '1';
+				wait for QUARTER_PERIOD;				
 				-- Verifications for Reset
 				s_rstn <= '0';
 				wait for QUARTER_PERIOD;
-				assert s_accm_pc = c_PC_INIT report "Problem for resetting !" severity error;
-				assert s_accm_inst = c_REG_INIT report "Problem for resetting !" severity error;
-				assert s_accm_rd = c_REG_INIT report "Problem for resetting !" severity error;
-				assert s_accm_validity = '0' report "Problem for resetting !" severity error;
-				assert s_dmem_daddress = c_REG_INIT report "Problem for resetting !" severity error;
-				assert s_dmem_oddata = c_REG_INIT report "Problem for resetting !" severity error;
-				assert s_dmem_dwrite = '0' report "Problem for resetting !" severity error;				
+				assert s_accm_pc = c_PC_INIT report "Problem for resetting 1!" severity error;
+				assert s_accm_inst = c_REG_INIT report "Problem for resetting 2!" severity error;
+				assert s_accm_rd = c_REG_INIT report "Problem for resetting 3!" severity error;
+				assert s_accm_validity = '0' report "Problem for resetting 4!" severity error;
+				assert s_dmem_daddress = c_REG_INIT report "Problem for resetting 5!" severity error;
+				assert s_dmem_oddata = c_REG_INIT report "Problem for resetting 6!" severity error;
+				assert s_dmem_dwrite = '0' report "Problem for resetting 7!" severity error;				
 				wait for QUARTER_PERIOD*3;
 				s_rstn <= '1';
 				wait for PERIOD;	
@@ -118,19 +118,20 @@ architecture bench_arch of tb_memory_access is
 					s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';				
 					wait for HALF_PERIOD;
-					assert s_dmem_daddress = s_exec_rd report "Problem for loading !" severity error;
-					assert s_dmem_oddata = s_exec_rs2 report "Problem for loading !" severity error;
-					assert s_dmem_dwrite = '0' report "Problem for loading !" severity error;
+					assert s_dmem_daddress = s_exec_rd report "Problem for loading 1!" severity error;
+					assert s_dmem_oddata = s_exec_rs2 report "Problem for loading 2!" severity error;
+					assert s_dmem_dwrite = '0' report "Problem for loading 3!" severity error;
 					wait for HALF_PERIOD;
-					assert s_accm_pc = s_exec_pc report "Problem for loading !" severity error;
-					assert s_accm_inst = s_exec_inst report "Problem for loading !" severity error;
-					assert s_accm_rd = s_dmem_iddata report "Problem for loading !" severity error;
-					assert s_accm_validity = '1' report "Problem for loading !" severity error;
+					assert s_accm_pc = s_exec_pc report "Problem for loading 4!" severity error;
+					assert s_accm_inst = s_exec_inst report "Problem for loading 5!" severity error;
+					assert s_accm_rd = s_dmem_iddata report "Problem for loading 6!" severity error;
+					assert s_accm_validity = '1' report "Problem for loading 7!" severity error;
 
 					v_exec_pc		:= v_exec_pc + "101";
 					v_exec_rs2		:= v_exec_rs2 + "10";
 					v_exec_rd		:= v_exec_rd + "110";
 					v_dmem_iddata	:= v_dmem_iddata + "100";
+					--wait for QUARTER_PERIOD;
 				end loop;
 
 				-- STORE
@@ -147,19 +148,20 @@ architecture bench_arch of tb_memory_access is
 					s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';
 					wait for HALF_PERIOD;
-					assert s_dmem_daddress = s_exec_rd report "Problem for storing !" severity error;
-					assert s_dmem_oddata = s_exec_rs2 report "Problem for storing !" severity error;
-					assert s_dmem_dwrite = '1' report "Problem for storing !" severity error;
+					assert s_dmem_daddress = s_exec_rd report "Problem for storing 1!" severity error;
+					assert s_dmem_oddata = s_exec_rs2 report "Problem for storing 2!" severity error;
+					assert s_dmem_dwrite = '1' report "Problem for storing 3!" severity error;
 					wait for HALF_PERIOD;
-					assert s_accm_pc = s_exec_pc report "Problem for storing !" severity error;
-					assert s_accm_inst = s_exec_inst report "Problem for storing !" severity error;
-					assert s_accm_rd = s_exec_rd report "Problem for storing !" severity error;
-					assert s_accm_validity = '1' report "Problem for storing !" severity error;
+					assert s_accm_pc = s_exec_pc report "Problem for storing 4!" severity error;
+					assert s_accm_inst = s_exec_inst report "Problem for storing 5!" severity error;
+					assert s_accm_rd = s_exec_rd report "Problem for storing 6!" severity error;
+					assert s_accm_validity = '1' report "Problem for storing 7!" severity error;
 
 					v_exec_pc		:= v_exec_pc + "01";
 					v_exec_rs2		:= v_exec_rs2 + "11";
 					v_exec_rd		:= v_exec_rd + "111";
 					v_dmem_iddata	:= v_dmem_iddata + "101";
+					--wait for QUARTER_PERIOD;
 				end loop;
 
 
@@ -177,24 +179,25 @@ architecture bench_arch of tb_memory_access is
 					s_wbck_validity	<= '1';
 					s_exec_validity	<= '1';
 					wait for HALF_PERIOD;
-					assert s_dmem_daddress = s_exec_rd report "Problem !" severity error;
-					assert s_dmem_oddata = s_exec_rs2 report "Problem !" severity error;
-					assert s_dmem_dwrite = '0' report "Problem !" severity error;
+					assert s_dmem_daddress = s_exec_rd report "Problem 1!" severity error;
+					assert s_dmem_oddata = s_exec_rs2 report "Problem 2!" severity error;
+					assert s_dmem_dwrite = '0' report "Problem 3!" severity error;
 					wait for HALF_PERIOD;
-					assert s_accm_pc = s_exec_pc report "Problem !" severity error;
-					assert s_accm_inst = s_exec_inst report "Problem !" severity error;
-					assert s_accm_rd = s_exec_rd report "Problem !" severity error;
-					assert s_accm_validity = '1' report "Problem !" severity error;
+					assert s_accm_pc = s_exec_pc report "Problem 4!" severity error;
+					assert s_accm_inst = s_exec_inst report "Problem 5!" severity error;
+					assert s_accm_rd = s_exec_rd report "Problem 6!" severity error;
+					assert s_accm_validity = '1' report "Problem 7!" severity error;
 
 					v_exec_pc		:= v_exec_pc + "010";
 					v_exec_rs2		:= v_exec_rs2 + "111";
 					v_exec_rd		:= v_exec_rd + "1110";
 					v_dmem_iddata	:= v_dmem_iddata + "1010";
+					--wait for QUARTER_PERIOD;
 				end loop;
 
 
 
-				-- assert false report "End of the Simulation !" severity failure;
+				--assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);
 		end process;
 

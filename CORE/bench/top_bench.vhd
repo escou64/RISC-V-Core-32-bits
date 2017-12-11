@@ -97,7 +97,7 @@ architecture bench_arch of tb_top is
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
-									i_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);		
+									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
 									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
