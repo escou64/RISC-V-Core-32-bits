@@ -1,7 +1,7 @@
-# End time: 23:11:26 on Dec 10,2017, Elapsed time: 0:00:00
+# End time: 08:25:41 on Dec 11,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
-# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/" 
-# Start time: 23:11:26 on Dec 10,2017
+# vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/" 
+# Start time: 08:25:41 on Dec 11,2017
 # ** Warning: Design size of 11669 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-8683) Uninitialized out port /tb_memory_access/memory_access1/o_daddress(31 downto 0) has no driver.
@@ -78,12 +78,12 @@
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 5 ns  Iteration: 0  Instance: /tb_memory_access
 # ** Error: Problem for resetting !
-#    Time: 5 ns  Iteration: 0  Process: /tb_memory_access/line__83 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
-# Break in Process line__83 at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd line 96
-# Stopped at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd line 96
+#    Time: 5 ns  Iteration: 0  Process: /tb_memory_access/line__83 File: /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
+# Break in Process line__83 at /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd line 96
+# Stopped at /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd line 96
 # 
 # Stack trace result from 'tb' command
-#  /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd 96 return [address 0xf6d06acd] Process line__83
+#  /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd 96 return [address 0xf6d08acd] Process line__83
 # 
 # 
 # Surrounding code from 'see' command
