@@ -16,6 +16,7 @@ entity memory_access is port (	i_rstn          : in std_logic;
                                 o_daddress      : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_ddata         : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_dwrite        : out std_logic;
+								o_dsize			: out std_logic_vector(1 downto 0);
                                 i_ddata         : in std_logic_vector(c_NBITS - 1 downto 0);       
                                 o_pc            : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_inst          : out std_logic_vector(c_NBITS - 1 downto 0);
@@ -39,19 +40,62 @@ architecture memory_access_arch of memory_access is
                         case i_inst(6 downto 0) is
                                 when c_OPCODE32_LOAD =>
                                         o_dwrite <= '0';
-                                        s_rd <= i_ddata;
-                                        s_validity_global <= s_validity_inputs;       
+										o_dsize <= "11";
+										case i_inst(14 downto 12) is  
+											when c_FUNC3_LB =>
+												s_rd(7 downto 0) <= i_ddata(7 downto 0);
+												s_rd(31 downto 8) <= (others => i_ddata(7));
+												s_validity_global <= s_validity_inputs;									
+											when c_FUNC3_LH =>
+												s_rd(15 downto 0) <= i_ddata(15 downto 0);
+												s_rd(31 downto 16) <= (others => i_ddata(15));
+												s_validity_global <= s_validity_inputs;
+											when c_FUNC3_LW =>
+												s_rd <= i_ddata;
+												s_validity_global <= s_validity_inputs;
+											when c_FUNC3_LBU =>
+												s_rd(7 downto 0) <= i_ddata(7 downto 0);
+												s_rd(31 downto 8) <= (others => '0');
+												s_validity_global <= s_validity_inputs;
+											when c_FUNC3_LHU =>
+												s_rd(15 downto 0) <= i_ddata(15 downto 0);
+												s_rd(31 downto 16) <= (others => '0');
+												s_validity_global <= s_validity_inputs;
+											when others =>
+												s_rd <= i_ddata;
+												s_validity_global <= '0';
+										end case;     
                                 when c_OPCODE32_STORE =>       
-                                        o_dwrite <= '1';
-                                        s_rd <= i_rd;                                       
-                                        s_validity_global <= s_validity_inputs;
+                                        s_rd <= i_rd;
+										s_validity_global <= '0';
+										if s_validity_inputs = '1' then									                                       
+											case i_inst(14 downto 12) is
+												when c_FUNC3_SB =>
+													o_dwrite <= '1';
+													o_dsize <= "01";													
+												when c_FUNC3_SH =>
+													o_dwrite <= '1';
+													o_dsize <= "10";
+												when c_FUNC3_SW =>
+													o_dwrite <= '1';
+													o_dsize <= "11";
+												when others =>
+													o_dwrite <= '0';
+													o_dsize <= "00";
+											end case;
+										else
+											o_dwrite <= '0';
+											o_dsize <= "00";
+										end if;
                                 when c_OPCODE32_LUI | c_OPCODE32_OP | c_OPCODE32_OP_IMM | c_OPCODE32_AUIPC =>
                                         o_dwrite <= '0';
+										o_dsize <= "00";
                                         s_rd <= i_rd;
                                         s_validity_global <= s_validity_inputs;
                                        
                                 when others =>
                                         o_dwrite <= '0';
+										o_dsize <= "00";
                                         s_rd <= i_rd;
                                         s_validity_global <= '0';
                         end case;
@@ -60,9 +104,9 @@ architecture memory_access_arch of memory_access is
                 seq : process (i_clk, i_rstn)
                         begin
                                 if (i_rstn = '0') then
-                                        o_pc <= (others => '0');
-                                        o_inst <= (others => '0');
-                                        o_rd <= (others => '0');
+                                        o_pc <= c_PC_INIT;
+                                        o_inst <= c_REG_INIT;
+                                        o_rd <= c_REG_INIT;
                                         o_validity <= '0';
                                 elsif (i_clk'event and i_clk = '1') then
                                         o_pc <= i_pc;

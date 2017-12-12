@@ -31,6 +31,7 @@ architecture bench_arch of tb_memory_access is
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
+									o_dsize			: out std_logic_vector(1 downto 0);
 									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
 									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -50,6 +51,7 @@ architecture bench_arch of tb_memory_access is
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_dwrite	: std_logic;
+	signal s_dmem_dsize		: std_logic_vector(1 downto 0);
 	signal s_dmem_iddata	: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
 	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -65,10 +67,11 @@ architecture bench_arch of tb_memory_access is
 													i_inst			=> s_exec_inst,
 													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
-													i_validity_exec	=> s_exec_validity,													
+													i_validity_exec	=> s_exec_validity,										
 													o_daddress		=> s_dmem_daddress,
 													o_ddata			=> s_dmem_oddata,
 													o_dwrite		=> s_dmem_dwrite,
+													o_dsize			=> s_dmem_dsize,
 													i_ddata			=> s_dmem_iddata,		
 													o_pc			=> s_accm_pc,
 													o_inst			=> s_accm_inst,
@@ -153,7 +156,7 @@ architecture bench_arch of tb_memory_access is
 					assert s_accm_pc = s_exec_pc report "Problem for storing 4!" severity error;
 					assert s_accm_inst = s_exec_inst report "Problem for storing 5!" severity error;
 					assert s_accm_rd = s_exec_rd report "Problem for storing 6!" severity error;
-					assert s_accm_validity = '1' report "Problem for storing 7!" severity error;
+					assert s_accm_validity = '0' report "Problem for storing 7!" severity error;
 
 					v_exec_pc		:= v_exec_pc + "01";
 					v_exec_rs2		:= v_exec_rs2 + "11";

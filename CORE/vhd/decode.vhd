@@ -70,7 +70,7 @@ architecture decode_arch of decode is
 										s_rs2select <= "00000";
 										s_rdselect <= i_inst(11 downto 7);
 										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_OP_IMM =>									-- I-type Format
+						when c_OPCODE32_OP_IMM |  c_OPCODE32_LOAD =>				-- I-type Format
 										s_rs1select <= i_inst(19 downto 15);
 										s_rs2select <= "00000";
 										s_rdselect <= i_inst(11 downto 7);
@@ -79,6 +79,11 @@ architecture decode_arch of decode is
 										s_rs1select <= i_inst(19 downto 15);
 										s_rs2select <= i_inst(24 downto 20);
 										s_rdselect <= i_inst(11 downto 7);
+										s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_STORE =>									-- S-type Format
+										s_rs1select <= i_inst(19 downto 15);
+										s_rs2select <= i_inst(24 downto 20);
+										s_rdselect <= "00000";
 										s_validity_global <= s_validity_inputs;
 						when others => 
 										s_rs1select <= "00000";

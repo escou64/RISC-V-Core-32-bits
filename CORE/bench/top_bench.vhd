@@ -98,6 +98,7 @@ architecture bench_arch of tb_top is
 									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_dwrite		: out std_logic;
+									o_dsize			: out std_logic_vector(1 downto 0);
 									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
 									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -150,6 +151,7 @@ architecture bench_arch of tb_top is
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_dwrite	: std_logic;
+	signal s_dmem_dsize		: std_logic_vector(1 downto 0);
 	signal s_dmem_iddata	: std_logic_vector(c_NBITS - 1 downto 0)	:= "00000000000000000000000000000000";
 	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -236,6 +238,7 @@ architecture bench_arch of tb_top is
 													o_daddress		=> s_dmem_daddress,
 													o_ddata			=> s_dmem_oddata,
 													o_dwrite		=> s_dmem_dwrite,
+													o_dsize			=> s_dmem_dsize,
 													i_ddata			=> s_dmem_iddata,		
 													o_pc			=> s_accm_pc,
 													o_inst			=> s_accm_inst,
@@ -259,10 +262,13 @@ architecture bench_arch of tb_top is
    		process
 			variable v_iline		: line;
 			variable v_rline		: line;
+			variable v_idline		: line;
 			variable v_imem_data	: std_logic_vector(c_NBITS - 1 downto 0);
 			variable v_result_wbck	: std_logic_vector(c_NBITS - 1 downto 0);
+			variable v_data_in		: std_logic_vector(c_NBITS - 1 downto 0);
 			file f_instructions	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/files/instructions.txt";
 			file f_results_wbck	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/files/results_wbck.txt";
+			file f_datas_in		: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/files/datas_in.txt";
 			begin
 				test_runner_setup(runner, runner_cfg);
 				wait for QUARTER_PERIOD;
@@ -277,14 +283,19 @@ architecture bench_arch of tb_top is
 					read(v_iline, v_imem_data);
 					s_imem_data <= v_imem_data;
 
+					if (v_imem_data(6 downto 0) = c_OPCODE32_LOAD) and (not endfile(f_datas_in)) then
+						readline(f_datas_in,v_idline);
+						read(v_idline, v_data_in);
+						s_imem_data <= v_imem_data;
+					end if; 
+
 					wait for PERIOD;
 					if(not endfile(f_results_wbck)) then
 						readline(f_results_wbck,v_rline);
 						read(v_rline, v_result_wbck);
 						assert s_wbck_rd = v_result_wbck report "Problem in rd wbck value !" severity error;
 					end if;
-				end loop;
-				s_imem_data <= "00000000000000000000000000000000";
+				end loop;				
 			
 				for I in 0 to 4 loop
 					wait for PERIOD;

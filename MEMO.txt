@@ -13,3 +13,7 @@
 		-> Même méthode à utiliser pour l'initialisation des différents registres au cours d'un reset ?
 	/!\ Maintenant que le fichier top (core.vhd) a été créé, il faut penser a bien y modifier les interfaces quand cela est nécessaire
 
+2017/12/12: escou64
+	- Accès à la mémoire d'instruction
+			-> Ajout d'un signal dsize pour choisir entre des écritures 8 bits, 16 bits et 32 bits
+			-> Protocole correct ? Valeurs choisies correctes ?

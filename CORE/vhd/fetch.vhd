@@ -16,20 +16,9 @@ entity fetch is port (	i_rstn			: in std_logic;
 						o_validity		: out std_logic);
 end fetch;
 
-architecture fetch_arch of fetch is
-
-	--signal s_pc		: std_logic_vector(c_NBITS - 1 downto 0);
-	--signal s_idata	: std_logic_vector(c_NBITS - 1 downto 0);
-	
+architecture fetch_arch of fetch is	
 	begin
 		o_iaddress <= i_pc;
-
-		--comb : process(i_clk, i_pc,i_idata)
-		--	begin
-		--		s_pc <=i_pc;
-		--		s_data <= i_idata;
-		--end process comb;
-
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then

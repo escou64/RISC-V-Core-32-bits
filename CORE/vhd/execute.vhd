@@ -84,22 +84,32 @@ architecture execute_arch of execute is
 				s_sel				<= (others => '0');
 			else 
 				case i_inst(6 downto 0) is
-					when c_OPCODE32_LUI =>
+					when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>
 						s_validity_global	<= s_validity_inputs;
 						s_op1(31 downto 12)	<= i_inst(31 downto 12);
 						s_op1(11 downto 0)	<= "000000000000";
-						s_op2				<= (others => '0');
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_sel				<= c_ALU_ADD;
-					when c_OPCODE32_AUIPC =>
+						if i_inst(6 downto 0) = c_OPCODE32_AUIPC then
+							s_op2				<= i_pc;
+						else
+							s_op2				<= (others => '0');
+						end if;
+					when c_OPCODE32_LOAD | c_OPCODE32_STORE =>
 						s_validity_global	<= s_validity_inputs;
-						s_op1(31 downto 12)	<= i_inst(31 downto 12);
-						s_op1(11 downto 0)	<= "000000000000";
-						s_op2				<= i_pc;
+						s_op1				<= s_rs1;
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_sel				<= c_ALU_ADD;
+						if i_inst(6 downto 0) = c_OPCODE32_STORE then
+							s_op2(4 downto 0)	<= i_inst(11 downto 7);
+							s_op2(11 downto 5)	<= i_inst(31 downto 25);
+							s_op2(31 downto 12)	<= (others => i_inst(31));
+						else
+							s_op2(11 downto 0)	<= i_inst(31 downto 20);
+							s_op2(31 downto 12)	<= (others => i_inst(31));
+						end if;
 					when c_OPCODE32_OP_IMM =>
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= i_inst(14 downto 12);
