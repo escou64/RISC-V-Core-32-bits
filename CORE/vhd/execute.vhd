@@ -17,6 +17,8 @@ entity execute is port (i_rstn			: in std_logic;
 						i_rs2_dependency: in std_logic_vector(2 downto 0);
 						i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
+						i_validity_accm	: in std_logic;
+						i_validity_wbck	: in std_logic;
 						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -35,8 +37,9 @@ architecture execute_arch of execute is
 	end component alu;
 
 
-	signal s_validity_inputs : std_logic;
-	signal s_validity_global : std_logic;
+	signal s_validity_inputs	: std_logic;
+	signal s_validity_global	: std_logic;
+	signal s_validity_final		: std_logic;
 	signal s_rs1 : std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_rs2 : std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_rd_final : std_logic_vector(c_NBITS - 1 downto 0); 
@@ -59,14 +62,14 @@ architecture execute_arch of execute is
 
 	s_validity_inputs <= i_validity_dcde; -- AND i_invalidation;
 
-	s_rs1 <=	s_rd_final when i_rs1_dependency(0) = '1' else
-				i_rd_accm when i_rs1_dependency(1) = '1' else
-				i_rd_wbck when i_rs1_dependency(2) = '1' else
+	s_rs1 <=	s_rd_final when (i_rs1_dependency(0) = '1') and (s_validity_final = '1') else
+				i_rd_accm when (i_rs1_dependency(1) = '1') and (i_validity_accm = '1') else
+				i_rd_wbck when (i_rs1_dependency(2) = '1') and (i_validity_wbck = '1') else
 				i_rs1;
 
-	s_rs2 <=	s_rd_final when i_rs2_dependency(0) = '1' else
-				i_rd_accm when i_rs2_dependency(1) = '1' else
-				i_rd_wbck when i_rs2_dependency(2) = '1' else
+	s_rs2 <=	s_rd_final when i_rs2_dependency(0) = '1' and (s_validity_final = '1') else
+				i_rd_accm when i_rs2_dependency(1) = '1' and (i_validity_accm = '1') else
+				i_rd_wbck when i_rs2_dependency(2) = '1' and (i_validity_wbck = '1') else
 				i_rs2 ;	
 
 	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, s_rs1, s_rs2)
@@ -83,14 +86,16 @@ architecture execute_arch of execute is
 				case i_inst(6 downto 0) is
 					when c_OPCODE32_LUI =>
 						s_validity_global	<= s_validity_inputs;
-						s_op1				<= i_inst(31 downto 12) & "000000000000";
+						s_op1(31 downto 12)	<= i_inst(31 downto 12);
+						s_op1(11 downto 0)	<= "000000000000";
 						s_op2				<= (others => '0');
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_sel				<= c_ALU_ADD;
 					when c_OPCODE32_AUIPC =>
 						s_validity_global	<= s_validity_inputs;
-						s_op1				<= i_inst(31 downto 12) & "000000000000";
+						s_op1(31 downto 12)	<= i_inst(31 downto 12);
+						s_op1(11 downto 0)	<= "000000000000";
 						s_op2				<= i_pc;
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
@@ -101,8 +106,12 @@ architecture execute_arch of execute is
 						s_op1				<= s_rs1;
 						s_op2(11 downto 0)	<= i_inst(31 downto 20);
 						s_op2(31 downto 12) <= (others => i_inst(31));
-						s_signed			<= i_inst(30);
 						s_amount			<= i_inst(24 downto 20);
+						if i_inst(14 downto 12) = c_FUNC3_SRAI then
+							s_signed	<= i_inst(30);
+						else
+							s_signed	<= '0';
+						end if; 
 					when c_OPCODE32_OP =>
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= i_inst(14 downto 12);
@@ -132,19 +141,20 @@ architecture execute_arch of execute is
 	seq : process (i_rstn, i_clk)
 		begin
 			if i_rstn = '0' then
-				o_pc		<= c_PC_INIT;
-				o_inst		<= c_REG_INIT;
-				o_rs2		<= c_REG_INIT;
-				s_rd_final	<= c_REG_INIT;
-				o_validity	<= '0';
+				o_pc				<= c_PC_INIT;
+				o_inst				<= c_REG_INIT;
+				o_rs2				<= c_REG_INIT;
+				s_rd_final			<= c_REG_INIT;
+				s_validity_final	<= '0';
 			elsif (i_clk'event) and (i_clk = '1') then
-				o_pc		<= i_pc;
-				o_inst		<= i_inst;
-				o_rs2		<= s_rs2;
-				s_rd_final	<= s_result;
-				o_validity	<= s_validity_global;
+				o_pc				<= i_pc;
+				o_inst				<= i_inst;
+				o_rs2				<= s_rs2;
+				s_rd_final			<= s_result;
+				s_validity_final	<= s_validity_global;
 			end if;
 	end process seq;
 
+	o_validity <= s_validity_final;
 	o_rd <= s_rd_final;
 end execute_arch;

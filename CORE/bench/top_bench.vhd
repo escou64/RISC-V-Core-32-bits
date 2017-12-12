@@ -41,9 +41,9 @@ architecture bench_arch of tb_top is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_ftch	: in std_logic;
-							i_validity_exec	: in std_logic;
-							i_validity_accm	: in std_logic;
-							i_validity_wbck	: in std_logic;	
+							--i_validity_exec	: in std_logic;
+							--i_validity_accm	: in std_logic;
+							--i_validity_wbck	: in std_logic;	
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs1			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -79,6 +79,8 @@ architecture bench_arch of tb_top is
 							i_rs2_dependency: in std_logic_vector(2 downto 0);
 							i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_validity_accm	: in std_logic;
+							i_validity_wbck	: in std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);					
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -190,9 +192,9 @@ architecture bench_arch of tb_top is
 									i_pc				=> s_ftch_pc,		
 									i_inst				=> s_ftch_inst,		
 									i_validity_ftch		=> s_ftch_validity,
-									i_validity_exec		=> s_exec_validity,
-									i_validity_accm		=> s_accm_validity,
-									i_validity_wbck		=> s_wbck_validity,	
+									--i_validity_exec		=> s_exec_validity,
+									--i_validity_accm		=> s_accm_validity,
+									--i_validity_wbck		=> s_wbck_validity,	
 									o_pc				=> s_dcde_pc,		
 									o_inst				=> s_dcde_inst,		
 									o_rs1				=> s_dcde_rs1,
@@ -216,6 +218,8 @@ architecture bench_arch of tb_top is
 										i_rs2_dependency	=> s_dcde_rs2_dependency,
 										i_rd_accm			=> s_accm_rd,
 										i_rd_wbck			=> s_wbck_rd,
+										i_validity_accm		=> s_accm_validity,
+										i_validity_wbck		=> s_wbck_validity,
 										o_pc				=> s_exec_pc,
 										o_inst				=> s_exec_inst,
 										o_rs2				=> s_exec_rs2,
@@ -253,10 +257,12 @@ architecture bench_arch of tb_top is
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			variable v_iline    : line;
-			variable v_dline    : line;
-			variable v_imem_data: std_logic_vector(c_NBITS - 1 downto 0);
-			file f_instructions	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/instructions.txt";
+			variable v_iline		: line;
+			variable v_rline		: line;
+			variable v_imem_data	: std_logic_vector(c_NBITS - 1 downto 0);
+			variable v_result_wbck	: std_logic_vector(c_NBITS - 1 downto 0);
+			file f_instructions	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/files/instructions.txt";
+			file f_results_wbck	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/files/results_wbck.txt";
 			begin
 				test_runner_setup(runner, runner_cfg);
 				wait for QUARTER_PERIOD;
@@ -265,25 +271,31 @@ architecture bench_arch of tb_top is
 				s_rstn <= '0';
 				wait for PERIOD;
 				s_rstn <= '1';
-				wait for PERIOD;	
-
-				--if(not endfile(f_instructions)) then
-				--	readline(f_instructions,v_iline);
-				--end if;
-
-				--file_open(fINSTRUCTIONS, "instructions.txt",  read_mode);
-				--file_open(fDATAS, "datas.txt", write_mode);
+				
 				while not endfile(f_instructions) loop
 					readline(f_instructions,v_iline);
-				--	readline(fINSTRUCTIONS, v_iline);
 					read(v_iline, v_imem_data);
 					s_imem_data <= v_imem_data;
 
 					wait for PERIOD;
+					if(not endfile(f_results_wbck)) then
+						readline(f_results_wbck,v_rline);
+						read(v_rline, v_result_wbck);
+						assert s_wbck_rd = v_result_wbck report "Problem in rd wbck value !" severity error;
+					end if;
 				end loop;
+				s_imem_data <= "00000000000000000000000000000000";
 			
-				wait for PERIOD*5;
+				for I in 0 to 4 loop
+					wait for PERIOD;
+					if(not endfile(f_results_wbck)) then
+						readline(f_results_wbck,v_rline);
+						read(v_rline, v_result_wbck);
+						assert s_wbck_rd = v_result_wbck report "Problem in rd wbck value !" severity error;
+					end if;
+				end loop;
 
+				wait for HALF_PERIOD;
 				-- assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);
 		end process;

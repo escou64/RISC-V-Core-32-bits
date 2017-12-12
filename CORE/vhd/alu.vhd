@@ -23,7 +23,11 @@ architecture alu_arch of alu is
 			begin
 			case i_sel is
 				when c_ALU_ADD =>		-- ADD SUB
-					s_result <= i_op1 + i_op2;	
+					if i_signed = '0' then
+						s_result <= i_op1 + i_op2;
+					else
+						s_result <= i_op1 - i_op2;
+					end if;	
 				when c_ALU_SLL =>		-- SLL
 					for I in 31 downto 0 loop
 						if I < to_integer(unsigned(i_amount)) then

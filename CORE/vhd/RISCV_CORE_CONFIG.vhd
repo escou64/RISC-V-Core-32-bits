@@ -48,6 +48,7 @@ package RISCV_CORE_CONFIG is
 	constant c_FUNC3_SLLI		: std_logic_vector(2 downto 0) := "001";
 	constant c_FUNC3_SRLI		: std_logic_vector(2 downto 0) := "101";
 	constant c_FUNC3_SRAI		: std_logic_vector(2 downto 0) := "101";
+
 	constant c_FUNC3_ADD		: std_logic_vector(2 downto 0) := "000";
 	constant c_FUNC3_SUB		: std_logic_vector(2 downto 0) := "000";
 	constant c_FUNC3_SLL		: std_logic_vector(2 downto 0) := "001";

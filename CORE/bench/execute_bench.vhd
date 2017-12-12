@@ -29,6 +29,8 @@ architecture bench_arch of tb_execute is
 								i_rs2_dependency: in std_logic_vector(2 downto 0);
 								i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_validity_accm	: in std_logic;
+								i_validity_wbck	: in std_logic;
 								o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -49,6 +51,8 @@ architecture bench_arch of tb_execute is
 
 	signal accm_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal wbck_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
+	signal accm_validity	: std_logic											:= '1';
+	signal wbck_validity	: std_logic											:= '1';
 
 	signal exec_pc			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -68,6 +72,8 @@ architecture bench_arch of tb_execute is
 										i_rs2_dependency	=> dcde_rs2_dependency,
 										i_rd_accm			=> accm_rd,
 										i_rd_wbck			=> wbck_rd,
+										i_validity_accm		=> accm_validity,
+										i_validity_wbck		=> wbck_validity,
 										o_pc				=> exec_pc,
 										o_inst				=> exec_inst,
 										o_rs2				=> exec_rs2,
