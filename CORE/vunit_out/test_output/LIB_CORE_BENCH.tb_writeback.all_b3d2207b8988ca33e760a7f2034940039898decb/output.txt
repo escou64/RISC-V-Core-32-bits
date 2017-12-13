@@ -1,7 +1,7 @@
-# End time: 15:56:42 on Dec 12,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 24
-# vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_writeback.all_b3d2207b8988ca33e760a7f2034940039898decb/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_writeback(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_writeback/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_writeback.all_b3d2207b8988ca33e760a7f2034940039898decb/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/" 
-# Start time: 15:56:42 on Dec 12,2017
+# End time: 23:52:43 on Dec 13,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_writeback.all_b3d2207b8988ca33e760a7f2034940039898decb/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_writeback(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_writeback/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_writeback.all_b3d2207b8988ca33e760a7f2034940039898decb/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/" 
+# Start time: 23:52:43 on Dec 13,2017
 # ** Warning: Design size of 11542 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
