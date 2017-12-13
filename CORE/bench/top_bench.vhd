@@ -278,18 +278,21 @@ architecture bench_arch of tb_top is
 				wait for PERIOD;
 				s_rstn <= '1';
 				
+				s_dmem_iddata <= "11111111111111111111101000101101";
 				while not endfile(f_instructions) loop
 					readline(f_instructions,v_iline);
 					read(v_iline, v_imem_data);
 					s_imem_data <= v_imem_data;
 
-					if (v_imem_data(6 downto 0) = c_OPCODE32_LOAD) and (not endfile(f_datas_in)) then
-						readline(f_datas_in,v_idline);
-						read(v_idline, v_data_in);
-						s_imem_data <= v_imem_data;
-					end if; 
-
 					wait for PERIOD;
+
+					--if (s_exec_inst(6 downto 0) = c_OPCODE32_LOAD) and (not endfile(f_datas_in)) then
+					--	readline(f_datas_in,v_idline);
+					--	read(v_idline, v_data_in);
+					--	s_dmem_iddata <= v_data_in;
+					--end if; 
+					--wait for 3*QUARTER_PERIOD;
+
 					if(not endfile(f_results_wbck)) then
 						readline(f_results_wbck,v_rline);
 						read(v_rline, v_result_wbck);
