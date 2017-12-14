@@ -59,7 +59,7 @@ architecture bench_arch of tb_decode is
 	signal regf_rs2			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal regf_write		: std_logic												:= '0';
 	signal regf_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "00000";
-	signal regf_data		: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '1');
+	signal regf_data		: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
 
 	signal ftch_pc			: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
 	signal ftch_inst		: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');	--"11111111111111111111111111100011";
@@ -110,8 +110,8 @@ architecture bench_arch of tb_decode is
 		clk <= not (clk) after HALF_PERIOD;
 
 		process
-			variable v_value_regfile : std_logic_vector(c_NBITS - 1 downto 0) := c_REG_INIT;
-			variable v_address_regfile : std_logic_vector(4 downto 0) := "00000";
+			--variable v_value_regfile : std_logic_vector(c_NBITS - 1 downto 0) := c_REG_INIT;
+			--variable v_address_regfile : std_logic_vector(4 downto 0) := "00000";
 			begin
 				test_runner_setup(runner, runner_cfg);				
 				wait for QUARTER_PERIOD*5;
@@ -134,11 +134,13 @@ architecture bench_arch of tb_decode is
 				--Writing differents datas in regfile
 				regf_write <= '1';
 				for I in 0 to c_NREGISTERS - 1 loop
-					regf_data <= v_value_regfile;
-					regf_rdselect <= v_address_regfile;
+					--regf_data <= v_value_regfile;
+					--regf_rdselect <= v_address_regfile;
 					wait for PERIOD;
-					v_value_regfile := v_value_regfile + "1";
-					v_address_regfile := v_address_regfile + "1";
+					--v_value_regfile := v_value_regfile + "00000000000000000000000000000001";
+					regf_data <= regf_data + "00000000000000000000000000000001";
+					--v_address_regfile := v_address_regfile + "00001";
+					regf_rdselect <= regf_rdselect + "00001";
 				end loop;
 				regf_write <= '0';
 
@@ -167,14 +169,22 @@ architecture bench_arch of tb_decode is
 
 				--Writing differents datas in regfile
 				regf_write <= '1';
-				v_value_regfile := "00000000000000000000000000000010";
-				v_address_regfile := "00000";
+				--v_value_regfile := "00000000000000000000000000000010";
+				
+				regf_rdselect <= "00000";
+				regf_data <= "00000000000000000000000000000010";
+				regf_rdselect <="00000";
 				for I in 0 to c_NREGISTERS - 1 loop
-					regf_data <= v_value_regfile;
-					regf_rdselect <= v_address_regfile;
+					
+					--regf_data <= v_value_regfile;
+					--regf_rdselect <= v_address_regfile;
 					wait for PERIOD;
-					v_value_regfile := v_value_regfile + "10";
-					v_address_regfile := v_address_regfile + "1";
+					--v_value_regfile := v_value_regfile + "10";
+					regf_data <= regf_data + "00000000000000000000000000000010";
+					--v_address_regfile := v_address_regfile + "1";
+					regf_rdselect <= regf_rdselect + "00001";
+
+
 				end loop;
 				regf_write <= '0';
 				

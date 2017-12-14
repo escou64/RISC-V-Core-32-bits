@@ -2,87 +2,28 @@ m255
 K4
 z2
 13
-cModel Technology
-Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
-!s112 0.1
+!s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
-T_opt
-!s110 1512982156
-Vb;^z2R^f]OXN=1S<``c@80
-04 16 10 work tb_memory_access bench_arch 1
-=1-002564c79803-5a2e468c-55d66-5de0
-o-quiet -auto_acc_if_foreign -work LIB_CORE_BENCH
-n@_opt
-OL;O;10.2c;57
+cModel Technology
+Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
 Priscv_core_config_bench
 w1512981765
-Z1 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
+R0
 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
 l0
 L1
-VGb54V^g>WFDJ4XKW8_m_W0
-Z2 OL;C;10.2c;57
+VT_9@3R]ZY:A3B[eXPMjC?1
+!s100 N974k3UkFRCICK>ZJo[3m3
+OL;C;10.5c;63
 32
-Z3 o+acc -work LIB_CORE_BENCH
-Z4 tExplicit 1
-!s110 1512982141
-!s100 A8L8aYEL3R;E40SP?7@[;1
+!s110 1513239357
 !i10b 1
-!s108 1512982141.840084
+!s108 1513239357.000000
 !s90 +acc|-work|LIB_CORE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
-!i111 0
-Etb_memory_access
-Z5 w1512982136
-Z6 DPx14 lib_core_bench 23 riscv_core_config_bench 0 22 Gb54V^g>WFDJ4XKW8_m_W0
-Z7 DPx8 lib_core 17 riscv_core_config 0 22 MfD;YL8Qg^30[ZkJOf0SN2
-Z8 DPx4 ieee 16 std_logic_textio 0 22 E=LR>a2bb_I?VV>QDdAdh3
-Z9 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
-Z10 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
-Z11 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
-Z12 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
-Z13 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
-R1
-Z14 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
-Z15 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
-l0
-L18
-VSoKK`FAb7dT0f`J7AbR@43
-R2
-32
-Z16 !s110 1512982142
-Z17 !s108 1512982142.078680
-Z18 !s90 +acc|-work|LIB_CORE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
-Z19 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
-R3
-R4
-!s100 BA9?P?Vl@H^fAUQZhX[IB2
-!i10b 1
-!i111 0
-Abench_arch
-R6
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-DEx4 work 16 tb_memory_access 0 22 SoKK`FAb7dT0f`J7AbR@43
-l62
-L22
-V8j02mgBN9Rd`hHRklBA310
-R2
-32
-R16
-R17
-R18
-R19
-R3
-R4
-!s100 mnMa]<HK5nWM@2baOznGN2
-!i10b 1
-!i111 0
+!i113 0
+o+acc -work LIB_CORE_BENCH
+tExplicit 1 CvgOpt 0

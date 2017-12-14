@@ -60,31 +60,31 @@ architecture bench_arch of tb_core is
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/instructions.txt";
+			file f_inst				: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/instructions.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_ddatain			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/datas_in.txt";
+			file f_ddatain			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/datas_in.txt";
 			variable v_ddatain_line	: line;
 			variable v_ddatain		: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_iaddress			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/iaddress.txt";
+			file f_iaddress			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/iaddress.txt";
 			variable v_iaddress_line: line;
 			variable v_iaddress		: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_daddress			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/daddress.txt";
+			file f_daddress			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/daddress.txt";
 			variable v_daddress_line: line;
 			variable v_daddress		: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_ddataout			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/datas_out.txt";
+			file f_ddataout			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/datas_out.txt";
 			variable v_ddataout_line: line;
 			variable v_ddataout		: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_dwrite			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/dwrite.txt";
+			file f_dwrite			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/dwrite.txt";
 			variable v_dwrite_line	: line;
 			variable v_dwrite		: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_dsize			: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.files/dsize.txt";
+			file f_dsize			: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/core_bench.files/dsize.txt";
 			variable v_dsize_line	: line;
 			variable v_dsize		: std_logic_vector(c_NBITS - 1 downto 0);
 			
