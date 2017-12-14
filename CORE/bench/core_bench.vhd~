@@ -22,14 +22,14 @@ end entity tb_core;
 architecture bench_arch of tb_core is
 
 	component core port (		i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-								i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-								o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_dwrite		: out std_logic;
-								o_dsize			: out std_logic_vector(1 downto 0);
-								i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0));
+					i_clk			: in std_logic;
+					o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+					i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
+					o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+					o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
+					o_dwrite		: out std_logic;
+					o_dsize			: out std_logic_vector(1 downto 0);
+					i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0));
 	end component core;
 
 	signal s_rstn			: std_logic					:= '1';

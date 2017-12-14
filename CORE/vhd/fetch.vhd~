@@ -6,7 +6,7 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity fetch is port (				i_rstn			: in std_logic;
+entity fetch is port (	i_rstn			: in std_logic;
 						i_clk			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
