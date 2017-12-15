@@ -11,6 +11,8 @@ entity decode is port (	i_rstn			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_validity_ftch	: in std_logic;
+						i_jump			: in std_logic;
+						i_branch		: in std_logic;
 						--i_validity_exec	: in std_logic;
 						--i_validity_accm	: in std_logic;
 						--i_validity_wbck	: in std_logic;
@@ -46,7 +48,7 @@ architecture decode_arch of decode is
 	signal s_rs2_dependency : std_logic_vector(2 downto 0);
 	begin
 
-		s_validity_inputs <= i_validity_ftch; --AND i_invalidation;
+		s_validity_inputs <= i_validity_ftch AND (NOT i_jump) AND (NOT i_branch); --AND i_invalidation;
 		o_rs1select <= s_rs1select;
 		o_rs2select <= s_rs2select;
 		s_rs1 <= i_rs1;
@@ -65,25 +67,30 @@ architecture decode_arch of decode is
 					s_validity_global <= '0';
 				else 
 					case i_inst(6 downto 0) is
-						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>					-- U-type Format
+						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>						-- U-type Format
 										s_rs1select <= "00000";
 										s_rs2select <= "00000";
 										s_rdselect <= i_inst(11 downto 7);
 										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_OP_IMM |  c_OPCODE32_LOAD =>				-- I-type Format
+						when c_OPCODE32_OP_IMM | c_OPCODE32_LOAD | c_OPCODE32_JALR =>	-- I-type Format
 										s_rs1select <= i_inst(19 downto 15);
 										s_rs2select <= "00000";
 										s_rdselect <= i_inst(11 downto 7);
 										s_validity_global <= s_validity_inputs;		
-						when c_OPCODE32_OP =>										-- R-type Format
+						when c_OPCODE32_OP =>											-- R-type Format
 										s_rs1select <= i_inst(19 downto 15);
 										s_rs2select <= i_inst(24 downto 20);
 										s_rdselect <= i_inst(11 downto 7);
 										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_STORE =>									-- S-type Format
+						when c_OPCODE32_STORE =>										-- S-type Format
 										s_rs1select <= i_inst(19 downto 15);
 										s_rs2select <= i_inst(24 downto 20);
 										s_rdselect <= "00000";
+										s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_JAL =>											-- J-type Format
+										s_rs1select <= "00000";
+										s_rs2select <= "00000";
+										s_rdselect <= i_inst(11 downto 7);
 										s_validity_global <= s_validity_inputs;
 						when others => 
 										s_rs1select <= "00000";

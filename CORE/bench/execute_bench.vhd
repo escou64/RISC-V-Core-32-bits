@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use IEEE.std_logic_unsigned.all;
+use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 library LIB_CORE;
@@ -31,6 +31,9 @@ architecture bench_arch of tb_execute is
 								i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_validity_accm	: in std_logic;
 								i_validity_wbck	: in std_logic;
+								o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_jump			: out std_logic;
+								o_branch		: out std_logic;
 								o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -53,6 +56,10 @@ architecture bench_arch of tb_execute is
 	signal wbck_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= "00000000000000000000000000000000";
 	signal accm_validity	: std_logic											:= '1';
 	signal wbck_validity	: std_logic											:= '1';
+
+	signal exec_newpc	: std_logic_vector(c_NBITS - 1 downto 0);
+	signal exec_jump	: std_logic;
+	signal exec_branch	: std_logic;
 
 	signal exec_pc			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);

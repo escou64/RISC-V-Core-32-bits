@@ -1,5 +1,19 @@
-# vsim -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_top.all_c7f6c18dac016c58f2619e6bc4cdd73d27a0fc4e/modelsim/vsim.wlf {-g/tb_top/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_top.all_c7f6c18dac016c58f2619e6bc4cdd73d27a0fc4e/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"} LIB_CORE_BENCH.tb_top(bench_arch) 
-# ** Note: (vsim-3812) Design is being optimized...
+# End time: 12:00:27 on Dec 14,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_top.all_c7f6c18dac016c58f2619e6bc4cdd73d27a0fc4e/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_top(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_top/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_top.all_c7f6c18dac016c58f2619e6bc4cdd73d27a0fc4e/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/" 
+# Start time: 12:00:27 on Dec 14,2017
+# ** Warning: (vsim-7) Failed to open VHDL file "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top
+# ** Warning: (vsim-7) Failed to open VHDL file "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/results_wbck.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top
+# ** Warning: (vsim-7) Failed to open VHDL file "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/datas_in.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top
+# ** Warning: Design size of 12665 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -44,5 +58,28 @@
 #    Time: 0 ps  Iteration: 1  Instance: /tb_top/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 1  Instance: /tb_top/decode1
-# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10 
+# ** Fatal: (vsim-7) Failed to open VHDL file "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 25 ns  Iteration: 0  Process: /tb_top/line__263 File: /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd
+# Fatal error in Process line__263 at /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd line 282
+# 
+# HDL call sequence:
+# Stopped at /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd 282 Process line__263
+# 
+# 
+# Stack trace result from 'tb' command
+#  /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd 282 return [address 0xf6d092ef] Process line__263
+# 
+# 
+# Surrounding code from 'see' command
+#   277 : 				s_rstn <= '0';
+#   278 : 				wait for PERIOD;
+#   279 : 				s_rstn <= '1';
+#   280 : 				
+#   281 : 				s_dmem_iddata <= "11111111111111111111101000101101";
+# ->282 : 				while not endfile(f_instructions) loop
+#   283 : 					readline(f_instructions,v_iline);
+#   284 : 					read(v_iline, v_imem_data);
+#   285 : 					s_imem_data <= v_imem_data;
+#   286 : 
+# 
