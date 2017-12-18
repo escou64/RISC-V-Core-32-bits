@@ -2,573 +2,77 @@ m255
 K4
 z2
 13
-cModel Technology
-Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE
-!s112 0.1
+!s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
-T_opt
-!s110 1513241589
-V?ifVa`:8ACoHI<U3SWZ`82
-04 6 10 work tb_alu bench_arch 1
-=1-e0db550d5e60-5a323bf5-530e7-1f4f
-o-quiet -auto_acc_if_foreign -work LIB_CORE_BENCH -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g {/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"}
-n@_opt
-Z1 OL;O;10.2c;57
-R0
-T_opt1
-VXf4L3XXQ^XG?d8XfTnXRk3
-04 16 10 work tb_memory_access bench_arch 1
-=1-e0db550d5e60-5a323bf1-a9ed2-1f3b
-o-quiet -auto_acc_if_foreign -work LIB_CORE_BENCH -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g {/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"}
-n@_opt1
-R1
-R0
-!s110 1513241585
-T_opt2
-V56Kn_T9XH]GD>8ckKWmVV0
-04 15 10 work tb_registerfile bench_arch 1
-=1-e0db550d5e60-5a323bf3-7f3d9-1f44
-o-quiet -auto_acc_if_foreign -work LIB_CORE_BENCH -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g {/tb_registerfile/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/"}
-n@_opt2
-R1
-R0
-!s110 1513241587
+cModel Technology
+Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
 Priscv_core_config_bench
 w1512982823
-Z2 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE
+R0
 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd
 l0
 L1
 V<IWA8]9fW084SzDl:OaoS3
 !s100 N974k3UkFRCICK>ZJo[3m3
-Z3 OV;C;10.5c;63
+Z1 OV;C;10.5c;63
 33
-!s110 1513244266
+!s110 1513342141
 !i10b 1
-!s108 1513244266.000000
+!s108 1513342141.000000
 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/RISCV_CORE_CONFIG_BENCH.vhd|
 !i113 1
-Z4 o-quiet -2008 -work LIB_CORE_BENCH
-Z5 tExplicit 1 CvgOpt 0
+Z2 o-quiet -2008 -work LIB_CORE_BENCH
+Z3 tExplicit 1 CvgOpt 0
 Etb_alu
-Z6 w1512477118
-Z7 D^#x9 vunit_lib 13 vunit_context 0 22 A1MU5C4TX7dH]K[HOQTSn1
-Z8 DPx9 vunit_lib 7 run_pkg 0 22 :>o4znSG5`<A<F;hHMKhH1
-Z9 DPx9 vunit_lib 12 run_base_pkg 0 22 KULGL@1dU0BHc9b;g7igZ0
-Z10 DPx9 vunit_lib 21 run_special_types_pkg 0 22 XN>`bQV`R61M<DU>4G8]g3
-Z11 DPx9 vunit_lib 13 run_types_pkg 0 22 gnB71ZYIDP@G^<`Dze<Ol0
-Z12 DPx9 vunit_lib 4 path 0 22 Nc7]mO6O0HNNXT_k^Qgoe1
-Z13 DPx9 vunit_lib 14 check_base_pkg 0 22 6khlF7jlG3XP5Bc9=lSF=3
-Z14 DPx9 vunit_lib 23 check_special_types_pkg 0 22 >]VMHj]2_dakO@]Sz1fG81
-Z15 DPx9 vunit_lib 12 log_base_pkg 0 22 egmiOA0jOkn22SNYghHMm3
-Z16 DPx9 vunit_lib 7 log_pkg 0 22 J_?2_QhlQe2KAS=2e8Pa`0
-Z17 DPx9 vunit_lib 18 log_formatting_pkg 0 22 d75lM?2@3AXKRIPYgPWH<2
-Z18 DPx9 vunit_lib 21 log_special_types_pkg 0 22 n@GoB6`YUERo9zKGHQ[gh3
-Z19 DPx9 vunit_lib 15 check_types_pkg 0 22 b]H]`_JWR;NHO0NZ^?z_>2
-Z20 DPx9 vunit_lib 9 check_pkg 0 22 zYkYR9M:QdZ]9l[8]3dW]3
-Z21 DPx9 vunit_lib 13 log_types_pkg 0 22 IbPmRVYKU2TLnChTMB`EL2
-Z22 DPx9 vunit_lib 10 dictionary 0 22 T[>mL5_]X3QImm^UB7Y=53
-Z23 DPx9 vunit_lib 10 string_ops 0 22 >6lVd?dSYVCeeU;1?_=bg2
-Z24 DPx9 vunit_lib 4 lang 0 22 ;:Mg0N:Ff<C2R`d>MPj;Q2
-Z25 DPx14 lib_core_bench 23 riscv_core_config_bench 0 22 <IWA8]9fW084SzDl:OaoS3
-Z26 DPx8 lib_core 17 riscv_core_config 0 22 XaaH60KeAhg6P`5f3QB>C3
-Z27 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z28 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z29 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z30 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z31 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R2
-Z32 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
-Z33 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
+Z4 w1513341687
+Z5 D^#x9 vunit_lib 13 vunit_context 0 22 A1MU5C4TX7dH]K[HOQTSn1
+Z6 DPx9 vunit_lib 7 run_pkg 0 22 :>o4znSG5`<A<F;hHMKhH1
+Z7 DPx9 vunit_lib 12 run_base_pkg 0 22 KULGL@1dU0BHc9b;g7igZ0
+Z8 DPx9 vunit_lib 21 run_special_types_pkg 0 22 XN>`bQV`R61M<DU>4G8]g3
+Z9 DPx9 vunit_lib 13 run_types_pkg 0 22 gnB71ZYIDP@G^<`Dze<Ol0
+Z10 DPx9 vunit_lib 4 path 0 22 Nc7]mO6O0HNNXT_k^Qgoe1
+Z11 DPx9 vunit_lib 14 check_base_pkg 0 22 6khlF7jlG3XP5Bc9=lSF=3
+Z12 DPx9 vunit_lib 23 check_special_types_pkg 0 22 >]VMHj]2_dakO@]Sz1fG81
+Z13 DPx9 vunit_lib 12 log_base_pkg 0 22 egmiOA0jOkn22SNYghHMm3
+Z14 DPx9 vunit_lib 7 log_pkg 0 22 J_?2_QhlQe2KAS=2e8Pa`0
+Z15 DPx9 vunit_lib 18 log_formatting_pkg 0 22 d75lM?2@3AXKRIPYgPWH<2
+Z16 DPx9 vunit_lib 21 log_special_types_pkg 0 22 n@GoB6`YUERo9zKGHQ[gh3
+Z17 DPx9 vunit_lib 15 check_types_pkg 0 22 b]H]`_JWR;NHO0NZ^?z_>2
+Z18 DPx9 vunit_lib 9 check_pkg 0 22 zYkYR9M:QdZ]9l[8]3dW]3
+Z19 DPx9 vunit_lib 13 log_types_pkg 0 22 IbPmRVYKU2TLnChTMB`EL2
+Z20 DPx9 vunit_lib 10 dictionary 0 22 T[>mL5_]X3QImm^UB7Y=53
+Z21 DPx9 vunit_lib 10 string_ops 0 22 >6lVd?dSYVCeeU;1?_=bg2
+Z22 DPx9 vunit_lib 4 lang 0 22 ;:Mg0N:Ff<C2R`d>MPj;Q2
+Z23 DPx14 lib_core_bench 23 riscv_core_config_bench 0 22 <IWA8]9fW084SzDl:OaoS3
+Z24 DPx8 lib_core 17 riscv_core_config 0 22 XaaH60KeAhg6P`5f3QB>C3
+Z25 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z26 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z27 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z28 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z29 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z30 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
+Z31 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd
 l0
 L16
 Ve3;7CZTJgh8Y3L[I[oWlN3
 !s100 G[G;ke^VBDjC38PX?ZVi:0
-R3
+R1
 33
-Z34 !s110 1513244270
+Z32 !s110 1513342145
 !i10b 1
-Z35 !s108 1513244270.000000
-Z36 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd|
-Z37 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd|
+Z33 !s108 1513342145.000000
+Z34 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd|
+Z35 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/alu_bench.vhd|
 !i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-DEx4 work 6 tb_alu 0 22 e3;7CZTJgh8Y3L[I[oWlN3
-l36
-L20
-V]RS=7UcgPX@4;THeNn5_:0
-!s100 dJEQI1GYVELe2D:[Ma27j3
-R3
-33
-R34
-!i10b 1
-R35
-R36
-R37
-!i113 1
-R4
-R5
-Etb_core
-Z38 w1513244232
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-Z39 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
-R27
-R28
-R29
-R30
-R31
 R2
-Z40 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
-Z41 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
-l0
-L18
-V4f3<meIZc8]El3BA58IiI0
-!s100 PA;T@ETFgTIJ?ig=e8m@c2
 R3
-33
-R34
-!i10b 1
-R35
-Z42 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
-Z43 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
-!i113 1
-R4
-R5
 Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R39
-R27
-R28
-R29
-R30
-R31
-DEx4 work 7 tb_core 0 22 4f3<meIZc8]El3BA58IiI0
-l48
-L22
-VIfYH1i;4W<Fii56Di:oXi3
-!s100 >[QOM9]]8Z]7KL:RWRDWm0
-R3
-33
-R34
-!i10b 1
-R35
-R42
-R43
-!i113 1
-R4
 R5
-Etb_decode
-R38
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-R2
-Z44 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
-Z45 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
-l0
-L16
-V`V9cgAP>f7:eQ;P39M1^a2
-!s100 hED33jojO][GaB3>nd7Y_1
-R3
-33
-R34
-!i10b 1
-R35
-Z46 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
-Z47 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
-!i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-DEx4 work 9 tb_decode 0 22 `V9cgAP>f7:eQ;P39M1^a2
-l78
-L20
-VflCZDY?TR]228Yj?ILY[j1
-!s100 dJ5EKG75C03Xg]ga_9j:Z2
-R3
-33
-R34
-!i10b 1
-R35
-R46
-R47
-!i113 1
-R4
-R5
-Etb_execute
-Z48 w1513249200
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-R2
-Z49 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd
-Z50 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd
-l0
-L16
-VhhV2;65h`1f6AWBOo:UaD1
-!s100 D]k@QQS]<1hzZWo0nCP[e0
-R3
-33
-Z51 !s110 1513249226
-!i10b 1
-Z52 !s108 1513249226.000000
-Z53 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd|
-Z54 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd|
-!i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-DEx4 work 10 tb_execute 0 22 hhV2;65h`1f6AWBOo:UaD1
-l69
-L20
-V=Dz=h^S[XX78F2c=OWA;e2
-!s100 O1JbP=E:zo5XEb39f^aR[2
-R3
-33
-R51
-!i10b 1
-R52
-R53
-R54
-!i113 1
-R4
-R5
-Etb_fetch
-Z55 w1513010145
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-R2
-Z56 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd
-Z57 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd
-l0
-L17
-V72^OW[gbXFJlo?C9MOkP70
-!s100 <?l1aTD0:=0_iEeE6Mo_o1
-R3
-33
-R34
-!i10b 1
-R35
-Z58 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
-Z59 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
-!i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
-DEx4 work 8 tb_fetch 0 22 72^OW[gbXFJlo?C9MOkP70
-l43
-L21
-VmA=BfH:6;hgUa?nPi=Bk81
-!s100 HZS]Aj5^?mhkSEU66Gm[i0
-R3
-33
-R34
-!i10b 1
-R35
-R58
-R59
-!i113 1
-R4
-R5
-Etb_memory_access
-Z60 w1513077078
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R39
-R27
-R28
-R29
-R30
-R31
-R2
-Z61 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
-Z62 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
-l0
-L18
-VobeVF[ZWI49NOM8Q2AF^?3
-!s100 BNfTHi^<Ijc`j9KF99Zb<3
-R3
-33
-R34
-!i10b 1
-R35
-Z63 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
-Z64 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
-!i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R39
-R27
-R28
-R29
-R30
-R31
-DEx4 work 16 tb_memory_access 0 22 obeVF[ZWI49NOM8Q2AF^?3
-l63
-L22
-V?l_0eMaJ88ADJIV:?n_0I1
-!s100 Vb;JMN9n0HBVEB<X=P8z40
-R3
-33
-R34
-!i10b 1
-R35
-R63
-R64
-!i113 1
-R4
-R5
-Etb_registerfile
 R6
 R7
 R8
@@ -593,26 +97,112 @@ R26
 R27
 R28
 R29
-R30
-R31
-R2
-Z65 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
-Z66 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
-l0
-L16
-VV:Yc4lCHY`M<dE1@Zg]Hj0
-!s100 Mm03?IiHI@]iJG^3`XdB[3
-R3
+DEx4 work 6 tb_alu 0 22 e3;7CZTJgh8Y3L[I[oWlN3
+l36
+L20
+VeoGn<c_Kj1lY>2>ZWOhjL3
+!s100 A;3i0_J3AVPb_Sl>jdf6=0
+R1
 33
-R34
+R32
 !i10b 1
+R33
+R34
 R35
-Z67 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
-Z68 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
 !i113 1
-R4
+R2
+R3
+Etb_core
+Z36 w1513348056
 R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+Z37 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R25
+R26
+R27
+R28
+R29
+R0
+Z38 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
+Z39 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd
+l0
+L18
+V4f3<meIZc8]El3BA58IiI0
+!s100 PA;T@ETFgTIJ?ig=e8m@c2
+R1
+33
+Z40 !s110 1513348062
+!i10b 1
+Z41 !s108 1513348062.000000
+Z42 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
+Z43 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/core_bench.vhd|
+!i113 1
+R2
+R3
 Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R37
+R25
+R26
+R27
+R28
+R29
+Z44 DEx4 work 7 tb_core 0 22 4f3<meIZc8]El3BA58IiI0
+l48
+L22
+V;Jn?S8=UI[jLbUOWFA6XF1
+!s100 _Po1;@b`N`@iXQ3XCFHz42
+R1
+33
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R2
+R3
+Etb_decode
+Z45 w1513342514
+R5
+R6
 R7
 R8
 R9
@@ -636,25 +226,410 @@ R26
 R27
 R28
 R29
-R30
-R31
+R0
+Z46 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+Z47 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd
+l0
+L16
+V`V9cgAP>f7:eQ;P39M1^a2
+!s100 hED33jojO][GaB3>nd7Y_1
+R1
+33
+Z48 !s110 1513342520
+!i10b 1
+Z49 !s108 1513342520.000000
+Z50 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
+Z51 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/decode_bench.vhd|
+!i113 1
+R2
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 9 tb_decode 0 22 `V9cgAP>f7:eQ;P39M1^a2
+l76
+L20
+V1YOSPiW>PE;D^hF_kZOzP3
+!s100 llZj=b4>g]48aQ2WRb_Xi1
+R1
+33
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R2
+R3
+Etb_execute
+Z52 w1513342013
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R0
+Z53 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd
+Z54 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd
+l0
+L16
+VhhV2;65h`1f6AWBOo:UaD1
+!s100 D]k@QQS]<1hzZWo0nCP[e0
+R1
+33
+R32
+!i10b 1
+R33
+Z55 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd|
+Z56 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/execute_bench.vhd|
+!i113 1
+R2
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 10 tb_execute 0 22 hhV2;65h`1f6AWBOo:UaD1
+l59
+L20
+Vh22]nb7[<h]VQ3943Jn]_0
+!s100 ^UN=o:H5Xe1U^A>0`dER03
+R1
+33
+R32
+!i10b 1
+R33
+R55
+R56
+!i113 1
+R2
+R3
+Etb_fetch
+Z57 w1513344163
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R0
+Z58 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd
+Z59 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd
+l0
+L17
+V72^OW[gbXFJlo?C9MOkP70
+!s100 <?l1aTD0:=0_iEeE6Mo_o1
+R1
+33
+Z60 !s110 1513344187
+!i10b 1
+Z61 !s108 1513344187.000000
+Z62 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
+Z63 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/fetch_bench.vhd|
+!i113 1
+R2
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+DEx4 work 8 tb_fetch 0 22 72^OW[gbXFJlo?C9MOkP70
+l45
+L21
+V[2HSB7=4SaKARmEC@T7j@2
+!s100 l?]Yo1^1FaIC_D;5V49>N1
+R1
+33
+R60
+!i10b 1
+R61
+R62
+R63
+!i113 1
+R2
+R3
+Etb_memory_access
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R37
+R25
+R26
+R27
+R28
+R29
+R0
+Z64 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
+Z65 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd
+l0
+L18
+VobeVF[ZWI49NOM8Q2AF^?3
+!s100 BNfTHi^<Ijc`j9KF99Zb<3
+R1
+33
+R32
+!i10b 1
+R33
+Z66 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
+Z67 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/memory_access_bench.vhd|
+!i113 1
+R2
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R37
+R25
+R26
+R27
+R28
+R29
+DEx4 work 16 tb_memory_access 0 22 obeVF[ZWI49NOM8Q2AF^?3
+l61
+L22
+VdC3d[>bMe3kB>J7P^TT_z2
+!s100 QRTCGD6l22ENAFaYR@`kk2
+R1
+33
+R32
+!i10b 1
+R33
+R66
+R67
+!i113 1
+R2
+R3
+Etb_registerfile
+Z68 w1512477118
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R0
+Z69 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
+Z70 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd
+l0
+L16
+VV:Yc4lCHY`M<dE1@Zg]Hj0
+!s100 Mm03?IiHI@]iJG^3`XdB[3
+R1
+33
+R32
+!i10b 1
+R33
+Z71 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
+Z72 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/registerfile_bench.vhd|
+!i113 1
+R2
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
 DEx4 work 15 tb_registerfile 0 22 V:Yc4lCHY`M<dE1@Zg]Hj0
 l42
 L20
 VDOC3`[hX8eDEbUR;G9Q]G3
 !s100 4FaHc1=3@ZPJHeIW:ZSLY1
-R3
+R1
 33
-R34
+R32
 !i10b 1
-R35
-R67
-R68
+R33
+R71
+R72
 !i113 1
-R4
-R5
+R2
+R3
 Etb_top
-R38
+Z73 w1513347725
+R5
+R6
 R7
 R8
 R9
@@ -673,118 +648,118 @@ R21
 R22
 R23
 R24
+R37
 R25
 R26
-R39
 R27
 R28
 R29
-R30
-R31
-R2
-Z69 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd
-Z70 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd
+R0
+Z74 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd
+Z75 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd
 l0
 L18
 VH60g4oe_GnWbN6PINnFVi1
 !s100 i^:k0B;Ge]IHl4G8efZj?0
-R3
+R1
 33
-Z71 !s110 1513244269
+Z76 !s110 1513347731
 !i10b 1
-Z72 !s108 1513244269.000000
-Z73 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd|
-Z74 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd|
+Z77 !s108 1513347731.000000
+Z78 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd|
+Z79 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.vhd|
 !i113 1
-R4
-R5
-Abench_arch
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R39
-R27
-R28
-R29
-R30
-R31
-DEx4 work 6 tb_top 0 22 H60g4oe_GnWbN6PINnFVi1
-l167
-L22
-V<^KKUV>5534KZ6PR@@z7b2
-!s100 z2C24nA3cCkb5zXX><^Eh0
-R3
-33
-R71
-!i10b 1
-R72
-R73
-R74
-!i113 1
-R4
-R5
-Etb_writeback
-Z75 w1513010071
-R7
-R8
-R9
-R10
-R11
-R12
-R13
-R14
-R15
-R16
-R17
-R18
-R19
-R20
-R21
-R22
-R23
-R24
-R25
-R26
-R27
-R28
-R29
-R30
-R31
 R2
-Z76 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd
-Z77 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd
+R3
+Abench_arch
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R37
+R25
+R26
+R27
+R28
+R29
+DEx4 work 6 tb_top 0 22 H60g4oe_GnWbN6PINnFVi1
+l181
+L22
+Vk:60WUMckK^0lA^aW1@JG3
+!s100 Z9<`Y7YKj89aTAa2:O8T]0
+R1
+33
+R76
+!i10b 1
+R77
+R78
+R79
+!i113 1
+R2
+R3
+Etb_writeback
+Z80 w1513010071
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R24
+R25
+R26
+R27
+R28
+R29
+R0
+Z81 8/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd
+Z82 F/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd
 l0
 L16
 VUOW^[5`<7ZZAVkl9QJ6fe1
 !s100 <Md?kzbTR:^d8D>8N;P2@3
-R3
+R1
 33
-R71
+R32
 !i10b 1
-R72
-Z78 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd|
-Z79 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd|
+Z83 !s108 1513342144.000000
+Z84 !s90 -quiet|-modelsimini|/media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE_BENCH|/media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd|
+Z85 !s107 /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/writeback_bench.vhd|
 !i113 1
-R4
-R5
+R2
+R3
 Abench_arch
+R5
+R6
 R7
 R8
 R9
@@ -808,20 +783,18 @@ R26
 R27
 R28
 R29
-R30
-R31
 DEx4 work 12 tb_writeback 0 22 UOW^[5`<7ZZAVkl9QJ6fe1
 l64
 L20
 VVX68=zmGdLF4LiPoU1IoS3
 !s100 GHL9=:TW[m]I?MI@5XDfb3
-R3
+R1
 33
-R71
+R32
 !i10b 1
-R72
-R78
-R79
+R83
+R84
+R85
 !i113 1
-R4
-R5
+R2
+R3

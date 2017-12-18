@@ -87,7 +87,7 @@ architecture memory_access_arch of memory_access is
 											o_dwrite <= '0';
 											o_dsize <= "00";
 										end if;
-                                when c_OPCODE32_LUI | c_OPCODE32_OP | c_OPCODE32_OP_IMM | c_OPCODE32_AUIPC =>
+                                when c_OPCODE32_LUI | c_OPCODE32_OP | c_OPCODE32_OP_IMM | c_OPCODE32_AUIPC | c_OPCODE32_JAL | c_OPCODE32_JALR =>
                                         o_dwrite <= '0';
 										o_dsize <= "00";
                                         s_rd <= i_rd;

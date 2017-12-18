@@ -21,30 +21,30 @@ end entity tb_memory_access;
 	
 architecture bench_arch of tb_memory_access is
 	
-	component memory_access port (					i_rstn			: in std_logic;
-									i_clk			: in std_logic;
-									i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_validity_exec	: in std_logic;
-									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_dwrite		: out std_logic;
-									o_dsize			: out std_logic_vector(1 downto 0);
-									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
-									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_validity		: out std_logic );
+	component memory_access port (		i_rstn			: in std_logic;
+										i_clk			: in std_logic;
+										i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_validity_exec		: in std_logic;
+										o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_dwrite		: out std_logic;
+										o_dsize			: out std_logic_vector(1 downto 0);
+										i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0);		
+										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_validity		: out std_logic );
 	end component;
 
-	signal s_rstn	: std_logic											:= '1';
-	signal s_clk	: std_logic											:= '1';
-
+	signal s_rstn			: std_logic									:= '1';
+	signal s_clk			: std_logic									:= '1';
+	
 	signal s_exec_pc		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_PC_INIT;
 	signal s_exec_inst		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
-	signal s_exec_validity	: std_logic									:= '1';
+	signal s_exec_validity	: std_logic					:= '1';
 	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
 
@@ -57,8 +57,6 @@ architecture bench_arch of tb_memory_access is
 	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_validity	: std_logic;
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-
-	--signal s_wbck_validity	: std_logic									:= '1';
 
 	begin
 		memory_access1 : memory_access port map (	i_rstn			=> s_rstn,

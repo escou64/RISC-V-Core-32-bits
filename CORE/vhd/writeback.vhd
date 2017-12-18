@@ -48,7 +48,12 @@ architecture writeback_arch of writeback is
 						o_write				<= '0';
 						o_rdselect			<= "00000";
 						o_data				<= i_rd;
-						s_validity_global	<= '0';										
+						s_validity_global	<= '0';	
+					when c_OPCODE32_JAL | c_OPCODE32_JALR =>
+						o_write				<= '1';
+						o_rdselect			<= i_inst(11 downto 7);
+						o_data				<= i_rd;
+						s_validity_global	<= '1';	
 					when others => 
 						o_write				<= '0';
 						o_rdselect			<= i_inst(11 downto 7);

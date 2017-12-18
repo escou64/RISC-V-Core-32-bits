@@ -79,7 +79,7 @@ architecture execute_arch of execute is
 				i_rd_wbck when i_rs2_dependency(2) = '1' and (i_validity_wbck = '1') else
 				i_rs2 ;	
 
-	s_rd <=		i_pc + "100" when s_jump = '1' else
+	s_rd <=		i_pc + "100" when (s_jump or s_branch) = '1' else
 				s_result;
 
 	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, s_rs1, s_rs2)

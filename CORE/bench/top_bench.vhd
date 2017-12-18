@@ -23,6 +23,9 @@ architecture bench_arch of tb_top is
 	
 	component counter_calculation port (i_rstn			: in std_logic;
 										i_clk			: in std_logic;
+										i_jump			: in std_logic;
+										i_branch		: in std_logic;
+										i_newpc			: in std_logic_vector(c_NBITS - 1 downto 0);
 										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
@@ -30,6 +33,8 @@ architecture bench_arch of tb_top is
 							i_clk			: in std_logic;
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_jump			: in std_logic;
+							i_branch		: in std_logic;
 							o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -41,6 +46,8 @@ architecture bench_arch of tb_top is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_ftch	: in std_logic;
+							i_jump			: in std_logic;
+							i_branch		: in std_logic;
 							--i_validity_exec	: in std_logic;
 							--i_validity_accm	: in std_logic;
 							--i_validity_wbck	: in std_logic;	
@@ -81,6 +88,9 @@ architecture bench_arch of tb_top is
 							i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_accm	: in std_logic;
 							i_validity_wbck	: in std_logic;
+							o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_jump			: out std_logic;
+							o_branch		: out std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);					
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -148,6 +158,10 @@ architecture bench_arch of tb_top is
 	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0);
 
+	signal s_exec_newpc		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_exec_jump		: std_logic;
+	signal s_exec_branch	: std_logic;
+
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_dwrite	: std_logic;
@@ -166,14 +180,19 @@ architecture bench_arch of tb_top is
 	
 	begin
 
-		counter_calculation1 : counter_calculation port map (	i_rstn	=> s_rstn,
-																i_clk	=> s_clk,
-																o_pc	=> s_calc_pc);
+		counter_calculation1 : counter_calculation port map (	i_rstn		=> s_rstn,
+																i_clk		=> s_clk,
+																i_newpc		=> s_exec_newpc,
+																i_jump		=> s_exec_jump,
+																i_branch	=> s_exec_branch,	
+																o_pc		=> s_calc_pc);
 
 		fetch1 : fetch port map (	i_rstn			=> s_rstn,
 									i_clk			=> s_clk,	
 									i_pc			=> s_calc_pc,
 									i_idata			=> s_imem_data,
+									i_jump			=> s_exec_jump,
+									i_branch		=> s_exec_branch,	
 									o_iaddress		=> s_imem_addr,
 									o_pc			=> s_ftch_pc,
 									o_inst			=> s_ftch_inst,
@@ -194,6 +213,8 @@ architecture bench_arch of tb_top is
 									i_pc				=> s_ftch_pc,		
 									i_inst				=> s_ftch_inst,		
 									i_validity_ftch		=> s_ftch_validity,
+									i_jump				=> s_exec_jump,
+									i_branch			=> s_exec_branch,	
 									--i_validity_exec		=> s_exec_validity,
 									--i_validity_accm		=> s_accm_validity,
 									--i_validity_wbck		=> s_wbck_validity,	
@@ -222,6 +243,9 @@ architecture bench_arch of tb_top is
 										i_rd_wbck			=> s_wbck_rd,
 										i_validity_accm		=> s_accm_validity,
 										i_validity_wbck		=> s_wbck_validity,
+										o_newpc				=> s_exec_newpc,
+										o_jump				=> s_exec_jump,
+										o_branch			=> s_exec_branch,	
 										o_pc				=> s_exec_pc,
 										o_inst				=> s_exec_inst,
 										o_rs2				=> s_exec_rs2,
@@ -266,9 +290,9 @@ architecture bench_arch of tb_top is
 			variable v_imem_data	: std_logic_vector(c_NBITS - 1 downto 0);
 			variable v_result_wbck	: std_logic_vector(c_NBITS - 1 downto 0);
 			variable v_data_in		: std_logic_vector(c_NBITS - 1 downto 0);
-			file f_instructions	: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt";
-			file f_results_wbck	: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/results_wbck.txt";
-			file f_datas_in		: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/datas_in.txt";
+			file f_instructions	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt";
+			file f_results_wbck	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/results_wbck.txt";
+			file f_datas_in		: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/datas_in.txt";
 			begin
 				test_runner_setup(runner, runner_cfg);
 				wait for QUARTER_PERIOD;

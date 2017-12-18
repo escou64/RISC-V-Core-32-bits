@@ -18,12 +18,12 @@ entity tb_alu is
 end entity tb_alu;
 
 architecture bench_arch of tb_alu is
-	component alu port (	i_op1		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_op2		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_signed	: in std_logic;
-							i_amount	: in std_logic_vector(4 downto 0);
-							i_sel		: in std_logic_vector(2 downto 0);
-							o_result	: out std_logic_vector(c_NBITS - 1 downto 0));
+	component alu port (		i_op1		: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_op2		: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_signed	: in std_logic;
+								i_amount	: in std_logic_vector(4 downto 0);
+								i_sel		: in std_logic_vector(2 downto 0);
+								o_result	: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
 	signal alu_op1		: std_logic_vector(c_NBITS - 1 downto 0)	:= (others => '0');
@@ -34,12 +34,12 @@ architecture bench_arch of tb_alu is
 	signal alu_result	: std_logic_vector(c_NBITS - 1 downto 0);
 	
 	begin
-	alu1 : alu port map (	i_op1		=> alu_op1,
-							i_op2		=> alu_op2,
-							i_signed	=> alu_signed,
-							i_amount	=> alu_amount,
-							i_sel		=> alu_sel,
-							o_result	=> alu_result);
+		alu1 : alu port map (	i_op1		=> alu_op1,
+								i_op2		=> alu_op2,
+								i_signed	=> alu_signed,
+								i_amount	=> alu_amount,
+								i_sel		=> alu_sel,
+								o_result	=> alu_result);
 		process
 			begin
 				test_runner_setup(runner, runner_cfg);

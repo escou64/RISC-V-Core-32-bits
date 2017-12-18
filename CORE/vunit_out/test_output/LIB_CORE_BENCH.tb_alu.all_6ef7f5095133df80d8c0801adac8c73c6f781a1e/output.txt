@@ -1,5 +1,5 @@
 # vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_alu(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/bench/" 
-# Start time: 12:00:26 on Dec 14,2017
+# Start time: 17:49:02 on Dec 16,2017
 # ** Warning: Design size of 11462 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.

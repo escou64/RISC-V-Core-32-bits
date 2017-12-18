@@ -8,6 +8,9 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 
 entity counter_calculation is port (	i_rstn			: in std_logic;
 										i_clk			: in std_logic;
+										i_jump			: in std_logic;
+										i_branch		: in std_logic;
+										i_newpc			: in std_logic_vector(c_NBITS - 1 downto 0);
 										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
 
 end counter_calculation;
@@ -19,10 +22,13 @@ architecture counter_calculation_arch of counter_calculation is
 	
 	begin
 		
-		comb : process(i_clk, s_pc_final)
-			begin
-				s_pc <=	s_pc_final + c_PC_STEP;
-		end process comb;
+		s_pc <=	i_newpc(c_NBITS - 1 downto 2) & "00" when (i_jump or i_branch) = '1' else
+				s_pc_final + c_PC_STEP;
+		
+		--comb : process(i_clk, s_pc_final)
+		--	begin
+		--		s_pc <=	s_pc_final + c_PC_STEP;
+		--end process comb;
 
 		seq : process (i_clk, i_rstn)
 			begin

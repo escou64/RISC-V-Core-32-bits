@@ -67,36 +67,36 @@ architecture decode_arch of decode is
 					s_validity_global <= '0';
 				else 
 					case i_inst(6 downto 0) is
-						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>						-- U-type Format
-										s_rs1select <= "00000";
-										s_rs2select <= "00000";
-										s_rdselect <= i_inst(11 downto 7);
-										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_OP_IMM | c_OPCODE32_LOAD | c_OPCODE32_JALR =>	-- I-type Format
-										s_rs1select <= i_inst(19 downto 15);
-										s_rs2select <= "00000";
-										s_rdselect <= i_inst(11 downto 7);
-										s_validity_global <= s_validity_inputs;		
-						when c_OPCODE32_OP =>											-- R-type Format
-										s_rs1select <= i_inst(19 downto 15);
-										s_rs2select <= i_inst(24 downto 20);
-										s_rdselect <= i_inst(11 downto 7);
-										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_STORE =>										-- S-type Format
-										s_rs1select <= i_inst(19 downto 15);
-										s_rs2select <= i_inst(24 downto 20);
-										s_rdselect <= "00000";
-										s_validity_global <= s_validity_inputs;
-						when c_OPCODE32_JAL =>											-- J-type Format
-										s_rs1select <= "00000";
-										s_rs2select <= "00000";
-										s_rdselect <= i_inst(11 downto 7);
-										s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>		-- U-type Format
+							s_rs1select <= "00000";
+							s_rs2select <= "00000";
+							s_rdselect <= i_inst(11 downto 7);
+							s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_OP_IMM |  c_OPCODE32_LOAD =>	-- I-type Format
+							s_rs1select <= i_inst(19 downto 15);
+							s_rs2select <= "00000";
+							s_rdselect <= i_inst(11 downto 7);
+							s_validity_global <= s_validity_inputs;		
+						when c_OPCODE32_OP =>							-- R-type Format
+							s_rs1select <= i_inst(19 downto 15);
+							s_rs2select <= i_inst(24 downto 20);
+							s_rdselect <= i_inst(11 downto 7);
+							s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_STORE =>						-- S-type Format
+							s_rs1select <= i_inst(19 downto 15);
+							s_rs2select <= i_inst(24 downto 20);
+							s_rdselect <= "00000";
+							s_validity_global <= s_validity_inputs;
+						when c_OPCODE32_JAL =>							-- J-type Format
+							s_rs1select <= "00000";
+							s_rs2select <= "00000";
+							s_rdselect <= i_inst(11 downto 7);
+							s_validity_global <= s_validity_inputs;
 						when others => 
-										s_rs1select <= "00000";
-										s_rs2select <= "00000";
-										s_rdselect <= "00000";
-										s_validity_global <= '0';
+							s_rs1select <= "00000";
+							s_rs2select <= "00000";
+							s_rdselect <= "00000";
+							s_validity_global <= '0';
 					end case;
 				end if;
 		end process comb1;

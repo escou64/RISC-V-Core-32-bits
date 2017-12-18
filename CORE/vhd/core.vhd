@@ -21,6 +21,9 @@ architecture core_arch of core is
 	
 	component counter_calculation port (i_rstn			: in std_logic;
 										i_clk			: in std_logic;
+										i_jump			: in std_logic;
+										i_branch		: in std_logic;
+										i_newpc			: in std_logic_vector(c_NBITS - 1 downto 0);
 										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
@@ -28,6 +31,8 @@ architecture core_arch of core is
 							i_clk			: in std_logic;
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_jump			: in std_logic;
+							i_branch		: in std_logic;
 							o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -39,6 +44,8 @@ architecture core_arch of core is
 							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_ftch	: in std_logic;
+							i_jump			: in std_logic;
+							i_branch		: in std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs1			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -76,6 +83,9 @@ architecture core_arch of core is
 							i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_validity_accm	: in std_logic;
 							i_validity_wbck	: in std_logic;
+							o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_jump			: out std_logic;
+							o_branch		: out std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -143,6 +153,10 @@ architecture core_arch of core is
 	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0);
 
+	signal s_exec_newpc		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_exec_jump		: std_logic;
+	signal s_exec_branch	: std_logic;
+
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_dwrite	: std_logic;
@@ -172,14 +186,19 @@ architecture core_arch of core is
 		o_dsize			<= s_dmem_dsize;	
 		s_dmem_iddata	<= i_ddata;
 
-		counter_calculation1 : counter_calculation port map (	i_rstn	=> s_rstn,
-																i_clk	=> s_clk,
-																o_pc	=> s_calc_pc);
+		counter_calculation1 : counter_calculation port map (	i_rstn		=> s_rstn,
+																i_clk		=> s_clk,
+																i_newpc		=> s_exec_newpc,
+																i_jump		=> s_exec_jump,
+																i_branch	=> s_exec_branch,
+																o_pc		=> s_calc_pc);
 
 		fetch1 : fetch port map (	i_rstn			=> s_rstn,
 									i_clk			=> s_clk,	
 									i_pc			=> s_calc_pc,
 									i_idata			=> s_imem_data,
+									i_jump			=> s_exec_jump,
+									i_branch		=> s_exec_branch,
 									o_iaddress		=> s_imem_addr,
 									o_pc			=> s_ftch_pc,
 									o_inst			=> s_ftch_inst,
@@ -200,6 +219,8 @@ architecture core_arch of core is
 									i_pc				=> s_ftch_pc,		
 									i_inst				=> s_ftch_inst,		
 									i_validity_ftch		=> s_ftch_validity,
+									i_jump				=> s_exec_jump,
+									i_branch			=> s_exec_branch,
 									o_pc				=> s_dcde_pc,		
 									o_inst				=> s_dcde_inst,		
 									o_rs1				=> s_dcde_rs1,
@@ -225,6 +246,9 @@ architecture core_arch of core is
 										i_rd_wbck			=> s_wbck_rd,
 										i_validity_accm		=> s_accm_validity,
 										i_validity_wbck		=> s_wbck_validity,
+										o_newpc				=> s_exec_newpc,
+										o_jump				=> s_exec_jump,
+										o_branch			=> s_exec_branch,
 										o_pc				=> s_exec_pc,
 										o_inst				=> s_exec_inst,
 										o_rs2				=> s_exec_rs2,

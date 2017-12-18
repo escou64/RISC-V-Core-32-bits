@@ -17,3 +17,6 @@
 	- Accès à la mémoire d'instruction
 			-> Ajout d'un signal dsize pour choisir entre des écritures 8 bits, 16 bits et 32 bits
 			-> Protocole correct ? Valeurs choisies correctes ?
+
+2017/12/15: escou64
+	- Calcul de nouveau pc (jump) : mettre bit 1 et 0 à '0' dans tous les cas ?
