@@ -39,6 +39,13 @@ package RISCV_CORE_CONFIG is
 	constant c_OPCODE32_SYSTEM	: std_logic_vector(6 downto 0) := "1110011";
 
 	--FUNCTIONS
+	constant c_FUNC3_BEQ		: std_logic_vector(2 downto 0) := "000";
+	constant c_FUNC3_BNE		: std_logic_vector(2 downto 0) := "001";
+	constant c_FUNC3_BLT		: std_logic_vector(2 downto 0) := "100";
+	constant c_FUNC3_BGE		: std_logic_vector(2 downto 0) := "101";
+	constant c_FUNC3_BLTU		: std_logic_vector(2 downto 0) := "110";
+	constant c_FUNC3_BGEU		: std_logic_vector(2 downto 0) := "111";	
+
 	constant c_FUNC3_LB			: std_logic_vector(2 downto 0) := "000";
 	constant c_FUNC3_LH			: std_logic_vector(2 downto 0) := "001";
 	constant c_FUNC3_LW			: std_logic_vector(2 downto 0) := "010";

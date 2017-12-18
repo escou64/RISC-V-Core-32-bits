@@ -60,15 +60,15 @@ architecture bench_arch of tb_demo is
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			file f_inst				: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/instructions.txt";
+			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/instructions.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_results			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/results.txt";
+			file f_results			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/results.txt";
 			variable v_result_line	: line;
 			variable v_result		: std_logic_vector(c_NBITS - 1 downto 0);
 	
-			file f_pc			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/pc.txt";
+			file f_pc			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/demo_bench.files/pc.txt";
 			variable v_pc_line	: line;
 			variable v_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	
@@ -91,12 +91,14 @@ architecture bench_arch of tb_demo is
 					if s_dmem_dwrite = '1' then
 						write(v_result_line,s_dmem_oddata, right, 15);
 						hwrite(v_result_line,s_dmem_oddata, right, 15);
-						writeline(f_results, v_result_line);
+						write(v_result_line,to_integer(unsigned(s_dmem_oddata)), right, 15);
+						writeline(f_results, v_result_line);						
 					end if;
 
 					write(v_pc_line,s_imem_addr, right, 15);
 					--write(v_pc_line,to_integer(unsigned(s_imem_addr)), right, 15);
 					hwrite(v_pc_line,s_imem_addr, right, 15);
+					write(v_pc_line,to_integer(unsigned(s_imem_addr)), right, 15);
 					writeline(f_pc, v_pc_line);
 				end loop;				
 		
@@ -107,11 +109,13 @@ architecture bench_arch of tb_demo is
 					if s_dmem_dwrite = '1' then
 						write(v_result_line,s_dmem_oddata, right, 15);
 						hwrite(v_result_line,s_dmem_oddata, right, 15);
+						write(v_result_line,to_integer(unsigned(s_dmem_oddata)), right, 15);
 						writeline(f_results, v_result_line);
 					end if;
 
 					write(v_pc_line,s_imem_addr, right, 15);
 					hwrite(v_pc_line,s_imem_addr, right, 15);
+					write(v_pc_line,to_integer(unsigned(s_imem_addr)), right, 15);
 					writeline(f_pc, v_pc_line);
 				end loop;
 

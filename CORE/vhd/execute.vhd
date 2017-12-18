@@ -79,7 +79,7 @@ architecture execute_arch of execute is
 				i_rd_wbck when i_rs2_dependency(2) = '1' and (i_validity_wbck = '1') else
 				i_rs2 ;	
 
-	s_rd <=		i_pc + "100" when (s_jump or s_branch) = '1' else
+	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
 
 	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, s_rs1, s_rs2)
@@ -155,8 +155,9 @@ architecture execute_arch of execute is
 						s_op1				<= i_pc;
 						s_op2(19 downto 0)	<= i_inst(31 downto 12);
 						s_op2(31 downto 20)	<= (others => i_inst(31));
-						s_signed			<= i_inst(30);
-						s_amount			<= s_rs2(4 downto 0);
+						--s_signed			<= i_inst(30);
+						s_signed			<= '0';
+						s_amount			<= (others => '0');
 						s_jump				<= '1';
 						s_branch			<= '0';
 					when c_OPCODE32_JALR =>
@@ -165,10 +166,36 @@ architecture execute_arch of execute is
 						s_op1				<= i_rs1;
 						s_op2(11 downto 0)	<= i_inst(31 downto 20);
 						s_op2(31 downto 12)	<= (others => i_inst(31));
-						s_signed			<= i_inst(30);
-						s_amount			<= s_rs2(4 downto 0);
+						--s_signed			<= i_inst(30);
+						s_signed			<= '0';
+						s_amount			<= (others => '0');
 						s_jump				<= '1';
 						s_branch			<= '0';
+					when c_OPCODE32_BRANCH =>
+						s_validity_global	<= s_validity_inputs;
+						s_sel				<= c_ALU_ADD;
+						s_op1				<= i_pc;
+						s_op2(4 downto 0)	<= i_inst(11 downto 7);
+						s_op2(11 downto 5)	<= i_inst(31 downto 25);
+						s_op2(31 downto 12)	<= (others => i_inst(31));
+						s_signed			<= '0';
+						s_amount			<= (others => '0');
+						s_jump				<= '0';
+						if (i_inst(14 downto 12) = c_FUNC3_BEQ) and (s_rs1 = s_rs2) then
+							s_branch		<= '1';
+						elsif (i_inst(14 downto 12) = c_FUNC3_BNE) and (s_rs1 /= s_rs2) then
+							s_branch		<= '1';
+						elsif (i_inst(14 downto 12) = c_FUNC3_BLT) and (signed(s_rs1) < signed(s_rs2)) then
+							s_branch		<= '1';
+						elsif (i_inst(14 downto 12) = c_FUNC3_BLTU) and (unsigned(s_rs1) < unsigned(s_rs2)) then
+							s_branch		<= '1';
+						elsif (i_inst(14 downto 12) = c_FUNC3_BGE) and (signed(s_rs1) >= signed(s_rs2)) then
+							s_branch		<= '1';
+						elsif (i_inst(14 downto 12) = c_FUNC3_BGEU) and (unsigned(s_rs1) >= unsigned(s_rs2)) then
+							s_branch		<= '1';
+						else
+							s_branch		<= '0';
+						end if;
 					when others =>
 						s_validity_global	<= '0';
 						s_op1				<= (others => '0');	

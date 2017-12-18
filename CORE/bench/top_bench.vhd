@@ -290,9 +290,9 @@ architecture bench_arch of tb_top is
 			variable v_imem_data	: std_logic_vector(c_NBITS - 1 downto 0);
 			variable v_result_wbck	: std_logic_vector(c_NBITS - 1 downto 0);
 			variable v_data_in		: std_logic_vector(c_NBITS - 1 downto 0);
-			file f_instructions	: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt";
-			file f_results_wbck	: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/results_wbck.txt";
-			file f_datas_in		: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/bench/top_bench.files/datas_in.txt";
+			file f_instructions	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/instructions.txt";
+			file f_results_wbck	: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/results_wbck.txt";
+			file f_datas_in		: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/top_bench.files/datas_in.txt";
 			begin
 				test_runner_setup(runner, runner_cfg);
 				wait for QUARTER_PERIOD;

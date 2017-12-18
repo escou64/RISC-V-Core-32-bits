@@ -19,4 +19,10 @@
 			-> Protocole correct ? Valeurs choisies correctes ?
 
 2017/12/15: escou64
-	- Calcul de nouveau pc (jump) : mettre bit 1 et 0 à '0' dans tous les cas ?
+	- Calcul de nouveau pc (jump) : mettre bit 1 et 0 à '0' dans tous les cas ? Idem pour branch ?
+
+2017/12/18: escou64
+	- p.16-17 : Forcer utilisation unique de rd = rs1 ou rs5 ? ou simple utilisation niveau logicielle ?
+	- Générer du code assembleur / C directement : exemple ?
+	- Différence(s) entre B-Type et S-Type Format ?
+	- OPTIMISATION: "Nettoyage" du code et suppression des cas traités plusieurs fois (switch case entre plusieurs étages ignorant les mêmes cas etc ...)
