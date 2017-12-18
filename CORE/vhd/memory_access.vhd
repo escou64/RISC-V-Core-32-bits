@@ -35,7 +35,7 @@ architecture memory_access_arch of memory_access is
                 o_daddress <= i_rd;
                 o_ddata <= i_rs2;
 
-                comb1 : process(i_clk, i_pc, i_inst)
+                comb1 : process(i_pc, i_inst, s_validity_inputs, i_ddata, i_rd)
                 begin
                         case i_inst(6 downto 0) is
                                 when c_OPCODE32_LOAD =>

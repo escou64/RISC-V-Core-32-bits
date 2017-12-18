@@ -104,12 +104,12 @@ architecture decode_arch of decode is
 		comb2 : process(i_clk, s_previous_rd, s_rs1select, s_rs2select)
 			begin
 				for I in 2 downto 0 loop
-					if s_rs1select = s_previous_rd(I) then
-						s_rs1_dependency(I) <= '1';	--std_logic_vector(to_unsigned(I, s_rs1_dependency'length));
+					if (s_rs1select = s_previous_rd(I)) and (s_rs1select /= "00000") then
+						s_rs1_dependency(I) <= '1';	--std_logic_vector(to_unsigned(I, s_rs1_dependency'length));  --PREVIOUS /= 0000 /!\
 					else
 						s_rs1_dependency(I) <= '0';
 					end if;
-					if s_rs2select = s_previous_rd(I) then
+					if (s_rs2select = s_previous_rd(I)) and (s_rs2select /= "00000") then
 						s_rs2_dependency(I) <= '1'; --std_logic_vector(to_unsigned(I, s_rs2_dependency'length));
 					else
 						s_rs2_dependency(I) <= '0';
