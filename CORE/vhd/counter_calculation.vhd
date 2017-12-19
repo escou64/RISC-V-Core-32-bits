@@ -22,7 +22,7 @@ architecture counter_calculation_arch of counter_calculation is
 	
 	begin
 		
-		s_pc <=	i_newpc(c_NBITS - 1 downto 2) & "00" when (i_jump or i_branch) = '1' else
+		s_pc <=	i_newpc when (i_jump or i_branch) = '1' else
 				s_pc_final + c_PC_STEP;
 		
 		--comb : process(i_clk, s_pc_final)

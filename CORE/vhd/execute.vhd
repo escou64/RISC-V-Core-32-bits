@@ -153,8 +153,9 @@ architecture execute_arch of execute is
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
-						s_op2(19 downto 0)	<= i_inst(31 downto 12);
-						s_op2(31 downto 20)	<= (others => i_inst(31));
+						s_op2(0)			<= '0';
+						s_op2(20 downto 1)	<= i_inst(31 downto 12);
+						s_op2(31 downto 21)	<= (others => i_inst(31));
 						--s_signed			<= i_inst(30);
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
@@ -163,9 +164,11 @@ architecture execute_arch of execute is
 					when c_OPCODE32_JALR =>
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= c_ALU_ADD;
-						s_op1				<= i_rs1;
-						s_op2(11 downto 0)	<= i_inst(31 downto 20);
-						s_op2(31 downto 12)	<= (others => i_inst(31));
+						s_op1(0)			<= '0';
+						s_op1(31 downto 1)	<= i_rs1(31 downto 1);
+						s_op2(0)			<= '0';
+						s_op2(12 downto 1)	<= i_inst(31 downto 20);
+						s_op2(31 downto 13)	<= (others => i_inst(31));
 						--s_signed			<= i_inst(30);
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
@@ -175,9 +178,10 @@ architecture execute_arch of execute is
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
-						s_op2(4 downto 0)	<= i_inst(11 downto 7);
-						s_op2(11 downto 5)	<= i_inst(31 downto 25);
-						s_op2(31 downto 12)	<= (others => i_inst(31));
+						s_op2(0)			<= '0';
+						s_op2(5 downto 1)	<= i_inst(11 downto 7);
+						s_op2(12 downto 6)	<= i_inst(31 downto 25);
+						s_op2(31 downto 13)	<= (others => i_inst(31));
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '0';

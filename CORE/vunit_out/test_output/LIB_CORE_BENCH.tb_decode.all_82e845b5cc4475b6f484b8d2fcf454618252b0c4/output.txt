@@ -1,6 +1,6 @@
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/bench/" 
-# Start time: 23:13:18 on Dec 18,2017
-# ** Warning: Design size of 11877 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Start time: 00:25:39 on Dec 20,2017
+# ** Warning: Design size of 11883 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
