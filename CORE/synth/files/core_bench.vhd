@@ -1,0 +1,1 @@
+../../design/bench/core_bench.vhd
