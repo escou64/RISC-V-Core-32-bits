@@ -13,7 +13,6 @@ package RISCV_CORE_CONFIG is
 	constant c_PC_STEP	: std_logic_vector(c_NBITS - 1 downto 0) := "00000000000000000000000000000100";
 	constant c_REG_INIT	: std_logic_vector(c_NBITS - 1 downto 0) := "00000000000000000000000000000000";
 
-
 	--Constants to choose the differents operations of the ALU
 	constant c_ALU_ADD	: std_logic_vector(2 downto 0) := "000";
 	constant c_ALU_SLL	: std_logic_vector(2 downto 0) := "001";
@@ -23,6 +22,11 @@ package RISCV_CORE_CONFIG is
 	constant c_ALU_SR	: std_logic_vector(2 downto 0) := "101";
 	constant c_ALU_OR	: std_logic_vector(2 downto 0) := "110";
 	constant c_ALU_AND	: std_logic_vector(2 downto 0) := "111";
+
+	--Constants to choose the size of the data stored
+	constant c_MEM_SIZEB	: std_logic_vector(1 downto 0) := "00";
+	constant c_MEM_SIZEH	: std_logic_vector(1 downto 0) := "01";
+	constant c_MEM_SIZEW	: std_logic_vector(1 downto 0) := "10";
 
 	--Contants to use the RV32I Instruction Set
 	--OPCODES

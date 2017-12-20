@@ -40,7 +40,7 @@ architecture memory_access_arch of memory_access is
                         case i_inst(6 downto 0) is
                                 when c_OPCODE32_LOAD =>
                                         o_dwrite <= '0';
-										o_dsize <= "11";
+										o_dsize <= c_MEM_SIZEW;
 										case i_inst(14 downto 12) is  
 											when c_FUNC3_LB =>
 												s_rd(7 downto 0) <= i_ddata(7 downto 0);
@@ -72,34 +72,34 @@ architecture memory_access_arch of memory_access is
 											case i_inst(14 downto 12) is
 												when c_FUNC3_SB =>
 													o_dwrite <= '1';
-													o_dsize <= "01";													
+													o_dsize <= c_MEM_SIZEB;											
 												when c_FUNC3_SH =>
 													o_dwrite <= '1';
-													o_dsize <= "10";
+													o_dsize <= c_MEM_SIZEH;
 												when c_FUNC3_SW =>
 													o_dwrite <= '1';
-													o_dsize <= "11";
+													o_dsize <= c_MEM_SIZEW;
 												when others =>
 													o_dwrite <= '0';
-													o_dsize <= "00";
+													o_dsize <= c_MEM_SIZEW;
 											end case;
 										else
 											o_dwrite <= '0';
-											o_dsize <= "00";
+											o_dsize <= c_MEM_SIZEW;
 										end if;
                                 when c_OPCODE32_LUI | c_OPCODE32_OP | c_OPCODE32_OP_IMM | c_OPCODE32_AUIPC | c_OPCODE32_JAL | c_OPCODE32_JALR =>
                                         o_dwrite <= '0';
-										o_dsize <= "00";
+										o_dsize <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
                                         s_validity_global <= s_validity_inputs;
 								when c_OPCODE32_BRANCH =>   
 										o_dwrite <= '0';
-										o_dsize <= "00";
+										o_dsize <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
                                         s_validity_global <= '0';                                    
                                 when others =>
                                         o_dwrite <= '0';
-										o_dsize <= "00";
+										o_dsize <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
                                         s_validity_global <= '0';
                         end case;
