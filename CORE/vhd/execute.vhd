@@ -165,7 +165,7 @@ architecture execute_arch of execute is
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= c_ALU_ADD;
 						s_op1(0)			<= '0';
-						s_op1(31 downto 1)	<= i_rs1(31 downto 1);
+						s_op1(31 downto 1)	<= s_rs1(31 downto 1);
 						s_op2(0)			<= '0';
 						s_op2(12 downto 1)	<= i_inst(31 downto 20);
 						s_op2(31 downto 13)	<= (others => i_inst(31));

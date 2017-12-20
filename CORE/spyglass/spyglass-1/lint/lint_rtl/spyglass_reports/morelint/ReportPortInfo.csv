@@ -1,0 +1,10 @@
+Entity,Entity Type,Port Name,Direction,Width,Index,Comment Source,Comment
+core,Top_Level,i_rstn,INPUT,1,-,port definition,- 
+core,Top_Level,i_clk,INPUT,1,-,port definition,- 
+core,Top_Level,o_iaddress,OUTPUT,32,(31:0),port definition,- 
+core,Top_Level,i_idata,INPUT,32,(31:0),port definition,- 
+core,Top_Level,o_daddress,OUTPUT,32,(31:0),port definition,- 
+core,Top_Level,o_ddata,OUTPUT,32,(31:0),port definition,- 
+core,Top_Level,o_dwrite,OUTPUT,1,-,port definition,- 
+core,Top_Level,o_dsize,OUTPUT,2,(1:0),port definition,- 
+core,Top_Level,i_ddata,INPUT,32,(31:0),port definition,- 
