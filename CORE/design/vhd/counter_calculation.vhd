@@ -25,11 +25,6 @@ architecture counter_calculation_arch of counter_calculation is
 		s_pc <=	i_newpc when (i_jump or i_branch) = '1' else
 				s_pc_final + c_PC_STEP;
 		
-		--comb : process(i_clk, s_pc_final)
-		--	begin
-		--		s_pc <=	s_pc_final + c_PC_STEP;
-		--end process comb;
-
 		seq : process (i_clk, i_rstn)
 			begin
 				if (i_rstn = '0') then

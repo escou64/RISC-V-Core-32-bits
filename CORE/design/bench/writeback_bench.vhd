@@ -26,9 +26,7 @@ architecture bench_arch of tb_writeback is
 								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_write			: out std_logic;
 								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic);
+								o_data			: out std_logic_vector(c_NBITS - 1 downto 0));								
 	end component;
 
 	component registerfile port (	i_rstn		: in std_logic;
@@ -58,9 +56,7 @@ architecture bench_arch of tb_writeback is
 	signal s_regf_write		: std_logic;
 	signal s_regf_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_regf_data		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_validity	: std_logic;
-
+	
 	begin
 
 		registerfile1 : registerfile port map (	i_rstn		=> rstn,
@@ -81,9 +77,7 @@ architecture bench_arch of tb_writeback is
 											i_rd			=> s_accm_rd,
 											o_write			=> s_regf_write,
 											o_rdselect		=> s_regf_rdselect,
-											o_data			=> s_regf_data,
-											o_validity		=> s_wbck_validity,
-											o_rd			=> s_wbck_rd);
+											o_data			=> s_regf_data);
 
 		clk <= not (clk) after HALF_PERIOD;
 
@@ -95,7 +89,6 @@ architecture bench_arch of tb_writeback is
 				-- Verifications for Reset
 				rstn <= '0';
 				wait for PERIOD;
-				assert s_wbck_rd = c_REG_INIT report "Problem for resetting !" severity error;
 				rstn <= '1';
 				wait for PERIOD;
 								

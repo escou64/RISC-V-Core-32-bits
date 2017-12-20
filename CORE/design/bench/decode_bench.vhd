@@ -36,6 +36,12 @@ architecture bench_arch of tb_decode is
 								i_validity_ftch		: in std_logic;
 								i_jump				: in std_logic;
 								i_branch			: in std_logic;
+								i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_validity_alu		: in std_logic;
+								i_validity_exec		: in std_logic;
+								i_validity_accm		: in std_logic;
 								o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_rs1				: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -44,9 +50,9 @@ architecture bench_arch of tb_decode is
 								o_rs1select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								o_rs2select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								i_rs1				: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0);
-								o_rs1_dependency	: out std_logic_vector(2 downto 0);
-								o_rs2_dependency	: out std_logic_vector(2 downto 0));
+								i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0));
+								--o_rs1_dependency	: out std_logic_vector(2 downto 0);
+								--o_rs2_dependency	: out std_logic_vector(2 downto 0));
 	end component;
 
 
@@ -67,8 +73,15 @@ architecture bench_arch of tb_decode is
 	signal dcde_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal dcde_validity		: std_logic;
-	signal dcde_rs1_dependency	: std_logic_vector(2 downto 0);
-	signal dcde_rs2_dependency	: std_logic_vector(2 downto 0);
+	--signal dcde_rs1_dependency	: std_logic_vector(2 downto 0);
+	--signal dcde_rs2_dependency	: std_logic_vector(2 downto 0);
+
+	signal alu_validity			: std_logic												:= '1';
+	signal exec_validity		: std_logic												:= '1';
+	signal accm_validity		: std_logic												:= '1';
+	signal alu_rd				: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
+	signal exec_rd				: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
+	signal accm_rd				: std_logic_vector(c_NBITS - 1 downto 0)				:= (others => '0');
 
 	signal exec_branch			: std_logic												:= '0';
 	signal exec_jump			: std_logic												:= '0';
@@ -90,7 +103,13 @@ architecture bench_arch of tb_decode is
 										i_inst				=> ftch_inst,		
 										i_validity_ftch		=> ftch_validity,
 										i_branch			=> exec_branch,
-										i_jump				=> exec_jump,	
+										i_jump				=> exec_jump,
+										i_rd_alu			=> alu_rd,
+										i_rd_exec			=> exec_rd,
+										i_rd_accm			=> accm_rd,
+										i_validity_alu		=> alu_validity,
+										i_validity_exec		=> exec_validity,
+										i_validity_accm		=> accm_validity,
 										o_pc				=> dcde_pc,		
 										o_inst				=> dcde_inst,		
 										o_rs1				=> dcde_rs1,
@@ -99,9 +118,9 @@ architecture bench_arch of tb_decode is
 										o_rs1select			=> regf_rs1select,
 										o_rs2select			=> regf_rs2select,
 										i_rs1				=> regf_rs1,
-										i_rs2				=> regf_rs2,
-										o_rs1_dependency 	=> dcde_rs1_dependency,
-										o_rs2_dependency 	=> dcde_rs2_dependency);
+										i_rs2				=> regf_rs2);
+										--o_rs1_dependency 	=> dcde_rs1_dependency,
+										--o_rs2_dependency 	=> dcde_rs2_dependency);
 	
 		clk <= not (clk) after HALF_PERIOD;
 

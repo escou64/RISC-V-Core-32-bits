@@ -46,6 +46,12 @@ architecture core_arch of core is
 							i_validity_ftch	: in std_logic;
 							i_jump			: in std_logic;
 							i_branch		: in std_logic;
+							i_rd_alu		: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_rd_exec		: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
+							i_validity_alu	: in std_logic;
+							i_validity_exec	: in std_logic;
+							i_validity_accm	: in std_logic;
 							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rs1			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -54,9 +60,7 @@ architecture core_arch of core is
 							o_rs1select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 							o_rs2select		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 							i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-							o_rs1_dependency: out std_logic_vector(2 downto 0);
-							o_rs2_dependency: out std_logic_vector(2 downto 0));
+							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
 	component registerfile port (	i_rstn		: in std_logic;
@@ -77,12 +81,8 @@ architecture core_arch of core is
 							i_validity_dcde	: in std_logic;
 							i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_rs1_dependency: in std_logic_vector(2 downto 0);
-							i_rs2_dependency: in std_logic_vector(2 downto 0);
-							i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_validity_accm	: in std_logic;
-							i_validity_wbck	: in std_logic;
+							o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_validity_alu	: out std_logic;
 							o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_jump			: out std_logic;
 							o_branch		: out std_logic;
@@ -119,9 +119,7 @@ architecture core_arch of core is
 								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_write			: out std_logic;
 								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic);
+								o_data			: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
 	signal s_rstn	: std_logic;
@@ -144,9 +142,7 @@ architecture core_arch of core is
 	signal s_dcde_validity			: std_logic;
 	signal s_dcde_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dcde_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_dcde_rs1_dependency	: std_logic_vector(2 downto 0);
-	signal s_dcde_rs2_dependency	: std_logic_vector(2 downto 0);
-	
+
 	signal s_exec_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_validity	: std_logic;
@@ -156,6 +152,9 @@ architecture core_arch of core is
 	signal s_exec_newpc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_jump		: std_logic;
 	signal s_exec_branch	: std_logic;
+
+	signal s_alu_rd			: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_alu_validity	: std_logic;
 
 	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
@@ -170,9 +169,7 @@ architecture core_arch of core is
 	signal s_regf_write		: std_logic;
 	signal s_regf_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_regf_data		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_wbck_validity	: std_logic;
-	
+		
 	begin
 
 		s_rstn	<= i_rstn;
@@ -221,6 +218,12 @@ architecture core_arch of core is
 									i_validity_ftch		=> s_ftch_validity,
 									i_jump				=> s_exec_jump,
 									i_branch			=> s_exec_branch,
+									i_rd_alu			=> s_alu_rd,
+									i_rd_exec			=> s_exec_rd,
+									i_rd_accm			=> s_accm_rd,
+									i_validity_alu		=> s_alu_validity,
+									i_validity_exec		=> s_exec_validity,
+									i_validity_accm		=> s_accm_validity,
 									o_pc				=> s_dcde_pc,		
 									o_inst				=> s_dcde_inst,		
 									o_rs1				=> s_dcde_rs1,
@@ -229,9 +232,7 @@ architecture core_arch of core is
 									o_rs1select			=> s_regf_rs1select,
 									o_rs2select			=> s_regf_rs2select,
 									i_rs1				=> s_regf_rs1,
-									i_rs2				=> s_regf_rs2,
-									o_rs1_dependency	=> s_dcde_rs1_dependency,
-									o_rs2_dependency	=> s_dcde_rs2_dependency);
+									i_rs2				=> s_regf_rs2);
 
 		execute1 : execute port map (	i_rstn				=> s_rstn,
 										i_clk				=> s_clk,
@@ -240,12 +241,8 @@ architecture core_arch of core is
 										i_validity_dcde		=> s_dcde_validity,
 										i_rs1				=> s_dcde_rs1,
 										i_rs2				=> s_dcde_rs2,
-										i_rs1_dependency	=> s_dcde_rs1_dependency,
-										i_rs2_dependency	=> s_dcde_rs2_dependency,
-										i_rd_accm			=> s_accm_rd,
-										i_rd_wbck			=> s_wbck_rd,
-										i_validity_accm		=> s_accm_validity,
-										i_validity_wbck		=> s_wbck_validity,
+										o_rd_alu			=> s_alu_rd,
+										o_validity_alu		=> s_alu_validity,
 										o_newpc				=> s_exec_newpc,
 										o_jump				=> s_exec_jump,
 										o_branch			=> s_exec_branch,
@@ -280,8 +277,6 @@ architecture core_arch of core is
 										i_rd			=> s_accm_rd,
 										o_write			=> s_regf_write,
 										o_rdselect		=> s_regf_rdselect,
-										o_data			=> s_regf_data,
-										o_rd			=> s_wbck_rd,
-										o_validity		=> s_wbck_validity);
+										o_data			=> s_regf_data);
 
 end core_arch;

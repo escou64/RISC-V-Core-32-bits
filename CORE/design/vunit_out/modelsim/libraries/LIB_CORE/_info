@@ -1,0 +1,457 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design
+Ealu
+Z1 w1513801432
+Z2 DPx8 lib_core 17 riscv_core_config 0 22 UgQPEIPYkJc_G<z7ZJkWN2
+Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z5 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z8 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd
+Z9 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd
+l0
+L9
+VYajDfY:m8Gj2;8<^Kb?iK2
+!s100 TYS<N^L1dUOi8Y>J4a0ld0
+Z10 OV;C;10.5b;63
+33
+Z11 !s110 1513804630
+!i10b 1
+Z12 !s108 1513804630.000000
+Z13 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd|
+Z14 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd|
+!i113 1
+Z15 o-quiet -2008 -work LIB_CORE
+Z16 tExplicit 1 CvgOpt 0
+Aalu_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 3 alu 0 22 YajDfY:m8Gj2;8<^Kb?iK2
+l21
+L17
+Vbez]S@0fbleJfKej4`BeA1
+!s100 jE5NDUXZkje27]Lc:3h383
+R10
+33
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ecore
+Z17 w1513808348
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z18 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd
+Z19 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd
+l0
+L9
+V[JMzZhM>P80DGm78?P9PE2
+!s100 DRbcD<zQ_?;6E88X2m4C?0
+R10
+33
+Z20 !s110 1513808372
+!i10b 1
+Z21 !s108 1513808372.000000
+Z22 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd|
+Z23 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd|
+!i113 1
+R15
+R16
+Acore_arch
+R2
+R3
+R4
+R5
+R6
+R7
+Z24 DEx4 work 4 core 0 22 [JMzZhM>P80DGm78?P9PE2
+l173
+L20
+VcA_ja_TQT>en]17mQ5DY^2
+!s100 i@`82W91=AGeJ5Y2O_^O20
+R10
+33
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R15
+R16
+Ecounter_calculation
+Z25 w1513807128
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z26 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd
+Z27 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd
+l0
+L9
+VM;>bcd7b[Ca>1?F=ZQ0>R1
+!s100 1ATz03nI4FeoU0045a<k41
+R10
+33
+Z28 !s110 1513807724
+!i10b 1
+Z29 !s108 1513807724.000000
+Z30 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd|
+Z31 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd|
+!i113 1
+R15
+R16
+Acounter_calculation_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 19 counter_calculation 0 22 M;>bcd7b[Ca>1?F=ZQ0>R1
+l23
+L18
+VFPB:=HaZ:zBGkZ7E2PD<e1
+!s100 T]Ag=76CSb1?18mImzH3Y1
+R10
+33
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 1
+R15
+R16
+Edecode
+Z32 w1513807280
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z33 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd
+Z34 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd
+l0
+L9
+Ve8T3FB`i2b@2_VUOQhKf`0
+!s100 HP4UNz8nbC[M1[YPJY>T<0
+R10
+33
+R28
+!i10b 1
+R29
+Z35 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd|
+Z36 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd|
+!i113 1
+R15
+R16
+Adecode_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 6 decode 0 22 e8T3FB`i2b@2_VUOQhKf`0
+l47
+L33
+V@2h=5fi3GclVE4mWZLTzT3
+!s100 dBSPb<6<9@E6a^V9kAXZ=1
+R10
+33
+R28
+!i10b 1
+R29
+R35
+R36
+!i113 1
+R15
+R16
+Eexecute
+Z37 w1513807709
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z38 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd
+Z39 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd
+l0
+L9
+VegZ99]GYI=[hW2RkGPM`32
+!s100 gi5=:F8ADXKPTigTI]I0<0
+R10
+33
+R28
+!i10b 1
+R29
+Z40 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd|
+Z41 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd|
+!i113 1
+R15
+R16
+Aexecute_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 7 execute 0 22 egZ99]GYI=[hW2RkGPM`32
+l53
+L28
+VJT[Td2KM_=K3Xm10WdnEM1
+!s100 L_GH3:LW2]5WoSaUOLHHC2
+R10
+33
+R28
+!i10b 1
+R29
+R40
+R41
+!i113 1
+R15
+R16
+Efetch
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z42 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd
+Z43 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd
+l0
+L9
+VU1jlf_TKXc96`[^?aG^:92
+!s100 gWPV>Wj9jmz9RzUN<IRjN2
+R10
+33
+Z44 !s110 1513804585
+!i10b 1
+Z45 !s108 1513804585.000000
+Z46 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd|
+Z47 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd|
+!i113 1
+R15
+R16
+Afetch_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 5 fetch 0 22 U1jlf_TKXc96`[^?aG^:92
+l23
+L21
+VDVo4bIkG[B1hJc[;859;H1
+!s100 jQFEz;XRX[PHcMiaH3?jb2
+R10
+33
+R44
+!i10b 1
+R45
+R46
+R47
+!i113 1
+R15
+R16
+Ememory_access
+Z48 w1513807792
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z49 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd
+Z50 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd
+l0
+L9
+V3CjXePIemY`e:^KMOz@Z21
+!s100 JO5Q<eORFT1lanY`fc:KC3
+R10
+33
+Z51 !s110 1513807796
+!i10b 1
+Z52 !s108 1513807796.000000
+Z53 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd|
+Z54 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd|
+!i113 1
+R15
+R16
+Amemory_access_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 13 memory_access 0 22 3CjXePIemY`e:^KMOz@Z21
+l33
+L27
+V@LLl9coZ_BLYRj@2W[hJ31
+!s100 <]k9=2S[^mNg=7NlLJ^4G3
+R10
+33
+R51
+!i10b 1
+R52
+R53
+R54
+!i113 1
+R15
+R16
+Eregisterfile
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z55 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd
+Z56 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd
+l0
+L9
+V1L<hIm:I5OB<l6U62fQ_C0
+!s100 PGCH^F?7EWaf6_`TbecFl2
+R10
+33
+R44
+!i10b 1
+R45
+Z57 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd|
+Z58 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd|
+!i113 1
+R15
+R16
+Aregisterfile_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 12 registerfile 0 22 1L<hIm:I5OB<l6U62fQ_C0
+l24
+L20
+VaOO`aoh8M5Sb:fdilH5VY3
+!s100 k`9TomQ1;7FBO]8hHYznP0
+R10
+33
+R44
+!i10b 1
+R45
+R57
+R58
+!i113 1
+R15
+R16
+Priscv_core_config
+R3
+R4
+R5
+R6
+R7
+R1
+R0
+8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd
+F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd
+l0
+L6
+VUgQPEIPYkJc_G<z7ZJkWN2
+!s100 WYS78XbjoF89=JAl>ilYK3
+R10
+33
+R44
+!i10b 1
+R45
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd|
+!s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd|
+!i113 1
+R15
+R16
+Ewriteback
+Z59 w1513808188
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+Z60 8/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd
+Z61 F/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd
+l0
+L9
+VZDhkBhfg>6?T`H^D^9=dL2
+!s100 iPjdZ5S<jhA:8Af2hng;32
+R10
+33
+R20
+!i10b 1
+R21
+Z62 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_CORE|/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd|
+Z63 !s107 /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd|
+!i113 1
+R15
+R16
+Awriteback_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 9 writeback 0 22 ZDhkBhfg>6?T`H^D^9=dL2
+l21
+L20
+V@fYGi?ZT0odK9o]5G_i`P0
+!s100 fY5J>DhQ`ZZhE=kOC74`Y2
+R10
+33
+R20
+!i10b 1
+R21
+R62
+R63
+!i113 1
+R15
+R16

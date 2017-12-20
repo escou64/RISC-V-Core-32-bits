@@ -31,7 +31,7 @@ architecture memory_access_arch of memory_access is
         signal s_rd : std_logic_vector(c_NBITS - 1 downto 0);
 
         begin
-                s_validity_inputs <= i_validity_exec; -- AND i_validity_wbck;
+                s_validity_inputs <= i_validity_exec;
                 o_daddress <= i_rd;
                 o_ddata <= i_rs2;
 

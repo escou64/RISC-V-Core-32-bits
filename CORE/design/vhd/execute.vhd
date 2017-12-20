@@ -13,12 +13,8 @@ entity execute is port (i_rstn			: in std_logic;
 						i_validity_dcde	: in std_logic;
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rs1_dependency: in std_logic_vector(2 downto 0);
-						i_rs2_dependency: in std_logic_vector(2 downto 0);
-						i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rd_wbck		: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity_accm	: in std_logic;
-						i_validity_wbck	: in std_logic;
+						o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
+						o_validity_alu	: out std_logic;
 						o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_jump			: out std_logic;
 						o_branch		: out std_logic;
@@ -42,11 +38,7 @@ architecture execute_arch of execute is
 
 	signal s_validity_inputs	: std_logic;
 	signal s_validity_global	: std_logic;
-	signal s_validity_final		: std_logic;
-	signal s_rs1	: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_rs2	: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_rd_final	: std_logic_vector(c_NBITS - 1 downto 0); 
+	signal s_rd					: std_logic_vector(c_NBITS - 1 downto 0);
 	
 	signal s_op1	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_op2	: std_logic_vector(c_NBITS - 1 downto 0);
@@ -67,22 +59,12 @@ architecture execute_arch of execute is
 							i_sel		=> s_sel,
 							o_result	=> s_result);
 
-	s_validity_inputs <= i_validity_dcde; -- AND i_invalidation;
-
-	s_rs1 <=	s_rd_final when (i_rs1_dependency(0) = '1') and (s_validity_final = '1') else
-				i_rd_accm when (i_rs1_dependency(1) = '1') and (i_validity_accm = '1') else
-				i_rd_wbck when (i_rs1_dependency(2) = '1') and (i_validity_wbck = '1') else
-				i_rs1;
-
-	s_rs2 <=	s_rd_final when i_rs2_dependency(0) = '1' and (s_validity_final = '1') else
-				i_rd_accm when i_rs2_dependency(1) = '1' and (i_validity_accm = '1') else
-				i_rd_wbck when i_rs2_dependency(2) = '1' and (i_validity_wbck = '1') else
-				i_rs2 ;	
+	s_validity_inputs <= i_validity_dcde;
 
 	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
 
-	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, s_rs1, s_rs2)
+	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
 		begin
 		if s_validity_inputs = '1' then
 			if (i_inst(1 downto 0) /= "11") then
@@ -112,7 +94,7 @@ architecture execute_arch of execute is
 						end if;
 					when c_OPCODE32_LOAD | c_OPCODE32_STORE =>
 						s_validity_global	<= s_validity_inputs;
-						s_op1				<= s_rs1;
+						s_op1				<= i_rs1;
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_sel				<= c_ALU_ADD;
@@ -129,7 +111,7 @@ architecture execute_arch of execute is
 					when c_OPCODE32_OP_IMM =>
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= i_inst(14 downto 12);
-						s_op1				<= s_rs1;
+						s_op1				<= i_rs1;
 						s_op2(11 downto 0)	<= i_inst(31 downto 20);
 						s_op2(31 downto 12) <= (others => i_inst(31));
 						s_amount			<= i_inst(24 downto 20);
@@ -143,10 +125,10 @@ architecture execute_arch of execute is
 					when c_OPCODE32_OP =>
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= i_inst(14 downto 12);
-						s_op1				<= s_rs1;
-						s_op2				<= s_rs2;
+						s_op1				<= i_rs1;
+						s_op2				<= i_rs2;
 						s_signed			<= i_inst(30);
-						s_amount			<= s_rs2(4 downto 0);
+						s_amount			<= i_rs2(4 downto 0);
 						s_jump				<= '0';
 						s_branch			<= '0';
 					when c_OPCODE32_JAL =>
@@ -156,7 +138,6 @@ architecture execute_arch of execute is
 						s_op2(0)			<= '0';
 						s_op2(20 downto 1)	<= i_inst(31 downto 12);
 						s_op2(31 downto 21)	<= (others => i_inst(31));
-						--s_signed			<= i_inst(30);
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '1';
@@ -165,11 +146,10 @@ architecture execute_arch of execute is
 						s_validity_global	<= s_validity_inputs;
 						s_sel				<= c_ALU_ADD;
 						s_op1(0)			<= '0';
-						s_op1(31 downto 1)	<= s_rs1(31 downto 1);
+						s_op1(31 downto 1)	<= i_rs1(31 downto 1);
 						s_op2(0)			<= '0';
 						s_op2(12 downto 1)	<= i_inst(31 downto 20);
 						s_op2(31 downto 13)	<= (others => i_inst(31));
-						--s_signed			<= i_inst(30);
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '1';
@@ -185,17 +165,17 @@ architecture execute_arch of execute is
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '0';
-						if (i_inst(14 downto 12) = c_FUNC3_BEQ) and (s_rs1 = s_rs2) then
+						if (i_inst(14 downto 12) = c_FUNC3_BEQ) and (i_rs1 = i_rs2) then
 							s_branch		<= '1';
-						elsif (i_inst(14 downto 12) = c_FUNC3_BNE) and (s_rs1 /= s_rs2) then
+						elsif (i_inst(14 downto 12) = c_FUNC3_BNE) and (i_rs1 /= i_rs2) then
 							s_branch		<= '1';
-						elsif (i_inst(14 downto 12) = c_FUNC3_BLT) and (signed(s_rs1) < signed(s_rs2)) then
+						elsif (i_inst(14 downto 12) = c_FUNC3_BLT) and (signed(i_rs1) < signed(i_rs2)) then
 							s_branch		<= '1';
-						elsif (i_inst(14 downto 12) = c_FUNC3_BLTU) and (unsigned(s_rs1) < unsigned(s_rs2)) then
+						elsif (i_inst(14 downto 12) = c_FUNC3_BLTU) and (unsigned(i_rs1) < unsigned(i_rs2)) then
 							s_branch		<= '1';
-						elsif (i_inst(14 downto 12) = c_FUNC3_BGE) and (signed(s_rs1) >= signed(s_rs2)) then
+						elsif (i_inst(14 downto 12) = c_FUNC3_BGE) and (signed(i_rs1) >= signed(i_rs2)) then
 							s_branch		<= '1';
-						elsif (i_inst(14 downto 12) = c_FUNC3_BGEU) and (unsigned(s_rs1) >= unsigned(s_rs2)) then
+						elsif (i_inst(14 downto 12) = c_FUNC3_BGEU) and (unsigned(i_rs1) >= unsigned(i_rs2)) then
 							s_branch		<= '1';
 						else
 							s_branch		<= '0';
@@ -229,14 +209,14 @@ architecture execute_arch of execute is
 				o_pc				<= c_PC_INIT;
 				o_inst				<= c_REG_INIT;
 				o_rs2				<= c_REG_INIT;
-				s_rd_final			<= c_REG_INIT;
-				s_validity_final	<= '0';
+				o_rd				<= c_REG_INIT;
+				o_validity			<= '0';
 			elsif (i_clk'event) and (i_clk = '1') then
 				o_pc				<= i_pc;
 				o_inst				<= i_inst;
-				o_rs2				<= s_rs2;
-				s_rd_final			<= s_rd;
-				s_validity_final	<= s_validity_global;
+				o_rs2				<= i_rs2;
+				o_rd				<= s_rd;
+				o_validity			<= s_validity_global;
 			end if;
 	end process seq;
 
@@ -244,6 +224,6 @@ architecture execute_arch of execute is
 	o_branch <= s_branch;
 	o_newpc <= s_result;
 
-	o_validity <= s_validity_final;
-	o_rd <= s_rd_final;
+	o_rd_alu <= s_rd;
+	o_validity_alu <= s_validity_global;
 end execute_arch;
