@@ -122,10 +122,10 @@ proc _vunit_sim_restart {} {
 }
 
 proc vunit_compile {} {
-    set cmd_show {/usr/bin/python -u run.py --compile}
+    set cmd_show {/usr/bin/python -u run.py --compile --gui LIB_CORE_BENCH.tb_decode.all}
     puts "Re-compiling using command ${cmd_show}"
 
-    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
+    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile', '--gui', 'LIB_CORE_BENCH.tb_decode.all'], cwd='/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
 
     while {[gets $chan line] >= 0} {
         puts $line

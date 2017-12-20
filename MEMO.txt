@@ -26,3 +26,7 @@
 	- Générer du code assembleur / C directement : exemple ?
 	- Différence(s) entre B-Type et S-Type Format ?
 	- OPTIMISATION: "Nettoyage" du code et suppression des cas traités plusieurs fois (switch case entre plusieurs étages ignorant les mêmes cas etc ...)
+
+2017/12/20: escou64
+	- Effacement des registres pc de la sortie du execute jusqu'au writeback inclus : possible ? car registres inutilisés ... (indiqués en synthèse et supprimés  automatiquement)
+
