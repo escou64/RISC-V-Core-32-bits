@@ -1,9 +1,9 @@
 ##spyglass_version: 5.6.0
-##date: Wed Dec 20 13:09:25 2017
+##date: Wed Dec 20 16:42:52 2017
 ##user: xph3app606
 ##cwd: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/spyglass
 ##lang: verilog+vhdl
-##args: -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -I '/softslin/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_PHYSICAL_HOME/common/sgphysical/policies/physical' -nl -wdir './spyglass-1/lint/lint_abstract' -lib LIB_CORE ./LIB_CORE -lib LIB_CORE ./LIB_CORE -lib WORK ./spyglass-1/WORK -dbdir './spyglass-1/.SG_SaveRestoreDB' -mixed -batch -rules='LINT_abstract01' -policy='lint' --goal_info 'lint/lint_abstract@' -projectwdir './spyglass-1' -hdllibdu -templatedir '/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff' --template_info 'lint/lint_abstract' -enable_save_restore -enable_save_restore_builtin 'true' -64bit -libhdlfiles LIB_CORE '/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/core.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/writeback.vhd'
+##args: -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -I '/softslin/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_PHYSICAL_HOME/common/sgphysical/policies/physical' -nl -wdir './spyglass-1/lint/lint_abstract' -lib LIB_CORE ./libs/LIB_CORE -lib LIB_CORE ./libs/LIB_CORE -lib WORK ./spyglass-1/WORK -dbdir './spyglass-1/.SG_SaveRestoreDB' -mixed -batch -rules='LINT_abstract01' -policy='lint' --goal_info 'lint/lint_abstract@' -projectwdir './spyglass-1' -hdllibdu -templatedir '/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff' --template_info 'lint/lint_abstract' -enable_save_restore -enable_save_restore_builtin 'true' -64bit -libhdlfiles LIB_CORE '/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd'
 ##spysch_dirname: ./spyglass-1/lint/lint_abstract/spyglass_spysch
 ##vdb_delimiter: @@
 ##run_mode: SINGLE_WORKSPACE
@@ -12,113 +12,73 @@
 ##sde_property: rule DetectTopDesignUnits -policy SpyGlass -highProfile
 ##sde_property: rule AnalyzeBBox -policy SpyGlass -highProfile
 ##file_label: SPG_ELAB_SUMMARY_FILE -file ./spyglass-1/lint/lint_abstract/spyglass_reports/SpyGlass/elab_summary.rpt -policy SpyGlass -external
-#top_modules core counter_calculation decode execute fetch memory_access registerfile writeback
+#top_modules core
 #bbox_modules
-##files_vhdl: ../vhd/writeback.vhd ../vhd/registerfile.vhd ../vhd/memory_access.vhd ../vhd/fetch.vhd ../vhd/execute.vhd ../vhd/alu.vhd ../vhd/decode.vhd ../vhd/counter_calculation.vhd ../vhd/core.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/writeback.vhd ../vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd
-##sde_property: file ../vhd/alu.vhd -id 1 -precompiled=LIB_CORE -inactiveList slc 25 25 23 slc 25 25 23 slc 31 31 23 slc 31 31 23 slc 39 39 23 slc 39 39 23 slc 46 46 24 slc 46 46 24 slc 53 53 23 slc 53 53 23 slc 55 55 22 slc 55 55 22 slc 67 67 22 slc 67 67 22 slc 69 69 23 slc 69 69 23
-##sde_property: file ../vhd/core.vhd -id 2
-##sde_property: file ../vhd/counter_calculation.vhd -id 3 -precompiled=LIB_CORE -inactiveList slc 28 31 0 slc 28 31 0
-##sde_property: file ../vhd/decode.vhd -id 4 -precompiled=LIB_CORE -inactiveList slc 16 18 0 slc 16 18 0 slc 45 46 0 slc 45 46 0 slc 51 51 76 slc 51 51 76 slc 57 59 0 slc 57 59 0 slc 70 70 49 slc 70 70 49 slc 75 75 51 slc 75 75 51 slc 80 80 34 slc 80 80 34 slc 85 85 36 slc 85 85 36 slc 90 90 35 slc 90 90 35 slc 95 95 37 slc 95 95 37 slc 113 113 34 slc 113 113 34 slc 118 118 34 slc 118 118 34
-##sde_property: file ../vhd/execute.vhd -id 5 -precompiled=LIB_CORE -inactiveList slc 70 70 39 slc 70 70 39 slc 159 159 0 slc 159 159 0 slc 172 172 0 slc 172 172 0
-##sde_property: file ../vhd/fetch.vhd -id 6 -precompiled=LIB_CORE
-##sde_property: file ../vhd/memory_access.vhd -id 7 -precompiled=LIB_CORE -inactiveList slc 34 34 54 slc 34 34 54
-##sde_property: file ../vhd/registerfile.vhd -id 8 -precompiled=LIB_CORE
-##sde_property: file ../vhd/RISCV_CORE_CONFIG.vhd -id 9 -precompiled=LIB_CORE -inactiveList slc 7 7 0 slc 7 7 0 slc 16 16 0 slc 16 16 0 slc 26 26 0 slc 26 26 0 slc 31 32 0 slc 31 32 0 slc 45 45 0 slc 45 45 0
-##sde_property: file ../vhd/writeback.vhd -id 10 -precompiled=LIB_CORE -inactiveList slc 23 23 0 slc 23 23 0
-#span WORK.RISCV_CORE_CONFIG ../vhd/RISCV_CORE_CONFIG.vhd 6 83 ../vhd/RISCV_CORE_CONFIG.vhd 1 83
+##files_vhdl: ../design/vhd/core.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/fetch.vhd ../design/vhd/registerfile.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/alu.vhd ../design/vhd/memory_access.vhd ../design/vhd/writeback.vhd ../design/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd
+##sde_property: file ../design/vhd/alu.vhd -id 1 -inactiveList slc 25 25 23 slc 31 31 23 slc 39 39 23 slc 46 46 24 slc 53 53 23 slc 55 55 22 slc 67 67 22 slc 69 69 23
+##sde_property: file ../design/vhd/core.vhd -id 2
+##sde_property: file ../design/vhd/counter_calculation.vhd -id 3 -inactiveList slc 28 31 0
+##sde_property: file ../design/vhd/decode.vhd -id 4 -inactiveList slc 16 18 0 slc 45 46 0 slc 51 51 76 slc 57 59 0 slc 70 70 49 slc 75 75 51 slc 80 80 34 slc 85 85 36 slc 90 90 35 slc 95 95 37 slc 113 113 34 slc 118 118 34
+##sde_property: file ../design/vhd/execute.vhd -id 5 -inactiveList slc 70 70 39 slc 159 159 0 slc 172 172 0
+##sde_property: file ../design/vhd/fetch.vhd -id 6
+##sde_property: file ../design/vhd/memory_access.vhd -id 7 -inactiveList slc 34 34 54
+##sde_property: file ../design/vhd/registerfile.vhd -id 8
+##sde_property: file ../design/vhd/RISCV_CORE_CONFIG.vhd -id 9 -precompiled=LIB_CORE -inactiveList slc 7 7 0 slc 7 7 0 slc 16 16 0 slc 16 16 0 slc 26 26 0 slc 26 26 0 slc 31 32 0 slc 31 32 0 slc 45 45 0 slc 45 45 0
+##sde_property: file ../design/vhd/writeback.vhd -id 10 -inactiveList slc 23 23 0
+#span WORK.RISCV_CORE_CONFIG ../design/vhd/RISCV_CORE_CONFIG.vhd 6 83 ../design/vhd/RISCV_CORE_CONFIG.vhd 1 83
 #rtl_idmap WORK.RISCV_CORE_CONFIG 1 -lang 2 -type pack
-#span LIB_CORE.RISCV_CORE_CONFIG /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd 6 83 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/RISCV_CORE_CONFIG.vhd 1 83
+#span LIB_CORE.RISCV_CORE_CONFIG /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd 6 83 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd 1 83
 #rtl_idmap LIB_CORE.RISCV_CORE_CONFIG 2 -lang 2 -type pack
-#span WORK.writeback.writeback_arch ../vhd/writeback.vhd 9 20 ../vhd/writeback.vhd 1 20 ../vhd/writeback.vhd 22 87
-#rtl_idmap WORK.writeback 3 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.writeback.writeback_arch 4 -entityid 3 -dep_ids 1 2
-#span WORK.registerfile.registerfile_arch ../vhd/registerfile.vhd 9 18 ../vhd/registerfile.vhd 1 18 ../vhd/registerfile.vhd 20 41
-#rtl_idmap WORK.registerfile 5 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.registerfile.registerfile_arch 6 -entityid 5 -dep_ids 1 2
-#span WORK.memory_access.memory_access_arch ../vhd/memory_access.vhd 9 25 ../vhd/memory_access.vhd 1 25 ../vhd/memory_access.vhd 27 122
-#rtl_idmap WORK.memory_access 7 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.memory_access.memory_access_arch 8 -entityid 7 -dep_ids 1 2
-#span WORK.fetch.fetch_arch ../vhd/fetch.vhd 9 19 ../vhd/fetch.vhd 1 19 ../vhd/fetch.vhd 21 38
-#rtl_idmap WORK.fetch 9 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.fetch.fetch_arch 10 -entityid 9 -dep_ids 1 2
-#span WORK.execute.execute_arch ../vhd/execute.vhd 9 30 ../vhd/execute.vhd 1 30 ../vhd/execute.vhd 32 249
-#rtl_idmap WORK.execute 11 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.execute.execute_arch 12 -entityid 11 -dep_ids 1 2
-#span WORK.alu.alu_arch ../vhd/alu.vhd 9 15 ../vhd/alu.vhd 1 15 ../vhd/alu.vhd 17 77
-#rtl_idmap WORK.alu 13 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.alu.alu_arch 14 -entityid 13 -dep_ids 1 2
-#span WORK.decode.decode_arch ../vhd/decode.vhd 9 31 ../vhd/decode.vhd 1 31 ../vhd/decode.vhd 33 153
-#rtl_idmap WORK.decode 15 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.decode.decode_arch 16 -entityid 15 -dep_ids 1 2
-#span WORK.counter_calculation.counter_calculation_arch ../vhd/counter_calculation.vhd 9 16 ../vhd/counter_calculation.vhd 1 16 ../vhd/counter_calculation.vhd 18 43
-#rtl_idmap WORK.counter_calculation 17 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.counter_calculation.counter_calculation_arch 18 -entityid 17 -dep_ids 1 2
-#span WORK.core.core_arch ../vhd/core.vhd 9 18 ../vhd/core.vhd 1 18 ../vhd/core.vhd 20 287
-#rtl_idmap WORK.core 19 -lang 2 -dep_ids 1 2
-#rtl_idmap WORK.core.core_arch 20 -entityid 19 -dep_ids 1 2
-#span LIB_CORE.counter_calculation.counter_calculation_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd 9 16 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd 1 16 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/counter_calculation.vhd 18 43
-#rtl_idmap LIB_CORE.counter_calculation 21 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.counter_calculation.counter_calculation_arch 22 -entityid 21 -dep_ids 1 2
-#span LIB_CORE.fetch.fetch_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd 9 19 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd 1 19 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/fetch.vhd 21 38
-#rtl_idmap LIB_CORE.fetch 23 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.fetch.fetch_arch 24 -entityid 23 -dep_ids 1 2
-#span LIB_CORE.registerfile.registerfile_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd 9 18 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd 1 18 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/registerfile.vhd 20 41
-#rtl_idmap LIB_CORE.registerfile 25 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.registerfile.registerfile_arch 26 -entityid 25 -dep_ids 1 2
-#span LIB_CORE.decode.decode_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd 9 31 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd 1 31 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/decode.vhd 33 153
-#rtl_idmap LIB_CORE.decode 27 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.decode.decode_arch 28 -entityid 27 -dep_ids 1 2
-#span LIB_CORE.execute.execute_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd 9 30 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd 1 30 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/execute.vhd 32 249
-#rtl_idmap LIB_CORE.execute 29 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.execute.execute_arch 30 -entityid 29 -dep_ids 1 2
-#span LIB_CORE.alu.alu_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd 9 15 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd 1 15 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/alu.vhd 17 77
-#rtl_idmap LIB_CORE.alu 31 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.alu.alu_arch 32 -entityid 31 -dep_ids 1 2
-#span LIB_CORE.memory_access.memory_access_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd 9 25 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd 1 25 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/memory_access.vhd 27 122
-#rtl_idmap LIB_CORE.memory_access 33 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.memory_access.memory_access_arch 34 -entityid 33 -dep_ids 1 2
-#span LIB_CORE.writeback.writeback_arch /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/writeback.vhd 9 20 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/writeback.vhd 1 20 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/vhd/writeback.vhd 22 87
-#rtl_idmap LIB_CORE.writeback 35 -lang 2 -dep_ids 1 2
-#rtl_idmap LIB_CORE.writeback.writeback_arch 36 -entityid 35 -dep_ids 1 2
-#greybox WORK.writeback.writeback_arch 15
-#greybox WORK.registerfile.registerfile_arch 15
-#greybox WORK.memory_access.memory_access_arch 15
+#span WORK.core.core_arch ../design/vhd/core.vhd 9 18 ../design/vhd/core.vhd 1 18 ../design/vhd/core.vhd 20 287
+#rtl_idmap WORK.core 3 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.core.core_arch 4 -entityid 3 -dep_ids 1 2
+#span WORK.counter_calculation.counter_calculation_arch ../design/vhd/counter_calculation.vhd 9 16 ../design/vhd/counter_calculation.vhd 1 16 ../design/vhd/counter_calculation.vhd 18 43
+#rtl_idmap WORK.counter_calculation 5 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.counter_calculation.counter_calculation_arch 6 -entityid 5 -dep_ids 1 2
+#span WORK.fetch.fetch_arch ../design/vhd/fetch.vhd 9 19 ../design/vhd/fetch.vhd 1 19 ../design/vhd/fetch.vhd 21 38
+#rtl_idmap WORK.fetch 7 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.fetch.fetch_arch 8 -entityid 7 -dep_ids 1 2
+#span WORK.registerfile.registerfile_arch ../design/vhd/registerfile.vhd 9 18 ../design/vhd/registerfile.vhd 1 18 ../design/vhd/registerfile.vhd 20 41
+#rtl_idmap WORK.registerfile 9 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.registerfile.registerfile_arch 10 -entityid 9 -dep_ids 1 2
+#span WORK.decode.decode_arch ../design/vhd/decode.vhd 9 31 ../design/vhd/decode.vhd 1 31 ../design/vhd/decode.vhd 33 153
+#rtl_idmap WORK.decode 11 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.decode.decode_arch 12 -entityid 11 -dep_ids 1 2
+#span WORK.execute.execute_arch ../design/vhd/execute.vhd 9 30 ../design/vhd/execute.vhd 1 30 ../design/vhd/execute.vhd 32 249
+#rtl_idmap WORK.execute 13 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.execute.execute_arch 14 -entityid 13 -dep_ids 1 2
+#span WORK.alu.alu_arch ../design/vhd/alu.vhd 9 15 ../design/vhd/alu.vhd 1 15 ../design/vhd/alu.vhd 17 77
+#rtl_idmap WORK.alu 15 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.alu.alu_arch 16 -entityid 15 -dep_ids 1 2
+#span WORK.memory_access.memory_access_arch ../design/vhd/memory_access.vhd 9 25 ../design/vhd/memory_access.vhd 1 25 ../design/vhd/memory_access.vhd 27 122
+#rtl_idmap WORK.memory_access 17 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.memory_access.memory_access_arch 18 -entityid 17 -dep_ids 1 2
+#span WORK.writeback.writeback_arch ../design/vhd/writeback.vhd 9 20 ../design/vhd/writeback.vhd 1 20 ../design/vhd/writeback.vhd 22 87
+#rtl_idmap WORK.writeback 19 -lang 2 -dep_ids 1 2
+#rtl_idmap WORK.writeback.writeback_arch 20 -entityid 19 -dep_ids 1 2
+#greybox WORK.core.core_arch 15
+#greybox WORK.counter_calculation.counter_calculation_arch 15
 #greybox WORK.fetch.fetch_arch 15
+#greybox WORK.registerfile.registerfile_arch 15
+#greybox WORK.decode.decode_arch 15
 #greybox WORK.execute.execute_arch 15
 #greybox WORK.alu.alu_arch 15
-#greybox WORK.decode.decode_arch 15
-#greybox WORK.counter_calculation.counter_calculation_arch 15
-#greybox WORK.core.core_arch 15
-#greybox LIB_CORE.counter_calculation.counter_calculation_arch 15
-#greybox LIB_CORE.fetch.fetch_arch 15
-#greybox LIB_CORE.registerfile.registerfile_arch 15
-#greybox LIB_CORE.decode.decode_arch 15
-#greybox LIB_CORE.execute.execute_arch 15
-#greybox LIB_CORE.alu.alu_arch 15
-#greybox LIB_CORE.memory_access.memory_access_arch 15
-#greybox LIB_CORE.writeback.writeback_arch 15
-#child lib_core_writeback_writeback_arch LIB_CORE.lib_core_writeback_writeback_arch.writeback_arch LIB_CORE.writeback.writeback_arch -elabDuId 9
-#child lib_core_memory_access_memory_access_arch LIB_CORE.lib_core_memory_access_memory_access_arch.memory_access_arch LIB_CORE.memory_access.memory_access_arch -elabDuId 8
-#child alu LIB_CORE.alu.alu_arch LIB_CORE.alu.alu_arch -elabDuId 7
-#child lib_core_execute_execute_arch LIB_CORE.lib_core_execute_execute_arch.execute_arch LIB_CORE.execute.execute_arch -elabDuId 6 alu1 alu
-#child lib_core_decode_decode_arch LIB_CORE.lib_core_decode_decode_arch.decode_arch LIB_CORE.decode.decode_arch -elabDuId 5
-#child lib_core_registerfile_registerfile_arch LIB_CORE.lib_core_registerfile_registerfile_arch.registerfile_arch LIB_CORE.registerfile.registerfile_arch -elabDuId 4
-#child lib_core_fetch_fetch_arch LIB_CORE.lib_core_fetch_fetch_arch.fetch_arch LIB_CORE.fetch.fetch_arch -elabDuId 3
-#child lib_core_counter_calculation_counter_calculation_arch LIB_CORE.lib_core_counter_calculation_counter_calculation_arch.counter_calculation_arch LIB_CORE.counter_calculation.counter_calculation_arch -elabDuId 2
-#child core WORK.core.core_arch WORK.core.core_arch -elabDuId 1 counter_calculation1 lib_core_counter_calculation_counter_calculation_arch fetch1 lib_core_fetch_fetch_arch registerfile1 lib_core_registerfile_registerfile_arch decode1 lib_core_decode_decode_arch execute1 lib_core_execute_execute_arch memory_access1 lib_core_memory_access_memory_access_arch writeback1 lib_core_writeback_writeback_arch
-#child counter_calculation WORK.counter_calculation.counter_calculation_arch WORK.counter_calculation.counter_calculation_arch -elabDuId 10
-#child decode WORK.decode.decode_arch WORK.decode.decode_arch -elabDuId 11
-#child work_alu_alu_arch WORK.work_alu_alu_arch.alu_arch WORK.alu.alu_arch -elabDuId 13
-#child execute WORK.execute.execute_arch WORK.execute.execute_arch -elabDuId 12 alu1 work_alu_alu_arch
-#child fetch WORK.fetch.fetch_arch WORK.fetch.fetch_arch -elabDuId 14
-#child memory_access WORK.memory_access.memory_access_arch WORK.memory_access.memory_access_arch -elabDuId 15
-#child registerfile WORK.registerfile.registerfile_arch WORK.registerfile.registerfile_arch -elabDuId 16
-#child writeback WORK.writeback.writeback_arch WORK.writeback.writeback_arch -elabDuId 17
-#rtl_top_modules core counter_calculation decode execute fetch memory_access registerfile writeback
+#greybox WORK.memory_access.memory_access_arch 15
+#greybox WORK.writeback.writeback_arch 15
+#child writeback WORK.writeback.writeback_arch WORK.writeback.writeback_arch -elabDuId 9
+#child memory_access WORK.memory_access.memory_access_arch WORK.memory_access.memory_access_arch -elabDuId 8
+#child alu WORK.alu.alu_arch WORK.alu.alu_arch -elabDuId 7
+#child execute WORK.execute.execute_arch WORK.execute.execute_arch -elabDuId 6 alu1 alu
+#child decode WORK.decode.decode_arch WORK.decode.decode_arch -elabDuId 5
+#child registerfile WORK.registerfile.registerfile_arch WORK.registerfile.registerfile_arch -elabDuId 4
+#child fetch WORK.fetch.fetch_arch WORK.fetch.fetch_arch -elabDuId 3
+#child counter_calculation WORK.counter_calculation.counter_calculation_arch WORK.counter_calculation.counter_calculation_arch -elabDuId 2
+#child core WORK.core.core_arch WORK.core.core_arch -elabDuId 1 counter_calculation1 counter_calculation fetch1 fetch registerfile1 registerfile decode1 decode execute1 execute memory_access1 memory_access writeback1 writeback
+#rtl_top_modules core
 ##sde_property: file ./spyglass-1/lint/lint_abstract/spyglass_spysch/waiver/pragma2Waiver.swl -id 13
 ##sde_property: file pragma2Waiver_varfile.swl -id 14
-##totalGeneratedCount:        17
+##totalGeneratedCount:         3
 ##totalWaivedViolationCount:         0
-##totalReportCount:        17
+##totalReportCount:         3
 ##totalSuppressedCount:         0
 ##Active_Rules  LINT_abstract01

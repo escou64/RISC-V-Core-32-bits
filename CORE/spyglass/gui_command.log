@@ -7,3 +7,11 @@ source scripts/run_spyglass.tcl
 
 
 
+
+
+
+current_goal Design_Read -alltop
+
+
+gui_exit
+gui_exit

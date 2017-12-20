@@ -17,13 +17,13 @@ Option          Value             Origin  File                           LineNo
 -inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 29
 -lib            accellera_vlog=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_verilog CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 2
                 accellera=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_vhdl CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 3
-                LIB_CORE=>./LIB_CORE CmdLine -                              -
-                LIB_CORE=>./LIB_CORE CmdLine -                              -
+                LIB_CORE=>./libs/LIB_CORE CmdLine -                              -
+                LIB_CORE=>./libs/LIB_CORE CmdLine -                              -
                 WORK=>./spyglass-1/WORK CmdLine -                              -
                 accellera_vlog=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_verilog CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 2
                 accellera=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_vhdl CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 3
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
--libhdlfiles    LIB_CORE=>"../vhd/*" CmdLine -                              -
+-libhdlfiles    LIB_CORE=>"../design/vhd/alu.vhd ../design/vhd/core.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/writeback.vhd" CmdLine -                              -
 -mixed          <ON>              CmdLine -                              -
 -nl             <ON>              CmdLine -                              -
 -policy         auto-verify       CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/adv_lint/adv_lint_verify.spq 25
@@ -46,16 +46,16 @@ Option          Value             Origin  File                           LineNo
 -template       adv_lint/adv_lint_verify CmdLine -                              -
 -templatedir    /softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
 -wdir           ./spyglass-1/adv_lint/adv_lint_verify CmdLine -                              -
-<design_files>  ../vhd/RISCV_CORE_CONFIG.vhd APICall -                              -
-                ../vhd/alu.vhd    APICall -                              -
-                ../vhd/core.vhd   APICall -                              -
-                ../vhd/counter_calculation.vhd APICall -                              -
-                ../vhd/decode.vhd APICall -                              -
-                ../vhd/execute.vhd APICall -                              -
-                ../vhd/fetch.vhd  APICall -                              -
-                ../vhd/memory_access.vhd APICall -                              -
-                ../vhd/registerfile.vhd APICall -                              -
-                ../vhd/writeback.vhd APICall -                              -
+<design_files>  ../design/vhd/RISCV_CORE_CONFIG.vhd APICall -                              -
+                ../design/vhd/alu.vhd APICall -                              -
+                ../design/vhd/core.vhd APICall -                              -
+                ../design/vhd/counter_calculation.vhd APICall -                              -
+                ../design/vhd/decode.vhd APICall -                              -
+                ../design/vhd/execute.vhd APICall -                              -
+                ../design/vhd/fetch.vhd APICall -                              -
+                ../design/vhd/memory_access.vhd APICall -                              -
+                ../design/vhd/registerfile.vhd APICall -                              -
+                ../design/vhd/writeback.vhd APICall -                              -
 
 
 Rules Parameter

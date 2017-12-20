@@ -8,7 +8,8 @@ use SpyGlass;
 use SpyGlass::Objects;
 spyRebootMsgTagSupport();
 
-spySetMsgTagCount(95,32);
+spySetMsgTagCount(248,47);
+spyCacheTagValuesFromBatch(["pe_crossprobe_tag"]);
 spyParseTextMessageTagFile("./spyglass-1/lint/lint_rtl/spyglass_spysch/sg_msgtag.txt");
 
 if(!defined $::spyInIspy || !$::spyInIspy)
