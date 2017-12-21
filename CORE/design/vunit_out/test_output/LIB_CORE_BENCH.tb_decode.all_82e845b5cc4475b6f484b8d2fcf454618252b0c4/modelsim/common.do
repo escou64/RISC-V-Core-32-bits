@@ -22,11 +22,11 @@ proc _vunit_source_init_files_after_load {} {
 
 proc vunit_load {{vsim_extra_args ""}} {
     set vsim_failed [catch {
-        eval vsim ${vsim_extra_args} {-modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf {/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_decode/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/"} LIB_CORE_BENCH.tb_decode(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH}
+        eval vsim ${vsim_extra_args} {-modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf {/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_decode/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/"} LIB_CORE_BENCH.tb_decode(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH}
     }]
 
     if {${vsim_failed}} {
-       echo Command 'vsim ${vsim_extra_args} -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf {/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_decode/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/"} LIB_CORE_BENCH.tb_decode(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH' failed
+       echo Command 'vsim ${vsim_extra_args} -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf {/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_decode/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/"} LIB_CORE_BENCH.tb_decode(bench_arch)   -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH' failed
        echo Bad flag from vsim_extra_args?
        return 1
     }
@@ -122,10 +122,10 @@ proc _vunit_sim_restart {} {
 }
 
 proc vunit_compile {} {
-    set cmd_show {/usr/bin/python -u run.py --compile --gui LIB_CORE_BENCH.tb_decode.all}
+    set cmd_show {/usr/bin/python -u run.py --compile}
     puts "Re-compiling using command ${cmd_show}"
 
-    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile', '--gui', 'LIB_CORE_BENCH.tb_decode.all'], cwd='/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
+    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
 
     while {[gets $chan line] >= 0} {
         puts $line

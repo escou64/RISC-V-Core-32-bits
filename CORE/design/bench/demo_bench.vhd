@@ -21,16 +21,16 @@ end entity tb_demo;
 	
 architecture bench_arch of tb_demo is
 
-	component core port (		i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-								i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-								o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_dwrite		: out std_logic;
-								o_dsize			: out std_logic_vector(1 downto 0);
-								i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0));
-	end component core;
+	component pipeline port (		i_rstn			: in std_logic;
+									i_clk			: in std_logic;
+									o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+									i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
+									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
+									o_dwrite		: out std_logic;
+									o_dsize			: out std_logic_vector(1 downto 0);
+									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0));
+	end component pipeline;
 
 	signal s_rstn			: std_logic					:= '1';
 	signal s_clk			: std_logic					:= '1';
@@ -47,28 +47,28 @@ architecture bench_arch of tb_demo is
 
 	begin
 
-		core1 : core port map (		i_rstn		=> s_rstn,
-						i_clk		=> s_clk,
-						o_iaddress	=> s_imem_addr,
-						i_idata		=> s_imem_data,
-						o_daddress	=> s_dmem_daddress,
-						o_ddata		=> s_dmem_oddata,
-						o_dwrite	=> s_dmem_dwrite,
-						o_dsize		=> s_dmem_dsize,
-						i_ddata		=> s_dmem_iddata);
+		pipeline1 : pipeline port map (		i_rstn		=> s_rstn,
+											i_clk		=> s_clk,
+											o_iaddress	=> s_imem_addr,
+											i_idata		=> s_imem_data,
+											o_daddress	=> s_dmem_daddress,
+											o_ddata		=> s_dmem_oddata,
+											o_dwrite	=> s_dmem_dwrite,
+											o_dsize		=> s_dmem_dsize,
+											i_ddata		=> s_dmem_iddata);
 
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench.files/instructions.txt";
+			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/instructions.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_results			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench.files/results.txt";
+			file f_results			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/results.txt";
 			variable v_result_line	: line;
 			variable v_result		: std_logic_vector(c_NBITS - 1 downto 0);
 	
-			file f_pc			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench.files/pc.txt";
+			file f_pc			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/pc.txt";
 			variable v_pc_line	: line;
 			variable v_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	
