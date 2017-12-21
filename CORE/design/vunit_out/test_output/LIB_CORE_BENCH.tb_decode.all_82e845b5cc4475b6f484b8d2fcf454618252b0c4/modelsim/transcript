@@ -1,9 +1,22 @@
 # Reading pref.tcl
-# source "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/gui.do"
-# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/" 
-# Start time: 23:43:43 on Dec 20,2017
-# ** Warning: Design size of 11917 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
+# //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# source "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/gui.do"
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/" 
+# Start time: 11:18:40 on Dec 21,2017
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
 # List of VUnit commands:
 # vunit_help
 #   - Prints this help
@@ -21,7 +34,6 @@
 #   - and re-runs the simulation if the compile was successful
 add wave -position insertpoint sim:/tb_decode/*
 run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -107,12 +119,12 @@ run -all
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
 # ** Error: Problem in the register value !
-#    Time: 925 ns  Iteration: 0  Process: /tb_decode/line__128 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd
-# Break in Process line__128 at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd line 175
+#    Time: 925 ns  Iteration: 0  Process: /tb_decode/line__128 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd
+# Break in Process line__128 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd line 175
 add wave -position insertpoint sim:/tb_decode/decode1/*
 restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -198,7 +210,5 @@ run -all
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
 # ** Error: Problem in the register value !
-#    Time: 925 ns  Iteration: 0  Process: /tb_decode/line__128 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd
-# Break in Process line__128 at /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd line 175
-# End time: 23:44:58 on Dec 20,2017, Elapsed time: 0:01:15
-# Errors: 2, Warnings: 87
+#    Time: 925 ns  Iteration: 0  Process: /tb_decode/line__128 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd
+# Break in Process line__128 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/decode_bench.vhd line 175
