@@ -172,7 +172,7 @@ architecture bench_arch of tb_decode is
 				wait for HALF_PERIOD;
 				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
 				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
-				assert dcde_rs1 = "000000000000000000000000000001110" report "Problem in the register value !" severity error;
+				assert dcde_rs1 = alu_rd report "Problem in the register value !" severity error;
 				assert dcde_rs2 = "000000000000000000000000000010000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
@@ -193,7 +193,7 @@ architecture bench_arch of tb_decode is
 
 				ftch_inst <= "0000000" & "00000" & "01111" & c_FUNC3_ADD & "11111" & c_OPCODE32_OP;	
 				wait for PERIOD;
-				assert dcde_rs1 = "000000000000000000000000000100000" report "Problem in the register value !" severity error;
+				assert dcde_rs1 = alu_rd report "Problem in the register value !" severity error;
 				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
 
 				ftch_inst <= "0000000" & "01010" & "01110" & c_FUNC3_ORI & "10101" & c_OPCODE32_OP;
