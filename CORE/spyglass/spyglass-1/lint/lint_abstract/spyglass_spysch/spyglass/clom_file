@@ -18,7 +18,7 @@ Option          Value             Origin  File                           LineNo
                 LIB_CORE=>./libs/LIB_CORE CmdLine -                              -
                 WORK=>./spyglass-1/WORK CmdLine -                              -
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
--libhdlfiles    LIB_CORE=>"../design/vhd/alu.vhd ../design/vhd/core.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/writeback.vhd" CmdLine -                              -
+-libhdlfiles    LIB_CORE=>"../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/alu.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/writeback.vhd ../design/vhd/pipeline.vhd" CmdLine -                              -
 -mixed          <ON>              CmdLine -                              -
 -nl             <ON>              CmdLine -                              -
 -policy         lint              CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_abstract.spq 30
@@ -31,12 +31,12 @@ Option          Value             Origin  File                           LineNo
 -wdir           ./spyglass-1/lint/lint_abstract CmdLine -                              -
 <design_files>  ../design/vhd/RISCV_CORE_CONFIG.vhd APICall -                              -
                 ../design/vhd/alu.vhd APICall -                              -
-                ../design/vhd/core.vhd APICall -                              -
                 ../design/vhd/counter_calculation.vhd APICall -                              -
                 ../design/vhd/decode.vhd APICall -                              -
                 ../design/vhd/execute.vhd APICall -                              -
                 ../design/vhd/fetch.vhd APICall -                              -
                 ../design/vhd/memory_access.vhd APICall -                              -
+                ../design/vhd/pipeline.vhd APICall -                              -
                 ../design/vhd/registerfile.vhd APICall -                              -
                 ../design/vhd/writeback.vhd APICall -                              -
 

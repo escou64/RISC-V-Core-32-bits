@@ -10,8 +10,8 @@ use SpyGlass;
 spyClearWaiverHashInPerl(1);
 
 spyComputeWaivedViolCount("totalWaivedViolationCount"=>'0',
-                          "totalGeneratedCount"=>'1',
-                          "totalReportCount"=>'1'
+                          "totalGeneratedCount"=>'0',
+                          "totalReportCount"=>'0'
                          );
 
 1;

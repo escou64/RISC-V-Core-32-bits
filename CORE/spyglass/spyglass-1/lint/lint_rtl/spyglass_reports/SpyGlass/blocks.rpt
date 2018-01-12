@@ -1,7 +1,0 @@
-counter_calculation@@@@core.counter_calculation1
-fetch@@@@core.fetch1
-registerfile@@@@core.registerfile1
-decode@@@@core.decode1
-execute@@@@core.execute1
-memory_access@@@@core.memory_access1
-writeback@@@@core.writeback1

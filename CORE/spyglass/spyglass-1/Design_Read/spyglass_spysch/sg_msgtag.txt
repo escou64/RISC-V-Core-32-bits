@@ -1,9 +1,9 @@
--1 "ReportAbortReason" 2
+-1 "DetectTopDesignUnits" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"
 "1"
--1 "STX_VH_202" 2
+-1 "ElabSummary" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"

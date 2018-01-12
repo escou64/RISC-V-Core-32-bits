@@ -1,4 +1,4 @@
-SpyGlass run started at 04:41:53 PM on Dec 20 2017 
+SpyGlass run started at 09:32:00 AM on Jan 11 2018 
 
 SpyGlass Predictive Analyzer(R) - Version 5.6.0
 Last compiled on Dec 15 2015
@@ -23,14 +23,8 @@ Loading Shared library libVeLint-Linux4.spyso from /softl3/spyglass5_6_0/SpyGlas
 Loading Shared library libCoreRules-Linux4.spyso from /softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/lib/libCoreRules-Linux4.spyso 
 Loading Shared library libVeMoreLint-Linux4.spyso from /softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/policies/morelint/libVeMoreLint-Linux4.spyso 
 Loading Shared library libVhMoreLint-Linux4.spyso from /softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/policies/morelint/libVhMoreLint-Linux4.spyso 
-
-INFO [326]    SpyGlass Design Database './spyglass-1/.SG_SaveRestoreDB' can not be restored because:
-              Design restore operation failed as policies 'auto-verify' were not specified during design save (saved with policies 'openmore starc starc2005 erc simulation lint latch spyglass morelint timing Audits area miscellaneous srp srs_3.1 starc2002 starcad-21 txv power_est dft_dsm dft constraints const_intern1 clock-reset').              Saving Database again
-Enabling Following Rules Only For Save:
- GenTopLevelBlocksForAutoSoc
-Total Rules Enabled Only For Save : 1
 ##build_id : 5.6.0
-##system   : Linux cimeld58 3.2.0-4-amd64 #1 SMP Debian 3.2.81-2 x86_64
+##system   : Linux cimeld19 3.2.0-4-amd64 #1 SMP Debian 3.2.68-1+deb7u3 x86_64
 ##cwd      : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/spyglass
 ##lang     : Verilog+VHDL
 ##args     : -mSpyGlass::Compatibility::v2_7_3 \
@@ -63,18 +57,18 @@ Total Rules Enabled Only For Save : 1
              -enable_save_restore_builtin 'true' \
              -audit=yes \
              -64bit  \
+             ../design/vhd/RISCV_CORE_CONFIG.vhd \
              ../design/vhd/alu.vhd \
-             ../design/vhd/core.vhd \
              ../design/vhd/counter_calculation.vhd \
              ../design/vhd/decode.vhd \
              ../design/vhd/execute.vhd \
              ../design/vhd/fetch.vhd \
              ../design/vhd/memory_access.vhd \
              ../design/vhd/registerfile.vhd \
-             ../design/vhd/RISCV_CORE_CONFIG.vhd \
-             ../design/vhd/writeback.vhd
+             ../design/vhd/writeback.vhd \
+             ../design/vhd/pipeline.vhd
 \
-             -libhdlfiles LIB_CORE '/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd'
+             -libhdlfiles LIB_CORE '/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/pipeline.vhd'
 ##verbosity level   : 2
 ##exact cmdline arg : -batch -project spyglass-1.prj -goal adv_lint/adv_lint_struct -64bit
 ##spyglass_run.csh begins :
@@ -84,16 +78,16 @@ Total Rules Enabled Only For Save : 1
 ;	setenv SPYGLASS_DW_PATH /softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/dw_support
 ;	/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/bin/spyglass  -batch -project spyglass-1.prj -goal adv_lint/adv_lint_struct -64bit
 ##spyglass_run.csh ends
-##files    : ../design/vhd/alu.vhd \
-             ../design/vhd/core.vhd \
+##files    : ../design/vhd/RISCV_CORE_CONFIG.vhd \
+             ../design/vhd/alu.vhd \
              ../design/vhd/counter_calculation.vhd \
              ../design/vhd/decode.vhd \
              ../design/vhd/execute.vhd \
              ../design/vhd/fetch.vhd \
              ../design/vhd/memory_access.vhd \
              ../design/vhd/registerfile.vhd \
-             ../design/vhd/RISCV_CORE_CONFIG.vhd \
-             ../design/vhd/writeback.vhd
+             ../design/vhd/writeback.vhd \
+             ../design/vhd/pipeline.vhd
 
 ##FILEDEBUG[sgOpenFile]: Opening File './spyglass-1/adv_lint/adv_lint_struct/spyglass_spysch/auto-verify/width01.txt' in "w" mode ...
 ##FILEDEBUG[sgOpenFile]: Opening File './spyglass-1/adv_lint/adv_lint_struct/spyglass_spysch/auto-verify/width01_en.txt' in "r" mode ...
@@ -139,20 +133,20 @@ Total Rules Enabled Only For Save : 1
 Performing unification checks on SGDC... done
 
 INFO [76]    Using `./spyglass-1/WORK/64' as the Work Directory for 64bit precompiled dump.
-Checking Rule PrecompileLibCheck01 (Rule 1 of total 180) .... done (Time = 0.00s, Memory = -4.3K)
-Checking Rule PrecompileLibCheck02 (Rule 2 of total 180) .... done (Time = 0.00s, Memory = -2.5K)
-Checking Rule PrecompileLibCheck03 (Rule 3 of total 180) .... done (Time = 0.00s, Memory = -1.0K)
-Checking Rule PrecompileLibCheck04 (Rule 4 of total 180) .... done (Time = 0.00s, Memory = -3.0K)
+Checking Rule PrecompileLibCheck01 (Rule 1 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck02 (Rule 2 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck03 (Rule 3 of total 180) .... done (Time = 0.00s, Memory = -0.1K)
+Checking Rule PrecompileLibCheck04 (Rule 4 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_assume_path01 (Rule 5 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_sdcschema02 (Rule 6 of total 180) .... done (Time = 0.00s, Memory = 30.4K)
-Checking Rule SGDC_clock05 (Rule 7 of total 180) .... done (Time = 0.00s, Memory = -8.0K)
-Checking Rule SGDC_clock09 (Rule 8 of total 180) .... done (Time = 0.00s, Memory = -0.9K)
+Checking Rule SGDC_sdcschema02 (Rule 6 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_clock05 (Rule 7 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_clock09 (Rule 8 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_force_ta05 (Rule 9 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_require_path03 (Rule 10 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_require_value03 (Rule 11 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_voltagedomain05 (Rule 12 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_voltagedomain06 (Rule 13 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_voltagedomain07 (Rule 14 of total 180) .... done (Time = 0.00s, Memory = 15.0K)
+Checking Rule SGDC_voltagedomain06 (Rule 13 of total 180) .... done (Time = 0.00s, Memory = 1.6K)
+Checking Rule SGDC_voltagedomain07 (Rule 14 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_powerdomainoutputs02 (Rule 15 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_supply01 (Rule 16 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive01 (Rule 17 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
@@ -167,47 +161,32 @@ Checking Rule SGDC_waive09 (Rule 25 of total 180) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive10 (Rule 26 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive11 (Rule 27 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive12 (Rule 28 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive13 (Rule 29 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive13 (Rule 29 of total 180) .... done (Time = 0.00s, Memory = -0.4K)
 Checking Rule SGDC_waive21 (Rule 30 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive22 (Rule 31 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive30 (Rule 32 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive32 (Rule 33 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive33 (Rule 34 of total 180) .... done (Time = 0.00s, Memory = 1.6K)
-Checking Rule SGDC_waive36 (Rule 35 of total 180) .... done (Time = 0.00s, Memory = -3.8K)
+Checking Rule SGDC_waive33 (Rule 34 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive36 (Rule 35 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive38 (Rule 36 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_fifo01 (Rule 37 of total 180) .... done (Time = 0.00s, Memory = -3.1K)
-Checking Rule SGDC_libgroup01 (Rule 38 of total 180) .... done (Time = 0.00s, Memory = -8.0K)
-Checking Rule SGDC_libgroup02 (Rule 39 of total 180) .... done (Time = 0.00s, Memory = 0.9K)
+Checking Rule SGDC_fifo01 (Rule 37 of total 180) .... done (Time = 0.00s, Memory = 0.9K)
+Checking Rule SGDC_libgroup01 (Rule 38 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup02 (Rule 39 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_libgroup04 (Rule 40 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_power_data01 (Rule 41 of total 180) .... done (Time = 0.00s, Memory = 17.8K)
+Checking Rule SGDC_power_data01 (Rule 41 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_ungroup01 (Rule 42 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port06 (Rule 43 of total 180) .... done (Time = 0.00s, Memory = 15.0K)
-Checking Rule SGDC_abstract_port14 (Rule 44 of total 180) .... done (Time = 0.00s, Memory = -2.0K)
+Checking Rule SGDC_abstract_port06 (Rule 43 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port14 (Rule 44 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port15 (Rule 45 of total 180) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule SGDC_abstract_port18 (Rule 46 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule sdc_init_rule (Rule 47 of total 180) .... done (Time = 0.00s, Memory = 0.6K)
 Checking Rule CMD_ignorelibs01 (Rule 48 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportRuleNotRun (Rule 49 of total 180) .... done (Time = 0.00s, Memory = -0.4K)
-Checking Rule Av_license01 (Rule 50 of total 180) .... done (Time = 0.00s, Memory = 61.9K)
+Checking Rule ReportRuleNotRun (Rule 49 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule Av_license01 (Rule 50 of total 180) .... done (Time = 0.00s, Memory = 40.0K)
 Checking Rule Av_sanity01 (Rule 51 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule AnalyzeBBox (Rule 52 of total 180) .... done (Time = 0.00s, Memory = -2.0K)
+Checking Rule AnalyzeBBox (Rule 52 of total 180) .... done (Time = 0.00s, Memory = 0.0K)
 
 SpyGlass Rule Checking ABORTED.
-
-        ********** LICENSE EXPIRY NOTIFICATION **********
-        Some or all of the license features at following license server(s)
-        are about to expire.
-
-        License Server: 1721@cimekey1 (HostID: 90b11c1aea4e)
-            Example: Feature "oemunlock 2015.12 (or > 2015.12)" expires in next 11 days.
-
-        You can use command "lmstat -a -c <License Server>" to get
-        details about the given license.
-
-        Please contact Atrenta Support or your CAD administrator
-        to renew your licenses.
-        ********** END OF LICENSE EXPIRY NOTIFICATION **********
-
 
 Generating data for Console...
 
@@ -226,10 +205,10 @@ Generating auto_verify report from './spyglass-1/adv_lint/adv_lint_struct/spygla
 Policy specific data (reports) are present in the directory './spyglass-1/adv_lint/adv_lint_struct/spyglass_reports'.
 
 SpyGlass critical reports for the current run are present in directory './spyglass-1/consolidated_reports/adv_lint_adv_lint_struct/'.
-##SGDEBUG [PEAK_MEMORY]: 2137304 KB for entire run at 'GenerateConfMap.Init' stage
-##SGDEBUG [VMPEAK_MEMORY]: 2571808 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking aborted: 3 sec, 471771 KB, 2119896 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking aborted: 3 sec, 471771 KB, 2119896 KB
+##SGDEBUG [PEAK_MEMORY]: 797312 KB for entire run at 'GenerateConfMap.Init' stage
+##SGDEBUG [VMPEAK_MEMORY]: 1223108 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking aborted: 2 sec, 278033 KB, 779668 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking aborted: 2 sec, 278033 KB, 779668 KB
 
 
 =====================================================================================
@@ -393,6 +372,7 @@ SpyGlass critical reports for the current run are present in directory './spygla
  _vhAvMeta01          (VHDL   ) auto-verify     Yes            0 VSDU           -               
  Av_init01                      auto-verify     Yes            0 FLATDU2_WL     -               
  Av_initseq01                   auto-verify     Yes            0 FLATDU2_WL     -               
+ checkCMD_unset_option          SpyGlass        Yes            1 SETUP          -               
 -------------------------------------------------------------------------------------
 Note: VSDU type of rules (as seen in the above table) are not run on
       unsynthesized modules reported by 'ErrorAnalyzeBBox/InfoAnalyzeBBox' messages
@@ -404,12 +384,13 @@ Note: VSDU type of rules (as seen in the above table) are not run on
 Results Summary:
 ---------------------------------------------------------------------------------------------
    Goal Run           :      adv_lint/adv_lint_struct
+   Command-line read  :      0 fatal,      0 error,        1 warning,      0 information message 
 ** Policy auto-verify :      1 fatal,      0 error,        0 warning,      0 information message 
    -------------------------------------------------------------------------------------
-** Total              :      1 fatal,      0 error,        0 warning,      0 information message 
+** Total              :      1 fatal,      0 error,        1 warning,      0 information message 
 
-  Total Number of Generated Messages     :         1 (1 fatal, 0 error, 0 warning, 0 Info)
-  Number of Reported Messages            :         1 (1 fatal, 0 error, 0 warning, 0 Info)
+  Total Number of Generated Messages     :         2 (1 fatal, 0 error, 1 warning, 0 Info)
+  Number of Reported Messages            :         2 (1 fatal, 0 error, 1 warning, 0 Info)
 
   NOTE: It is recommended to first fix/reconcile fatals/errors reported on
         lines starting with ** as subsequent issues might be related to it.
@@ -450,11 +431,11 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
    Goal Violation Summary:
        Waived   Messages:                      0 Errors,      0 Warnings,      0 Infos
-       Reported Messages:         1 Fatals,    0 Errors,      0 Warnings,      0 Infos
+       Reported Messages:         1 Fatals,    0 Errors,      1 Warnings,      0 Infos
 ---------------------------------------------------------------------------------------------------
    
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 7 (Rule-checking terminated due to FATAL errors - usage or run error)
-SpyGlass total run-time is 0:0:3 (3 secs)
-SpyGlass run completed at 04:43:02 PM on Dec 20 2017
+SpyGlass total run-time is 0:0:2 (2 secs)
+SpyGlass run completed at 09:32:47 AM on Jan 11 2018

@@ -1,0 +1,64 @@
+/*
+
+Vivado v2017.1 (64-bit)
+SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+
+Process ID: 15761
+License: Customer
+
+Current time: 	1/11/18 9:55:30 AM CET
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: CentOS release 5.3 (Final)
+OS Version: 3.2.0-4-amd64
+OS Architecture: amd64
+Available processors (cores): 2
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 7 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/softl2/XILINX/vivado_17.1/Vivado/2017.1/tps/lnx64/jre
+JVM executable location: 	/softl2/XILINX/vivado_17.1/Vivado/2017.1/tps/lnx64/jre/bin/java
+Java library paths: /softl2/XILINX/vivado_17.1/Vivado/2017.1/lib/lnx64.o:/softslin/vivado_17.1/Vivado/2017.1/tps/lnx64/jre/lib/amd64:/softslin/vivado_17.1/Vivado/2017.1/tps/lnx64/jre/lib/amd64/server:/softslin/vivado_17.1/Vivado/2017.1/lnx64/tools/dot/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+
+User name: 	xph3app606
+User home directory: /tp/xph3app/xph3app606
+User working directory: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /softl2/XILINX/vivado_17.1/Vivado
+HDI_APPROOT: /softslin/vivado_17.1/Vivado/2017.1
+RDI_DATADIR: /softl2/XILINX/vivado_17.1/Vivado/2017.1/data
+RDI_BINDIR: /softl2/XILINX/vivado_17.1/Vivado/2017.1/bin
+
+User preferences location: /tp/xph3app/xph3app606/.Xilinx/Vivado
+Vivado preferences directory: /tp/xph3app/xph3app606/.Xilinx/Vivado/2017.1/vivado.xml
+Vivado layouts directory: /tp/xph3app/xph3app606/.Xilinx/Vivado/2017.1/layouts
+PlanAhead jar location: 	/softl2/XILINX/vivado_17.1/Vivado/2017.1/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	./.Xil/Vivado-15761-cimeld19
+
+GUI allocated memory:	174 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,876 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 56 MB (+56042kb) [00:00:15]
+// [Engine Memory]: 4,876 MB (+4961487kb) [00:00:15]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,881 MB. GUI used memory: 35 MB. Current time: 1/11/18 9:55:32 AM CET
+// [GUI Memory]: 59 MB (+56kb) [00:26:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,883 MB. GUI used memory: 33 MB. Current time: 1/11/18 10:25:32 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 4,883 MB. GUI used memory: 32 MB. Current time: 1/11/18 10:55:32 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 4,883 MB. GUI used memory: 31 MB. Current time: 1/11/18 11:25:32 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 4,883 MB. GUI used memory: 32 MB. Current time: 1/11/18 11:55:32 AM CET

@@ -10,9 +10,6 @@ Option          Value             Origin  File                           LineNo
 --strict_sgdc_check <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 39
 -I              /softslin/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_PHYSICAL_HOME/common/sgphysical/policies/physical CmdLine -                              -
 -batch          <ON>              CmdLine -                              -
--dbdir          ./spyglass-1/.SG_SaveRestoreDB CmdLine -                              -
--enable_save_restore <ON>              CmdLine -                              -
--enable_save_restore_builtin true              CmdLine -                              -
 -hdllibdu       <ON>              CmdLine -                              -
 -inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 29
 -lib            accellera_vlog=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_verilog CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 2
@@ -23,7 +20,7 @@ Option          Value             Origin  File                           LineNo
                 accellera_vlog=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_verilog CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 2
                 accellera=>/softl3/spyglass5_6_0/SpyGlass-5.6.0/SPYGLASS_HOME/auxi/ovl/precompile/Linux4/accellera_vhdl CmdFile $SPYGLASS_HOME/auxi/policy_data/auto-verify/autoload.f 3
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
--libhdlfiles    LIB_CORE=>"../design/vhd/alu.vhd ../design/vhd/core.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/writeback.vhd" CmdLine -                              -
+-libhdlfiles    LIB_CORE=>"../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/alu.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/writeback.vhd ../design/vhd/pipeline.vhd" CmdLine -                              -
 -mixed          <ON>              CmdLine -                              -
 -nl             <ON>              CmdLine -                              -
 -policy         auto-verify       CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/adv_lint/adv_lint_struct.spq 26
@@ -48,12 +45,12 @@ Option          Value             Origin  File                           LineNo
 -wdir           ./spyglass-1/adv_lint/adv_lint_struct CmdLine -                              -
 <design_files>  ../design/vhd/RISCV_CORE_CONFIG.vhd APICall -                              -
                 ../design/vhd/alu.vhd APICall -                              -
-                ../design/vhd/core.vhd APICall -                              -
                 ../design/vhd/counter_calculation.vhd APICall -                              -
                 ../design/vhd/decode.vhd APICall -                              -
                 ../design/vhd/execute.vhd APICall -                              -
                 ../design/vhd/fetch.vhd APICall -                              -
                 ../design/vhd/memory_access.vhd APICall -                              -
+                ../design/vhd/pipeline.vhd APICall -                              -
                 ../design/vhd/registerfile.vhd APICall -                              -
                 ../design/vhd/writeback.vhd APICall -                              -
 

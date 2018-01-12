@@ -2,29 +2,11 @@
 # Vivado v2017.1 (64-bit)
 # SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
 # IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
-# Start of session at: Wed Dec 20 16:50:56 2017
-# Process ID: 32489
+# Start of session at: Thu Jan 11 09:54:50 2018
+# Process ID: 15761
 # Current directory: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth
 # Command line: vivado
 # Log file: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/vivado.log
 # Journal file: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project fpga_synth /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/fpga_synth -part xc7z020clg484-1
-set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
-set_property target_language VHDL [current_project]
-set_property simulator_language VHDL [current_project]
-add_files -norecurse {/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-synth_design -rtl -name core
-set_property default_lib LIB_CORE [current_project]
-synth_design -rtl -name core
-synth_design -rtl -name core
-launch_runs synth_1
-wait_on_run synth_1
-close_design
-open_run synth_1 -name synth_1
-write_schematic /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/fpga_synth/schematic.sch
-write_verilog /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/fpga_synth/fpga_synth.v
-write_vhdl /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/synth/fpga_synth/fpga_synth.vhd

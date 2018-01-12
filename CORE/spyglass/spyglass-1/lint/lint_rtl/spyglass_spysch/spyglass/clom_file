@@ -18,7 +18,7 @@ Option          Value             Origin  File                           LineNo
                 LIB_CORE=>./libs/LIB_CORE CmdLine -                              -
                 WORK=>./spyglass-1/WORK CmdLine -                              -
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
--libhdlfiles    LIB_CORE=>"../design/vhd/alu.vhd ../design/vhd/core.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/writeback.vhd" CmdLine -                              -
+-libhdlfiles    LIB_CORE=>"../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/alu.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/registerfile.vhd ../design/vhd/writeback.vhd ../design/vhd/pipeline.vhd" CmdLine -                              -
 -mixed          <ON>              CmdLine -                              -
 -nl             <ON>              CmdLine -                              -
 -overloadrules  STARC05-2.1.6.5+severity=Warning CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_rtl.spq 108
@@ -173,12 +173,12 @@ Option          Value             Origin  File                           LineNo
 -wdir           ./spyglass-1/lint/lint_rtl CmdLine -                              -
 <design_files>  ../design/vhd/RISCV_CORE_CONFIG.vhd APICall -                              -
                 ../design/vhd/alu.vhd APICall -                              -
-                ../design/vhd/core.vhd APICall -                              -
                 ../design/vhd/counter_calculation.vhd APICall -                              -
                 ../design/vhd/decode.vhd APICall -                              -
                 ../design/vhd/execute.vhd APICall -                              -
                 ../design/vhd/fetch.vhd APICall -                              -
                 ../design/vhd/memory_access.vhd APICall -                              -
+                ../design/vhd/pipeline.vhd APICall -                              -
                 ../design/vhd/registerfile.vhd APICall -                              -
                 ../design/vhd/writeback.vhd APICall -                              -
 
@@ -248,17 +248,5 @@ latch           5.6.0           $SPYGLASS_HOME/policies/latch
 morelint        5.6.0           $SPYGLASS_HOME/policies/morelint
 timing          5.6.0           $SPYGLASS_HOME/policies/timing
 starc2002       5.6.0           $SPYGLASS_HOME/policies/starc2002
-Audits          5.6.0           $SPYGLASS_HOME/policies/Audits
-area            5.6.0           $SPYGLASS_HOME/policies/area
-miscellaneous   5.6.0           $SPYGLASS_HOME/policies/miscellaneous
-starcad-21      5.6.0           $SPYGLASS_HOME/policies/starcad-21
-txv             5.6.0           $SPYGLASS_HOME/policies/txv
-power_est       5.6.0           $SPYGLASS_HOME/policies/power_est
-lowpower        5.6.0           $SPYGLASS_HOME/policies/lowpower
-dft_dsm         5.6.0           $SPYGLASS_HOME/policies/dft_dsm
-dft             5.6.0           $SPYGLASS_HOME/policies/dft
-constraints     5.6.0           $SPYGLASS_HOME/policies/constraints
-const_intern1   5.6.0           $SPYGLASS_HOME/policies/constraints
-clock-reset     5.6.0           $SPYGLASS_HOME/policies/clock
 
 

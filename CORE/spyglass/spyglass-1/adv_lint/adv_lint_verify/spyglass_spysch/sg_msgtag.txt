@@ -5,3 +5,8 @@
 [-1]
 "RULEGROUP"
 ["auto-verify/Sanity"]
+-1 "checkCMD_unset_option" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"

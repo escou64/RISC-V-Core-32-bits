@@ -1,14 +1,14 @@
 ; # VARIABLES OF CONFIGURATION
-set VHDL_FILES {	../design/vhd/alu.vhd
-					../design/vhd/core.vhd
+set VHDL_FILES {	../design/vhd/RISCV_CORE_CONFIG.vhd
+					../design/vhd/alu.vhd
 					../design/vhd/counter_calculation.vhd
 					../design/vhd/decode.vhd
 					../design/vhd/execute.vhd
 					../design/vhd/fetch.vhd
 					../design/vhd/memory_access.vhd
 					../design/vhd/registerfile.vhd
-					../design/vhd/RISCV_CORE_CONFIG.vhd
-					../design/vhd/writeback.vhd}
+					../design/vhd/writeback.vhd
+					../design/vhd/pipeline.vhd}
 
 set LIBRARY_NAME	LIB_CORE
 set LIBRARY_PATH	./libs/LIB_CORE
