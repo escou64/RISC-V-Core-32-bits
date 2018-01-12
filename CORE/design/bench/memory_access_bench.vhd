@@ -27,7 +27,8 @@ architecture bench_arch of tb_memory_access is
 										i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
 										i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 										i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-										i_validity_exec		: in std_logic;
+										i_validity_exec	: in std_logic;
+										i_freeze		: in std_logic;
 										o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
 										o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
 										o_dwrite		: out std_logic;
@@ -41,7 +42,8 @@ architecture bench_arch of tb_memory_access is
 
 	signal s_rstn			: std_logic									:= '1';
 	signal s_clk			: std_logic									:= '1';
-	
+	signal s_freeze			: std_logic									:= '1';
+
 	signal s_exec_pc		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_PC_INIT;
 	signal s_exec_inst		: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
 	signal s_exec_validity	: std_logic					:= '1';
@@ -65,7 +67,8 @@ architecture bench_arch of tb_memory_access is
 													i_inst			=> s_exec_inst,
 													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
-													i_validity_exec	=> s_exec_validity,										
+													i_validity_exec	=> s_exec_validity,
+													i_freeze		=> s_freeze,										
 													o_daddress		=> s_dmem_daddress,
 													o_ddata			=> s_dmem_oddata,
 													o_dwrite		=> s_dmem_dwrite,

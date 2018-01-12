@@ -20,6 +20,7 @@ end entity tb_decode;
 architecture bench_arch of tb_decode is
 	component registerfile port (		i_rstn		: in std_logic;
 										i_clk		: in std_logic;
+										i_freeze		: in std_logic;
 										i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 										i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 										o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -36,6 +37,7 @@ architecture bench_arch of tb_decode is
 								i_validity_ftch		: in std_logic;
 								i_jump				: in std_logic;
 								i_branch			: in std_logic;
+								i_freeze		: in std_logic;
 								i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);
 								i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);
@@ -58,6 +60,7 @@ architecture bench_arch of tb_decode is
 
 	signal rstn					: std_logic												:= '1';
 	signal clk					: std_logic												:= '1';
+	signal freeze				: std_logic												:= '1';
 	signal regf_rs1select		: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "11111";
 	signal regf_rs2select		: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "01010";
 	signal regf_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
@@ -89,6 +92,7 @@ architecture bench_arch of tb_decode is
 	begin
 		registerfile1 : registerfile port map (		i_rstn		=> rstn,
 													i_clk		=> clk,	
+													i_freeze	=> freeze,
 													i_rs1select	=> regf_rs1select,
 													i_rs2select	=> regf_rs2select,
 													o_rs1		=> regf_rs1,
@@ -104,6 +108,7 @@ architecture bench_arch of tb_decode is
 										i_validity_ftch		=> ftch_validity,
 										i_branch			=> exec_branch,
 										i_jump				=> exec_jump,
+										i_freeze			=> freeze,
 										i_rd_alu			=> alu_rd,
 										i_rd_exec			=> exec_rd,
 										i_rd_accm			=> accm_rd,

@@ -20,6 +20,7 @@ end entity tb_registerfile;
 architecture bench_arch of tb_registerfile is
 	component registerfile port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
+									i_freeze	: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -31,6 +32,7 @@ architecture bench_arch of tb_registerfile is
 
 	signal sig_rstn			: std_logic	:= '1';
 	signal sig_clk			: std_logic := '1';
+	signal sig_freeze		: std_logic := '1';
 	signal sig_rs1select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "11111";
 	signal sig_rs2select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "01010";
 	signal sig_rs1			: std_logic_vector(c_NBITS - 1 downto 0);
@@ -42,6 +44,7 @@ architecture bench_arch of tb_registerfile is
 	begin
 		registerfile1 : registerfile port map (	i_rstn		=> sig_rstn,
 												i_clk		=> sig_clk,	
+												i_freeze	=> sig_freeze,
 												i_rs1select	=> sig_rs1select,
 												i_rs2select	=> sig_rs2select,
 												o_rs1		=> sig_rs1,

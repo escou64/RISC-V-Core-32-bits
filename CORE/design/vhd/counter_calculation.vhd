@@ -10,6 +10,7 @@ entity counter_calculation is port (	i_rstn			: in std_logic;
 										i_clk			: in std_logic;
 										i_jump			: in std_logic;
 										i_branch		: in std_logic;
+										i_freeze		: in std_logic;
 										i_newpc			: in std_logic_vector(c_NBITS - 1 downto 0);
 										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0));
 
@@ -29,7 +30,7 @@ architecture counter_calculation_arch of counter_calculation is
 			begin
 				if (i_rstn = '0') then
 					s_pc_final <= c_PC_INIT;
-				elsif (i_clk'event and i_clk = '1') then
+				elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
 					s_pc_final <= s_pc;
 				end if;
 		end process seq;

@@ -8,6 +8,7 @@ use LIB_CORE.RISCV_CORE_CONFIG.all;
 
 entity registerfile is port (	i_rstn		: in std_logic;
 								i_clk		: in std_logic;
+								i_freeze	: in std_logic;
 								i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 								o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -29,7 +30,7 @@ architecture registerfile_arch of registerfile is
 				for I in 0 to c_NREGISTERS - 1 loop
 					s_registers(I) <= c_REG_INIT;
 				end loop;
-			elsif (i_clk'event and i_clk = '1') then
+			elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
 				if ((i_write = '1') and (to_integer(unsigned(i_rdselect)) /= 0)) then				
 					s_registers(to_integer(unsigned(i_rdselect))) <= i_data;
 				end if;

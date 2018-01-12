@@ -13,6 +13,7 @@ entity execute is port (i_rstn			: in std_logic;
 						i_validity_dcde	: in std_logic;
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
+						i_freeze		: in std_logic;
 						o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_validity_alu	: out std_logic;
 						o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
@@ -136,8 +137,10 @@ architecture execute_arch of execute is
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
 						s_op2(0)			<= '0';
-						s_op2(20 downto 1)	<= i_inst(31 downto 12);
-						s_op2(31 downto 21)	<= (others => i_inst(31));
+						s_op2(10 downto 1)	<= i_inst(30 downto 21);
+						s_op2(11)			<= i_inst(20);
+						s_op2(19 downto 12)	<= i_inst(19 downto 12);
+						s_op2(31 downto 20)	<= (others => i_inst(31));
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '1';
@@ -159,9 +162,10 @@ architecture execute_arch of execute is
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
 						s_op2(0)			<= '0';
-						s_op2(5 downto 1)	<= i_inst(11 downto 7);
-						s_op2(12 downto 6)	<= i_inst(31 downto 25);
-						s_op2(31 downto 13)	<= (others => i_inst(31));
+						s_op2(4 downto 1)	<= i_inst(11 downto 8);
+						s_op2(10 downto 5)	<= i_inst(30 downto 25);
+						s_op2(11)			<= i_inst(7);
+						s_op2(31 downto 12)	<= (others => i_inst(31));
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
 						s_jump				<= '0';
@@ -211,7 +215,7 @@ architecture execute_arch of execute is
 				o_rs2				<= c_REG_INIT;
 				o_rd				<= c_REG_INIT;
 				o_validity			<= '0';
-			elsif (i_clk'event) and (i_clk = '1') then
+			elsif (i_clk'event) and (i_clk = '1') and (i_freeze = '1') then
 				o_pc				<= i_pc;
 				o_inst				<= i_inst;
 				o_rs2				<= i_rs2;

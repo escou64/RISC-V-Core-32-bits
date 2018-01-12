@@ -21,54 +21,68 @@ end entity tb_demo;
 	
 architecture bench_arch of tb_demo is
 
-	component pipeline port (		i_rstn			: in std_logic;
-									i_clk			: in std_logic;
-									o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-									i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
-									o_daddress		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_ddata			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_dwrite		: out std_logic;
-									o_dsize			: out std_logic_vector(1 downto 0);
-									i_ddata			: in std_logic_vector(c_NBITS - 1 downto 0));
+	component pipeline port (	i_rstn			: in std_logic;
+								i_clk			: in std_logic;
+								o_imem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_imem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_imem_write	: out std_logic;
+								o_imem_size		: out std_logic_vector(1 downto 0);
+								i_imem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_imem_miss		: in std_logic;
+								o_dmem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_dmem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_dmem_write	: out std_logic;
+								o_dmem_size		: out std_logic_vector(1 downto 0);
+								i_dmem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
+								i_dmem_miss		: in std_logic);
 	end component pipeline;
 
 	signal s_rstn			: std_logic					:= '1';
 	signal s_clk			: std_logic					:= '1';
 
 	signal s_imem_addr		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_imem_data		: std_logic_vector(c_NBITS - 1 downto 0);	
+	signal s_imem_odata		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_imem_write		: std_logic;
+	signal s_imem_size		: std_logic_vector(1 downto 0);		
+	signal s_imem_idata		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_imem_miss		: std_logic					:= '1';
 
-	signal s_dmem_daddress	: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_dmem_oddata	: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_dmem_dwrite	: std_logic;
-	signal s_dmem_dsize		: std_logic_vector(1 downto 0);
-	signal s_dmem_iddata	: std_logic_vector(c_NBITS - 1 downto 0);	
-
+	signal s_dmem_addr		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_dmem_odata		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_dmem_write		: std_logic;
+	signal s_dmem_size		: std_logic_vector(1 downto 0);
+	signal s_dmem_idata		: std_logic_vector(c_NBITS - 1 downto 0)	:= "11111111111111111111101000101101";	
+	signal s_dmem_miss		: std_logic					:= '1';
 
 	begin
 
-		pipeline1 : pipeline port map (		i_rstn		=> s_rstn,
-											i_clk		=> s_clk,
-											o_iaddress	=> s_imem_addr,
-											i_idata		=> s_imem_data,
-											o_daddress	=> s_dmem_daddress,
-											o_ddata		=> s_dmem_oddata,
-											o_dwrite	=> s_dmem_dwrite,
-											o_dsize		=> s_dmem_dsize,
-											i_ddata		=> s_dmem_iddata);
+		pipeline1 : pipeline port map (		i_rstn			=> s_rstn,
+											i_clk			=> s_clk,
+											o_imem_addr		=> s_imem_addr,
+											o_imem_data		=> s_imem_odata,
+											o_imem_write	=> s_imem_write,
+											o_imem_size		=> s_imem_size,
+											i_imem_data		=> s_imem_idata,
+											i_imem_miss		=> s_imem_miss,
+											o_dmem_addr		=> s_dmem_addr,
+											o_dmem_data		=> s_dmem_odata,
+											o_dmem_write	=> s_dmem_write,
+											o_dmem_size		=> s_dmem_size,
+											i_dmem_data		=> s_dmem_idata,
+											i_dmem_miss		=> s_dmem_miss);
 
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			file f_inst				: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/instructions.txt";
+			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/instructions.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_results			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/results.txt";
+			file f_results			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/results.txt";
 			variable v_result_line	: line;
 			variable v_result		: std_logic_vector(c_NBITS - 1 downto 0);
 	
-			file f_pc			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/pc.txt";
+			file f_pc			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/demo_bench/pc.txt";
 			variable v_pc_line	: line;
 			variable v_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	
@@ -84,14 +98,14 @@ architecture bench_arch of tb_demo is
 				while not endfile(f_inst) loop
 					readline(f_inst,v_inst_line);
 					read(v_inst_line, v_inst);
-					s_imem_data <= v_inst;
+					s_imem_idata <= v_inst;
 
 					wait for PERIOD;
 
-					if s_dmem_dwrite = '1' then
-						write(v_result_line,s_dmem_oddata, right, 15);
-						hwrite(v_result_line,s_dmem_oddata, right, 15);
-						write(v_result_line,to_integer(unsigned(s_dmem_oddata)), right, 15);
+					if s_dmem_write = '1' then
+						write(v_result_line,s_dmem_odata, right, 15);
+						hwrite(v_result_line,s_dmem_odata, right, 15);
+						write(v_result_line,to_integer(unsigned(s_dmem_odata)), right, 15);
 						writeline(f_results, v_result_line);						
 					end if;
 
@@ -100,16 +114,16 @@ architecture bench_arch of tb_demo is
 					hwrite(v_pc_line,s_imem_addr, right, 15);
 					write(v_pc_line,to_integer(unsigned(s_imem_addr)), right, 15);
 					writeline(f_pc, v_pc_line);
-				end loop;				
-		
-				s_imem_data <= (others => '0');	
+				end loop;							
+
+				s_imem_idata <= (others => '0');	
 				for I in 0 to 4 loop
 					wait for PERIOD;
 
-					if s_dmem_dwrite = '1' then
-						write(v_result_line,s_dmem_oddata, right, 15);
-						hwrite(v_result_line,s_dmem_oddata, right, 15);
-						write(v_result_line,to_integer(unsigned(s_dmem_oddata)), right, 15);
+					if s_dmem_write = '1' then
+						write(v_result_line,s_dmem_odata, right, 15);
+						hwrite(v_result_line,s_dmem_odata, right, 15);
+						write(v_result_line,to_integer(unsigned(s_dmem_odata)), right, 15);
 						writeline(f_results, v_result_line);
 					end if;
 

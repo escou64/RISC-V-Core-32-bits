@@ -17,7 +17,8 @@ entity memory_access is port (	i_rstn          : in std_logic;
                                 o_ddata         : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_dwrite        : out std_logic;
 								o_dsize			: out std_logic_vector(1 downto 0);
-                                i_ddata         : in std_logic_vector(c_NBITS - 1 downto 0);       
+                                i_ddata         : in std_logic_vector(c_NBITS - 1 downto 0);
+								i_freeze		: in std_logic;     
                                 o_pc            : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_inst          : out std_logic_vector(c_NBITS - 1 downto 0);
                                 o_rd            : out std_logic_vector(c_NBITS - 1 downto 0);
@@ -112,7 +113,7 @@ architecture memory_access_arch of memory_access is
                                         o_inst <= c_REG_INIT;
                                         o_rd <= c_REG_INIT;
                                         o_validity <= '0';
-                                elsif (i_clk'event and i_clk = '1') then
+                                elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
                                         o_pc <= i_pc;
                                         o_inst <= i_inst;
                                         o_rd <= s_rd;

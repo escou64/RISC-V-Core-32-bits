@@ -25,7 +25,11 @@ architecture bench_arch of tb_fetch is
 										i_idata			: in std_logic_vector(c_NBITS - 1 downto 0);
 										i_jump			: in std_logic;
 										i_branch		: in std_logic;
+										i_freeze		: in std_logic;
 										o_iaddress		: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_write			: out std_logic;
+										o_size			: out std_logic_vector(1 downto 0);
 										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
 										o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
 										o_validity		: out std_logic);
@@ -33,9 +37,13 @@ architecture bench_arch of tb_fetch is
 
 	signal s_rstn				: std_logic									:= '1';
 	signal s_clk				: std_logic									:= '1';
+	signal s_freeze				: std_logic									:= '1';
 	signal s_calc_pc			: std_logic_vector(c_NBITS - 1 downto 0)	:= c_PC_INIT;
 	signal s_imem_addr			: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_imem_data			: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
+	signal s_imem_odata			: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_imem_write			: std_logic;
+	signal s_imem_size			: std_logic_vector(1 downto 0);
+	signal s_imem_idata			: std_logic_vector(c_NBITS - 1 downto 0)	:= c_REG_INIT;
 	signal s_ftch_pc			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_validity		: std_logic;
@@ -46,10 +54,14 @@ architecture bench_arch of tb_fetch is
 		fetch1 : fetch port map (				i_rstn			=> s_rstn,
 												i_clk			=> s_clk,	
 												i_pc			=> s_calc_pc,
-												i_idata			=> s_imem_data,
+												i_idata			=> s_imem_idata,
 												i_jump			=> s_exec_jump,
 												i_branch		=> s_exec_branch,
+												i_freeze		=> s_freeze,
 												o_iaddress		=> s_imem_addr,
+												o_data			=> s_imem_odata,
+												o_write			=> s_imem_write,
+												o_size			=> s_imem_size,
 												o_pc			=> s_ftch_pc,
 												o_inst			=> s_ftch_inst,
 												o_validity		=> s_ftch_validity);
@@ -77,12 +89,12 @@ architecture bench_arch of tb_fetch is
 
 				for I in 0 to 20 loop
 					s_calc_pc		<= v_calc_pc;
-					s_imem_data		<= v_imem_data;
+					s_imem_idata	<= v_imem_data;
 					wait for HALF_PERIOD;
 					assert s_imem_addr = s_calc_pc report "Problem for accessing instruction memory" severity error;
 					wait for HALF_PERIOD;
 					assert s_ftch_pc = s_calc_pc report "Problem for fetching instruction 1" severity error;
-					assert s_ftch_inst = s_imem_data report "Problem for fetching instruction 2" severity error;
+					assert s_ftch_inst = s_imem_idata report "Problem for fetching instruction 2" severity error;
 					assert s_ftch_validity = '1' report "Problem for fetching instruction 3" severity error;
 
 					v_calc_pc	:= v_calc_pc + "1011";

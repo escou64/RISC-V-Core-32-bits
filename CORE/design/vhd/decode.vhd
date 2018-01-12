@@ -13,6 +13,7 @@ entity decode is port (	i_rstn			: in std_logic;
 						i_validity_ftch	: in std_logic;
 						i_jump			: in std_logic;
 						i_branch		: in std_logic;
+						i_freeze		: in std_logic;
 						i_rd_alu		: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rd_exec		: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rd_accm		: in std_logic_vector(c_NBITS - 1 downto 0);
@@ -135,7 +136,7 @@ architecture decode_arch of decode is
 					for I in 2 downto 0 loop
 						s_previous_rd(I) <= (others => '0');
 					end loop;
-				elsif (i_clk'event and i_clk = '1') then
+				elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
 					o_pc <= i_pc;
 					o_inst <= i_inst;
 					o_rs1 <= s_rs1;
