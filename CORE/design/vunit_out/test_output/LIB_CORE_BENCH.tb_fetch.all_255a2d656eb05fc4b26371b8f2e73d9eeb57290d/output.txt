@@ -1,9 +1,0 @@
-# End time: 17:00:43 on Jan 12,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 37
-# vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_fetch.all_255a2d656eb05fc4b26371b8f2e73d9eeb57290d/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_fetch(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_fetch/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_fetch.all_255a2d656eb05fc4b26371b8f2e73d9eeb57290d/,tb path : /media/data/Projects/RISC-V-Core-32-bits/CORE/design/bench/" 
-# Start time: 17:00:43 on Jan 12,2018
-# ** Warning: Design size of 11513 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10

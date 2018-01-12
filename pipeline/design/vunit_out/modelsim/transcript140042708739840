@@ -1,0 +1,18 @@
+# do /home/escou64/.local/lib/python2.7/site-packages/vunit/tcl_read_eval_loop.tcl
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_registerfile(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_registerfile/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_registerfile.all_8ef75bb7bfb910e75eef556aa75b8a83aa1c7d5a/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/" 
+# Start time: 23:02:29 on Jan 12,2018
+# ** Warning: Design size of 11423 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 23:02:30 on Jan 12,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_fetch.all_255a2d656eb05fc4b26371b8f2e73d9eeb57290d/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_fetch(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_fetch/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vunit_out/test_output/LIB_CORE_BENCH.tb_fetch.all_255a2d656eb05fc4b26371b8f2e73d9eeb57290d/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/bench/" 
+# Start time: 23:02:30 on Jan 12,2018
+# ** Fatal: (vsim-3817) Port "i_data" of entity "fetch" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fetch/fetch1 File: /home/escou64/Projects/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 23:02:30 on Jan 12,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
