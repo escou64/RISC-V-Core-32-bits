@@ -7,7 +7,10 @@ package RISCV_CORE_CONFIG is
 	--Specific constants to implement this core
 	constant c_NBITS				: integer := 32;
 	constant c_NREGISTERS			: integer := 32;
+	constant c_NCOUNTERBITS			: integer := 64;
 	constant c_SELECTREGISTERBITS	: integer := 5;
+
+	constant c_ADDR_CSR				: integer := 12;
 
 	constant c_PC_INIT	: std_logic_vector(c_NBITS - 1 downto 0) := "00000000000000000000000000000000";
 	constant c_PC_STEP	: std_logic_vector(c_NBITS - 1 downto 0) := "00000000000000000000000000000100";
@@ -80,4 +83,8 @@ package RISCV_CORE_CONFIG is
 	constant c_FUNC3_SRA		: std_logic_vector(2 downto 0) := "101";
 	constant c_FUNC3_OR			: std_logic_vector(2 downto 0) := "110";
 	constant c_FUNC3_AND		: std_logic_vector(2 downto 0) := "111";
+
+	--CSRs
+	constant c_CSR_CYCLE		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110000000000";
+	constant c_CSR_CYCLEH		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110010000000";
 end package RISCV_CORE_CONFIG;

@@ -19,8 +19,7 @@ entity execute is port (i_rstn			: in std_logic;
 						o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_jump			: out std_logic;
 						o_branch		: out std_logic;
-						o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+						o_inst			: out std_logic_vector(14 downto 0);
 						o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 						o_validity		: out std_logic);		
@@ -65,7 +64,7 @@ architecture execute_arch of execute is
 	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
 
-	comb1 : process (i_clk, i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
+	comb1 : process (i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
 		begin
 		if s_validity_inputs = '1' then
 			if (i_inst(1 downto 0) /= "11") then
@@ -210,14 +209,12 @@ architecture execute_arch of execute is
 	seq : process (i_rstn, i_clk)
 		begin
 			if i_rstn = '0' then
-				o_pc				<= c_PC_INIT;
-				o_inst				<= c_REG_INIT;
+				o_inst				<= (others => '0');
 				o_rs2				<= c_REG_INIT;
 				o_rd				<= c_REG_INIT;
 				o_validity			<= '0';
 			elsif (i_clk'event) and (i_clk = '1') and (i_freeze = '1') then
-				o_pc				<= i_pc;
-				o_inst				<= i_inst;
+				o_inst				<= i_inst(14 downto 0);
 				o_rs2				<= i_rs2;
 				o_rd				<= s_rd;
 				o_validity			<= s_validity_global;

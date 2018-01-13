@@ -74,7 +74,7 @@ architecture pipeline_arch of pipeline is
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
-	component registerfile port (	i_rstn		: in std_logic;
+	component reg_integer port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
 									i_freeze	: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -99,8 +99,7 @@ architecture pipeline_arch of pipeline is
 							o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_jump			: out std_logic;
 							o_branch		: out std_logic;
-							o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-							o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+							o_inst			: out std_logic_vector(14 downto 0);
 							o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 							o_validity		: out std_logic);		
@@ -108,8 +107,7 @@ architecture pipeline_arch of pipeline is
 
 	component memory_access port (	i_rstn			: in std_logic;
 									i_clk			: in std_logic;
-									i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+									i_inst			: in std_logic_vector(14 downto 0);
 									i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 									i_validity		: in std_logic;
@@ -119,16 +117,12 @@ architecture pipeline_arch of pipeline is
 									o_write			: out std_logic;
 									o_size			: out std_logic_vector(1 downto 0);
 									i_data			: in std_logic_vector(c_NBITS - 1 downto 0);		
-									o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+									o_inst			: out std_logic_vector(11 downto 0);
 									o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
 									o_validity		: out std_logic );
 	end component;
 
-	component writeback port (	i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+	component writeback port (	i_inst			: in std_logic_vector(11 downto 0);
 								i_validity		: in std_logic;
 								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_write			: out std_logic;
@@ -179,8 +173,7 @@ architecture pipeline_arch of pipeline is
 	signal s_dcde_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dcde_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
 
-	signal s_exec_pc		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_exec_inst		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_exec_inst		: std_logic_vector(14 downto 0);
 	signal s_exec_validity	: std_logic;
 	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -195,8 +188,7 @@ architecture pipeline_arch of pipeline is
 	signal s_dmem_idata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_freeze	: std_logic;
 
-	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_accm_inst		: std_logic_vector(11 downto 0);
 	signal s_accm_validity	: std_logic;
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_addr		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -237,7 +229,7 @@ architecture pipeline_arch of pipeline is
 									o_inst			=> s_ftch_inst,
 									o_validity		=> s_ftch_validity);
 
-		registerfile1 : registerfile port map (	i_rstn		=> s_rstn,
+		reg_integer1 : reg_integer port map (	i_rstn		=> s_rstn,
 												i_clk		=> s_clk,	
 												i_freeze	=> s_freeze,
 												i_rs1select	=> s_regf_rs1select,
@@ -285,7 +277,6 @@ architecture pipeline_arch of pipeline is
 										o_newpc				=> s_exec_newpc,
 										o_jump				=> s_exec_jump,
 										o_branch			=> s_exec_branch,
-										o_pc				=> s_exec_pc,
 										o_inst				=> s_exec_inst,
 										o_rs2				=> s_exec_rs2,
 										o_rd				=> s_exec_rd,
@@ -293,7 +284,6 @@ architecture pipeline_arch of pipeline is
 
 		memory_access1 : memory_access port map (	i_rstn			=> s_rstn,
 													i_clk			=> s_clk,
-													i_pc			=> s_exec_pc,
 													i_inst			=> s_exec_inst,
 													i_rs2			=> s_exec_rs2,
 													i_rd			=> s_exec_rd,
@@ -304,15 +294,11 @@ architecture pipeline_arch of pipeline is
 													o_write			=> s_accm_write,
 													o_size			=> s_accm_size,
 													i_data			=> s_dmem_idata,		
-													o_pc			=> s_accm_pc,
 													o_inst			=> s_accm_inst,
 													o_rd			=> s_accm_rd,
 													o_validity		=> s_accm_validity);
 
-	writeback1 : writeback port map (	i_rstn			=> s_rstn,
-										i_clk			=> s_clk,
-										i_pc			=> s_accm_pc,
-										i_inst			=> s_accm_inst,
+	writeback1 : writeback port map (	i_inst			=> s_accm_inst,
 										i_validity		=> s_accm_validity,
 										i_rd			=> s_accm_rd,
 										o_write			=> s_regf_write,

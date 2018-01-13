@@ -1,7 +1,7 @@
-# End time: 21:18:12 on Jan 13,2018, Elapsed time: 0:00:00
+# End time: 21:47:29 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 37
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_alu(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_alu.all_6ef7f5095133df80d8c0801adac8c73c6f781a1e/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 21:18:12 on Jan 13,2018
+# Start time: 21:47:29 on Jan 13,2018
 # ** Warning: Design size of 11480 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.

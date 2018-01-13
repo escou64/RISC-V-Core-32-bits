@@ -20,7 +20,7 @@ end reg_integer;
 
 architecture reg_integer_arch of reg_integer is 
 	type regfile is array (0 to c_NREGISTERS - 1) of std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_registers : regfile;
+	signal r_integers : regfile;
 
 	begin
 
@@ -28,15 +28,15 @@ architecture reg_integer_arch of reg_integer is
 			begin
 			if (i_rstn = '0') then
 				for I in 0 to c_NREGISTERS - 1 loop
-					s_registers(I) <= c_REG_INIT;
+					r_integers(I) <= c_REG_INIT;
 				end loop;
 			elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
 				if ((i_write = '1') and (to_integer(unsigned(i_rdselect)) /= 0)) then				
-					s_registers(to_integer(unsigned(i_rdselect))) <= i_data;
+					r_integers(to_integer(unsigned(i_rdselect))) <= i_data;
 				end if;
 			end if;
 		end process seq;
 
-		o_rs1 <= s_registers(to_integer(unsigned(i_rs1select)));
-		o_rs2 <= s_registers(to_integer(unsigned(i_rs2select)));
+		o_rs1 <= r_integers(to_integer(unsigned(i_rs1select)));
+		o_rs2 <= r_integers(to_integer(unsigned(i_rs2select)));
 end reg_integer_arch;

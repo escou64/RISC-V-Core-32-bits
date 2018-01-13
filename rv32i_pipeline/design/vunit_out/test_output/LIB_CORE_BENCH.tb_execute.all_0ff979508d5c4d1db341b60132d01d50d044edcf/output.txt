@@ -1,11 +1,11 @@
-# End time: 21:18:12 on Jan 13,2018, Elapsed time: 0:00:00
+# End time: 21:47:29 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_execute.all_0ff979508d5c4d1db341b60132d01d50d044edcf/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_execute.all_0ff979508d5c4d1db341b60132d01d50d044edcf/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 21:18:12 on Jan 13,2018
+# Start time: 21:47:29 on Jan 13,2018
 # ** Fatal: (vsim-3348) Port length (15) does not match actual length (32) for port "/tb_execute/execute1/o_inst".
 #    Time: 0 ps  Iteration: 0  Instance: /tb_execute/execute1 File: /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd Line: 22
 # FATAL ERROR while loading design
 # Error loading design
 Error loading design
-# End time: 21:18:13 on Jan 13,2018, Elapsed time: 0:00:01
+# End time: 21:47:29 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0

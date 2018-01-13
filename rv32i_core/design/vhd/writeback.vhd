@@ -6,10 +6,7 @@ use IEEE.numeric_std.all;
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
 
-entity writeback is port (	i_rstn			: in std_logic;
-							i_clk			: in std_logic;
-							i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+entity writeback is port (	i_inst			: in std_logic_vector(11 downto 0);
 							i_validity		: in std_logic;
 							i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 							o_write			: out std_logic;
@@ -19,7 +16,7 @@ end writeback;
 
 architecture writeback_arch of writeback is
 	begin
-	comb : process (i_clk, i_pc, i_inst, i_validity, i_rd)
+	comb : process (i_inst, i_validity, i_rd)
 		begin
 		if i_validity = '1' then
 			if (i_inst(1 downto 0) /= "11") then
