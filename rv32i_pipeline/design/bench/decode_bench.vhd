@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 library LIB_CORE;
 use LIB_CORE.RISCV_CORE_CONFIG.all;
---use LIB_CORE.registerfile.all;
+--use LIB_CORE.reg_integer.all;
 
 library LIB_CORE_BENCH;
 use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
@@ -18,7 +18,7 @@ entity tb_decode is
 end entity tb_decode;
 
 architecture bench_arch of tb_decode is
-	component registerfile port (		i_rstn		: in std_logic;
+	component reg_integer port (		i_rstn		: in std_logic;
 										i_clk		: in std_logic;
 										i_freeze		: in std_logic;
 										i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -85,7 +85,7 @@ architecture bench_arch of tb_decode is
 	signal exec_jump			: std_logic												:= '0';
 
 	begin
-		registerfile1 : registerfile port map (		i_rstn		=> rstn,
+		reg_integer1 : reg_integer port map (		i_rstn		=> rstn,
 													i_clk		=> clk,	
 													i_freeze	=> freeze,
 													i_rs1select	=> regf_rs1select,

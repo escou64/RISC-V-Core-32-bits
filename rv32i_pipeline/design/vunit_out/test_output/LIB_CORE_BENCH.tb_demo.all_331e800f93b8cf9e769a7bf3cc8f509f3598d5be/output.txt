@@ -1,7 +1,7 @@
-# End time: 17:12:30 on Jan 13,2018, Elapsed time: 0:00:01
+# End time: 20:55:40 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 44
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_demo.all_331e800f93b8cf9e769a7bf3cc8f509f3598d5be/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_demo.all_331e800f93b8cf9e769a7bf3cc8f509f3598d5be/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 17:12:30 on Jan 13,2018
+# Start time: 20:55:40 on Jan 13,2018
 # ** Warning: Design size of 13060 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
@@ -52,9 +52,9 @@
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/registerfile1
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/registerfile1
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/counter_calculation1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).

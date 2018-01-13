@@ -74,7 +74,7 @@ architecture pipeline_arch of pipeline is
 							i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
-	component registerfile port (	i_rstn		: in std_logic;
+	component reg_integer port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
 									i_freeze	: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -229,7 +229,7 @@ architecture pipeline_arch of pipeline is
 									o_inst			=> s_ftch_inst,
 									o_validity		=> s_ftch_validity);
 
-		registerfile1 : registerfile port map (	i_rstn		=> s_rstn,
+		reg_integer1 : reg_integer port map (	i_rstn		=> s_rstn,
 												i_clk		=> s_clk,	
 												i_freeze	=> s_freeze,
 												i_rs1select	=> s_regf_rs1select,

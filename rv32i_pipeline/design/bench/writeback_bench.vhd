@@ -25,7 +25,7 @@ architecture bench_arch of tb_writeback is
 								o_data			: out std_logic_vector(c_NBITS - 1 downto 0));								
 	end component;
 
-	component registerfile port (	i_rstn		: in std_logic;
+	component reg_integer port (	i_rstn		: in std_logic;
 									i_clk		: in std_logic;
 									i_freeze	: in std_logic;
 									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
@@ -57,7 +57,7 @@ architecture bench_arch of tb_writeback is
 	
 	begin
 
-		registerfile1 : registerfile port map (	i_rstn		=> rstn,
+		reg_integer1 : reg_integer port map (	i_rstn		=> rstn,
 												i_clk		=> clk,	
 												i_freeze	=> freeze,
 												i_rs1select	=> s_regf_rs1select,
