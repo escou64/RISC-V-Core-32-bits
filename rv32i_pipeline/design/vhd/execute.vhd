@@ -10,7 +10,7 @@ entity execute is port (i_rstn			: in std_logic;
 						i_clk			: in std_logic;
 						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity		: in std_logic;
+						i_validity_dcde		: in std_logic;
 						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
 						i_freeze		: in std_logic;
@@ -59,7 +59,7 @@ architecture execute_arch of execute is
 							i_sel		=> s_sel,
 							o_result	=> s_result);
 
-	s_validity_inputs <= i_validity;
+	s_validity_inputs <= i_validity_dcde;
 
 	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
