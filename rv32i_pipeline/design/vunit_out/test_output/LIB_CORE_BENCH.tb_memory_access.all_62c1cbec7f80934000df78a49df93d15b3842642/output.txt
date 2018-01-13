@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # End time: 21:17:01 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
 # Start time: 21:17:01 on Jan 13,2018
 # ** Warning: Design size of 11718 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+=======
+# End time: 21:18:13 on Jan 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 37
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_memory_access.all_62c1cbec7f80934000df78a49df93d15b3842642/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 21:18:13 on Jan 13,2018
+# ** Warning: Design size of 11714 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 # Expect performance to be adversely affected.
 # Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
 # Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10

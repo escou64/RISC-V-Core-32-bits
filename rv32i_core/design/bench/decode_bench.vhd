@@ -20,7 +20,7 @@ end entity tb_decode;
 architecture bench_arch of tb_decode is
 	component registerfile port (		i_rstn		: in std_logic;
 										i_clk		: in std_logic;
-										i_freeze		: in std_logic;
+										i_freeze	: in std_logic;
 										i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 										i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 										o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);

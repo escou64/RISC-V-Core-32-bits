@@ -32,11 +32,19 @@ V6khlF7jlG3XP5Bc9=lSF=3
 Z15 OV;C;10.5b;63
 33
 b1
+<<<<<<< HEAD
 Z16 !s110 1515860673
 !i10b 1
 Z17 !s108 1515860673.000000
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base_api.vhd|
+=======
+Z15 !s110 1515873829
+!i10b 1
+Z16 !s108 1515873829.000000
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base_api.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 Z18 o-quiet -2008 -work vunit_lib
 Z19 tExplicit 1 CvgOpt 0
@@ -62,11 +70,19 @@ VCdbai9e_lg^jjTC3N?PNE3
 !s100 LN_ETUPJ^elOcEooBzgQ01
 R15
 33
+<<<<<<< HEAD
 Z21 !s110 1515860674
 !i10b 1
 Z22 !s108 1515860674.000000
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base.vhd|
+=======
+R15
+!i10b 1
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_base.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -95,13 +111,26 @@ VzYkYR9M:QdZ]9l[8]3dW]3
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_api.vhd|
+=======
+R15
+!i10b 1
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_api.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
+<<<<<<< HEAD
+=======
+Bbody
+Z20 DPx4 work 9 check_pkg 0 22 zYkYR9M:QdZ]9l[8]3dW]3
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R19
 Bbody
 Z23 DPx4 work 9 check_pkg 0 22 zYkYR9M:QdZ]9l[8]3dW]3
@@ -126,11 +155,19 @@ Z24 Vg8<h;bTF<]n`>O7cY?1jZ2
 Z25 !s100 U_C5<Az`5dIagf<j48YN?1
 R15
 33
+<<<<<<< HEAD
 Z26 !s110 1515860676
 !i10b 1
 Z27 !s108 1515860676.000000
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check.vhd|
+=======
+Z21 !s110 1515873830
+!i10b 1
+Z22 !s108 1515873830.000000
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -147,9 +184,15 @@ R9
 R11
 R12
 R13
+<<<<<<< HEAD
 R14
 Z28 8/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd
 Z29 F/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd
+=======
+R0
+Z23 8/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd
+Z24 F/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 l0
 L17
 V>]VMHj]2_dakO@]Sz1fG81
@@ -158,7 +201,13 @@ R15
 33
 b1
 R16
+<<<<<<< HEAD
 !i10b 1
+=======
+Z25 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd|
+Z26 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd|
+!i113 1
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R17
 Z30 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd|
 Z31 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/check/src/check_special_types200x.vhd|
@@ -185,7 +234,13 @@ VfL5UIg[9ES88K2AJoBiW80
 R15
 33
 R16
+<<<<<<< HEAD
 !i10b 1
+=======
+R25
+R26
+!i113 1
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R17
 R30
 R31
@@ -229,7 +284,11 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
@@ -237,9 +296,15 @@ R11
 R12
 R7
 R13
+<<<<<<< HEAD
 R14
 Z32 8/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd
 Z33 F/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd
+=======
+R0
+Z27 8/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd
+Z28 F/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 l0
 L15
 VT[>mL5_]X3QImm^UB7Y=53
@@ -247,13 +312,26 @@ VT[>mL5_]X3QImm^UB7Y=53
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 Z34 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd|
 Z35 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd|
+=======
+R15
+!i10b 1
+R16
+Z29 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd|
+Z30 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/dictionary/src/dictionary.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
+<<<<<<< HEAD
+=======
+Bbody
+Z31 DPx4 work 10 dictionary 0 22 T[>mL5_]X3QImm^UB7Y=53
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R19
 Bbody
 Z36 DPx4 work 10 dictionary 0 22 T[>mL5_]X3QImm^UB7Y=53
@@ -264,7 +342,11 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
@@ -277,20 +359,34 @@ V`Bg8Z]U>i0i<;@dP_W3BX0
 !s100 giKG3=Zh=KXHPABD^TXUD2
 R15
 33
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 R34
 R35
+=======
+R15
+!i10b 1
+R16
+R29
+R30
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
 Plang
 R11
 R13
+<<<<<<< HEAD
 R14
 Z37 8/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd
 Z38 F/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd
+=======
+R0
+Z32 8/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd
+Z33 F/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 l0
 L12
 V;:Mg0N:Ff<C2R`d>MPj;Q2
@@ -298,11 +394,19 @@ V;:Mg0N:Ff<C2R`d>MPj;Q2
 R15
 33
 b1
+<<<<<<< HEAD
 Z39 !s110 1515860670
 !i10b 1
 Z40 !s108 1515860670.000000
 Z41 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd|
 Z42 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd|
+=======
+Z34 !s110 1515873827
+!i10b 1
+Z35 !s108 1515873827.000000
+Z36 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd|
+Z37 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vhdl/src/lang/lang.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -315,11 +419,19 @@ Vl[UbONRebzbYk8VQ8PiN`2
 !s100 9GYlHoZ^fnYd8UkiAgHlS3
 R15
 33
+<<<<<<< HEAD
 R39
 !i10b 1
 R40
 R41
 R42
+=======
+R34
+!i10b 1
+R35
+R36
+R37
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -343,8 +455,17 @@ VegmiOA0jOkn22SNYghHMm3
 R15
 33
 b1
+<<<<<<< HEAD
 R16
 !i10b 1
+=======
+Z38 !s110 1515873828
+!i10b 1
+Z39 !s108 1515873828.000000
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base_api.vhd|
+!i113 1
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R17
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base_api.vhd|
@@ -367,10 +488,21 @@ l0
 L13
 VVHl70B?LRV3Aah_El9XV82
 !s100 ZX14<V??R2Qf;LKPR<]oA2
+<<<<<<< HEAD
 R15
 33
 R16
 !i10b 1
+=======
+R14
+33
+R38
+!i10b 1
+R39
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base.vhd|
+!i113 1
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R17
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_base.vhd|
@@ -395,11 +527,19 @@ Vd75lM?2@3AXKRIPYgPWH<2
 R15
 33
 b1
+<<<<<<< HEAD
 Z45 !s110 1515860672
 !i10b 1
 Z46 !s108 1515860672.000000
 Z47 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_formatting.vhd|
 Z48 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_formatting.vhd|
+=======
+R38
+!i10b 1
+R39
+Z42 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_formatting.vhd|
+Z43 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_formatting.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -415,6 +555,7 @@ l0
 L28
 V<gPnWamAYl]LRo^QL3M:@2
 !s100 H[kLEC1:Qed<GP3bHEDJI3
+<<<<<<< HEAD
 R15
 33
 R45
@@ -422,6 +563,15 @@ R45
 R46
 R47
 R48
+=======
+R14
+33
+R38
+!i10b 1
+R39
+R42
+R43
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -446,8 +596,17 @@ VJ_?2_QhlQe2KAS=2e8Pa`0
 R15
 33
 b1
+<<<<<<< HEAD
 R16
 !i10b 1
+=======
+R15
+!i10b 1
+R39
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_api.vhd|
+!i113 1
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R17
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_api.vhd|
@@ -500,11 +659,19 @@ Vn@GoB6`YUERo9zKGHQ[gh3
 R15
 33
 b1
+<<<<<<< HEAD
 R16
 !i10b 1
 R46
 Z51 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_special_types200x.vhd|
 Z52 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_special_types200x.vhd|
+=======
+R38
+!i10b 1
+R39
+Z46 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_special_types200x.vhd|
+Z47 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_special_types200x.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -521,10 +688,18 @@ l0
 L61
 VDW:^l968e^S>ECfZ>afIB0
 !s100 b8=3N32C?2DSZ?8T35nJ=2
+<<<<<<< HEAD
 R15
 33
 R16
 !i10b 1
+=======
+R14
+33
+R38
+!i10b 1
+R39
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R46
 R51
 R52
@@ -545,6 +720,7 @@ l0
 L15
 VIbPmRVYKU2TLnChTMB`EL2
 !s100 R9ge39IMS6Zl=[V8^;hzi2
+<<<<<<< HEAD
 R15
 33
 R45
@@ -552,6 +728,15 @@ R45
 R46
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_types.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_types.vhd|
+=======
+R14
+33
+R38
+!i10b 1
+R39
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_types.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/logging/src/log_types.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -571,11 +756,19 @@ VNc7]mO6O0HNNXT_k^Qgoe1
 R15
 33
 b1
+<<<<<<< HEAD
 R39
 !i10b 1
 R40
 Z55 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/path/src/path.vhd|
 Z56 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/path/src/path.vhd|
+=======
+R34
+!i10b 1
+R35
+Z50 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/path/src/path.vhd|
+Z51 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/path/src/path.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -591,11 +784,19 @@ Vb8Po9z5]f]LjPHQm0LN]n2
 !s100 DiiUzicQV=S>L>aY2z3co3
 R15
 33
+<<<<<<< HEAD
 R39
 !i10b 1
 R40
 R55
 R56
+=======
+R34
+!i10b 1
+R35
+R50
+R51
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -606,9 +807,15 @@ R1
 R2
 R3
 R10
+<<<<<<< HEAD
 R23
 R36
 Z59 DPx4 work 13 run_types_pkg 0 22 gnB71ZYIDP@G^<`Dze<Ol0
+=======
+R20
+R31
+Z54 DPx4 work 13 run_types_pkg 0 22 gnB71ZYIDP@G^<`Dze<Ol0
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R4
 R6
@@ -628,11 +835,19 @@ VKULGL@1dU0BHc9b;g7igZ0
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base_api.vhd|
+=======
+R15
+!i10b 1
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base_api.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -644,9 +859,15 @@ R1
 R2
 R3
 R10
+<<<<<<< HEAD
 R23
 R36
 R59
+=======
+R20
+R31
+R54
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R4
 R6
@@ -663,11 +884,19 @@ VE?99k5Y78cN`dVeoo_LIN0
 !s100 hWh7[S27>S2JM7707ijKh3
 R15
 33
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base.vhd|
+=======
+R15
+!i10b 1
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_base.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -675,10 +904,17 @@ Prun_pkg
 R58
 R20
 R1
+<<<<<<< HEAD
 R23
 R36
 R59
 R60
+=======
+R20
+R31
+R54
+R55
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R2
 R3
 R4
@@ -701,11 +937,19 @@ V:>o4znSG5`<A<F;hHMKhH1
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_api.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_api.vhd|
+=======
+R15
+!i10b 1
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_api.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_api.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -717,10 +961,17 @@ R57
 R58
 R20
 R1
+<<<<<<< HEAD
 R23
 R36
 R59
 R60
+=======
+R20
+R31
+R54
+R55
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R2
 R3
 R4
@@ -740,11 +991,19 @@ VA?G@NPU??SJ0EWK9UMl5S3
 !s100 dgSbVoF8zo`;EO>R:bQeO2
 R15
 33
+<<<<<<< HEAD
 R26
 !i10b 1
 R27
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run.vhd|
+=======
+R21
+!i10b 1
+R22
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -756,14 +1015,23 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
 R12
 R7
+<<<<<<< HEAD
 R36
 R59
+=======
+R31
+R54
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R11
 R13
 R14
@@ -776,11 +1044,19 @@ VXN>`bQV`R61M<DU>4G8]g3
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 Z65 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_special_types200x.vhd|
 Z66 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_special_types200x.vhd|
+=======
+R15
+!i10b 1
+R16
+Z60 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_special_types200x.vhd|
+Z61 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_special_types200x.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -793,14 +1069,23 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
 R12
 R7
+<<<<<<< HEAD
 R36
 R59
+=======
+R31
+R54
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R11
 l0
 L120
@@ -808,11 +1093,19 @@ VXi<G_bNH_HQI71;9kWbeW0
 !s100 3c7_:R<gzDR>jcg<n<^S41
 R15
 33
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 R65
 R66
+=======
+R15
+!i10b 1
+R16
+R60
+R61
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -824,13 +1117,21 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
 R12
 R7
+<<<<<<< HEAD
 R36
+=======
+R31
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R11
 R13
 R14
@@ -843,11 +1144,19 @@ VgnB71ZYIDP@G^<`Dze<Ol0
 R15
 33
 b1
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 Z69 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_types.vhd|
 Z70 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_types.vhd|
+=======
+R15
+!i10b 1
+R16
+Z64 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_types.vhd|
+Z65 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/run/src/run_types.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -860,13 +1169,21 @@ R3
 R4
 R5
 R10
+<<<<<<< HEAD
 R23
+=======
+R20
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R9
 R8
 R6
 R12
 R7
+<<<<<<< HEAD
 R36
+=======
+R31
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 R11
 l0
 L78
@@ -874,11 +1191,19 @@ VXm__Db8[^81Al`C[TDl<?3
 !s100 T<z84P9RR@=GSiz2GZC6n0
 R15
 33
+<<<<<<< HEAD
 R21
 !i10b 1
 R22
 R69
 R70
+=======
+R15
+!i10b 1
+R16
+R64
+R65
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -897,11 +1222,19 @@ V>6lVd?dSYVCeeU;1?_=bg2
 R15
 33
 b1
+<<<<<<< HEAD
 R39
 !i10b 1
 R40
 Z73 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/string_ops/src/string_ops.vhd|
 Z74 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/string_ops/src/string_ops.vhd|
+=======
+R34
+!i10b 1
+R35
+Z68 !s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/string_ops/src/string_ops.vhd|
+Z69 !s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/string_ops/src/string_ops.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -916,11 +1249,19 @@ V2zgdC_g5z_P<COSWzU4813
 !s100 17T3YWdDG5X2SlCbSJ_8=0
 R15
 33
+<<<<<<< HEAD
 R39
 !i10b 1
 R40
 R73
 R74
+=======
+R34
+!i10b 1
+R35
+R68
+R69
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -935,11 +1276,19 @@ VA1MU5C4TX7dH]K[HOQTSn1
 !s100 z2MZKd5HcVIXcl^o6<:^g0
 R15
 33
+<<<<<<< HEAD
 !s110 1515860675
 !i10b 0
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_context.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_context.vhd|
+=======
+R15
+!i10b 0
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_context.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_context.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
@@ -992,11 +1341,19 @@ V9aIX]?11^gXVOLi=?kiH[3
 !s100 A5C>GJBF>GbmzmdP5?^8V2
 R15
 33
+<<<<<<< HEAD
 R21
 !i10b 0
 R22
 !s90 -quiet|-modelsimini|/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_run_context.vhd|
 !s107 /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_run_context.vhd|
+=======
+R15
+!i10b 0
+R16
+!s90 -quiet|-modelsimini|/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|vunit_lib|/home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_run_context.vhd|
+!s107 /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/vunit_run_context.vhd|
+>>>>>>> 320df9fb346b8f27468eaeed2b47fdc8de44a3d6
 !i113 1
 R18
 R19
