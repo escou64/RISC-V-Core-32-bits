@@ -87,4 +87,6 @@ package RISCV_CORE_CONFIG is
 	--CSRs
 	constant c_CSR_CYCLE		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110000000000";
 	constant c_CSR_CYCLEH		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110010000000";
+	constant c_CSR_INSTRET		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110000000010";
+	constant c_CSR_INSTRETH		: std_logic_vector(c_ADDR_CSR - 1 downto 0) := "110010000010";
 end package RISCV_CORE_CONFIG;

@@ -61,7 +61,7 @@ architecture decode_arch of decode is
 					i_rd_accm when (s_rs2_dependency(2) = '1') and (i_validity_accm = '1') else
 					i_rs2;
 
-		comb1 : process(i_clk, i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
+		comb1 : process(i_inst, s_validity_inputs)
 			begin
 				if (i_inst(1 downto 0) /= "11") then
 					s_rs1select <= "00000";

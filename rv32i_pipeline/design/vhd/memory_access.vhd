@@ -25,16 +25,14 @@ end memory_access;
 
 architecture memory_access_arch of memory_access is
        
-        signal s_validity_inputs : std_logic;
         signal s_validity_global : std_logic;
         signal s_rd : std_logic_vector(c_NBITS - 1 downto 0);
 
         begin
-                s_validity_inputs <= i_validity;
                 o_addr <= i_rd;
                 o_data <= i_rs2;
 
-                comb1 : process(i_inst, s_validity_inputs, i_data, i_rd)
+                comb1 : process(i_inst, i_validity, i_data, i_rd)
                 begin
                         case i_inst(6 downto 0) is
                                 when c_OPCODE32_LOAD =>
@@ -44,22 +42,22 @@ architecture memory_access_arch of memory_access is
 											when c_FUNC3_LB =>
 												s_rd(7 downto 0) <= i_data(7 downto 0);
 												s_rd(31 downto 8) <= (others => i_data(7));
-												s_validity_global <= s_validity_inputs;									
+												s_validity_global <= i_validity;									
 											when c_FUNC3_LH =>
 												s_rd(15 downto 0) <= i_data(15 downto 0);
 												s_rd(31 downto 16) <= (others => i_data(15));
-												s_validity_global <= s_validity_inputs;
+												s_validity_global <= i_validity;
 											when c_FUNC3_LW =>
 												s_rd <= i_data;
-												s_validity_global <= s_validity_inputs;
+												s_validity_global <= i_validity;
 											when c_FUNC3_LBU =>
 												s_rd(7 downto 0) <= i_data(7 downto 0);
 												s_rd(31 downto 8) <= (others => '0');
-												s_validity_global <= s_validity_inputs;
+												s_validity_global <= i_validity;
 											when c_FUNC3_LHU =>
 												s_rd(15 downto 0) <= i_data(15 downto 0);
 												s_rd(31 downto 16) <= (others => '0');
-												s_validity_global <= s_validity_inputs;
+												s_validity_global <= i_validity;
 											when others =>
 												s_rd <= i_data;
 												s_validity_global <= '0';
@@ -67,7 +65,7 @@ architecture memory_access_arch of memory_access is
                                 when c_OPCODE32_STORE =>       
                                         s_rd <= i_rd;
 										s_validity_global <= '0';
-										if s_validity_inputs = '1' then									                                       
+										if i_validity = '1' then									                                       
 											case i_inst(14 downto 12) is
 												when c_FUNC3_SB =>
 													o_write <= '1';
@@ -90,7 +88,7 @@ architecture memory_access_arch of memory_access is
                                         o_write <= '0';
 										o_size <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
-                                        s_validity_global <= s_validity_inputs;
+                                        s_validity_global <= i_validity;
 								when c_OPCODE32_BRANCH =>   
 										o_write <= '0';
 										o_size <= c_MEM_SIZEW;

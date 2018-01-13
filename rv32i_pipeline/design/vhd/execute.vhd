@@ -35,8 +35,6 @@ architecture execute_arch of execute is
 							o_result	: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component alu;
 
-
-	signal s_validity_inputs	: std_logic;
 	signal s_validity_global	: std_logic;
 	signal s_rd					: std_logic_vector(c_NBITS - 1 downto 0);
 	
@@ -59,14 +57,12 @@ architecture execute_arch of execute is
 							i_sel		=> s_sel,
 							o_result	=> s_result);
 
-	s_validity_inputs <= i_validity;
-
 	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
 
-	comb1 : process (i_pc, i_inst, s_validity_inputs, i_rs1, i_rs2)
+	comb1 : process (i_pc, i_inst, i_validity, i_rs1, i_rs2)
 		begin
-		if s_validity_inputs = '1' then
+		if i_validity = '1' then
 			if (i_inst(1 downto 0) /= "11") then
 				s_validity_global	<= '0';
 				s_op1				<= (others => '0');	
@@ -79,7 +75,7 @@ architecture execute_arch of execute is
 			else 
 				case i_inst(6 downto 0) is
 					when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_op1(31 downto 12)	<= i_inst(31 downto 12);
 						s_op1(11 downto 0)	<= "000000000000";
 						s_signed			<= '0';
@@ -93,7 +89,7 @@ architecture execute_arch of execute is
 							s_op2				<= (others => '0');
 						end if;
 					when c_OPCODE32_LOAD | c_OPCODE32_STORE =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_op1				<= i_rs1;
 						s_signed			<= '0';
 						s_amount			<= (others => '0');
@@ -109,7 +105,7 @@ architecture execute_arch of execute is
 							s_op2(31 downto 12)	<= (others => i_inst(31));
 						end if;
 					when c_OPCODE32_OP_IMM =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_sel				<= i_inst(14 downto 12);
 						s_op1				<= i_rs1;
 						s_op2(11 downto 0)	<= i_inst(31 downto 20);
@@ -123,7 +119,7 @@ architecture execute_arch of execute is
 							s_signed	<= '0';
 						end if; 
 					when c_OPCODE32_OP =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_sel				<= i_inst(14 downto 12);
 						s_op1				<= i_rs1;
 						s_op2				<= i_rs2;
@@ -132,7 +128,7 @@ architecture execute_arch of execute is
 						s_jump				<= '0';
 						s_branch			<= '0';
 					when c_OPCODE32_JAL =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
 						s_op2(0)			<= '0';
@@ -145,7 +141,7 @@ architecture execute_arch of execute is
 						s_jump				<= '1';
 						s_branch			<= '0';
 					when c_OPCODE32_JALR =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1(0)			<= '0';
 						s_op1(31 downto 1)	<= i_rs1(31 downto 1);
@@ -157,7 +153,7 @@ architecture execute_arch of execute is
 						s_jump				<= '1';
 						s_branch			<= '0';
 					when c_OPCODE32_BRANCH =>
-						s_validity_global	<= s_validity_inputs;
+						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
 						s_op2(0)			<= '0';
