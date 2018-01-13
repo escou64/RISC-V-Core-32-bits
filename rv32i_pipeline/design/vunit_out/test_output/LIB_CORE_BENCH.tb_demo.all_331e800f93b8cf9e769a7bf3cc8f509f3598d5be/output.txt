@@ -1,8 +1,8 @@
-# End time: 23:31:41 on Jan 12,2018, Elapsed time: 0:00:00
+# End time: 15:48:43 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 44
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_demo.all_331e800f93b8cf9e769a7bf3cc8f509f3598d5be/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_demo.all_331e800f93b8cf9e769a7bf3cc8f509f3598d5be/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 23:31:41 on Jan 12,2018
-# ** Warning: Design size of 13112 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Start time: 15:48:43 on Jan 13,2018
+# ** Warning: Design size of 13060 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).

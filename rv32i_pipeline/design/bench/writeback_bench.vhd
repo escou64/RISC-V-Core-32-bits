@@ -17,10 +17,7 @@ entity tb_writeback is
 end entity tb_writeback;
 
 architecture bench_arch of tb_writeback is
-	component writeback port (	i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
+	component writeback port (	i_inst			: in std_logic_vector(11 downto 0);
 								i_validity		: in std_logic;
 								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
 								o_write			: out std_logic;
@@ -49,8 +46,8 @@ architecture bench_arch of tb_writeback is
 	signal s_regf_rs2select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "00000";
 	signal s_regf_rs1		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_regf_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_PC_INIT;
-	signal s_accm_inst		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_REG_INIT;
+	--signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_PC_INIT;
+	signal s_accm_inst		: std_logic_vector(11 downto 0)							:= (others => '0');
 	signal s_accm_validity	: std_logic												:= '0';
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_REG_INIT;
 
@@ -71,10 +68,7 @@ architecture bench_arch of tb_writeback is
 												i_rdselect	=> s_regf_rdselect,
 												i_data		=> s_regf_data);
 	
-		writeback1 : writeback port map (	i_rstn			=> rstn,
-											i_clk			=> clk,
-											i_pc			=> s_accm_pc,
-											i_inst			=> s_accm_inst,
+		writeback1 : writeback port map (	i_inst			=> s_accm_inst,
 											i_validity		=> s_accm_validity,
 											i_rd			=> s_accm_rd,
 											o_write			=> s_regf_write,
