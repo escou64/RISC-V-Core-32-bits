@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 # End time: 17:20:53 on Jan 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
 # Start time: 17:20:53 on Jan 13,2018
 # ** Warning: Design size of 12779 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+=======
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_CORE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_CORE -L LIB_CORE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_CORE_BENCH.tb_decode.all_82e845b5cc4475b6f484b8d2fcf454618252b0c4/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 17:12:29 on Jan 13,2018
+# ** Warning: Design size of 11933 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+>>>>>>> 2c52b0ab387414c157a9af8d54e6b66dce18ddd0
 # Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -88,6 +95,7 @@
 #    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+<<<<<<< HEAD
 # ** Error: Problem in the register value !
 #    Time: 925 ns  Iteration: 0  Process: /tb_decode/line__126 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/decode_bench.vhd
 # Break in Process line__126 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/decode_bench.vhd line 173
@@ -109,3 +117,7 @@
 #   176 : 
 #   177 : 				
 # 
+=======
+# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+>>>>>>> 2c52b0ab387414c157a9af8d54e6b66dce18ddd0
