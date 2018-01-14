@@ -35,14 +35,13 @@ architecture bench_arch of tb_execute is
 								--i_validity_wbck	: in std_logic;
 								o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_validity_alu	: out std_logic;
-								o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_jump			: out std_logic;
 								o_branch		: out std_logic;
-								o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
+								o_inst			: out std_logic_vector(14 downto 0);
 								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
 								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity			: out std_logic);
+								o_validity		: out std_logic);
 	end component;
 
 	signal rstn					: std_logic									:= '1';
@@ -63,7 +62,7 @@ architecture bench_arch of tb_execute is
 	signal alu_rd				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal alu_validity			: std_logic;
 	signal exec_pc				: std_logic_vector(c_NBITS - 1 downto 0);
-	signal exec_inst			: std_logic_vector(c_NBITS - 1 downto 0);
+	signal exec_inst			: std_logic_vector(14 downto 0);
 	signal exec_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_rd				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal exec_validity		: std_logic;
@@ -86,7 +85,7 @@ architecture bench_arch of tb_execute is
 											--i_validity_wbck		=> wbck_validity,
 											o_rd_alu			=> alu_rd,
 											o_validity_alu		=> alu_validity,
-											o_pc				=> exec_pc,
+											o_newpc				=> exec_pc,
 											o_inst				=> exec_inst,
 											o_rs2				=> exec_rs2,
 											o_rd				=> exec_rd,
@@ -105,7 +104,7 @@ architecture bench_arch of tb_execute is
 				rstn <= '0';
 				wait for PERIOD;
 				assert exec_pc = c_PC_INIT report "Problem for resetting !" severity error;
-				assert exec_inst = c_REG_INIT report "Problem for resetting !" severity error;
+				assert exec_inst <= "000000000000000" report "Problem for resetting !" severity error;
 				assert exec_rs2 = c_REG_INIT report "Problem for resetting !" severity error;
 				assert exec_rd = c_REG_INIT report "Problem for resetting !" severity error;
 				assert exec_validity = '0' report "Problem for resetting !" severity error;
@@ -118,56 +117,56 @@ architecture bench_arch of tb_execute is
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "00000" & "11111" & c_FUNC3_ADD & "01110" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11111" & "11111" & c_FUNC3_SH & "11111" & c_OPCODE32_STORE;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "00000" & "00000" & c_FUNC3_SW & "00000" & c_OPCODE32_STORE;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "10101" & c_FUNC3_LB & "00001" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 				
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "01010" & "01010" & c_FUNC3_LH & "00010" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11100" & "11100" & c_FUNC3_LW & "00011" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 				
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11011" & "11001" & c_FUNC3_LBU & "00100" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "00011" & "00001" & c_FUNC3_LHU & "00101" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
@@ -175,162 +174,162 @@ architecture bench_arch of tb_execute is
 				wait for HALF_PERIOD;
 				dcde_inst <= "00000000000000000000" & "00111" & c_OPCODE32_LUI;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 				
 				wait for HALF_PERIOD;
 				dcde_inst <= "00000000000000000000" & "01000" & c_OPCODE32_AUIPC;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000011001" & "10101" & c_FUNC3_ADDI & "01001" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000010100" & "10101" & c_FUNC3_SLTI & "01010" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000010001" & "10101" & c_FUNC3_SLTIU & "01011" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000011101" & "10101" & c_FUNC3_XORI & "01100" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000010111" & "10101" & c_FUNC3_ORI & "01101" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "000000011111" & "10101" & c_FUNC3_ANDI & "01110" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "00000" & "10101" & c_FUNC3_SLLI & "01111" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "00000" & "10101" & c_FUNC3_SRLI & "10000" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0100000" & "00000" & "10101" & c_FUNC3_SRAI & "10001" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_ADD & "00000" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0100000" & "10101" & "01111" & c_FUNC3_SUB & "00001" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_SLL & "00010" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_SLT & "00011" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_SLTU & "00100" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_XOR & "00101" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_SRL & "00110" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0100000" & "10101" & "01111" & c_FUNC3_SRA & "00111" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_OR & "01000" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "01111" & c_FUNC3_AND & "01001" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "00000001010101011011" & "00001" & c_OPCODE32_JAL;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
-				assert exec_jump = '0' report "Problem signal jump output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+				assert exec_jump = '1' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "00000001010101111011" & "00010" & c_OPCODE32_JALR;
 				wait for HALF_PERIOD;
-				assert exec_validity = '0' report "Problem signal validaty output  " severity error;
-				assert exec_jump = '0' report "Problem signal jump output  " severity error;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+				assert exec_jump = '1' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 
 
