@@ -6,11 +6,11 @@ use IEEE.numeric_std.all;
 use STD.textio.all;
 use IEEE.std_logic_textio.all;
 
-library LIB_CORE;
-use LIB_CORE.RISCV_CORE_CONFIG.all;
+library LIB_PIPELINE;
+use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-library LIB_CORE_BENCH;
-use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
+library LIB_PIPELINE_BENCH;
+use LIB_PIPELINE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
 library vunit_lib;
 context vunit_lib.vunit_context;
@@ -157,7 +157,7 @@ architecture bench_arch of tb_memory_access is
 					--assert s_accm_pc = s_exec_pc report "Problem for storing 4!" severity error;
 					assert s_accm_inst = s_exec_inst(11 downto 0) report "Problem for storing 5!" severity error;
 					assert s_accm_rd = s_exec_rd report "Problem for storing 6!" severity error;
-					assert s_accm_validity = '0' report "Problem for storing 7!" severity error;
+					assert s_accm_validity = '1' report "Problem for storing 7!" severity error;
 
 					--v_exec_pc		:= v_exec_pc + "01";
 					v_exec_rs2		:= v_exec_rs2 + "11";

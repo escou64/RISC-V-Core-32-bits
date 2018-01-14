@@ -3,8 +3,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 use IEEE.numeric_std.all;
 
-library LIB_CORE;
-use LIB_CORE.RISCV_CORE_CONFIG.all;
+library LIB_PIPELINE;
+use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
 entity memory_access is port (	i_rstn          : in std_logic;
                                 i_clk           : in std_logic;
@@ -34,6 +34,7 @@ architecture memory_access_arch of memory_access is
 
                 comb1 : process(i_inst, i_validity, i_data, i_rd)
                 begin
+					if i_validity = '1' then
                         case i_inst(6 downto 0) is
                                 when c_OPCODE32_LOAD =>
                                         o_write <= '0';
@@ -42,7 +43,7 @@ architecture memory_access_arch of memory_access is
 											when c_FUNC3_LB =>
 												s_rd(7 downto 0) <= i_data(7 downto 0);
 												s_rd(31 downto 8) <= (others => i_data(7));
-												s_validity_global <= i_validity;									
+												s_validity_global <= i_validity;						
 											when c_FUNC3_LH =>
 												s_rd(15 downto 0) <= i_data(15 downto 0);
 												s_rd(31 downto 16) <= (others => i_data(15));
@@ -63,27 +64,25 @@ architecture memory_access_arch of memory_access is
 												s_validity_global <= '0';
 										end case;     
                                 when c_OPCODE32_STORE =>       
-                                        s_rd <= i_rd;
-										s_validity_global <= '0';
-										if i_validity = '1' then									                                       
-											case i_inst(14 downto 12) is
-												when c_FUNC3_SB =>
-													o_write <= '1';
-													o_size <= c_MEM_SIZEB;											
-												when c_FUNC3_SH =>
-													o_write <= '1';
-													o_size <= c_MEM_SIZEH;
-												when c_FUNC3_SW =>
-													o_write <= '1';
-													o_size <= c_MEM_SIZEW;
-												when others =>
-													o_write <= '0';
-													o_size <= c_MEM_SIZEW;
-											end case;
-										else
-											o_write <= '0';
-											o_size <= c_MEM_SIZEW;
-										end if;
+                                        s_rd <= i_rd;														                                       
+										case i_inst(14 downto 12) is
+											when c_FUNC3_SB =>
+												o_write <= '1';
+												o_size <= c_MEM_SIZEB;
+												s_validity_global <= i_validity;											
+											when c_FUNC3_SH =>
+												o_write <= '1';
+												o_size <= c_MEM_SIZEH;													
+												s_validity_global <= i_validity;
+											when c_FUNC3_SW =>
+												o_write <= '1';
+												o_size <= c_MEM_SIZEW;
+												s_validity_global <= i_validity;
+											when others =>
+												o_write <= '0';
+												o_size <= c_MEM_SIZEW;
+												s_validity_global <= '0';
+										end case;
                                 when c_OPCODE32_LUI | c_OPCODE32_OP | c_OPCODE32_OP_IMM | c_OPCODE32_AUIPC | c_OPCODE32_JAL | c_OPCODE32_JALR =>
                                         o_write <= '0';
 										o_size <= c_MEM_SIZEW;
@@ -93,13 +92,19 @@ architecture memory_access_arch of memory_access is
 										o_write <= '0';
 										o_size <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
-                                        s_validity_global <= '0';                                    
+                                        s_validity_global <= i_validity;                                    
                                 when others =>
                                         o_write <= '0';
 										o_size <= c_MEM_SIZEW;
                                         s_rd <= i_rd;
                                         s_validity_global <= '0';
                         end case;
+					else
+						o_write <= '0';
+						o_size <= c_MEM_SIZEW;
+                        s_rd <= i_rd;
+                        s_validity_global <= '0';
+					end if;
                 end process comb1;
 
                 seq : process (i_clk, i_rstn)

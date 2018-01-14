@@ -6,11 +6,11 @@ use IEEE.numeric_std.all;
 use STD.textio.all;
 use IEEE.std_logic_textio.all;
 
-library LIB_CORE;
-use LIB_CORE.RISCV_CORE_CONFIG.all;
+library LIB_PIPELINE;
+use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-library LIB_CORE_BENCH;
-use LIB_CORE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
+library LIB_PIPELINE_BENCH;
+use LIB_PIPELINE_BENCH.RISCV_CORE_CONFIG_BENCH.all;
 
 library vunit_lib;
 context vunit_lib.vunit_context;
