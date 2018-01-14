@@ -87,6 +87,83 @@ architecture bench_arch of tb_writeback is
 				wait for PERIOD;
 				rstn <= '1';
 				wait for PERIOD;
+				
+				s_accm_validity <= '1';
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00000" & c_OPCODE32_LUI;
+				s_accm_rd <= "00000000000000000000000000001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00001" & c_OPCODE32_AUIPC;
+				s_accm_rd <= "00000000000000000000000001001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00001" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000001001000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00010" & c_OPCODE32_OP_IMM;
+				s_accm_rd <= "10000000000000000000000000001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00010" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "10000000000000000000000000001000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00011" & c_OPCODE32_OP;
+				s_accm_rd <= "00000000000000000000000000001100";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00011" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000000001100" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00100" & c_OPCODE32_LOAD;
+				s_accm_rd <= "00000000000000000000000000001010";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00100" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000000001010" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "01000" & c_OPCODE32_STORE;
+				s_accm_rd <= "00000000000000000000000000001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '0' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "00101" & c_OPCODE32_JAL;
+				s_accm_rd <= "00000000000000000000000000011000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00101" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000000011000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "01000" & c_OPCODE32_JALR;
+				s_accm_rd <= "00000000000000010000000000001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "01000" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000010000000000001000" report "Problem signal data output  " severity error;
+
+				wait for HALF_PERIOD;
+				s_accm_inst <= "11111" & c_OPCODE32_BRANCH;
+				s_accm_rd <= "00000000000000000000000111001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '0' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000111001000" report "Problem signal data output  " severity error;
+
+
+
 								
 				-- assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);

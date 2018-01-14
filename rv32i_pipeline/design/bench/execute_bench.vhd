@@ -120,6 +120,7 @@ architecture bench_arch of tb_execute is
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
+	--			assert exec_rd <= "" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11111" & "11111" & c_FUNC3_SH & "11111" & c_OPCODE32_STORE;
