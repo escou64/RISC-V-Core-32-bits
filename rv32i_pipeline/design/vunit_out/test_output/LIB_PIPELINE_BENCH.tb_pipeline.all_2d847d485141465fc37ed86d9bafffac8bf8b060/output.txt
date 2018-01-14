@@ -1,5 +1,5 @@
 # vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_pipeline(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_pipeline/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 14:26:13 on Jan 14,2018
+# Start time: 14:31:57 on Jan 14,2018
 # ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench/instructions.txt" in r mode.
 # No such file or directory. (errno = ENOENT)
 #    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline

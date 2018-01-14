@@ -39,7 +39,7 @@ package RISCV_CORE_CONFIG is
 	constant c_OPCODE32_STORE	: std_logic_vector(6 downto 0) := "0100011";	
 	constant c_OPCODE32_OP_IMM	: std_logic_vector(6 downto 0) := "0010011";
 	constant c_OPCODE32_OP		: std_logic_vector(6 downto 0) := "0110011";
-	constant c_OPCODE32_MISC_MEM: std_logic_vector(6 downto 0) := "0001111";
+	constant c_OPCODE32_MISC_MEM	: std_logic_vector(6 downto 0) := "0001111";
 	constant c_OPCODE32_SYSTEM	: std_logic_vector(6 downto 0) := "1110011";
 
 	--FUNCTIONS

@@ -162,6 +162,13 @@ architecture bench_arch of tb_writeback is
 				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;
 				assert s_regf_data = "00000000000000000000000111001000" report "Problem signal data output  " severity error;
 
+				wait for HALF_PERIOD;
+				s_accm_inst <= "11011" & c_OPCODE32_MISC_MEM;
+				s_accm_rd <= "00000000000000000000000101001000";
+				wait for HALF_PERIOD;
+				assert s_regf_write = '0' report "Problem signal write output  " severity error;
+				assert s_regf_rdselect = "11011" report "Problem signal rdselect output  " severity error;
+				assert s_regf_data = "00000000000000000000000101001000" report "Problem signal data output  " severity error;
 
 
 								
