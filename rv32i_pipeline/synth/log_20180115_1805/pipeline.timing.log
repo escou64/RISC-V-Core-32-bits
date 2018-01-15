@@ -1,0 +1,726 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : pipeline
+Version: J-2014.09-SP2
+Date   : Mon Jan 15 18:06:51 2018
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: WORST   Library: c35_CORELIB_TYP
+Wire Load Model Mode: enclosed
+
+  Startpoint: decode1/o_inst_reg[5]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[27]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[5]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[5]/Q (DFEC3)                         1.29       1.29 f
+  decode1/o_inst[5] (decode)                              0.00       1.29 f
+  execute1/i_inst[5] (execute)                            0.00       1.29 f
+  execute1/U80/Q (CLKBU15)                                0.44       1.73 f
+  execute1/U303/Q (NAND32)                                0.45       2.18 r
+  execute1/U66/Q (INV10)                                  0.15       2.33 f
+  execute1/U281/Q (NAND34)                                0.38       2.72 r
+  execute1/U466/Q (OAI212)                                0.32       3.04 f
+  execute1/U73/Q (INV6)                                   0.32       3.36 r
+  execute1/U24/Q (INV3)                                   0.13       3.49 f
+  execute1/U22/Q (NAND24)                                 0.21       3.70 r
+  execute1/U23/Q (NAND24)                                 0.07       3.77 f
+  execute1/U175/Q (CLKBU15)                               0.45       4.22 f
+  execute1/alu1/i_op2[8] (alu)                            0.00       4.22 f
+  execute1/alu1/U361/Q (CLKIN10)                          0.17       4.39 r
+  execute1/alu1/U198/Q (INV8)                             0.17       4.56 f
+  execute1/alu1/add_27/B[8] (alu_DW01_add_1)              0.00       4.56 f
+  execute1/alu1/add_27/U5/Q (NOR24)                       0.21       4.76 r
+  execute1/alu1/add_27/U4/Q (NOR23)                       0.22       4.98 f
+  execute1/alu1/add_27/U153/Q (NAND34)                    0.55       5.53 r
+  execute1/alu1/add_27/U20/Q (INV10)                      0.12       5.65 f
+  execute1/alu1/add_27/U103/Q (NAND28)                    0.32       5.97 r
+  execute1/alu1/add_27/U131/Q (INV12)                     0.11       6.08 f
+  execute1/alu1/add_27/U166/Q (NAND24)                    0.29       6.37 r
+  execute1/alu1/add_27/U221/Q (INV6)                      0.13       6.50 f
+  execute1/alu1/add_27/U141/Q (NAND24)                    0.21       6.71 r
+  execute1/alu1/add_27/U263/Q (AOI312)                    0.24       6.95 f
+  execute1/alu1/add_27/U262/Q (NOR24)                     0.24       7.19 r
+  execute1/alu1/add_27/U173/Q (XNR22)                     0.37       7.57 r
+  execute1/alu1/add_27/SUM[27] (alu_DW01_add_1)           0.00       7.57 r
+  execute1/alu1/U176/Q (NAND23)                           0.10       7.66 f
+  execute1/alu1/U496/Q (NAND43)                           0.68       8.34 r
+  execute1/alu1/o_result[27] (alu)                        0.00       8.34 r
+  execute1/U164/Q (CLKIN6)                                0.15       8.49 f
+  execute1/U327/Q (OAI212)                                0.41       8.90 r
+  execute1/o_rd_alu[27] (execute)                         0.00       8.90 r
+  decode1/i_rd_alu[27] (decode)                           0.00       8.90 r
+  decode1/U126/Q (INV6)                                   0.13       9.03 f
+  decode1/U429/Q (OAI212)                                 0.34       9.36 r
+  decode1/o_rs1_reg[27]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs1_reg[27]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[5]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[27]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[5]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[5]/Q (DFEC3)                         1.29       1.29 f
+  decode1/o_inst[5] (decode)                              0.00       1.29 f
+  execute1/i_inst[5] (execute)                            0.00       1.29 f
+  execute1/U80/Q (CLKBU15)                                0.44       1.73 f
+  execute1/U303/Q (NAND32)                                0.45       2.18 r
+  execute1/U66/Q (INV10)                                  0.15       2.33 f
+  execute1/U281/Q (NAND34)                                0.38       2.72 r
+  execute1/U466/Q (OAI212)                                0.32       3.04 f
+  execute1/U73/Q (INV6)                                   0.32       3.36 r
+  execute1/U24/Q (INV3)                                   0.13       3.49 f
+  execute1/U22/Q (NAND24)                                 0.21       3.70 r
+  execute1/U23/Q (NAND24)                                 0.07       3.77 f
+  execute1/U175/Q (CLKBU15)                               0.45       4.22 f
+  execute1/alu1/i_op2[8] (alu)                            0.00       4.22 f
+  execute1/alu1/U361/Q (CLKIN10)                          0.17       4.39 r
+  execute1/alu1/U198/Q (INV8)                             0.17       4.56 f
+  execute1/alu1/add_27/B[8] (alu_DW01_add_1)              0.00       4.56 f
+  execute1/alu1/add_27/U5/Q (NOR24)                       0.21       4.76 r
+  execute1/alu1/add_27/U4/Q (NOR23)                       0.22       4.98 f
+  execute1/alu1/add_27/U153/Q (NAND34)                    0.55       5.53 r
+  execute1/alu1/add_27/U20/Q (INV10)                      0.12       5.65 f
+  execute1/alu1/add_27/U103/Q (NAND28)                    0.32       5.97 r
+  execute1/alu1/add_27/U131/Q (INV12)                     0.11       6.08 f
+  execute1/alu1/add_27/U166/Q (NAND24)                    0.29       6.37 r
+  execute1/alu1/add_27/U221/Q (INV6)                      0.13       6.50 f
+  execute1/alu1/add_27/U141/Q (NAND24)                    0.21       6.71 r
+  execute1/alu1/add_27/U263/Q (AOI312)                    0.24       6.95 f
+  execute1/alu1/add_27/U262/Q (NOR24)                     0.24       7.19 r
+  execute1/alu1/add_27/U173/Q (XNR22)                     0.37       7.57 r
+  execute1/alu1/add_27/SUM[27] (alu_DW01_add_1)           0.00       7.57 r
+  execute1/alu1/U176/Q (NAND23)                           0.10       7.66 f
+  execute1/alu1/U496/Q (NAND43)                           0.68       8.34 r
+  execute1/alu1/o_result[27] (alu)                        0.00       8.34 r
+  execute1/U164/Q (CLKIN6)                                0.15       8.49 f
+  execute1/U327/Q (OAI212)                                0.41       8.90 r
+  execute1/o_rd_alu[27] (execute)                         0.00       8.90 r
+  decode1/i_rd_alu[27] (decode)                           0.00       8.90 r
+  decode1/U126/Q (INV6)                                   0.13       9.03 f
+  decode1/U350/Q (OAI212)                                 0.34       9.36 r
+  decode1/o_rs2_reg[27]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[27]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[6]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[30]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[6]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[6]/Q (DFEC3)                         1.12       1.12 f
+  decode1/o_inst[6] (decode)                              0.00       1.12 f
+  execute1/i_inst[6] (execute)                            0.00       1.12 f
+  execute1/U244/Q (CLKBU15)                               0.41       1.54 f
+  execute1/U165/Q (CLKIN15)                               0.19       1.73 r
+  execute1/U44/Q (CLKIN6)                                 0.11       1.84 f
+  execute1/U180/Q (NAND32)                                0.55       2.39 r
+  execute1/U384/Q (INV6)                                  0.16       2.55 f
+  execute1/U367/Q (NAND34)                                0.45       3.01 r
+  execute1/U478/Q (OAI2112)                               0.18       3.19 f
+  execute1/U124/Q (NAND26)                                0.36       3.55 r
+  execute1/U54/Q (INV15)                                  0.22       3.77 f
+  execute1/U241/Q (NOR21)                                 0.36       4.13 r
+  execute1/U484/Q (OAI212)                                0.16       4.29 f
+  execute1/alu1/i_op2[24] (alu)                           0.00       4.29 f
+  execute1/alu1/U218/Q (BUF15)                            0.57       4.86 f
+  execute1/alu1/add_27/B[24] (alu_DW01_add_1)             0.00       4.86 f
+  execute1/alu1/add_27/U22/Q (NOR23)                      0.28       5.14 r
+  execute1/alu1/add_27/U208/Q (NOR24)                     0.24       5.38 f
+  execute1/alu1/add_27/U207/Q (NAND34)                    0.47       5.84 r
+  execute1/alu1/add_27/U199/Q (INV6)                      0.15       5.99 f
+  execute1/alu1/add_27/U16/Q (NAND28)                     0.30       6.29 r
+  execute1/alu1/add_27/U15/Q (NOR23)                      0.22       6.51 f
+  execute1/alu1/add_27/U393/Q (NAND24)                    0.30       6.81 r
+  execute1/alu1/add_27/U152/Q (NAND34)                    0.15       6.96 f
+  execute1/alu1/add_27/U389/Q (AOI212)                    0.39       7.35 r
+  execute1/alu1/add_27/U123/Q (XNR22)                     0.59       7.94 f
+  execute1/alu1/add_27/SUM[30] (alu_DW01_add_1)           0.00       7.94 f
+  execute1/alu1/U1033/Q (AOI212)                          0.34       8.28 r
+  execute1/alu1/U901/Q (NAND24)                           0.09       8.37 f
+  execute1/alu1/o_result[30] (alu)                        0.00       8.37 f
+  execute1/U47/Q (CLKIN6)                                 0.19       8.56 r
+  execute1/U382/Q (OAI212)                                0.22       8.79 f
+  execute1/o_rd_alu[30] (execute)                         0.00       8.79 f
+  decode1/i_rd_alu[30] (decode)                           0.00       8.79 f
+  decode1/U12/Q (INV6)                                    0.32       9.11 r
+  decode1/U435/Q (OAI212)                                 0.18       9.29 f
+  decode1/o_rs1_reg[30]/D (DFEC1)                         0.00       9.29 f
+  data arrival time                                                  9.29
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs1_reg[30]/C (DFEC1)                         0.00       9.50 r
+  library setup time                                     -0.21       9.29
+  data required time                                                 9.29
+  --------------------------------------------------------------------------
+  data required time                                                 9.29
+  data arrival time                                                 -9.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[5]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[20]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[5]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[5]/Q (DFEC3)                         1.29       1.29 f
+  decode1/o_inst[5] (decode)                              0.00       1.29 f
+  execute1/i_inst[5] (execute)                            0.00       1.29 f
+  execute1/U80/Q (CLKBU15)                                0.44       1.73 f
+  execute1/U303/Q (NAND32)                                0.45       2.18 r
+  execute1/U66/Q (INV10)                                  0.15       2.33 f
+  execute1/U284/Q (CLKIN6)                                0.18       2.51 r
+  execute1/U50/Q (OAI212)                                 0.22       2.73 f
+  execute1/U102/Q (INV6)                                  0.32       3.06 r
+  execute1/U283/Q (NAND28)                                0.12       3.18 f
+  execute1/U93/Q (INV15)                                  0.17       3.35 r
+  execute1/U292/Q (NOR33)                                 0.28       3.63 f
+  execute1/U360/Q (AOI312)                                0.45       4.08 r
+  execute1/U95/Q (NAND28)                                 0.17       4.25 f
+  execute1/alu1/i_op2[2] (alu)                            0.00       4.25 f
+  execute1/alu1/add_27/B[2] (alu_DW01_add_1)              0.00       4.25 f
+  execute1/alu1/add_27/U429/Q (NOR24)                     0.30       4.56 r
+  execute1/alu1/add_27/U7/Q (BUF6)                        0.39       4.94 r
+  execute1/alu1/add_27/U144/Q (NOR24)                     0.25       5.19 f
+  execute1/alu1/add_27/U102/Q (NAND28)                    0.36       5.55 r
+  execute1/alu1/add_27/U428/Q (OAI222)                    0.26       5.82 f
+  execute1/alu1/add_27/U291/Q (NOR24)                     0.30       6.12 r
+  execute1/alu1/add_27/U30/Q (NAND28)                     0.19       6.31 f
+  execute1/alu1/add_27/U230/Q (NAND22)                    0.35       6.66 r
+  execute1/alu1/add_27/U8/Q (NAND23)                      0.14       6.79 f
+  execute1/alu1/add_27/U404/Q (AOI212)                    0.41       7.20 r
+  execute1/alu1/add_27/U215/Q (IMUX22)                    0.45       7.65 r
+  execute1/alu1/add_27/SUM[20] (alu_DW01_add_1)           0.00       7.65 r
+  execute1/alu1/U70/Q (NAND24)                            0.08       7.74 f
+  execute1/alu1/U232/Q (NAND43)                           0.64       8.37 r
+  execute1/alu1/o_result[20] (alu)                        0.00       8.37 r
+  execute1/U177/Q (NAND24)                                0.10       8.47 f
+  execute1/U188/Q (NAND26)                                0.44       8.91 r
+  execute1/o_rd_alu[20] (execute)                         0.00       8.91 r
+  decode1/i_rd_alu[20] (decode)                           0.00       8.91 r
+  decode1/U41/Q (INV6)                                    0.12       9.03 f
+  decode1/U414/Q (OAI212)                                 0.34       9.36 r
+  decode1/o_rs1_reg[20]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs1_reg[20]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[5]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[20]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[5]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[5]/Q (DFEC3)                         1.29       1.29 f
+  decode1/o_inst[5] (decode)                              0.00       1.29 f
+  execute1/i_inst[5] (execute)                            0.00       1.29 f
+  execute1/U80/Q (CLKBU15)                                0.44       1.73 f
+  execute1/U303/Q (NAND32)                                0.45       2.18 r
+  execute1/U66/Q (INV10)                                  0.15       2.33 f
+  execute1/U284/Q (CLKIN6)                                0.18       2.51 r
+  execute1/U50/Q (OAI212)                                 0.22       2.73 f
+  execute1/U102/Q (INV6)                                  0.32       3.06 r
+  execute1/U283/Q (NAND28)                                0.12       3.18 f
+  execute1/U93/Q (INV15)                                  0.17       3.35 r
+  execute1/U292/Q (NOR33)                                 0.28       3.63 f
+  execute1/U360/Q (AOI312)                                0.45       4.08 r
+  execute1/U95/Q (NAND28)                                 0.17       4.25 f
+  execute1/alu1/i_op2[2] (alu)                            0.00       4.25 f
+  execute1/alu1/add_27/B[2] (alu_DW01_add_1)              0.00       4.25 f
+  execute1/alu1/add_27/U429/Q (NOR24)                     0.30       4.56 r
+  execute1/alu1/add_27/U7/Q (BUF6)                        0.39       4.94 r
+  execute1/alu1/add_27/U144/Q (NOR24)                     0.25       5.19 f
+  execute1/alu1/add_27/U102/Q (NAND28)                    0.36       5.55 r
+  execute1/alu1/add_27/U428/Q (OAI222)                    0.26       5.82 f
+  execute1/alu1/add_27/U291/Q (NOR24)                     0.30       6.12 r
+  execute1/alu1/add_27/U30/Q (NAND28)                     0.19       6.31 f
+  execute1/alu1/add_27/U230/Q (NAND22)                    0.35       6.66 r
+  execute1/alu1/add_27/U8/Q (NAND23)                      0.14       6.79 f
+  execute1/alu1/add_27/U404/Q (AOI212)                    0.41       7.20 r
+  execute1/alu1/add_27/U215/Q (IMUX22)                    0.45       7.65 r
+  execute1/alu1/add_27/SUM[20] (alu_DW01_add_1)           0.00       7.65 r
+  execute1/alu1/U70/Q (NAND24)                            0.08       7.74 f
+  execute1/alu1/U232/Q (NAND43)                           0.64       8.37 r
+  execute1/alu1/o_result[20] (alu)                        0.00       8.37 r
+  execute1/U177/Q (NAND24)                                0.10       8.47 f
+  execute1/U188/Q (NAND26)                                0.44       8.91 r
+  execute1/o_rd_alu[20] (execute)                         0.00       8.91 r
+  decode1/i_rd_alu[20] (decode)                           0.00       8.91 r
+  decode1/U41/Q (INV6)                                    0.12       9.03 f
+  decode1/U340/Q (OAI212)                                 0.34       9.36 r
+  decode1/o_rs2_reg[20]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[20]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[6]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[0]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  alu_DW01_cmp2_73   10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[6]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[6]/Q (DFEC3)                         1.12       1.12 f
+  decode1/o_inst[6] (decode)                              0.00       1.12 f
+  execute1/i_inst[6] (execute)                            0.00       1.12 f
+  execute1/U244/Q (CLKBU15)                               0.41       1.54 f
+  execute1/U165/Q (CLKIN15)                               0.19       1.73 r
+  execute1/U44/Q (CLKIN6)                                 0.11       1.84 f
+  execute1/U180/Q (NAND32)                                0.55       2.39 r
+  execute1/U384/Q (INV6)                                  0.16       2.55 f
+  execute1/U367/Q (NAND34)                                0.45       3.01 r
+  execute1/U478/Q (OAI2112)                               0.18       3.19 f
+  execute1/U124/Q (NAND26)                                0.36       3.55 r
+  execute1/U54/Q (INV15)                                  0.22       3.77 f
+  execute1/U273/Q (AOI212)                                0.26       4.02 r
+  execute1/U490/Q (OAI212)                                0.16       4.19 f
+  execute1/alu1/i_op2[27] (alu)                           0.00       4.19 f
+  execute1/alu1/U201/Q (BUF15)                            0.60       4.78 f
+  execute1/alu1/lt_48/B[27] (alu_DW01_cmp2_73)            0.00       4.78 f
+  execute1/alu1/lt_48/U112/Q (NOR20)                      0.51       5.29 r
+  execute1/alu1/lt_48/U272/Q (NOR21)                      0.40       5.69 f
+  execute1/alu1/lt_48/U271/Q (NAND22)                     0.35       6.04 r
+  execute1/alu1/lt_48/U75/Q (NOR21)                       0.33       6.37 f
+  execute1/alu1/lt_48/U74/Q (AOI311)                      0.54       6.91 r
+  execute1/alu1/lt_48/U307/Q (OAI312)                     0.19       7.10 f
+  execute1/alu1/lt_48/U48/Q (NOR24)                       0.27       7.37 r
+  execute1/alu1/lt_48/U304/Q (AOI312)                     0.19       7.56 f
+  execute1/alu1/lt_48/LT_LE (alu_DW01_cmp2_73)            0.00       7.56 f
+  execute1/alu1/U559/Q (NAND33)                           0.31       7.87 r
+  execute1/alu1/U627/Q (OAI312)                           0.19       8.06 f
+  execute1/alu1/U565/Q (NOR24)                            0.32       8.38 r
+  execute1/alu1/U487/Q (NAND26)                           0.08       8.46 f
+  execute1/alu1/o_result[0] (alu)                         0.00       8.46 f
+  execute1/U370/Q (MUX26)                                 0.44       8.90 f
+  execute1/o_rd_alu[0] (execute)                          0.00       8.90 f
+  decode1/i_rd_alu[0] (decode)                            0.00       8.90 f
+  decode1/U133/Q (AOI222)                                 0.32       9.22 r
+  decode1/U53/Q (NAND23)                                  0.07       9.29 f
+  decode1/o_rs2_reg[0]/D (DFEC3)                          0.00       9.29 f
+  data arrival time                                                  9.29
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[0]/C (DFEC3)                          0.00       9.50 r
+  library setup time                                     -0.21       9.29
+  data required time                                                 9.29
+  --------------------------------------------------------------------------
+  data required time                                                 9.29
+  data arrival time                                                 -9.29
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[5]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[15]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu_DW01_add_1     10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[5]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[5]/Q (DFEC3)                         1.29       1.29 f
+  decode1/o_inst[5] (decode)                              0.00       1.29 f
+  execute1/i_inst[5] (execute)                            0.00       1.29 f
+  execute1/U80/Q (CLKBU15)                                0.44       1.73 f
+  execute1/U303/Q (NAND32)                                0.45       2.18 r
+  execute1/U66/Q (INV10)                                  0.15       2.33 f
+  execute1/U284/Q (CLKIN6)                                0.18       2.51 r
+  execute1/U50/Q (OAI212)                                 0.22       2.73 f
+  execute1/U102/Q (INV6)                                  0.32       3.06 r
+  execute1/U283/Q (NAND28)                                0.12       3.18 f
+  execute1/U93/Q (INV15)                                  0.17       3.35 r
+  execute1/U292/Q (NOR33)                                 0.28       3.63 f
+  execute1/U360/Q (AOI312)                                0.45       4.08 r
+  execute1/U95/Q (NAND28)                                 0.17       4.25 f
+  execute1/alu1/i_op2[2] (alu)                            0.00       4.25 f
+  execute1/alu1/add_27/B[2] (alu_DW01_add_1)              0.00       4.25 f
+  execute1/alu1/add_27/U429/Q (NOR24)                     0.30       4.56 r
+  execute1/alu1/add_27/U7/Q (BUF6)                        0.39       4.94 r
+  execute1/alu1/add_27/U144/Q (NOR24)                     0.25       5.19 f
+  execute1/alu1/add_27/U102/Q (NAND28)                    0.36       5.55 r
+  execute1/alu1/add_27/U428/Q (OAI222)                    0.26       5.82 f
+  execute1/alu1/add_27/U291/Q (NOR24)                     0.30       6.12 r
+  execute1/alu1/add_27/U30/Q (NAND28)                     0.19       6.31 f
+  execute1/alu1/add_27/U251/Q (AOI212)                    0.40       6.70 r
+  execute1/alu1/add_27/U415/Q (NOR24)                     0.19       6.89 f
+  execute1/alu1/add_27/U413/Q (NOR24)                     0.28       7.17 r
+  execute1/alu1/add_27/U297/Q (XOR22)                     0.42       7.59 r
+  execute1/alu1/add_27/SUM[15] (alu_DW01_add_1)           0.00       7.59 r
+  execute1/alu1/U374/Q (NAND24)                           0.08       7.67 f
+  execute1/alu1/U237/Q (NAND43)                           0.53       8.20 r
+  execute1/alu1/o_result[15] (alu)                        0.00       8.20 r
+  execute1/U415/Q (AOI212)                                0.21       8.41 f
+  execute1/U391/Q (CLKIN6)                                0.28       8.69 r
+  execute1/o_rd_alu[15] (execute)                         0.00       8.69 r
+  decode1/i_rd_alu[15] (decode)                           0.00       8.69 r
+  decode1/U110/Q (NAND23)                                 0.08       8.77 f
+  decode1/U332/Q (NAND33)                                 0.59       9.36 r
+  decode1/o_rs2_reg[15]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[15]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: fetch1/o_inst_reg[0]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[20]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+  reg_integer        10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  fetch1/o_inst_reg[0]/C (DFEC1)                          0.00 #     0.00 r
+  fetch1/o_inst_reg[0]/Q (DFEC1)                          1.25       1.25 f
+  fetch1/o_inst[0] (fetch)                                0.00       1.25 f
+  decode1/i_inst[0] (decode)                              0.00       1.25 f
+  decode1/U268/Q (NAND22)                                 0.48       1.73 r
+  decode1/U269/Q (CLKIN3)                                 0.33       2.06 f
+  decode1/U52/Q (NAND24)                                  0.33       2.39 r
+  decode1/U283/Q (OAI212)                                 0.18       2.58 f
+  decode1/U8/Q (CLKIN6)                                   0.30       2.87 r
+  decode1/U9/Q (INV10)                                    0.13       3.00 f
+  decode1/U284/Q (NAND22)                                 0.40       3.41 r
+  decode1/U285/Q (CLKIN3)                                 0.46       3.87 f
+  decode1/o_rs1select[0] (decode)                         0.00       3.87 f
+  reg_integer1/i_rs1select[0] (reg_integer)               0.00       3.87 f
+  reg_integer1/U1931/Q (CLKIN3)                           0.37       4.23 r
+  reg_integer1/U54/Q (NAND21)                             0.17       4.41 f
+  reg_integer1/U1926/Q (CLKIN3)                           0.40       4.81 r
+  reg_integer1/U1924/Q (NAND22)                           0.12       4.92 f
+  reg_integer1/U40/Q (INV3)                               0.34       5.26 r
+  reg_integer1/U14/Q (BUF6)                               0.93       6.19 r
+  reg_integer1/U193/Q (AOI220)                            0.41       6.60 f
+  reg_integer1/U1871/Q (NAND41)                           0.89       7.49 r
+  reg_integer1/U1080/Q (NOR21)                            0.34       7.83 f
+  reg_integer1/U1079/Q (IMUX21)                           0.45       8.28 r
+  reg_integer1/o_rs1[20] (reg_integer)                    0.00       8.28 r
+  decode1/i_rs1[20] (decode)                              0.00       8.28 r
+  decode1/U412/Q (NAND22)                                 0.10       8.38 f
+  decode1/U413/Q (OAI212)                                 0.29       8.67 r
+  decode1/U27/Q (AOI211)                                  0.30       8.97 f
+  decode1/U414/Q (OAI212)                                 0.40       9.36 r
+  decode1/o_rs1_reg[20]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs1_reg[20]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: decode1/o_inst_reg[6]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[28]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  execute            10k                   c35_CORELIB_TYP
+  alu                10k                   c35_CORELIB_TYP
+  alu_DW01_sub_5     10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  decode1/o_inst_reg[6]/C (DFEC3)                         0.00 #     0.00 r
+  decode1/o_inst_reg[6]/Q (DFEC3)                         1.12       1.12 f
+  decode1/o_inst[6] (decode)                              0.00       1.12 f
+  execute1/i_inst[6] (execute)                            0.00       1.12 f
+  execute1/U244/Q (CLKBU15)                               0.41       1.54 f
+  execute1/U165/Q (CLKIN15)                               0.19       1.73 r
+  execute1/U44/Q (CLKIN6)                                 0.11       1.84 f
+  execute1/U180/Q (NAND32)                                0.55       2.39 r
+  execute1/U384/Q (INV6)                                  0.16       2.55 f
+  execute1/U367/Q (NAND34)                                0.45       3.01 r
+  execute1/U478/Q (OAI2112)                               0.18       3.19 f
+  execute1/U124/Q (NAND26)                                0.36       3.55 r
+  execute1/U54/Q (INV15)                                  0.22       3.77 f
+  execute1/U271/Q (AOI212)                                0.26       4.02 r
+  execute1/U482/Q (OAI212)                                0.16       4.19 f
+  execute1/alu1/i_op2[22] (alu)                           0.00       4.19 f
+  execute1/alu1/U296/Q (BUF15)                            0.48       4.66 f
+  execute1/alu1/sub_29/B[22] (alu_DW01_sub_5)             0.00       4.66 f
+  execute1/alu1/sub_29/U28/Q (INV2)                       0.21       4.88 r
+  execute1/alu1/sub_29/U197/Q (NAND22)                    0.24       5.12 f
+  execute1/alu1/sub_29/U205/Q (CLKIN6)                    0.21       5.33 r
+  execute1/alu1/sub_29/U44/Q (NOR24)                      0.23       5.56 f
+  execute1/alu1/sub_29/U271/Q (AOI2112)                   0.42       5.98 r
+  execute1/alu1/sub_29/U227/Q (NOR24)                     0.17       6.16 f
+  execute1/alu1/sub_29/U282/Q (NAND26)                    0.39       6.55 r
+  execute1/alu1/sub_29/U97/Q (NAND22)                     0.15       6.70 f
+  execute1/alu1/sub_29/U160/Q (NAND22)                    0.33       7.03 r
+  execute1/alu1/sub_29/U410/Q (AOI212)                    0.28       7.31 f
+  execute1/alu1/sub_29/U357/Q (XNR22)                     0.40       7.71 r
+  execute1/alu1/sub_29/DIFF[28] (alu_DW01_sub_5)          0.00       7.71 r
+  execute1/alu1/U1025/Q (AOI2112)                         0.30       8.01 f
+  execute1/alu1/U9/Q (NAND24)                             0.45       8.46 r
+  execute1/alu1/o_result[28] (alu)                        0.00       8.46 r
+  execute1/U46/Q (NAND26)                                 0.08       8.54 f
+  execute1/U32/Q (NAND28)                                 0.25       8.79 r
+  execute1/o_rd_alu[28] (execute)                         0.00       8.79 r
+  decode1/i_rd_alu[28] (decode)                           0.00       8.79 r
+  decode1/U100/Q (AOI222)                                 0.14       8.93 f
+  decode1/U2/Q (NAND23)                                   0.43       9.36 r
+  decode1/o_rs2_reg[28]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[28]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: fetch1/o_inst_reg[0]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[20]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+  decode             10k                   c35_CORELIB_TYP
+  reg_integer        10k                   c35_CORELIB_TYP
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  fetch1/o_inst_reg[0]/C (DFEC1)                          0.00 #     0.00 r
+  fetch1/o_inst_reg[0]/Q (DFEC1)                          1.25       1.25 f
+  fetch1/o_inst[0] (fetch)                                0.00       1.25 f
+  decode1/i_inst[0] (decode)                              0.00       1.25 f
+  decode1/U268/Q (NAND22)                                 0.48       1.73 r
+  decode1/U269/Q (CLKIN3)                                 0.33       2.06 f
+  decode1/U52/Q (NAND24)                                  0.33       2.39 r
+  decode1/U273/Q (CLKIN3)                                 0.40       2.80 f
+  decode1/U274/Q (NAND22)                                 0.59       3.39 r
+  decode1/U63/Q (INV6)                                    0.24       3.63 f
+  decode1/o_rs2select[0] (decode)                         0.00       3.63 f
+  reg_integer1/i_rs2select[0] (reg_integer)               0.00       3.63 f
+  reg_integer1/U934/Q (CLKIN0)                            1.07       4.70 r
+  reg_integer1/U56/Q (BUF6)                               0.62       5.32 r
+  reg_integer1/U78/Q (CLKIN3)                             0.91       6.23 f
+  reg_integer1/U1628/Q (IMUX40)                           1.05       7.28 f
+  reg_integer1/U1109/Q (IMUX40)                           0.71       7.99 r
+  reg_integer1/U1108/Q (MUX22)                            0.35       8.35 r
+  reg_integer1/o_rs2[20] (reg_integer)                    0.00       8.35 r
+  decode1/i_rs2[20] (decode)                              0.00       8.35 r
+  decode1/U338/Q (NAND22)                                 0.09       8.44 f
+  decode1/U339/Q (OAI212)                                 0.35       8.79 r
+  decode1/U58/Q (AOI212)                                  0.20       8.99 f
+  decode1/U340/Q (OAI212)                                 0.37       9.36 r
+  decode1/o_rs2_reg[20]/D (DFEC3)                         0.00       9.36 r
+  data arrival time                                                  9.36
+
+  clock HCLK (rise edge)                                 10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.50       9.50
+  decode1/o_rs2_reg[20]/C (DFEC3)                         0.00       9.50 r
+  library setup time                                     -0.14       9.36
+  data required time                                                 9.36
+  --------------------------------------------------------------------------
+  data required time                                                 9.36
+  data arrival time                                                 -9.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

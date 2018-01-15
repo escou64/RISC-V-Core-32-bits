@@ -1,0 +1,504 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+Ealu
+Z1 w1516001162
+Z2 DPx12 lib_pipeline 17 riscv_core_config 0 22 54QU[8`^Nn9n`>>nToRGK1
+Z3 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z4 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+Z5 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
+Z6 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z7 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z8 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design
+Z9 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/alu.vhd
+Z10 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/alu.vhd
+l0
+L9
+VGD1jBDUJN9<[^VdGbjN>o0
+!s100 M7hD9bA8YGo3G];K?P0IA3
+Z11 OL;C;10.2c;57
+33
+Z12 !s110 1516006292
+!i10b 1
+Z13 !s108 1516006292.688148
+Z14 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/alu.vhd|
+Z15 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/alu.vhd|
+!i111 0
+Z16 o-quiet -2008 -work LIB_PIPELINE
+Z17 tExplicit 1
+Aalu_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 3 alu 0 22 GD1jBDUJN9<[^VdGbjN>o0
+l21
+L17
+V0?353b`UUXJQWnANzV;5B0
+!s100 [WC1[YQT>ZWh8PGGaET6E1
+R11
+33
+R12
+!i10b 1
+R13
+R14
+R15
+!i111 0
+R16
+R17
+Ecache_controller
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z18 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/cache_controller.vhd
+Z19 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/cache_controller.vhd
+l0
+L9
+V3KTm<LNYH5L;CneCba3H32
+R11
+33
+R12
+Z20 !s108 1516006292.620878
+Z21 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/cache_controller.vhd|
+Z22 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/cache_controller.vhd|
+R16
+R17
+!s100 1=b:IbXUgKlaKWT]>W=OY3
+!i10b 1
+!i111 0
+Acache_controller_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 16 cache_controller 0 22 3KTm<LNYH5L;CneCba3H32
+l24
+L23
+VETd`JWTZUA[i`mnSW3g[o3
+R11
+33
+R12
+R20
+R21
+R22
+R16
+R17
+!s100 Hg80nfncc;PR:Yd@Ji0g32
+!i10b 1
+!i111 0
+Ecounter_calculation
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z23 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/counter_calculation.vhd
+Z24 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/counter_calculation.vhd
+l0
+L9
+V5<kaYEQ1abZTM3_[GoB^X1
+R11
+33
+R12
+Z25 !s108 1516006292.521107
+Z26 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/counter_calculation.vhd|
+Z27 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/counter_calculation.vhd|
+R16
+R17
+!s100 oajKNUHbho_m7N<iiGl8`1
+!i10b 1
+!i111 0
+Acounter_calculation_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 19 counter_calculation 0 22 5<kaYEQ1abZTM3_[GoB^X1
+l24
+L19
+Vj__hQ[@NiZ^_=LeF:I0n:0
+R11
+33
+R12
+R25
+R26
+R27
+R16
+R17
+!s100 ON<@PH7=EW[N_2W1ofN]o0
+!i10b 1
+!i111 0
+Edecode
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z28 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/decode.vhd
+Z29 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/decode.vhd
+l0
+L9
+VkZ`1nVOcU?:lSHX9UoMEe2
+R11
+33
+R12
+Z30 !s108 1516006292.416942
+Z31 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/decode.vhd|
+Z32 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/decode.vhd|
+R16
+R17
+!s100 8CkKCLD=LJ<T3Xa496;Hi0
+!i10b 1
+!i111 0
+Adecode_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 6 decode 0 22 kZ`1nVOcU?:lSHX9UoMEe2
+l48
+L34
+VKgeK:oJYaT=kjQ8b]9PzA1
+R11
+33
+R12
+R30
+R31
+R32
+R16
+R17
+!s100 N9:8J_XYM@n_Q[O41QnkZ1
+!i10b 1
+!i111 0
+Eexecute
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z33 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd
+Z34 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd
+l0
+L9
+Vg`Hei1edcCMN7MSm83N=H3
+R11
+33
+R12
+Z35 !s108 1516006292.312587
+Z36 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd|
+Z37 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd|
+R16
+R17
+!s100 _68KYbZE3Wi=zYWVglC9H1
+!i10b 1
+!i111 0
+Aexecute_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 7 execute 0 22 g`Hei1edcCMN7MSm83N=H3
+l51
+L28
+VDi<<aX4GSCU?3G5Ie7bm23
+R11
+33
+R12
+R35
+R36
+R37
+R16
+R17
+!s100 ]jTUEZh1]EF2MIzliZ0G?0
+!i10b 1
+!i111 0
+Efetch
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z38 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/fetch.vhd
+Z39 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/fetch.vhd
+l0
+L9
+VBGTmK6_lcQWhXSJiWTggJ2
+R11
+33
+R12
+Z40 !s108 1516006292.208237
+Z41 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/fetch.vhd|
+Z42 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/fetch.vhd|
+R16
+R17
+!s100 h?PQlTg1eaU9eBlOVnQ_o2
+!i10b 1
+!i111 0
+Afetch_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 5 fetch 0 22 BGTmK6_lcQWhXSJiWTggJ2
+l27
+L25
+V2K<08U[MYXiajZcRiH=AL0
+R11
+33
+R12
+R40
+R41
+R42
+R16
+R17
+!s100 P5j]zgZWMFW3GQ4e=``3z1
+!i10b 1
+!i111 0
+Ememory_access
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z43 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/memory_access.vhd
+Z44 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/memory_access.vhd
+l0
+L9
+VAk`ReUQcm@5R?VHU?_mTV0
+R11
+33
+R12
+Z45 !s108 1516006292.103828
+Z46 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/memory_access.vhd|
+Z47 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/memory_access.vhd|
+R16
+R17
+!s100 2N9ac_FQVo9SD0@90j]BO0
+!i10b 1
+!i111 0
+Amemory_access_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 13 memory_access 0 22 Ak`ReUQcm@5R?VHU?_mTV0
+l31
+L26
+VIIO]OOE9g8lSn]H^MeLjg2
+R11
+33
+R12
+R45
+R46
+R47
+R16
+R17
+!s100 3mZXgIdAJD6G79K0_ZDUX1
+!i10b 1
+!i111 0
+Epipeline
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z48 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/pipeline.vhd
+Z49 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/pipeline.vhd
+l0
+L9
+VaK@WO@QYiz7ak?o:3MB<l2
+R11
+33
+R12
+Z50 !s108 1516006292.032148
+Z51 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/pipeline.vhd|
+Z52 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/pipeline.vhd|
+R16
+R17
+!s100 @LJn<lEHJ98c7BY]3ChH;1
+!i10b 1
+!i111 0
+Apipeline_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 8 pipeline 0 22 aK@WO@QYiz7ak?o:3MB<l2
+l203
+L25
+VYg`IO@^V<^82Zj`7d:70d1
+R11
+33
+R12
+R50
+R51
+R52
+R16
+R17
+!s100 jBTjB<2a>d4BoI1ENS47`2
+!i10b 1
+!i111 0
+Ereg_integer
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z53 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/reg_integer.vhd
+Z54 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/reg_integer.vhd
+l0
+L9
+VPR4<Q]XP:R3AG]3=zh>0:2
+R11
+33
+Z55 !s110 1516006291
+Z56 !s108 1516006291.964880
+Z57 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/reg_integer.vhd|
+Z58 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/reg_integer.vhd|
+R16
+R17
+!s100 b>KTB=[Hfogokk<VN90M21
+!i10b 1
+!i111 0
+Areg_integer_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 11 reg_integer 0 22 PR4<Q]XP:R3AG]3=zh>0:2
+l25
+L21
+VH?6Q4TQm?`VGV4fWdagYn2
+R11
+33
+R55
+R56
+R57
+R58
+R16
+R17
+!s100 AWXLd^WhOGh;Z05m`hzn]3
+!i10b 1
+!i111 0
+Priscv_core_config
+R3
+R4
+R5
+R6
+R7
+R1
+R8
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/RISCV_CORE_CONFIG.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/RISCV_CORE_CONFIG.vhd
+l0
+L6
+V54QU[8`^Nn9n`>>nToRGK1
+R11
+33
+R16
+R17
+R55
+!s100 Klm@4UJa]MJ`zMeR:j;[]3
+!i10b 1
+!s108 1516006291.792752
+!s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/RISCV_CORE_CONFIG.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/RISCV_CORE_CONFIG.vhd|
+!i111 0
+Ewriteback
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z59 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/writeback.vhd
+Z60 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/writeback.vhd
+l0
+L9
+VR5zS`^SS]PB9UkocZ29Tf3
+R11
+33
+R55
+Z61 !s108 1516006291.897622
+Z62 !s90 -quiet|-modelsimini|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini|-2008|-work|LIB_PIPELINE|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/writeback.vhd|
+Z63 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/writeback.vhd|
+R16
+R17
+!s100 ZX_jzHd3QzmbaclA25e_U2
+!i10b 1
+!i111 0
+Awriteback_arch
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 9 writeback 0 22 R5zS`^SS]PB9UkocZ29Tf3
+l18
+L17
+V:gA7_@m4AF[8h_J`]dQCH2
+R11
+33
+R55
+R61
+R62
+R63
+R16
+R17
+!s100 Q8;1bBLolbX:711ZV]8ej3
+!i10b 1
+!i111 0

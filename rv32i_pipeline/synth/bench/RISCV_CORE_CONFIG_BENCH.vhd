@@ -1,0 +1,1 @@
+../../design/bench/RISCV_CORE_CONFIG_BENCH.vhd

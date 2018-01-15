@@ -1,0 +1,1 @@
+../../design/vhd/RISCV_CORE_CONFIG.vhd

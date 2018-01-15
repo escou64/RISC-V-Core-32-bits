@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+!s110 1516036198
+VF>k;aOR`Gei8lXE6kXSQ<3
+04 11 10 work tb_pipeline bench_arch 1
+=1-002564c7984c-5a5ce064-e57c4-59b5
+o-quiet -auto_acc_if_foreign -work LIB_PIPELINE_BENCH -L c35_CORELIB -L c35_IOLIB_4M -sdftyp /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/netlist/pipeline.sdf -suppress 1948
+n@_opt
+OL;O;10.2c;57
+Priscv_core_config_bench
+w1516001162
+Z1 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth
+8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd
+F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd
+l0
+L1
+VW2i1Paf1l^bJaTInLk:fC3
+Z2 OL;C;10.2c;57
+32
+Z3 o+acc -work LIB_PIPELINE_BENCH
+Z4 tExplicit 1
+Z5 !s110 1516036123
+!s100 A8L8aYEL3R;E40SP?7@[;1
+!i10b 1
+!s108 1516036123.818332
+!s90 +acc|-work|LIB_PIPELINE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd|
+!i111 0
+Etb_pipeline
+Z6 w1516034205
+Z7 DPx18 lib_pipeline_bench 23 riscv_core_config_bench 0 22 W2i1Paf1l^bJaTInLk:fC3
+Z8 DPx12 lib_pipeline 17 riscv_core_config 0 22 JP2gCW^UMRN63j;]`F1Q>1
+Z9 DPx4 ieee 16 std_logic_textio 0 22 E=LR>a2bb_I?VV>QDdAdh3
+Z10 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z11 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+Z12 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
+Z13 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z14 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+R1
+Z15 8/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd
+Z16 F/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd
+l0
+L18
+VL`CeLI]0^hGiNOP;Hd78[0
+R2
+32
+R5
+Z17 !s108 1516036123.912037
+Z18 !s90 +acc|-work|LIB_PIPELINE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd|
+Z19 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd|
+R3
+R4
+!s100 nfMC2fhf_>H6^Y4_UfXn20
+!i10b 1
+!i111 0
+Abench_arch
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+DEx4 work 11 tb_pipeline 0 22 L`CeLI]0^hGiNOP;Hd78[0
+l57
+L22
+V^QJAdU=]gALBVl7JX]ke81
+R2
+32
+R5
+R17
+R18
+R19
+R3
+R4
+!s100 4XED6]kAheRdK=HgkCQ842
+!i10b 1
+!i111 0
