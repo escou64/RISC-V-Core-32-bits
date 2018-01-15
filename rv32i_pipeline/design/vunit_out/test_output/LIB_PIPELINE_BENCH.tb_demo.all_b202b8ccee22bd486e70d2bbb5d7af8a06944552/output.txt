@@ -1,14 +1,10 @@
-# vsim -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf {-g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_demo(bench_arch) 
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/instructions.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
-# ** Error: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/results.txt" in r+ mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
-# ** Error: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/pc.txt" in r+ mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
+# End time: 21:11:38 on Jan 15,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 44
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 21:11:38 on Jan 15,2018
+# ** Warning: Design size of 13057 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -77,28 +73,5 @@
 #    Time: 0 ps  Iteration: 2  Instance: /tb_demo/pipeline1/counter_calculation1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 3  Instance: /tb_demo/pipeline1/counter_calculation1
-# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/instructions.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 25 ns  Iteration: 0  Process: /tb_demo/line__77 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd
-# Fatal error in Process line__77 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd line 98
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd 98 Process line__77
-# 
-# 
-# Stack trace result from 'tb' command 
-#  /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd 98 [address 7feff04a2ff3] Process line__77
-#  
-# 
-# Surrounding code from 'see' command 
-#   93 : 				-- Verifications for Reset
-#   94 : 				s_rstn <= '0';
-#   95 : 				wait for PERIOD;
-#   96 : 				s_rstn <= '1';
-#   97 : 				
-# ->98 : 				while not endfile(f_inst) loop
-#   99 : 					readline(f_inst,v_inst_line);
-#   100 : 					read(v_inst_line, v_inst);
-#   101 : 					s_imem_idata <= v_inst;
-#   102 : 
-#  
+# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
