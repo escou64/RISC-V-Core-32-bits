@@ -3,10 +3,10 @@
 int addition(int b)
 {
 	int a;
-	asm (	"addi $1,$1,25;"
+	/*asm (	"addi $1,$1,25;"
 			: "=&r" (a) 
-			: "r" (b)); 
-	return a;
+			: "r" (b));*/ 
+	return b;
 }
 
 int main(void) 

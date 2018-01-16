@@ -1,7 +1,7 @@
 # Reading pref.tcl
 # source "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/modelsim/gui.do"
 # vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_finaldemo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_finaldemo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 22:09:58 on Jan 15,2018
+# Start time: 23:31:44 on Jan 16,2018
 # ** Warning: Design size of 13106 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # List of VUnit commands:
@@ -20,9 +20,7 @@
 #   - Recompiles the source files
 #   - and re-runs the simulation if the compile was successful
 add wave -position insertpoint  \
-sim:/tb_finaldemo/m_inst \
 sim:/tb_finaldemo/m_data
-# (vsim-4077) Logging very large object: /tb_finaldemo/m_inst 
 # (vsim-4077) Logging very large object: /tb_finaldemo/m_data 
 run -all
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
@@ -216,8 +214,104 @@ run -all
 #    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 160 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+#    Time: 620 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
 # Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# End time: 22:23:22 on Jan 15,2018, Elapsed time: 0:13:24
-# Errors: 0, Warnings: 98
+# End time: 23:55:57 on Jan 16,2018, Elapsed time: 0:24:13
+# Errors: 0, Warnings: 146
