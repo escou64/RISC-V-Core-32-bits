@@ -118,10 +118,8 @@ architecture bench_arch of tb_finaldemo is
 		s_dmem_idata(31 downto 24) <= m_data(to_integer(unsigned(s_dmem_addr(15 downto 0))) + 3);
 
 
-		s_clk <= not (s_clk) after HALF_PERIOD;
-
    		process
-			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/instructions.txt";
+			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/pgcd.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 			begin
@@ -146,7 +144,7 @@ architecture bench_arch of tb_finaldemo is
 				wait for PERIOD;
 				s_rstn <= '1';
 
-				wait for PERIOD*20;					
+				wait for PERIOD*100;					
 				
 				-- assert false report "End of the Simulation !" severity failure;
 				test_runner_cleanup(runner);
