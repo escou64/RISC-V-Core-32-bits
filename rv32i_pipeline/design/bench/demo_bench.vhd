@@ -74,15 +74,15 @@ architecture bench_arch of tb_demo is
 		s_clk <= not (s_clk) after HALF_PERIOD;
 
    		process
-			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/instructions.txt";
+			file f_inst				: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/instructions.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			file f_results			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/results.txt";
+			file f_results			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/results.txt";
 			variable v_result_line	: line;
 			variable v_result		: std_logic_vector(c_NBITS - 1 downto 0);
 	
-			file f_pc			: text open write_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/pc.txt";
+			file f_pc			: text open write_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench/pc.txt";
 			variable v_pc_line	: line;
 			variable v_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	

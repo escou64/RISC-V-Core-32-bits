@@ -85,8 +85,8 @@ architecture bench_arch of tb_decode is
 	signal exec_jump			: std_logic												:= '0';
 
 	begin
-		reg_integer1 : reg_integer port map (		i_rstn		=> rstn,
-													i_clk		=> clk,	
+		reg_integer1 : reg_integer port map (		i_rstn		=> rstn,					--Module reg_integer1 
+													i_clk		=> clk,						-- connection signal with input/output
 													i_freeze	=> freeze,
 													i_rs1select	=> regf_rs1select,
 													i_rs2select	=> regf_rs2select,
@@ -96,8 +96,8 @@ architecture bench_arch of tb_decode is
 													i_rdselect	=> regf_rdselect,
 													i_data		=> regf_data);
 
-		decode1 : decode port map (		i_rstn				=> rstn,
-										i_clk				=> clk,
+		decode1 : decode port map (		i_rstn				=> rstn,					--Module decode1 
+										i_clk				=> clk,						-- connection signal with input/output
 										i_pc				=> ftch_pc,		
 										i_inst				=> ftch_inst,		
 										i_validity			=> ftch_validity,

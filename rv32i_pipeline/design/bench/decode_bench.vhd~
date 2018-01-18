@@ -174,12 +174,6 @@ architecture bench_arch of tb_decode is
 				assert dcde_rs2 = "000000000000000000000000000010000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
-				
-				
-				
-				
-
-				
 				ftch_inst <= "0000000" & "00000" & "01111" & c_FUNC3_BEQ & "00000" & c_OPCODE32_BRANCH;
 				wait for HALF_PERIOD;
 				assert regf_rs1select = "01111" report "Problem to generate the register number !" severity error;
@@ -190,7 +184,6 @@ architecture bench_arch of tb_decode is
 				assert dcde_rs1 = alu_rd report "Problem in the register value !" severity error;
 				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
-
 
 				ftch_inst <= "0000000" & "01010" & "01110" & c_FUNC3_BNE & "00001" & c_OPCODE32_BRANCH;
 				wait for HALF_PERIOD;
@@ -214,7 +207,6 @@ architecture bench_arch of tb_decode is
 				assert dcde_rs2 = "000000000000000000000000000001010" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
-				
 				ftch_inst <= "0000000" & "10000" & "00001" & c_FUNC3_BLT & "00010" & c_OPCODE32_BRANCH;
 				wait for HALF_PERIOD;
 				assert regf_rs1select = "00001" report "Problem to generate the register number !" severity error;
@@ -258,10 +250,6 @@ architecture bench_arch of tb_decode is
 				assert dcde_rs1 = "000000000000000000000000000000010" report "Problem in the register value !" severity error;
 				assert dcde_rs2 = "000000000000000000000000000000001" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;				
-
-
-
-
 
 				ftch_inst <= "000000000000" & "01011" & c_FUNC3_LB & "10000" & c_OPCODE32_LOAD;
 				wait for HALF_PERIOD;
@@ -307,11 +295,7 @@ architecture bench_arch of tb_decode is
 				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
 				assert dcde_rs1 = "000000000000000000000000000001011" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
-				
-				
-			
-		--	 SHAMT 	: valeur de décalage	
-				
+
 				ftch_inst <= "000000010101" & "01111" & c_FUNC3_ADDI & "01111" & c_OPCODE32_OP_IMM;
 				wait for HALF_PERIOD;
 				assert regf_rs1select = "01111" report "Problem to generate the register number !" severity error;
@@ -392,10 +376,6 @@ architecture bench_arch of tb_decode is
 				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
 				assert dcde_rs1 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
-
-				
-
-
 
 				ftch_inst <= "0000000" & "00000" & "01111" & c_FUNC3_ADD & "11111" & c_OPCODE32_OP;
 				wait for HALF_PERIOD;

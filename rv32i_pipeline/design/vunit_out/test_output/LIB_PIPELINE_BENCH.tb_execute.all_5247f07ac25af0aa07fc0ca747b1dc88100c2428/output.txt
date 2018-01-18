@@ -1,9 +1,38 @@
-# End time: 21:45:02 on Jan 17,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 21:45:02 on Jan 17,2018
-# ** Warning: Design size of 12341 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:00:03 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: Problem signal rd output  
+#    Time: 705 ns  Iteration: 0  Process: /tb_execute/line__79 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd
+# Break in Process line__79 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 408
+# Stopped at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 408
+# 
+# Stack trace result from 'tb' command
+#  /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd 408 return [address 0x7feff0566d38] Process line__79
+# 
+# 
+# Surrounding code from 'see' command
+#   403 : 				dcde_rs1 <= "00000000000000000000000000000100";
+#   404 : 				wait for HALF_PERIOD;
+#   405 : 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+#   406 : 				assert exec_jump = '1' report "Problem signal jump output  " severity error;
+#   407 : 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
+# ->408 : 				assert exec_rd = "00000000000000000000000000000100" report "Problem signal rd output  " severity error;
+#   409 : 
+#   410 : 				wait for HALF_PERIOD;
+#   411 : 				dcde_inst <= "1111011" & "10101" & "00011" & c_FUNC3_BNE & "00010" & c_OPCODE32_BRANCH;
+#   412 : 				wait for HALF_PERIOD;
+# 

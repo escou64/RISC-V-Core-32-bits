@@ -46,7 +46,8 @@ architecture execute_arch of execute is
 	signal s_result	: std_logic_vector(c_NBITS - 1 downto 0);
 
 	signal s_jump	: std_logic;
-	signal s_branch	: std_logic;
+	signal s_jumpr	: std_logic;
+	signal s_branch	: std_logic;	
 
 	begin
 
