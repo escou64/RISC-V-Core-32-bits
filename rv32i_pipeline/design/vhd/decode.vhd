@@ -6,34 +6,35 @@ use IEEE.numeric_std.all;
 library LIB_PIPELINE;
 use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-entity decode is port (	i_rstn				: in std_logic;
-						i_clk				: in std_logic;
-						i_pc				: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_inst				: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity			: in std_logic;
-						i_jump				: in std_logic;
-						i_branch			: in std_logic;
-						i_freeze			: in std_logic;
-						i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity_alu		: in std_logic;
-						i_validity_exec		: in std_logic;
-						i_validity_accm		: in std_logic;
-						o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_rs1				: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_rs2				: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_validity			: out std_logic; 
-						o_load_dependency	: out std_logic;
-						o_rs1select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-						o_rs2select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-						i_rs1				: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0));
+entity decode is port (	i_rstn				: in std_logic;												-- Asynhronous Negative Reset
+						i_clk				: in std_logic;												-- Clock
+						i_pc				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Program Counter
+						i_inst				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Instruction
+						i_validity			: in std_logic;												-- Validity of the instruction
+						i_jump				: in std_logic;												-- Indicates a future jump
+						i_branch			: in std_logic;												-- Indicates a future branch
+						i_freeze			: in std_logic;												-- Freeze for Cache 'Miss'
+						i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the ALU Output
+						i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the Execute Floor Output
+						i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the Access Memory Floor Output
+						i_validity_alu		: in std_logic;												-- Data Dependency: Validity of the ALU value
+						i_validity_exec		: in std_logic;												-- Data Dependency: Validity of the Execute Floor value
+						i_validity_accm		: in std_logic;												-- Data Dependency: Validity of the Access Memory Floor value
+						o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Program Counter
+						o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Instruction
+						o_rs1				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+						o_rs2				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 2
+						o_validity			: out std_logic;											-- Instruction Validity
+						o_load_dependency	: out std_logic;											-- Indicates a Load Data Dependency
+						o_rs1select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects the Source Register 1
+						o_rs2select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects the Source Register 2
+						i_rs1				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+						i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0));				-- Value of the Source Register 2
 end decode;
 
 architecture decode_arch of decode is
 
+	-- Signals for the basic decode
 	signal s_rs1select : std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_rs2select : std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_rs1 : std_logic_vector(c_NBITS - 1 downto 0);
@@ -41,43 +42,34 @@ architecture decode_arch of decode is
 	signal s_rdselect : std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_validity_inputs : std_logic;
 	signal s_validity_global : std_logic;
-
+	-- Signals for the data depency (Excepted Load Data Dependency)
     type dependency_regfile is array (2 downto 0) of std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
 	signal s_previous_rd : dependency_regfile;
 	signal s_rs1_dependency : std_logic_vector(2 downto 0);
 	signal s_rs2_dependency : std_logic_vector(2 downto 0);
-	
+	-- Signals for Load Data Dependency
 	signal s_previous_load		: std_logic_vector (1 downto 0);
 	signal s_load				: std_logic;
 	signal s_load_dependency	: std_logic;
-	begin
 
+	begin
+		-- Combinatorial Logic
 		s_validity_inputs <= i_validity AND (NOT i_jump) AND (NOT i_branch);
+
+		-- Selects the different source registers 
 		o_rs1select <= s_rs1select;
 		o_rs2select <= s_rs2select;
-
-		s_rs1 <=	i_rd_alu when (s_rs1_dependency(0) = '1') and (i_validity_alu = '1') else
-					i_rd_exec when (s_rs1_dependency(1) = '1') and (i_validity_exec = '1') else
-					i_rd_accm when (s_rs1_dependency(2) = '1') and (i_validity_accm = '1') else
-					i_rs1;
-
-		s_rs2 <=	i_rd_alu when (s_rs2_dependency(0) = '1') and (i_validity_alu = '1') else
-					i_rd_exec when (s_rs2_dependency(1) = '1') and (i_validity_exec = '1') else
-					i_rd_accm when (s_rs2_dependency(2) = '1') and (i_validity_accm = '1') else
-					i_rs2;
-
-		o_load_dependency	<= s_load_dependency;
-
+		-- Decoding of the different forms of instructions 
 		comb : process(i_inst, s_validity_inputs)
-			begin
-				if (i_inst(1 downto 0) /= "11") then
+			begin				
+				if (i_inst(1 downto 0) /= "11") then		-- For Future 16 Bits Instruction Extension
 					s_rs1select <= "00000";
 					s_rs2select <= "00000";
 					s_rdselect <= "00000";
 					s_load <= '0';
 					s_validity_global <= '0';
 				else 
-					case i_inst(6 downto 0) is
+					case i_inst(6 downto 0) is				-- 32 bits instructions
 						when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>						-- U-type Format
 							s_rs1select <= "00000";
 							s_rs2select <= "00000";
@@ -127,7 +119,18 @@ architecture decode_arch of decode is
 					end case;
 				end if;
 		end process comb;
-	
+
+		-- Calculation of the source register values with data dependencies	(Except Load)
+		s_rs1 <=	i_rd_alu when (s_rs1_dependency(0) = '1') and (i_validity_alu = '1') else
+					i_rd_exec when (s_rs1_dependency(1) = '1') and (i_validity_exec = '1') else
+					i_rd_accm when (s_rs1_dependency(2) = '1') and (i_validity_accm = '1') else
+					i_rs1;
+
+		s_rs2 <=	i_rd_alu when (s_rs2_dependency(0) = '1') and (i_validity_alu = '1') else
+					i_rd_exec when (s_rs2_dependency(1) = '1') and (i_validity_exec = '1') else
+					i_rd_accm when (s_rs2_dependency(2) = '1') and (i_validity_accm = '1') else
+					i_rs2;
+		-- Calculation of the different data dependencies (Except Load)
 		reg_dep : process(i_clk, s_previous_rd, s_rs1select, s_rs2select)
 			begin
 				for I in 2 downto 0 loop
@@ -144,6 +147,7 @@ architecture decode_arch of decode is
 				end loop;
 		end process reg_dep;
 
+		-- Calculation of the load data dependencies
 		load_dep : process(s_previous_load, s_rs1select, s_rs2select, s_previous_rd)
 			begin
 				if (s_previous_load(0) = '1') and ((s_rs1select = s_previous_rd(0)) or (s_rs2select = s_previous_rd(0))) then
@@ -154,10 +158,13 @@ architecture decode_arch of decode is
 					s_load_dependency <= '0';
 				end if;
 		end process load_dep;
+		-- Assignment of the data dependency output
+		o_load_dependency	<= s_load_dependency;
 
+		--Sequential Logic
 		seq : process (i_clk, i_rstn)
 			begin
-				if (i_rstn = '0') then
+				if (i_rstn = '0') then								-- Asynchronous Reset
 					o_pc <= c_PC_INIT;
 					o_inst <= c_REG_INIT;
 					o_rs1 <= c_REG_INIT;
@@ -168,13 +175,13 @@ architecture decode_arch of decode is
 					end loop;
 					s_previous_load	<= "00";
 				elsif (i_clk'event and i_clk = '1' and i_freeze = '1') then
-					if s_load_dependency = '1' then
+					if s_load_dependency = '1' then					-- Decode Blocking with Load Data Dependency
 						s_previous_rd(2) <= s_previous_rd(1);
 						s_previous_rd(1) <= s_previous_rd(0);
 						s_previous_rd(0) <= s_rdselect;
 						s_previous_load(1) <= s_previous_load(0);
 						s_previous_load(0) <= s_load;
-					else
+					else											-- Normal Assignment
 						o_pc <= i_pc;
 						o_inst <= i_inst;
 						o_rs1 <= s_rs1;

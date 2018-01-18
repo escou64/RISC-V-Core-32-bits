@@ -6,18 +6,18 @@ use IEEE.numeric_std.all;
 library LIB_PIPELINE;
 use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-entity cache_controller is port (	i_core_addr		: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_core_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_core_write	: in std_logic;
-									i_core_size		: in std_logic_vector(1 downto 0);
-									o_core_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_core_freeze	: out std_logic;
-									o_mem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_mem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_mem_write		: out std_logic;
-									o_mem_size		: out std_logic_vector(1 downto 0);
-									i_mem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-									i_mem_miss		: in std_logic);
+entity cache_controller is port (	i_core_addr		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Memory Address
+									i_core_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Data to write
+									i_core_write	: in std_logic;									-- Read / Write
+									i_core_size		: in std_logic_vector(1 downto 0);				-- Size of the data
+									o_core_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Read Data
+									o_core_freeze	: out std_logic;								-- Core Freeze
+									o_mem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Memory Address
+									o_mem_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Data to write
+									o_mem_write		: out std_logic;								-- Read / Write
+									o_mem_size		: out std_logic_vector(1 downto 0);				-- Size of the data
+									i_mem_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Read Data
+									i_mem_miss		: in std_logic);								-- Cache Miss
 end cache_controller;
 
 architecture cache_controller_arch of cache_controller is

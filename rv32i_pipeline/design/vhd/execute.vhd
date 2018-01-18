@@ -6,27 +6,28 @@ use IEEE.numeric_std.all;
 library LIB_PIPELINE;
 use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-entity execute is port (i_rstn			: in std_logic;
-						i_clk			: in std_logic;
-						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_validity		: in std_logic;
-						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-						i_freeze		: in std_logic;
-						o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_validity_alu	: out std_logic;
-						o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_jump			: out std_logic;
-						o_branch		: out std_logic;
-						o_inst			: out std_logic_vector(14 downto 0);
-						o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-						o_validity		: out std_logic);		
+entity execute is port (i_rstn			: in std_logic;									-- Asynhronous Negative Reset
+						i_clk			: in std_logic;									-- Clock
+						i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Program Counter
+						i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction
+						i_validity		: in std_logic;									-- Validity of the instruction
+						i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 1
+						i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 2
+						i_freeze		: in std_logic;									-- Freeze for Cache 'Miss'
+						o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);   -- Data Dependency: ALU Output
+						o_validity_alu	: out std_logic;								-- Data Dependency: ALU Output Validity
+						o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);	-- New Program Counter for Branch / Jump Instructions
+						o_jump			: out std_logic;								-- Indicates a future jump
+						o_branch		: out std_logic;								-- Indicates a future branch
+						o_inst			: out std_logic_vector(14 downto 0);			-- Instruction
+						o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 2
+						o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);	-- Execute Result
+						o_validity		: out std_logic);								-- Validity of the instruction
 end entity execute;
 
 architecture execute_arch of execute is
 
+	-- Separated ALU
 	component alu port (	i_op1		: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_op2		: in std_logic_vector(c_NBITS - 1 downto 0);
 							i_signed	: in std_logic;
@@ -51,20 +52,21 @@ architecture execute_arch of execute is
 
 	begin
 
+	-- Combinatorial Logic
 	alu1 : alu port map (	i_op1		=> s_op1,
 							i_op2		=> s_op2,
 							i_signed	=> s_signed,
 							i_amount	=> s_amount,
 							i_sel		=> s_sel,
 							o_result	=> s_result);
-
+	-- Execute Result (Not the direct result of a calculation for a jump instruction)
 	s_rd <=		i_pc + "100" when s_jump = '1' else
 				s_result;
 
 	comb1 : process (i_pc, i_inst, i_validity, i_rs1, i_rs2)
 		begin
 		if i_validity = '1' then
-			if (i_inst(1 downto 0) /= "11") then
+			if (i_inst(1 downto 0) /= "11") then		-- 16 Bits Instructions
 				s_validity_global	<= '0';
 				s_op1				<= (others => '0');	
 				s_op2				<= (others => '0');
@@ -75,9 +77,9 @@ architecture execute_arch of execute is
 				s_jumpr				<= '0';
 				s_branch			<= '0';
 			else 
-				case i_inst(6 downto 0) is
-					when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>
-						s_validity_global	<= i_validity;
+				case i_inst(6 downto 0) is								-- 32 Bits Instructions
+					when c_OPCODE32_LUI | c_OPCODE32_AUIPC =>			-- ALU Inputs Change for the different instruction
+						s_validity_global	<= i_validity;				-- Load Upper Immediate / Add Upper Immediate to Program Counter
 						s_op1(31 downto 12)	<= i_inst(31 downto 12);
 						s_op1(11 downto 0)	<= "000000000000";
 						s_signed			<= '0';
@@ -91,7 +93,7 @@ architecture execute_arch of execute is
 						else
 							s_op2				<= (others => '0');
 						end if;
-					when c_OPCODE32_LOAD | c_OPCODE32_STORE =>
+					when c_OPCODE32_LOAD | c_OPCODE32_STORE =>			-- Load / Store
 						s_validity_global	<= i_validity;
 						s_op1				<= i_rs1;
 						s_signed			<= '0';
@@ -108,7 +110,7 @@ architecture execute_arch of execute is
 							s_op2(11 downto 0)	<= i_inst(31 downto 20);
 							s_op2(31 downto 12)	<= (others => i_inst(31));
 						end if;
-					when c_OPCODE32_OP_IMM =>
+					when c_OPCODE32_OP_IMM =>							-- Operations on Immediates
 						s_validity_global	<= i_validity;
 						s_sel				<= i_inst(14 downto 12);
 						s_op1				<= i_rs1;
@@ -123,7 +125,7 @@ architecture execute_arch of execute is
 						else
 							s_signed	<= '0';
 						end if; 
-					when c_OPCODE32_OP =>
+					when c_OPCODE32_OP =>								-- Operations on Registers
 						s_validity_global	<= i_validity;
 						s_sel				<= i_inst(14 downto 12);
 						s_op1				<= i_rs1;
@@ -133,7 +135,7 @@ architecture execute_arch of execute is
 						s_jump				<= '0';
 						s_jumpr				<= '0';
 						s_branch			<= '0';
-					when c_OPCODE32_JAL =>
+					when c_OPCODE32_JAL =>								-- Jump And Link (Relative)
 						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
@@ -147,7 +149,7 @@ architecture execute_arch of execute is
 						s_jump				<= '1';
 						s_jumpr				<= '0';
 						s_branch			<= '0';
-					when c_OPCODE32_JALR =>
+					when c_OPCODE32_JALR =>								-- Jump And Link Register
 						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_rs1;
@@ -158,7 +160,7 @@ architecture execute_arch of execute is
 						s_jump				<= '1';
 						s_jumpr				<= '1';
 						s_branch			<= '0';
-					when c_OPCODE32_BRANCH =>
+					when c_OPCODE32_BRANCH =>							-- Branch (withe the different kinds of tests)
 						s_validity_global	<= i_validity;
 						s_sel				<= c_ALU_ADD;
 						s_op1				<= i_pc;
@@ -211,6 +213,16 @@ architecture execute_arch of execute is
 		end if;
 	end process comb1;
 
+	--Ouputs Assignments
+	o_jump <= s_jump;
+	o_branch <= s_branch;
+	o_newpc <=	s_result(31 downto 1) & '0' when s_jumpr = '1' else
+				s_result;
+	o_rd_alu <= s_rd;
+	o_validity_alu <= s_validity_global;
+
+
+	-- Sequential Logic
 	seq : process (i_rstn, i_clk)
 		begin
 			if i_rstn = '0' then
@@ -225,12 +237,4 @@ architecture execute_arch of execute is
 				o_validity			<= s_validity_global;
 			end if;
 	end process seq;
-
-	o_jump <= s_jump;
-	o_branch <= s_branch;
-	o_newpc <=	s_result(31 downto 1) & '0' when s_jumpr = '1' else
-				s_result;
-
-	o_rd_alu <= s_rd;
-	o_validity_alu <= s_validity_global;
 end execute_arch;

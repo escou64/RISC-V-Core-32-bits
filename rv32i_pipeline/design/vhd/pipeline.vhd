@@ -6,32 +6,32 @@ use IEEE.numeric_std.all;
 library LIB_PIPELINE;
 use LIB_PIPELINE.RISCV_CORE_CONFIG.all;
 
-entity pipeline is port (	i_rstn			: in std_logic;
-							i_clk			: in std_logic;
-							o_imem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
-							o_imem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-							o_imem_write	: out std_logic;
-							o_imem_size		: out std_logic_vector(1 downto 0);
-							i_imem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_imem_miss		: in std_logic;
-							o_dmem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
-							o_dmem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-							o_dmem_write	: out std_logic;
-							o_dmem_size		: out std_logic_vector(1 downto 0);
-							i_dmem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-							i_dmem_miss		: in std_logic);
+entity pipeline is port (	i_rstn			: in std_logic;									-- Asynchronous Negative Reset
+							i_clk			: in std_logic;									-- Clock
+							o_imem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction Address
+							o_imem_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction to write (Not Used)
+							o_imem_write	: out std_logic;								-- Instruction Write (Not Used)
+							o_imem_size		: out std_logic_vector(1 downto 0);				-- Instruction Size (Always Word)
+							i_imem_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Read Instruction
+							i_imem_miss		: in std_logic;									-- Instruction Cache 'Miss'
+							o_dmem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Data Address
+							o_dmem_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Data to write
+							o_dmem_write	: out std_logic;								-- Data Write
+							o_dmem_size		: out std_logic_vector(1 downto 0);				-- Data Size
+							i_dmem_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Read Data
+							i_dmem_miss		: in std_logic);								-- Daata Cache 'Miss'
 end entity pipeline;
 
 architecture pipeline_arch of pipeline is
 	
-	component counter_calculation port (i_rstn				: in std_logic;
-										i_clk				: in std_logic;
-										i_jump				: in std_logic;
-										i_branch			: in std_logic;
-										i_freeze			: in std_logic;
-										i_load_dependency	: in std_logic;
-										i_newpc				: in std_logic_vector(c_NBITS - 1 downto 0);
-										o_pc				: out std_logic_vector(c_NBITS - 1 downto 0));
+	component pc port (	i_rstn				: in std_logic;
+						i_clk				: in std_logic;
+						i_jump				: in std_logic;
+						i_branch			: in std_logic;
+						i_freeze			: in std_logic;
+						i_load_dependency	: in std_logic;
+						i_newpc				: in std_logic_vector(c_NBITS - 1 downto 0);
+						o_pc				: out std_logic_vector(c_NBITS - 1 downto 0));
 	end component;
 
 	component fetch port (	i_rstn				: in std_logic;
@@ -147,51 +147,50 @@ architecture pipeline_arch of pipeline is
 										i_mem_miss		: in std_logic);
 	end component;
 
-
+	-- Global Signals
 	signal s_rstn	: std_logic;
 	signal s_clk	: std_logic;
 	signal s_freeze	: std_logic;
-
-	signal s_calc_pc	: std_logic_vector(c_NBITS - 1 downto 0);
-
+	-- PC Block Output
+	signal s_pc	: std_logic_vector(c_NBITS - 1 downto 0);
+	-- Instruction Memory Outputs
 	signal s_imem_idata		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_imem_freeze	: std_logic;
-
+	-- Fetch Block Outputs
 	signal s_ftch_pc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_inst		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_validity	: std_logic;
 	signal s_ftch_addr		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_odata		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_ftch_size		: std_logic_vector(1 downto 0);
-	signal s_ftch_write		: std_logic;
-	
-
-	signal s_regf_rs1select			: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-	signal s_regf_rs2select			: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-	signal s_regf_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
-	signal s_regf_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_ftch_write		: std_logic;	
+	-- Integer Register Block Outputs
+	signal s_regi_rs1select			: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
+	signal s_regi_rs2select			: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
+	signal s_regi_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_regi_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
+	-- Decode Block Outputs
 	signal s_dcde_pc				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dcde_inst				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dcde_validity			: std_logic;
 	signal s_dcde_load_dependency	: std_logic;
 	signal s_dcde_rs1				: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dcde_rs2				: std_logic_vector(c_NBITS - 1 downto 0);
-
+	-- Execute Block Ouputs
 	signal s_exec_inst		: std_logic_vector(14 downto 0);
 	signal s_exec_validity	: std_logic;
 	signal s_exec_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_rd		: std_logic_vector(c_NBITS - 1 downto 0);
-
 	signal s_exec_newpc		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_exec_jump		: std_logic;
 	signal s_exec_branch	: std_logic;
-
+	-- ALU Block Ouputs (From Inside Execute Block)
 	signal s_alu_rd			: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_alu_validity	: std_logic;
-
+	-- Data Memory Outputs
 	signal s_dmem_idata	: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_dmem_freeze	: std_logic;
-
+	-- Access Memory Block Outputs
 	signal s_accm_inst		: std_logic_vector(11 downto 0);
 	signal s_accm_validity	: std_logic;
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0);
@@ -199,29 +198,29 @@ architecture pipeline_arch of pipeline is
 	signal s_accm_odata		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_accm_write		: std_logic;
 	signal s_accm_size		: std_logic_vector(1 downto 0);
-
-	signal s_regf_write		: std_logic;
-	signal s_regf_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-	signal s_regf_data		: std_logic_vector(c_NBITS - 1 downto 0);
-		
+	-- Write Back Block Outputs
+	signal s_wbck_write		: std_logic;
+	signal s_wbck_rdselect	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
+	signal s_wbck_data		: std_logic_vector(c_NBITS - 1 downto 0);	
 	begin
 
 		s_rstn		<= i_rstn;
 		s_clk		<= i_clk;
+		-- Global Freeze with Instruction/ Data Memories
 		s_freeze	<= s_dmem_freeze AND s_imem_freeze;
 
-		counter_calculation1 : counter_calculation port map (	i_rstn				=> s_rstn,
-																i_clk				=> s_clk,
-																i_jump				=> s_exec_jump,
-																i_branch			=> s_exec_branch,
-																i_freeze			=> s_freeze,
-																i_load_dependency	=> s_dcde_load_dependency,
-																i_newpc				=> s_exec_newpc,
-																o_pc				=> s_calc_pc);
+		pc1 : pc port map (	i_rstn				=> s_rstn,
+							i_clk				=> s_clk,
+							i_jump				=> s_exec_jump,
+							i_branch			=> s_exec_branch,
+							i_freeze			=> s_freeze,
+							i_load_dependency	=> s_dcde_load_dependency,
+							i_newpc				=> s_exec_newpc,
+							o_pc				=> s_pc);
 
 		fetch1 : fetch port map (	i_rstn				=> s_rstn,
 									i_clk				=> s_clk,	
-									i_pc				=> s_calc_pc,
+									i_pc				=> s_pc,
 									i_data				=> s_imem_idata,
 									i_jump				=> s_exec_jump,
 									i_branch			=> s_exec_branch,
@@ -238,13 +237,13 @@ architecture pipeline_arch of pipeline is
 		reg_integer1 : reg_integer port map (	i_rstn		=> s_rstn,
 												i_clk		=> s_clk,	
 												i_freeze	=> s_freeze,
-												i_rs1select	=> s_regf_rs1select,
-												i_rs2select	=> s_regf_rs2select,
-												o_rs1		=> s_regf_rs1,
-												o_rs2		=> s_regf_rs2,
-												i_write		=> s_regf_write,
-												i_rdselect	=> s_regf_rdselect,
-												i_data		=> s_regf_data);
+												i_rs1select	=> s_regi_rs1select,
+												i_rs2select	=> s_regi_rs2select,
+												o_rs1		=> s_regi_rs1,
+												o_rs2		=> s_regi_rs2,
+												i_write		=> s_wbck_write,
+												i_rdselect	=> s_wbck_rdselect,
+												i_data		=> s_wbck_data);
 
 		decode1 : decode port map (	i_rstn				=> s_rstn,
 									i_clk				=> s_clk,
@@ -266,10 +265,10 @@ architecture pipeline_arch of pipeline is
 									o_rs2				=> s_dcde_rs2,
 									o_validity			=> s_dcde_validity,
 									o_load_dependency	=> s_dcde_load_dependency,
-									o_rs1select			=> s_regf_rs1select,
-									o_rs2select			=> s_regf_rs2select,
-									i_rs1				=> s_regf_rs1,
-									i_rs2				=> s_regf_rs2);
+									o_rs1select			=> s_regi_rs1select,
+									o_rs2select			=> s_regi_rs2select,
+									i_rs1				=> s_regi_rs1,
+									i_rs2				=> s_regi_rs2);
 
 		execute1 : execute port map (	i_rstn				=> s_rstn,
 										i_clk				=> s_clk,
@@ -308,9 +307,9 @@ architecture pipeline_arch of pipeline is
 	writeback1 : writeback port map (	i_inst			=> s_accm_inst,
 										i_validity		=> s_accm_validity,
 										i_rd			=> s_accm_rd,
-										o_write			=> s_regf_write,
-										o_rdselect		=> s_regf_rdselect,
-										o_data			=> s_regf_data);
+										o_write			=> s_wbck_write,
+										o_rdselect		=> s_wbck_rdselect,
+										o_data			=> s_wbck_data);
 
 	icache_controller1 : cache_controller port map (i_core_addr		=> s_ftch_addr,
 													i_core_data		=> s_ftch_odata,
