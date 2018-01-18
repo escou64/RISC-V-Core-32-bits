@@ -18,20 +18,21 @@ entity tb_fetch is
 end entity tb_fetch;
 
 architecture bench_arch of tb_fetch is
-	component fetch port (				i_rstn			: in std_logic;
-										i_clk			: in std_logic;
-										i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-										i_data			: in std_logic_vector(c_NBITS - 1 downto 0);
-										i_jump			: in std_logic;
-										i_branch		: in std_logic;
-										i_freeze		: in std_logic;
-										o_addr			: out std_logic_vector(c_NBITS - 1 downto 0);
-										o_data			: out std_logic_vector(c_NBITS - 1 downto 0);
-										o_write			: out std_logic;
-										o_size			: out std_logic_vector(1 downto 0);
-										o_pc			: out std_logic_vector(c_NBITS - 1 downto 0);
-										o_inst			: out std_logic_vector(c_NBITS - 1 downto 0);
-										o_validity		: out std_logic);
+	component fetch port (				i_rstn				: in std_logic;
+										i_clk				: in std_logic;
+										i_pc				: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_data				: in std_logic_vector(c_NBITS - 1 downto 0);
+										i_jump				: in std_logic;
+										i_branch			: in std_logic;
+										i_load_dependency	: in std_logic;
+										i_freeze			: in std_logic;
+										o_addr				: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_data				: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_write				: out std_logic;
+										o_size				: out std_logic_vector(1 downto 0);
+										o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);
+										o_validity			: out std_logic);
 	end component;
 
 	signal s_rstn				: std_logic									:= '1';
@@ -48,22 +49,24 @@ architecture bench_arch of tb_fetch is
 	signal s_ftch_validity		: std_logic;
 	signal s_exec_jump			: std_logic									:= '0';
 	signal s_exec_branch		: std_logic									:= '0';
+	signal s_dcde_load_dependency	: std_logic								:= '0';
 
 	begin
-		fetch1 : fetch port map (				i_rstn			=> s_rstn,
-												i_clk			=> s_clk,	
-												i_pc			=> s_calc_pc,
-												i_data			=> s_imem_idata,
-												i_jump			=> s_exec_jump,
-												i_branch		=> s_exec_branch,
-												i_freeze		=> s_freeze,
-												o_addr			=> s_imem_addr,
-												o_data			=> s_imem_odata,
-												o_write			=> s_imem_write,
-												o_size			=> s_imem_size,
-												o_pc			=> s_ftch_pc,
-												o_inst			=> s_ftch_inst,
-												o_validity		=> s_ftch_validity);
+		fetch1 : fetch port map (				i_rstn				=> s_rstn,
+												i_clk				=> s_clk,	
+												i_pc				=> s_calc_pc,
+												i_data				=> s_imem_idata,
+												i_jump				=> s_exec_jump,
+												i_branch			=> s_exec_branch,
+												i_freeze			=> s_freeze,
+												i_load_dependency	=> s_dcde_load_dependency,
+												o_addr				=> s_imem_addr,
+												o_data				=> s_imem_odata,
+												o_write				=> s_imem_write,
+												o_size				=> s_imem_size,
+												o_pc				=> s_ftch_pc,
+												o_inst				=> s_ftch_inst,
+												o_validity			=> s_ftch_validity);
 
 		s_clk <= not (s_clk) after HALF_PERIOD;
 

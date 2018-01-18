@@ -315,7 +315,7 @@ architecture bench_arch of tb_execute is
 				dcde_rs2 <= "00000000000000000000000000000010";				
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
-				assert exec_jump = '0' report "Problem signal jump output  " severity error;
+				assert exec_jump = '0' report "Problem signal newpcjump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
 				assert exec_rd = "00000000000000000000000001111000" report "Problem signal rd output  " severity error;
 
@@ -399,13 +399,15 @@ architecture bench_arch of tb_execute is
 				assert exec_rd = "00000000000000000000000000001000" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
-				dcde_inst <= "00000000000000000001" & "00010" & c_OPCODE32_JALR;
+				dcde_inst <= "000000000011" & "00011" & "000" & "00010" & c_OPCODE32_JALR;
+				dcde_pc <= "00000000000000000000000000010000";
 				dcde_rs1 <= "00000000000000000000000000000100";
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '1' report "Problem signal jump output  " severity error;
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
-				assert exec_rd = "00000000000000000000000000000100" report "Problem signal rd output  " severity error;
+				assert exec_rd = "00000000000000000000000000010100" report "Problem signal rd output  " severity error;
+				assert exec_pc = "00000000000000000000000000000110" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "1111011" & "10101" & "00011" & c_FUNC3_BNE & "00010" & c_OPCODE32_BRANCH;

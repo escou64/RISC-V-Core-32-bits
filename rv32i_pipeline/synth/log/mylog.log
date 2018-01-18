@@ -14,10 +14,6 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package std_logic_1164
 -- Compiling package CONV_PACK_pipeline
 -- Loading package CONV_PACK_pipeline
--- Compiling entity alu_DW01_cmp2_73
--- Compiling architecture SYN_rpl of alu_DW01_cmp2_73
--- Compiling entity alu_DW01_cmp2_72
--- Compiling architecture SYN_rpl of alu_DW01_cmp2_72
 -- Compiling entity alu_DW01_sub_5
 -- Compiling architecture SYN_cla of alu_DW01_sub_5
 -- Compiling entity execute_DW01_cmp2_7
@@ -32,6 +28,10 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Compiling architecture SYN_cla of counter_calculation_DW01_add_1
 -- Compiling entity execute_DW01_add_1
 -- Compiling architecture SYN_cla of execute_DW01_add_1
+-- Compiling entity alu_DW01_cmp2_67
+-- Compiling architecture SYN_rpl of alu_DW01_cmp2_67
+-- Compiling entity alu_DW01_cmp2_66
+-- Compiling architecture SYN_rpl of alu_DW01_cmp2_66
 -- Compiling entity alu_DW01_add_1
 -- Compiling architecture SYN_cla of alu_DW01_add_1
 -- Compiling entity execute_DW01_cmp6_1
@@ -76,6 +76,18 @@ Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
 -- Loading package RISCV_CORE_CONFIG_BENCH
 -- Compiling entity tb_pipeline
 -- Compiling architecture bench_arch of tb_pipeline
+Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package RISCV_CORE_CONFIG
+-- Loading package RISCV_CORE_CONFIG_BENCH
+-- Compiling entity tb_finaldemo
+-- Compiling architecture bench_arch of tb_finaldemo
 
 Total Errors :	0
 Total Warnings :	0

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : pipeline
+Version: J-2014.09-SP2
+Date   : Thu Jan 18 17:57:31 2018
+****************************************
+
+Library(s) Used:
+
+    c35_CORELIB_TYP (File: /softslin/AMS_410_CDS/synopsys/c35_3.3V/c35_CORELIB_TYP.db)
+
+Number of ports:                          202
+Number of nets:                           936
+Number of cells:                           47
+Number of combinational cells:             38
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         35
+Number of references:                      15
+
+Combinational area:             532113.397545
+Buf/Inv area:                   118445.600822
+Noncombinational area:          468158.584015
+Macro/Black Box area:                0.000000
+Net Interconnect area:          188622.000000
+
+Total cell area:               1000271.981560
+Total area:                    1188893.981560
+1

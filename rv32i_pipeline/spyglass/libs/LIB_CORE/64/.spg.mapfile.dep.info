@@ -1,6 +1,7 @@
 4.2.1
-1 0
-0 83 LIB_CORE=>/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/spyglass/libs/LIB_CORE/64
+2 1
+1 83 LIB_CORE=>/tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/spyglass/libs/LIB_CORE/64
+0 93 LIB_CORE=>/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/spyglass/libs/LIB_CORE/64
 21 20
 0 11 2	0	ALU	ALU
 1 39 2	2	RISCV_CORE_CONFIG	RISCV_CORE_CONFIG
@@ -26,44 +27,54 @@
 11 10
 0 1 20 11821183 1515659533 66 ff76de68b77384e3e9e312bb11510d69 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/alu.vhd
 2 2 17 0 9
-1
-0 2 1 0
+2
+0 0
+1 2 1 0
 1 1 20 11821248 1513784546 67 c5b3d29372330bf8516dc1c683b4b80f /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/core.vhd
 2 4 20 3 9
-1
-0 2 1 3
+2
+0 0
+1 2 1 3
 2 1 20 11821212 1515659533 82 c0fe00625fd737828f07e425ea8e19c2 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/counter_calculation.vhd
 2 6 18 5 9
-1
-0 2 1 5
+2
+0 0
+1 2 1 5
 3 1 20 11821198 1515659533 69 cbb1c802ef4af813be3e65eaa235051c /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/decode.vhd
 2 8 33 7 9
-1
-0 2 1 7
+2
+0 0
+1 2 1 7
 4 1 20 11821222 1515659533 70 a2be286570b3d076bf693d7816a98212 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/execute.vhd
 2 10 28 9 9
-1
-0 2 1 9
+2
+0 0
+1 2 1 9
 5 1 20 11821252 1515659533 68 9dce3a87c811d3d0e49711b0dad0cb84 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/fetch.vhd
 2 11 9 12 21
-1
-0 2 1 11
+2
+0 0
+1 2 1 11
 6 1 20 11821206 1515659533 76 7172c2d0887455e5ea570ad0bbc4a835 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/memory_access.vhd
 2 14 27 13 9
-1
-0 2 1 13
+2
+0 0
+1 2 1 13
 7 1 20 11821146 1515659533 75 2252e3abe666934ef7e0769202bcec76 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/registerfile.vhd
 2 15 9 16 20
-1
-0 2 1 15
+2
+0 0
+1 2 1 15
 8 1 20 11821085 1515659533 80 5b4c043572a95e1e141735f4d43e7624 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/RISCV_CORE_CONFIG.vhd
 1 1 6
 0
 9 1 20 11821207 1515659533 72 dfe8e9fff2f1b956d99c973b5684f649 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/writeback.vhd
 2 17 9 18 20
-1
-0 2 1 17
+2
+0 0
+1 2 1 17
 10 1 20 11821228 1515659533 71 70ee5f209a0f9b8e9031baa65bdfe10e /tp/xph3app/xph3app606/RISC-V-Core-32-bits/CORE/design/vhd/pipeline.vhd
-2 20 20 19 9
-1
-0 2 1 19
+18 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1 20 -1 19 -1
+2
+0 0
+1 2 1 19

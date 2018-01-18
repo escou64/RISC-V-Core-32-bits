@@ -1,17 +1,18 @@
 ; # VARIABLES OF CONFIGURATION
 set VHDL_FILES {	../design/vhd/RISCV_CORE_CONFIG.vhd
+					../design/vhd/cache_controller.vhd
 					../design/vhd/alu.vhd
 					../design/vhd/counter_calculation.vhd
 					../design/vhd/decode.vhd
 					../design/vhd/execute.vhd
 					../design/vhd/fetch.vhd
 					../design/vhd/memory_access.vhd
-					../design/vhd/registerfile.vhd
+					../design/vhd/reg_integer.vhd
 					../design/vhd/writeback.vhd
 					../design/vhd/pipeline.vhd}
 
-set LIBRARY_NAME	LIB_CORE
-set LIBRARY_PATH	./libs/LIB_CORE
+set LIBRARY_NAME	LIB_PIPELINE
+set LIBRARY_PATH	./libs/LIB_PIPELINE
 
 ; # END OF THE CONFIGURATION PART
 

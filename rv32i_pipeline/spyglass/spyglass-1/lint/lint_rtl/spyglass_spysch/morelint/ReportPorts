@@ -1,0 +1,15 @@
+SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
+VALUE@@i_rstn@@INPUT@@0@@0@@-@@pipeline@@No
+VALUE@@i_clk@@INPUT@@0@@0@@-@@pipeline@@No
+VALUE@@o_imem_addr@@OUTPUT@@31@@0@@-@@pipeline@@No
+VALUE@@o_imem_data@@OUTPUT@@31@@0@@-@@pipeline@@No
+VALUE@@o_imem_write@@OUTPUT@@0@@0@@-@@pipeline@@No
+VALUE@@o_imem_size@@OUTPUT@@1@@0@@-@@pipeline@@No
+VALUE@@i_imem_data@@INPUT@@31@@0@@-@@pipeline@@No
+VALUE@@i_imem_miss@@INPUT@@0@@0@@-@@pipeline@@No
+VALUE@@o_dmem_addr@@OUTPUT@@31@@0@@-@@pipeline@@No
+VALUE@@o_dmem_data@@OUTPUT@@31@@0@@-@@pipeline@@No
+VALUE@@o_dmem_write@@OUTPUT@@0@@0@@-@@pipeline@@No
+VALUE@@o_dmem_size@@OUTPUT@@1@@0@@-@@pipeline@@No
+VALUE@@i_dmem_data@@INPUT@@31@@0@@-@@pipeline@@No
+VALUE@@i_dmem_miss@@INPUT@@0@@0@@-@@pipeline@@No

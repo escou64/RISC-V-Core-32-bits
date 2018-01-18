@@ -1,0 +1,30 @@
+##Data Import Section
+
+read_file -type vhdl ../design/vhd/RISCV_CORE_CONFIG.vhd
+read_file -type vhdl ../design/vhd/cache_controller.vhd
+read_file -type vhdl ../design/vhd/alu.vhd
+read_file -type vhdl ../design/vhd/counter_calculation.vhd
+read_file -type vhdl ../design/vhd/decode.vhd
+read_file -type vhdl ../design/vhd/execute.vhd
+read_file -type vhdl ../design/vhd/fetch.vhd
+read_file -type vhdl ../design/vhd/memory_access.vhd
+read_file -type vhdl ../design/vhd/reg_integer.vhd
+read_file -type vhdl ../design/vhd/writeback.vhd
+read_file -type vhdl ../design/vhd/pipeline.vhd
+set_option lib LIB_PIPELINE ./libs/LIB_PIPELINE
+set_option lib LIB_PIPELINE ./libs/LIB_PIPELINE
+set_option libhdlfiles LIB_PIPELINE { ../design/vhd/RISCV_CORE_CONFIG.vhd ../design/vhd/cache_controller.vhd ../design/vhd/alu.vhd ../design/vhd/counter_calculation.vhd ../design/vhd/decode.vhd ../design/vhd/execute.vhd ../design/vhd/fetch.vhd ../design/vhd/memory_access.vhd ../design/vhd/reg_integer.vhd ../design/vhd/writeback.vhd ../design/vhd/pipeline.vhd }
+
+##Common Options Section
+
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis yes
+set_option designread_disable_flatten no
+set_option hdllibdu yes
+
+
+##Goal Setup Section
+
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+

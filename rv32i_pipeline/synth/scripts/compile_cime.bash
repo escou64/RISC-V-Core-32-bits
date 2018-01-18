@@ -23,7 +23,8 @@ VHDL_FILES="	RISCV_CORE_CONFIG.vhd
 
 																	# List of the different VHDL Files used for the bench
 BENCH_FILES="	RISCV_CORE_CONFIG_BENCH.vhd
-				pipeline_bench.vhd"									
+				pipeline_bench.vhd
+				finaldemo_bench.vhd"									
 OPT_VCOM="+acc -work" #+acc											# List of the different options of ModelSim used for Compilation
 LOG_FILE="mylog.log"												# Name of the log file
 

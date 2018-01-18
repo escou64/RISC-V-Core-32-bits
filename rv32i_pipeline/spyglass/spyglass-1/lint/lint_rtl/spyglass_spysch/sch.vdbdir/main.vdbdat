@@ -1,0 +1,32 @@
+#x HLBEGIN S.1
+#x {}
+#x 101 { @@n 36 @@p 36 }
+#x HLEND
+#x HLBEGIN S.2
+#x {}
+#x 101 { @@n 68 @@p 68 }
+#x HLEND
+#x HLBEGIN S.3
+#x {}
+#x 101 { @@n 70 @@p 70 }
+#x HLEND
+#x HLBEGIN S.4
+#x {}
+#x 101 { @@n 105 @@p 105 }
+#x HLEND
+#x HLBEGIN S.5
+#x {}
+#x 101 { @@n 172 @@p 172 }
+#x HLEND
+#x HLBEGIN S.6
+#x {}
+#x 101 { @@n 174 @@p 174 }
+#x HLEND
+#x HLBEGIN S.7
+#x {}
+#x 101 { @@n 177 @@p 177 }
+#x HLEND
+#x HLBEGIN S.8
+#x {}
+#x 101 { @@n 209 @@p 209 }
+#x HLEND

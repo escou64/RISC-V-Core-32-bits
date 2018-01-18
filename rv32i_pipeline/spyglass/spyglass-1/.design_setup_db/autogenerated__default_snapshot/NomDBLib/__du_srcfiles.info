@@ -1,0 +1,12 @@
+11
+90 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/RISCV_CORE_CONFIG.vhd 1 3c42bd836c808773b73841721c75d5ac
+89 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/cache_controller.vhd 1 bd0741ddcf56f384f6a6e00237ea9278
+76 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/alu.vhd 1 dee27369c82e7603263658829dbcaa96
+92 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/counter_calculation.vhd 1 953d0d962030bba1dd49dd7bab65ed16
+79 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/decode.vhd 1 b7f226e44cdfe8139535756209a51541
+80 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/execute.vhd 1 a5d2ab0ce5f9a5c93c7c3fa2f82e4246
+78 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/fetch.vhd 1 485c8cdb92e045f9e2ab1c87ec10815b
+86 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/memory_access.vhd 1 283b1e8cb919141ccbbd63da7b0cad40
+84 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/reg_integer.vhd 1 4241cd730fed1cfc3b22d42f50ed2d00
+82 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/writeback.vhd 1 2f40b0a59e01738d76a163eb8b8f9c21
+81 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vhd/pipeline.vhd 1 992c86a1cefa9518d3ab09fdb5e9a325

@@ -1,0 +1,720 @@
+# do /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/tcl_read_eval_loop.tcl
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:34 on Jan 18,2018
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  ModelSim SE-64 10.5c Jul 20 2016Linux 3.2.0-4-amd64
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: Problem signal rd output  
+#    Time: 705 ns  Iteration: 0  Process: /tb_execute/line__79 File: /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd
+# Break in Process line__79 at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 410
+# Stopped at /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 410
+# 
+# Stack trace result from 'tb' command
+#  /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd 410 return [address 0x7feff05a6fb0] Process line__79
+# 
+# 
+# Surrounding code from 'see' command
+#   405 : 				wait for HALF_PERIOD;
+#   406 : 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+#   407 : 				assert exec_jump = '1' report "Problem signal jump output  " severity error;
+#   408 : 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
+#   409 : 				assert exec_rd = "00000000000000000000000000001000" report "Problem signal rd output  " severity error;
+# ->410 : 				assert exec_pc = "00000000000000000000000000000110" report "Problem signal rd output  " severity error;
+#   411 : 
+#   412 : 				wait for HALF_PERIOD;
+#   413 : 				dcde_inst <= "1111011" & "10101" & "00011" & c_FUNC3_BNE & "00010" & c_OPCODE32_BRANCH;
+#   414 : 				wait for HALF_PERIOD;
+# 
+# End time: 13:30:35 on Jan 18,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_decode.all_acbf876bf0c6ebb9edb8a6394d5c41476351caad/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_decode.all_acbf876bf0c6ebb9edb8a6394d5c41476351caad/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:35 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:37 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 43
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_writeback.all_328af63cfde7f6332e479c317871af30954f7203/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_writeback(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_writeback/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_writeback.all_328af63cfde7f6332e479c317871af30954f7203/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:37 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:39 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_fetch.all_0dcd4905659bd441d8f7d4b4b8b19502951ce4f2/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_fetch(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_fetch/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_fetch.all_0dcd4905659bd441d8f7d4b4b8b19502951ce4f2/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:39 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:40 on Jan 18,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_reg_integer.all_387a0226c3e38f597630c3cda9e6d2407d3ea39d/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_reg_integer(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_reg_integer/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_reg_integer.all_387a0226c3e38f597630c3cda9e6d2407d3ea39d/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:40 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:42 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_memory_access.all_1a2cef00fa7baacf013e65b088f9e6a0b558caad/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_memory_access.all_1a2cef00fa7baacf013e65b088f9e6a0b558caad/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:42 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:44 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_alu.all_c379f9c4821ba209c2f798a940dbde6c22569ce2/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_alu(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_alu.all_c379f9c4821ba209c2f798a940dbde6c22569ce2/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:44 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:45 on Jan 18,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_finaldemo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_finaldemo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:45 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/counter_calculation1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_finaldemo/pipeline1/counter_calculation1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_finaldemo/pipeline1/counter_calculation1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/counter_calculation1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 5  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 5  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 5  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 20 ns  Iteration: 5  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 30 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 3  Instance: /tb_finaldemo/pipeline1/execute1/alu1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 40 ns  Iteration: 6  Instance: /tb_finaldemo/pipeline1/counter_calculation1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 50 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 60 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 60 ns  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 60 ns  Iteration: 4  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 2  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3780 ns  Iteration: 2  Instance: /tb_finaldemo/pipeline1/decode1
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:47 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 233
+# vsim -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 13:30:47 on Jan 18,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/string_ops/src/string_ops.vhd(456): (vopt-1083) Implicit array operator "=" always returns FALSE (left length 1 is not equal to right length 0).
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/counter_calculation1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_demo/pipeline1/counter_calculation1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_demo/pipeline1/counter_calculation1
+# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 13:30:49 on Jan 18,2018, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 35
