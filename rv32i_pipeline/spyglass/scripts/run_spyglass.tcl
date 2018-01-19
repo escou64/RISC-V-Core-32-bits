@@ -2,7 +2,7 @@
 set VHDL_FILES {	../design/vhd/RISCV_CORE_CONFIG.vhd
 					../design/vhd/cache_controller.vhd
 					../design/vhd/alu.vhd
-					../design/vhd/counter_calculation.vhd
+					../design/vhd/pc.vhd
 					../design/vhd/decode.vhd
 					../design/vhd/execute.vhd
 					../design/vhd/fetch.vhd

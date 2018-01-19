@@ -119,7 +119,7 @@ architecture bench_arch of tb_finaldemo is
 
 
    		process
-			file f_inst				: text open read_mode is "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/pgcd_v2.txt";
+			file f_inst				: text open read_mode is "/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/pgcd_v2.txt";
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 			begin

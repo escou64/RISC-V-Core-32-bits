@@ -1,15 +1,15 @@
 Entity,Entity Type,Port Name,Direction,Width,Index,Comment Source,Comment
-pipeline,Top_Level,i_rstn,INPUT,1,-,port definition,- 
-pipeline,Top_Level,i_clk,INPUT,1,-,port definition,- 
-pipeline,Top_Level,o_imem_addr,OUTPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,o_imem_data,OUTPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,o_imem_write,OUTPUT,1,-,port definition,- 
-pipeline,Top_Level,o_imem_size,OUTPUT,2,(1:0),port definition,- 
-pipeline,Top_Level,i_imem_data,INPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,i_imem_miss,INPUT,1,-,port definition,- 
-pipeline,Top_Level,o_dmem_addr,OUTPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,o_dmem_data,OUTPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,o_dmem_write,OUTPUT,1,-,port definition,- 
-pipeline,Top_Level,o_dmem_size,OUTPUT,2,(1:0),port definition,- 
-pipeline,Top_Level,i_dmem_data,INPUT,32,(31:0),port definition,- 
-pipeline,Top_Level,i_dmem_miss,INPUT,1,-,port definition,- 
+pipeline,Top_Level,i_rstn,INPUT,1,-,port definition,Asynchronous Negative Reset 
+pipeline,Top_Level,i_clk,INPUT,1,-,port definition,Clock 
+pipeline,Top_Level,o_imem_addr,OUTPUT,32,(31:0),port definition,Instruction Address 
+pipeline,Top_Level,o_imem_data,OUTPUT,32,(31:0),port definition,Instruction to write (Not Used) 
+pipeline,Top_Level,o_imem_write,OUTPUT,1,-,port definition,Instruction Write (Not Used) 
+pipeline,Top_Level,o_imem_size,OUTPUT,2,(1:0),port definition,Instruction Size (Always Word) 
+pipeline,Top_Level,i_imem_data,INPUT,32,(31:0),port definition,Read Instruction 
+pipeline,Top_Level,i_imem_miss,INPUT,1,-,port definition,Instruction Cache 'Miss' 
+pipeline,Top_Level,o_dmem_addr,OUTPUT,32,(31:0),port definition,Data Address 
+pipeline,Top_Level,o_dmem_data,OUTPUT,32,(31:0),port definition,Data to write 
+pipeline,Top_Level,o_dmem_write,OUTPUT,1,-,port definition,Data Write 
+pipeline,Top_Level,o_dmem_size,OUTPUT,2,(1:0),port definition,Data Size 
+pipeline,Top_Level,i_dmem_data,INPUT,32,(31:0),port definition,Read Data 
+pipeline,Top_Level,i_dmem_miss,INPUT,1,-,port definition,Daata Cache 'Miss' 

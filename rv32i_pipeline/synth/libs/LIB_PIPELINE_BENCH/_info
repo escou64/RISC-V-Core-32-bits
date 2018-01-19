@@ -9,11 +9,11 @@ Z0 d/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth
 !i10e 25
 !i10f 100
 T_opt
-!s110 1516296884
-V_eX0Z;h?;o2Oz@@zN1Y]F1
+!s110 1516356920
+Vj[;BMW^<;kL_W=d^icOgN1
 04 12 10 work tb_finaldemo bench_arch 1
-=1-002564c79673-5a60dab2-b781c-7575
-o-quiet -auto_acc_if_foreign -work LIB_PIPELINE_BENCH -L c35_CORELIB -L c35_IOLIB_4M -sdftyp /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/results/pipeline.sdf -suppress 1948
+=1-002564c79527-5a61c536-d6f66-4400
+o-quiet -auto_acc_if_foreign -work LIB_PIPELINE_BENCH -L c35_CORELIB -L c35_IOLIB_4M -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -sdftyp /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/netlist/pipeline_flat.sdf -suppress 1948
 n@_opt
 OL;O;10.2c;57
 Priscv_core_config_bench
@@ -28,10 +28,10 @@ Z2 OL;C;10.2c;57
 32
 Z3 o+acc -work LIB_PIPELINE_BENCH
 Z4 tExplicit 1
-Z5 !s110 1516296836
+Z5 !s110 1516356863
 !s100 A8L8aYEL3R;E40SP?7@[;1
 !i10b 1
-!s108 1516296836.614033
+!s108 1516356863.225139
 !s90 +acc|-work|LIB_PIPELINE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd|
 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/RISCV_CORE_CONFIG_BENCH.vhd|
 !i111 0
@@ -54,7 +54,7 @@ V?jO>O03JXIH<iMZg1>[nR3
 R2
 32
 R5
-Z17 !s108 1516296836.804145
+Z17 !s108 1516356863.407265
 Z18 !s90 +acc|-work|LIB_PIPELINE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/finaldemo_bench.vhd|
 Z19 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/finaldemo_bench.vhd|
 R3
@@ -87,7 +87,7 @@ R4
 !i10b 1
 !i111 0
 Etb_pipeline
-Z20 w1516034205
+Z20 w1516354201
 R7
 R8
 R9
@@ -105,7 +105,7 @@ VL`CeLI]0^hGiNOP;Hd78[0
 R2
 32
 R5
-Z23 !s108 1516296836.708636
+Z23 !s108 1516356863.319689
 Z24 !s90 +acc|-work|LIB_PIPELINE_BENCH|/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd|
 Z25 !s107 /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/synth/bench/pipeline_bench.vhd|
 R3
@@ -125,7 +125,7 @@ R14
 DEx4 work 11 tb_pipeline 0 22 L`CeLI]0^hGiNOP;Hd78[0
 l57
 L22
-V^QJAdU=]gALBVl7JX]ke81
+V[2D5KoP[>V1;eJ@VVTG?^0
 R2
 32
 R5
@@ -134,6 +134,6 @@ R24
 R25
 R3
 R4
-!s100 4XED6]kAheRdK=HgkCQ842
+!s100 FUIfYo?XndLJRSl4L@QBS0
 !i10b 1
 !i111 0
