@@ -17,24 +17,24 @@ entity tb_writeback is
 end entity tb_writeback;
 
 architecture bench_arch of tb_writeback is
-	component writeback port (	i_inst			: in std_logic_vector(11 downto 0);
-								i_validity		: in std_logic;
-								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);
-								o_write			: out std_logic;
-								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								o_data			: out std_logic_vector(c_NBITS - 1 downto 0));								
+	component writeback port (	i_inst			: in std_logic_vector(11 downto 0);							-- Instruction
+								i_validity		: in std_logic;												-- Instrution Validity
+								i_rd			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Accees Memory Result
+								o_write			: out std_logic;											-- Write Integer Register
+								o_rdselect		: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Select Integer Register Destination
+								o_data			: out std_logic_vector(c_NBITS - 1 downto 0));				-- Data to write								
 	end component;
 
-	component reg_integer port (	i_rstn		: in std_logic;
-									i_clk		: in std_logic;
-									i_freeze	: in std_logic;
-									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);
-									i_write		: in std_logic;
-									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));
+	component reg_integer port (	i_rstn		: in std_logic;												-- Asynhronous Negative Reset					
+									i_clk		: in std_logic;												-- Clock
+									i_freeze	: in std_logic;												-- Freeze for Cache 'Miss'
+									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 1
+									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 2
+									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 2
+									i_write		: in std_logic;												-- Write Signal
+									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects register for writing
+									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));				-- Data to write 
 
 	end component;
 	
@@ -46,7 +46,6 @@ architecture bench_arch of tb_writeback is
 	signal s_regf_rs2select	: std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0)	:= "00000";
 	signal s_regf_rs1		: std_logic_vector(c_NBITS - 1 downto 0);
 	signal s_regf_rs2		: std_logic_vector(c_NBITS - 1 downto 0);
-	--signal s_accm_pc		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_PC_INIT;
 	signal s_accm_inst		: std_logic_vector(11 downto 0)							:= (others => '0');
 	signal s_accm_validity	: std_logic												:= '0';
 	signal s_accm_rd		: std_logic_vector(c_NBITS - 1 downto 0)				:= c_REG_INIT;
@@ -57,8 +56,8 @@ architecture bench_arch of tb_writeback is
 	
 	begin
 
-		reg_integer1 : reg_integer port map (	i_rstn		=> rstn,
-												i_clk		=> clk,	
+		reg_integer1 : reg_integer port map (	i_rstn		=> rstn,				-- Module reg_integer1
+												i_clk		=> clk,					-- Connection signal with input/output
 												i_freeze	=> freeze,
 												i_rs1select	=> s_regf_rs1select,
 												i_rs2select	=> s_regf_rs2select,
@@ -68,8 +67,8 @@ architecture bench_arch of tb_writeback is
 												i_rdselect	=> s_regf_rdselect,
 												i_data		=> s_regf_data);
 	
-		writeback1 : writeback port map (	i_inst			=> s_accm_inst,
-											i_validity		=> s_accm_validity,
+		writeback1 : writeback port map (	i_inst			=> s_accm_inst,			-- Module writeback1
+											i_validity		=> s_accm_validity,		-- Connection signal with input/output
 											i_rd			=> s_accm_rd,
 											o_write			=> s_regf_write,
 											o_rdselect		=> s_regf_rdselect,
@@ -90,13 +89,14 @@ architecture bench_arch of tb_writeback is
 				
 				s_accm_validity <= '1';
 
+				-- Verifications for differents value of register rd to write in register file
 				wait for HALF_PERIOD;
-				s_accm_inst <= "00000" & c_OPCODE32_LUI;
-				s_accm_rd <= "00000000000000000000000000001000";
+				s_accm_inst <= "00000" & c_OPCODE32_LUI;																		--Instruction
+				s_accm_rd <= "00000000000000000000000000001000";																-- value of rd
 				wait for HALF_PERIOD;
-				assert s_regf_write = '1' report "Problem signal write output  " severity error;
-				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;
-				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;								-- Operation good for writing data
+				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;						-- Value of rd address 
+				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;	-- Value of data to write
 
 				wait for HALF_PERIOD;
 				s_accm_inst <= "00001" & c_OPCODE32_AUIPC;

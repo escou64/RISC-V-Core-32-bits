@@ -16,7 +16,7 @@ end entity alu;
 
 architecture alu_arch of alu is
 
-	signal s_result : std_logic_vector(c_NBITS - 1 downto 0);
+	signal s_result : std_logic_vector(c_NBITS - 1 downto 0); 
 
 	begin
 		-- Combinatorial Logic

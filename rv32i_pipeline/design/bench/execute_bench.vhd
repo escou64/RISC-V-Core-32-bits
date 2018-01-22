@@ -18,23 +18,23 @@ entity tb_execute is
 end entity tb_execute;
 
 architecture bench_arch of tb_execute is
-	component execute port (	i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_validity		: in std_logic;
-								i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_freeze		: in std_logic;
-								o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity_alu	: out std_logic;
-								o_jump			: out std_logic;
-								o_branch		: out std_logic;
-								o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_inst			: out std_logic_vector(14 downto 0);
-								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity		: out std_logic);
+	component execute port (	i_rstn			: in std_logic;									-- Asynhronous Negative Reset
+								i_clk			: in std_logic;									-- Clock
+								i_pc			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Program Counter
+								i_inst			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction
+								i_validity		: in std_logic;									-- Validity of the instruction
+								i_rs1			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 1
+								i_rs2			: in std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 2
+								i_freeze		: in std_logic;									-- Freeze for Cache 'Miss'
+								o_rd_alu		: out std_logic_vector(c_NBITS - 1 downto 0);   -- Data Dependency: ALU Output
+								o_validity_alu	: out std_logic;								-- Data Dependency: ALU Output Validity
+								o_newpc			: out std_logic_vector(c_NBITS - 1 downto 0);	-- New Program Counter for Branch / Jump Instructions
+								o_jump			: out std_logic;								-- Indicates a future jump
+								o_branch		: out std_logic;								-- Indicates a future branch
+								o_inst			: out std_logic_vector(14 downto 0);			-- Instruction
+								o_rs2			: out std_logic_vector(c_NBITS - 1 downto 0);	-- Value of the Source Register 2
+								o_rd			: out std_logic_vector(c_NBITS - 1 downto 0);	-- Execute Result
+								o_validity		: out std_logic);								-- Validity of the instruction
 	end component;
 
 	signal rstn					: std_logic									:= '1';
@@ -55,8 +55,8 @@ architecture bench_arch of tb_execute is
 	signal exec_jump			: std_logic;
 	signal exec_branch			: std_logic;
 	begin
-		execute1 : execute port map (		i_rstn				=> rstn,					--Connection signal with input/output
-											i_clk				=> clk,
+		execute1 : execute port map (		i_rstn				=> rstn,					-- Module execute1
+											i_clk				=> clk,						--Connection signal with input/output
 											i_pc				=> dcde_pc,
 											i_inst				=> dcde_inst,
 											i_validity			=> dcde_validity,
@@ -103,7 +103,7 @@ architecture bench_arch of tb_execute is
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;						--Verification of good value of Validity output
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;								--Verification of good value of jump output
 				assert exec_branch = '0' report "Problem signal branch output  " severity error;							--Verification of good value of branch output
-				assert exec_rd = "00000000000000000000000000000011" report "Problem signal rd output  " severity error;	--Verification of good value of rd output
+				assert exec_rd = "00000000000000000000000000000011" report "Problem signal rd output  " severity error;		--Verification of good value of rd output
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11111" & "11111" & c_FUNC3_SH & "11110" & c_OPCODE32_STORE;

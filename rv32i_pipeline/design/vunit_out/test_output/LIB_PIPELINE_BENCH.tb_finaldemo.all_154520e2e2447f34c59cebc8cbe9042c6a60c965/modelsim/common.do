@@ -122,10 +122,10 @@ proc _vunit_sim_restart {} {
 }
 
 proc vunit_compile {} {
-    set cmd_show {/usr/bin/python -u run.py --compile --gui LIB_PIPELINE_BENCH.tb_finaldemo.all}
+    set cmd_show {/usr/bin/python -u run.py --compile}
     puts "Re-compiling using command ${cmd_show}"
 
-    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile', '--gui', 'LIB_PIPELINE_BENCH.tb_finaldemo.all'], cwd='/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
+    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
 
     while {[gets $chan line] >= 0} {
         puts $line

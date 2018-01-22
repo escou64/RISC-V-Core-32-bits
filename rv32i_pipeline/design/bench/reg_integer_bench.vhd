@@ -18,16 +18,16 @@ entity tb_reg_integer is
 end entity tb_reg_integer;
 
 architecture bench_arch of tb_reg_integer is
-	component reg_integer port (	i_rstn		: in std_logic;
-									i_clk		: in std_logic;
-									i_freeze	: in std_logic;
-									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
-									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);
-									i_write		: in std_logic;
-									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));
+	component reg_integer port (	i_rstn		: in std_logic;												-- Asynhronous Negative Reset					
+									i_clk		: in std_logic;												-- Clock
+									i_freeze	: in std_logic;												-- Freeze for Cache 'Miss'
+									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 1
+									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 2
+									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 2
+									i_write		: in std_logic;												-- Write Signal
+									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects register for writing
+									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));				-- Data to write 
 	end component;
 
 	signal sig_rstn			: std_logic	:= '1';
@@ -42,8 +42,8 @@ architecture bench_arch of tb_reg_integer is
 	signal sig_data			: std_logic_vector(c_NBITS - 1 downto 0)			:= (others => '1');			
 
 	begin
-		reg_integer1 : reg_integer port map (	i_rstn		=> sig_rstn,
-												i_clk		=> sig_clk,	
+		reg_integer1 : reg_integer port map (	i_rstn		=> sig_rstn,					-- Module reg_integer1
+												i_clk		=> sig_clk,						-- Connection signal with input/output
 												i_freeze	=> sig_freeze,
 												i_rs1select	=> sig_rs1select,
 												i_rs2select	=> sig_rs2select,

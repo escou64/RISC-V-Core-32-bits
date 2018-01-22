@@ -18,42 +18,42 @@ entity tb_decode is
 end entity tb_decode;
 
 architecture bench_arch of tb_decode is
-	component reg_integer port (		i_rstn		: in std_logic;
-										i_clk		: in std_logic;
-										i_freeze		: in std_logic;
-										i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-										i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-										o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);
-										o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);
-										i_write		: in std_logic;
-										i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-										i_data		: in std_logic_vector(c_NBITS - 1 downto 0));
+	component reg_integer port (	i_rstn		: in std_logic;												-- Asynhronous Negative Reset					
+									i_clk		: in std_logic;												-- Clock
+									i_freeze	: in std_logic;												-- Freeze for Cache 'Miss'
+									i_rs1select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 1
+									i_rs2select	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects Source Register 2
+									o_rs1		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+									o_rs2		: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 2
+									i_write		: in std_logic;												-- Write Signal
+									i_rdselect	: in std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects register for writing
+									i_data		: in std_logic_vector(c_NBITS - 1 downto 0));				-- Data to write 
 	end component;
 
-	component decode port (		i_rstn				: in std_logic;
-								i_clk				: in std_logic;
-								i_pc				: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_inst				: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_validity			: in std_logic;
-								i_jump				: in std_logic;
-								i_branch			: in std_logic;
-								i_freeze			: in std_logic;
-								i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_validity_alu		: in std_logic;
-								i_validity_exec		: in std_logic;
-								i_validity_accm		: in std_logic;
-								o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_rs1				: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_rs2				: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_validity			: out std_logic;
-								o_load_dependency	: out std_logic;
-								o_rs1select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								o_rs2select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);
-								i_rs1				: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0));								
+	component decode port (		i_rstn				: in std_logic;												-- Asynhronous Negative Reset
+								i_clk				: in std_logic;												-- Clock
+								i_pc				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Program Counter
+								i_inst				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Instruction
+								i_validity			: in std_logic;												-- Validity of the instruction
+								i_jump				: in std_logic;												-- Indicates a future jump
+								i_branch			: in std_logic;												-- Indicates a future branch
+								i_freeze			: in std_logic;												-- Freeze for Cache 'Miss'
+								i_rd_alu			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the ALU Output
+								i_rd_exec			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the Execute Floor Output
+								i_rd_accm			: in std_logic_vector(c_NBITS - 1 downto 0);				-- Data Dependency: New Value in the Access Memory Floor Output
+								i_validity_alu		: in std_logic;												-- Data Dependency: Validity of the ALU value
+								i_validity_exec		: in std_logic;												-- Data Dependency: Validity of the Execute Floor value
+								i_validity_accm		: in std_logic;												-- Data Dependency: Validity of the Access Memory Floor value
+								o_pc				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Program Counter
+								o_inst				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Instruction
+								o_rs1				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+								o_rs2				: out std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 2
+								o_validity			: out std_logic;											-- Instruction Validity
+								o_load_dependency	: out std_logic;											-- Indicates a Load Data Dependency
+								o_rs1select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects the Source Register 1
+								o_rs2select			: out std_logic_vector(c_SELECTREGISTERBITS - 1 downto 0);	-- Selects the Source Register 2
+								i_rs1				: in std_logic_vector(c_NBITS - 1 downto 0);				-- Value of the Source Register 1
+								i_rs2				: in std_logic_vector(c_NBITS - 1 downto 0));				-- Value of the Source Register 2								
 	end component;
 
 

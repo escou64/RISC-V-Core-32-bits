@@ -21,20 +21,20 @@ end entity tb_finaldemo;
 	
 architecture bench_arch of tb_finaldemo is
 
-	component pipeline port (	i_rstn			: in std_logic;
-								i_clk			: in std_logic;
-								o_imem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_imem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_imem_write	: out std_logic;
-								o_imem_size		: out std_logic_vector(1 downto 0);
-								i_imem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_imem_miss		: in std_logic;
-								o_dmem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_dmem_data		: out std_logic_vector(c_NBITS - 1 downto 0);
-								o_dmem_write	: out std_logic;
-								o_dmem_size		: out std_logic_vector(1 downto 0);
-								i_dmem_data		: in std_logic_vector(c_NBITS - 1 downto 0);
-								i_dmem_miss		: in std_logic);
+	component pipeline port (	i_rstn			: in std_logic;									-- Asynchronous Negative Reset
+								i_clk			: in std_logic;									-- Clock
+								o_imem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction Address
+								o_imem_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Instruction to write (Not Used)
+								o_imem_write	: out std_logic;								-- Instruction Write (Not Used)
+								o_imem_size		: out std_logic_vector(1 downto 0);				-- Instruction Size (Always Word)
+								i_imem_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Read Instruction
+								i_imem_miss		: in std_logic;									-- Instruction Cache 'Miss'
+								o_dmem_addr		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Data Address
+								o_dmem_data		: out std_logic_vector(c_NBITS - 1 downto 0);	-- Data to write
+								o_dmem_write	: out std_logic;								-- Data Write
+								o_dmem_size		: out std_logic_vector(1 downto 0);				-- Data Size
+								i_dmem_data		: in std_logic_vector(c_NBITS - 1 downto 0);	-- Read Data
+								i_dmem_miss		: in std_logic);								-- Daata Cache 'Miss'
 	end component pipeline;
 
 	signal s_rstn			: std_logic					:= '1';
