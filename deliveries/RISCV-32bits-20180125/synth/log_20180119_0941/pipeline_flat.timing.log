@@ -1,0 +1,576 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : pipeline
+Version: J-2014.09-SP2
+Date   : Fri Jan 19 09:44:56 2018
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: WORST   Library: c35_CORELIB_TYP
+Wire Load Model Mode: enclosed
+
+  Startpoint: decode1/o_rs2_reg[11]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: pc1/s_pc_final_reg[15]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_rs2_reg[11]/C (DFC3)           0.00 #     0.00 r
+  decode1/o_rs2_reg[11]/Q (DFC3)           1.24       1.24 f
+  U3938/Q (NAND22)                         0.47       1.71 r
+  U3983/Q (CLKIN3)                         0.22       1.93 f
+  U1094/Q (OAI211)                         0.47       2.39 r
+  U3984/Q (NAND22)                         0.09       2.48 f
+  U430/Q (NAND41)                          0.60       3.08 r
+  U429/Q (INV3)                            0.27       3.35 f
+  U4019/Q (OAI222)                         0.47       3.82 r
+  U2875/Q (NOR31)                          0.35       4.17 f
+  U4021/Q (OAI212)                         0.42       4.59 r
+  U4022/Q (AOI2112)                        0.25       4.84 f
+  U4024/Q (OAI212)                         0.39       5.22 r
+  U815/Q (NAND42)                          0.10       5.32 f
+  U1062/Q (NAND22)                         0.42       5.75 r
+  U4028/Q (AOI312)                         0.22       5.96 f
+  U583/Q (IMUX23)                          0.36       6.32 r
+  U3783/Q (NOR42)                          0.39       6.71 f
+  U938/Q (NOR24)                           0.38       7.09 r
+  U4029/Q (OAI212)                         0.16       7.25 f
+  U888/Q (CLKBU15)                         0.63       7.88 f
+  U1031/Q (CLKBU15)                        0.42       8.30 f
+  U1096/Q (NOR21)                          0.37       8.68 r
+  U269/Q (AOI312)                          0.22       8.90 f
+  U5172/Q (OAI212)                         0.47       9.36 r
+  pc1/s_pc_final_reg[15]/D (DFEC1)         0.00       9.36 r
+  data arrival time                                   9.36
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  pc1/s_pc_final_reg[15]/C (DFEC1)         0.00       9.50 r
+  library setup time                      -0.14       9.36
+  data required time                                  9.36
+  -----------------------------------------------------------
+  data required time                                  9.36
+  data arrival time                                  -9.36
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_rs2_reg[11]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: pc1/s_pc_final_reg[19]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_rs2_reg[11]/C (DFC3)           0.00 #     0.00 r
+  decode1/o_rs2_reg[11]/Q (DFC3)           1.24       1.24 f
+  U3938/Q (NAND22)                         0.47       1.71 r
+  U3983/Q (CLKIN3)                         0.22       1.93 f
+  U1094/Q (OAI211)                         0.47       2.39 r
+  U3984/Q (NAND22)                         0.09       2.48 f
+  U430/Q (NAND41)                          0.60       3.08 r
+  U429/Q (INV3)                            0.27       3.35 f
+  U4019/Q (OAI222)                         0.47       3.82 r
+  U2875/Q (NOR31)                          0.35       4.17 f
+  U4021/Q (OAI212)                         0.42       4.59 r
+  U4022/Q (AOI2112)                        0.25       4.84 f
+  U4024/Q (OAI212)                         0.39       5.22 r
+  U815/Q (NAND42)                          0.10       5.32 f
+  U1062/Q (NAND22)                         0.42       5.75 r
+  U4028/Q (AOI312)                         0.22       5.96 f
+  U583/Q (IMUX23)                          0.36       6.32 r
+  U3783/Q (NOR42)                          0.39       6.71 f
+  U938/Q (NOR24)                           0.38       7.09 r
+  U4029/Q (OAI212)                         0.16       7.25 f
+  U888/Q (CLKBU15)                         0.63       7.88 f
+  U3470/Q (NOR30)                          0.63       8.51 r
+  U1468/Q (AOI311)                         0.39       8.90 f
+  U964/Q (OAI212)                          0.46       9.36 r
+  pc1/s_pc_final_reg[19]/D (DFEC1)         0.00       9.36 r
+  data arrival time                                   9.36
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  pc1/s_pc_final_reg[19]/C (DFEC1)         0.00       9.50 r
+  library setup time                      -0.14       9.36
+  data required time                                  9.36
+  -----------------------------------------------------------
+  data required time                                  9.36
+  data arrival time                                  -9.36
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[2]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[24]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[2]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[2]/Q (DFEC3)          1.22       1.22 f
+  U1743/Q (CLKIN12)                        0.27       1.49 r
+  U1100/Q (NAND34)                         0.17       1.66 f
+  U1079/Q (CLKIN12)                        0.20       1.86 r
+  U1539/Q (NAND28)                         0.10       1.96 f
+  U740/Q (NAND43)                          0.69       2.64 r
+  U1069/Q (NAND28)                         0.21       2.85 f
+  U214/Q (INV15)                           0.47       3.33 r
+  U4074/Q (NAND22)                         0.21       3.54 f
+  U1493/Q (NAND26)                         0.50       4.04 r
+  U1458/Q (INV6)                           0.12       4.17 f
+  U442/Q (NAND23)                          0.43       4.60 r
+  U128/Q (CLKIN2)                          0.22       4.82 f
+  U127/Q (NOR22)                           0.29       5.10 r
+  U4395/Q (OAI212)                         0.20       5.30 f
+  U1855/Q (AOI312)                         0.47       5.77 r
+  U4410/Q (OAI312)                         0.17       5.94 f
+  U3675/Q (BUF15)                          0.49       6.44 f
+  U1382/Q (NAND22)                         0.38       6.82 r
+  U3718/Q (NAND21)                         0.17       6.99 f
+  U4996/Q (CLKIN3)                         0.37       7.36 r
+  U5010/Q (OAI212)                         0.15       7.51 f
+  U1369/Q (OAI212)                         0.51       8.02 r
+  U1208/Q (AOI312)                         0.22       8.25 f
+  U5013/Q (OAI2112)                        0.75       9.00 r
+  U824/Q (INV6)                            0.10       9.09 f
+  U3713/Q (OAI211)                         0.39       9.49 r
+  decode1/o_rs2_reg[24]/D (DFC3)           0.00       9.49 r
+  data arrival time                                   9.49
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs2_reg[24]/C (DFC3)           0.00       9.50 r
+  library setup time                      -0.01       9.49
+  data required time                                  9.49
+  -----------------------------------------------------------
+  data required time                                  9.49
+  data arrival time                                  -9.49
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[2]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[24]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[2]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[2]/Q (DFEC3)          1.22       1.22 f
+  U1743/Q (CLKIN12)                        0.27       1.49 r
+  U1100/Q (NAND34)                         0.17       1.66 f
+  U1079/Q (CLKIN12)                        0.20       1.86 r
+  U1539/Q (NAND28)                         0.10       1.96 f
+  U740/Q (NAND43)                          0.69       2.64 r
+  U1069/Q (NAND28)                         0.21       2.85 f
+  U214/Q (INV15)                           0.47       3.33 r
+  U4074/Q (NAND22)                         0.21       3.54 f
+  U1493/Q (NAND26)                         0.50       4.04 r
+  U1458/Q (INV6)                           0.12       4.17 f
+  U442/Q (NAND23)                          0.43       4.60 r
+  U128/Q (CLKIN2)                          0.22       4.82 f
+  U127/Q (NOR22)                           0.29       5.10 r
+  U4395/Q (OAI212)                         0.20       5.30 f
+  U1855/Q (AOI312)                         0.47       5.77 r
+  U4410/Q (OAI312)                         0.17       5.94 f
+  U3675/Q (BUF15)                          0.49       6.44 f
+  U1382/Q (NAND22)                         0.38       6.82 r
+  U3718/Q (NAND21)                         0.17       6.99 f
+  U4996/Q (CLKIN3)                         0.37       7.36 r
+  U5010/Q (OAI212)                         0.15       7.51 f
+  U1369/Q (OAI212)                         0.51       8.02 r
+  U1208/Q (AOI312)                         0.22       8.25 f
+  U5013/Q (OAI2112)                        0.75       9.00 r
+  U824/Q (INV6)                            0.10       9.09 f
+  U3714/Q (OAI211)                         0.39       9.49 r
+  decode1/o_rs1_reg[24]/D (DFC3)           0.00       9.49 r
+  data arrival time                                   9.49
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs1_reg[24]/C (DFC3)           0.00       9.50 r
+  library setup time                      -0.01       9.49
+  data required time                                  9.49
+  -----------------------------------------------------------
+  data required time                                  9.49
+  data arrival time                                  -9.49
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: fetch1/o_inst_reg[6]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[6]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  fetch1/o_inst_reg[6]/C (DFEC3)           0.00 #     0.00 r
+  fetch1/o_inst_reg[6]/Q (DFEC3)           1.23       1.23 f
+  U816/Q (NAND21)                          0.42       1.65 r
+  U256/Q (NAND41)                          0.21       1.86 f
+  U255/Q (BUF12)                           0.52       2.39 f
+  U852/Q (NOR24)                           0.31       2.70 r
+  U3858/Q (NAND22)                         0.23       2.93 f
+  U529/Q (INV3)                            0.56       3.49 r
+  U4114/Q (NAND22)                         0.10       3.59 f
+  U4115/Q (CLKIN3)                         0.43       4.02 r
+  U4127/Q (NAND22)                         0.18       4.20 f
+  U893/Q (CLKBU4)                          1.33       5.53 f
+  U4571/Q (OAI222)                         0.80       6.33 r
+  U3189/Q (NOR40)                          0.78       7.11 f
+  U4575/Q (NAND41)                         0.97       8.08 r
+  U3446/Q (AOI220)                         0.54       8.62 f
+  U1612/Q (NAND42)                         0.87       9.49 r
+  decode1/o_rs2_reg[6]/D (DFC3)            0.00       9.49 r
+  data arrival time                                   9.49
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs2_reg[6]/C (DFC3)            0.00       9.50 r
+  library setup time                      -0.01       9.49
+  data required time                                  9.49
+  -----------------------------------------------------------
+  data required time                                  9.49
+  data arrival time                                  -9.49
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[4]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[15]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[4]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[4]/Q (DFEC3)          1.30       1.30 f
+  U1100/Q (NAND34)                         0.49       1.78 r
+  U1079/Q (CLKIN12)                        0.12       1.90 f
+  U1539/Q (NAND28)                         0.31       2.22 r
+  U916/Q (INV2)                            0.26       2.47 f
+  U1356/Q (NAND28)                         0.38       2.85 r
+  U1357/Q (INV15)                          0.18       3.03 f
+  U4052/Q (NAND22)                         0.46       3.49 r
+  U1364/Q (NAND26)                         0.18       3.67 f
+  U1640/Q (NOR24)                          0.75       4.42 r
+  U1132/Q (INV12)                          0.26       4.69 f
+  U1437/Q (OAI221)                         0.69       5.38 r
+  U1109/Q (INV6)                           0.11       5.50 f
+  U1108/Q (OAI222)                         0.41       5.91 r
+  U3147/Q (AOI2111)                        0.43       6.34 f
+  U4731/Q (OAI212)                         0.47       6.80 r
+  U577/Q (INV3)                            0.18       6.98 f
+  U208/Q (OAI222)                          0.29       7.27 r
+  U2729/Q (AOI2111)                        0.44       7.71 f
+  U1110/Q (IMUX21)                         0.47       8.18 r
+  U4740/Q (NAND41)                         0.18       8.36 f
+  U422/Q (AOI311)                          0.62       8.98 r
+  U1308/Q (NAND24)                         0.11       9.09 f
+  U1307/Q (CLKIN6)                         0.24       9.33 r
+  U4759/Q (OAI212)                         0.16       9.50 f
+  decode1/o_rs2_reg[15]/D (DFC3)           0.00       9.50 f
+  data arrival time                                   9.50
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs2_reg[15]/C (DFC3)           0.00       9.50 r
+  library setup time                       0.00       9.50
+  data required time                                  9.50
+  -----------------------------------------------------------
+  data required time                                  9.50
+  data arrival time                                  -9.50
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[4]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[15]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[4]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[4]/Q (DFEC3)          1.30       1.30 f
+  U1100/Q (NAND34)                         0.49       1.78 r
+  U1079/Q (CLKIN12)                        0.12       1.90 f
+  U1539/Q (NAND28)                         0.31       2.22 r
+  U916/Q (INV2)                            0.26       2.47 f
+  U1356/Q (NAND28)                         0.38       2.85 r
+  U1357/Q (INV15)                          0.18       3.03 f
+  U4052/Q (NAND22)                         0.46       3.49 r
+  U1364/Q (NAND26)                         0.18       3.67 f
+  U1640/Q (NOR24)                          0.75       4.42 r
+  U1132/Q (INV12)                          0.26       4.69 f
+  U1437/Q (OAI221)                         0.69       5.38 r
+  U1109/Q (INV6)                           0.11       5.50 f
+  U1108/Q (OAI222)                         0.41       5.91 r
+  U3147/Q (AOI2111)                        0.43       6.34 f
+  U4731/Q (OAI212)                         0.47       6.80 r
+  U577/Q (INV3)                            0.18       6.98 f
+  U208/Q (OAI222)                          0.29       7.27 r
+  U2729/Q (AOI2111)                        0.44       7.71 f
+  U1110/Q (IMUX21)                         0.47       8.18 r
+  U4740/Q (NAND41)                         0.18       8.36 f
+  U422/Q (AOI311)                          0.62       8.98 r
+  U1308/Q (NAND24)                         0.11       9.09 f
+  U1307/Q (CLKIN6)                         0.24       9.33 r
+  U5170/Q (OAI212)                         0.16       9.50 f
+  decode1/o_rs1_reg[15]/D (DFC3)           0.00       9.50 f
+  data arrival time                                   9.50
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs1_reg[15]/C (DFC3)           0.00       9.50 r
+  library setup time                       0.00       9.50
+  data required time                                  9.50
+  -----------------------------------------------------------
+  data required time                                  9.50
+  data arrival time                                  -9.50
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[2]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs2_reg[0]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[2]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[2]/QN (DFEC3)         1.42       1.42 r
+  U1670/Q (INV6)                           0.09       1.51 f
+  U1494/Q (NAND41)                         0.81       2.32 r
+  U1293/Q (INV6)                           0.16       2.49 f
+  U982/Q (NAND28)                          0.35       2.83 r
+  U1174/Q (INV12)                          0.14       2.98 f
+  U3766/Q (NAND28)                         0.29       3.26 r
+  U3847/Q (INV15)                          0.18       3.44 f
+  U3431/Q (NAND20)                         0.65       4.10 r
+  U308/Q (OAI2112)                         0.23       4.33 f
+  U4181/Q (CLKIN3)                         0.34       4.67 r
+  U569/Q (NAND22)                          0.34       5.00 f
+  U459/Q (NAND41)                          0.76       5.76 r
+  U4194/Q (CLKIN3)                         0.28       6.05 f
+  U372/Q (NAND42)                          0.78       6.83 r
+  U582/Q (NOR41)                           0.67       7.50 f
+  U581/Q (OAI311)                          0.62       8.13 r
+  U2732/Q (AOI2111)                        0.36       8.49 f
+  U2003/Q (AOI312)                         0.42       8.92 r
+  U219/Q (NAND43)                          0.15       9.07 f
+  U40/Q (INV6)                             0.27       9.33 r
+  U4251/Q (OAI212)                         0.16       9.50 f
+  decode1/o_rs2_reg[0]/D (DFC3)            0.00       9.50 f
+  data arrival time                                   9.50
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs2_reg[0]/C (DFC3)            0.00       9.50 r
+  library setup time                       0.00       9.50
+  data required time                                  9.50
+  -----------------------------------------------------------
+  data required time                                  9.50
+  data arrival time                                  -9.50
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[2]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[0]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[2]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[2]/QN (DFEC3)         1.42       1.42 r
+  U1670/Q (INV6)                           0.09       1.51 f
+  U1494/Q (NAND41)                         0.81       2.32 r
+  U1293/Q (INV6)                           0.16       2.49 f
+  U982/Q (NAND28)                          0.35       2.83 r
+  U1174/Q (INV12)                          0.14       2.98 f
+  U3766/Q (NAND28)                         0.29       3.26 r
+  U3847/Q (INV15)                          0.18       3.44 f
+  U3431/Q (NAND20)                         0.65       4.10 r
+  U308/Q (OAI2112)                         0.23       4.33 f
+  U4181/Q (CLKIN3)                         0.34       4.67 r
+  U569/Q (NAND22)                          0.34       5.00 f
+  U459/Q (NAND41)                          0.76       5.76 r
+  U4194/Q (CLKIN3)                         0.28       6.05 f
+  U372/Q (NAND42)                          0.78       6.83 r
+  U582/Q (NOR41)                           0.67       7.50 f
+  U581/Q (OAI311)                          0.62       8.13 r
+  U2732/Q (AOI2111)                        0.36       8.49 f
+  U2003/Q (AOI312)                         0.42       8.92 r
+  U219/Q (NAND43)                          0.15       9.07 f
+  U40/Q (INV6)                             0.27       9.33 r
+  U1388/Q (OAI212)                         0.16       9.50 f
+  decode1/o_rs1_reg[0]/D (DFC3)            0.00       9.50 f
+  data arrival time                                   9.50
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs1_reg[0]/C (DFC3)            0.00       9.50 r
+  library setup time                       0.00       9.50
+  data required time                                  9.50
+  -----------------------------------------------------------
+  data required time                                  9.50
+  data arrival time                                  -9.50
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: decode1/o_inst_reg[6]
+              (rising edge-triggered flip-flop clocked by HCLK)
+  Endpoint: decode1/o_rs1_reg[6]
+            (rising edge-triggered flip-flop clocked by HCLK)
+  Path Group: HCLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipeline           10k                   c35_CORELIB_TYP
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode1/o_inst_reg[6]/C (DFEC3)          0.00 #     0.00 r
+  decode1/o_inst_reg[6]/QN (DFEC3)         1.42       1.42 r
+  U1759/Q (INV6)                           0.17       1.59 f
+  U880/Q (NAND26)                          0.22       1.81 r
+  U1456/Q (INV6)                           0.10       1.91 f
+  U1625/Q (NAND34)                         0.50       2.42 r
+  U740/Q (NAND43)                          0.20       2.62 f
+  U1069/Q (NAND28)                         0.50       3.11 r
+  U214/Q (INV15)                           0.29       3.40 f
+  U4074/Q (NAND22)                         0.48       3.87 r
+  U1493/Q (NAND26)                         0.24       4.11 f
+  U1458/Q (INV6)                           0.27       4.38 r
+  U442/Q (NAND23)                          0.15       4.53 f
+  U1077/Q (NAND24)                         0.35       4.88 r
+  U867/Q (INV6)                            0.09       4.97 f
+  U4327/Q (OAI312)                         0.61       5.58 r
+  U1476/Q (INV6)                           0.11       5.69 f
+  U4557/Q (OAI212)                         0.34       6.03 r
+  U490/Q (NAND22)                          0.22       6.25 f
+  U537/Q (NOR32)                           0.27       6.51 r
+  U306/Q (AOI311)                          0.31       6.83 f
+  U305/Q (OAI312)                          0.49       7.31 r
+  U107/Q (INV6)                            0.08       7.39 f
+  U39/Q (NAND43)                           0.33       7.72 r
+  U4566/Q (OAI222)                         0.28       8.00 f
+  U1744/Q (CLKIN6)                         0.29       8.29 r
+  U3137/Q (AOI220)                         0.38       8.67 f
+  U1613/Q (NAND42)                         0.81       9.48 r
+  decode1/o_rs1_reg[6]/D (DFC3)            0.00       9.48 r
+  data arrival time                                   9.48
+
+  clock HCLK (rise edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.50       9.50
+  decode1/o_rs1_reg[6]/C (DFC3)            0.00       9.50 r
+  library setup time                      -0.01       9.49
+  data required time                                  9.49
+  -----------------------------------------------------------
+  data required time                                  9.49
+  data arrival time                                  -9.48
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

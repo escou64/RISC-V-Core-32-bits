@@ -1,0 +1,57 @@
+ARBORESCENCE DES LIVRABLES:
+
+./RISCV-32bits-20180125
+	- Répertoire racine du Livrable
+./RISCV-32bits-20180125/config
+	- Répertoire contenant les différents fichiers de configuration pour utiliser les outils au CIME
+	- config_VERIF pour Spyglass
+	- config_ASIC pour DesignCompiler et Modelsim
+	- modelsim.ini sert à configurer ModelSim
+./RISCV-32bits-20180125/docs
+	- Ensemble des documents utilisés/ produits durant ce projet
+	- On retrouve les spécifications RISC-V ainsi que le rapport de projet rendu le 22/01/2018
+./RISCV-32bits-20180125/design
+	- Répertoire contenant les différents fichiers VHDL du projet
+	- Le fichier run.py permet d'utiliser l'environnement de test unitaire VUnit
+	- Python doit être accessible pour lancer ce fichier
+./RISCV-32bits-20180125/design/vhd
+	- Ensemble des fichiers VHDL écrits pour la description du design
+	- RISCV_CORE_CONFIG.vhd contient l'ensemble des constantes utilisées
+	- Les autres fichiers .vhd représentent des blocs du design 
+./RISCV-32bits-20180125/design/bench
+	- Ensemble des benchs VHDL utilisés pour tester le design
+	- RISCV_CORE_CONFIG_BENCH.vhd contient l'ensemble des constantes propres aux benchs
+	- Les autres fichiers décrivent les benchs eux-mêmes
+./RISCV-32bits-20180125/design/bench/pipeline
+	- Ensembles des fichiers utilisés en entrée pour le bench pipeline_bench.vhd (instructions, adresses d'instruction attendues etc ...)
+./RISCV-32bits-20180125/design/bench/interactivedemo
+	- Fichier pgcd.txt contenant le code binaire du calcul d'un PGCD de manière intéractive
+	- commentaries décrit le fichier pgcd.txt
+./RISCV-32bits-20180125/spyglass
+	- Répertoire de travail pour utiliser l'outil Spyglass
+./RISCV-32bits-20180125/spyglass/libs
+	- Répertoire contenant les librairies compilées par Spyglass
+./RISCV-32bits-20180125/spyglass/scripts
+	- Répertoire contenant le script pour lancer automatiquement Spyglass
+./RISCV-32bits-20180125/synth
+	- Répertoire de mise en place de l'environnement de synthèse
+./RISCV-32bits-20180125/synth/bench/
+	- Répertoire contenant les benchs pour les simulations post-synthèse (benchs repris dans ./RISCV-32bits-20180125/design/bench)
+./RISCV-32bits-20180125/synth/libs
+	- Répertoire contenant les librairies pour les simulations post-synthèse via ModelSim
+./RISCV-32bits-20180125/synth/libs_synth
+	- Répertoire contenant les librairies pour la synthèse via DesignCompiler
+./RISCV-32bits-20180125/synth/log*
+	- Répertoire contenant les différents fichiers log
+	- Une copie avec la date et l'heure de fin de la synthèse est effectuée automatiquement
+./RISCV-32bits-20180125/synth/netlist
+	- Répertoire contenant les fichiers résultats nécessaires à la simulation post-synthèse
+./RISCV-32bits-20180125/synth/results*
+	- Répertoire contenant les différents fichiers produits par la synthèse
+	- Une copie est automatiquement effectuée avec la date et l'heure de fin de la synthèse 
+./RISCV-32bits-20180125/synth/scripts
+	- Ensemble des scripts nécessaires à la synthèse et à la compilation en vue d'une simulation post-synthèse
+	- run_synthesis.sh lance la synthèse à l'aide l'outil ModelSim
+	- compile_*.bash effectue les compilations nécessaires à la simulation post-synthèse
+./RISCV-32bits-20180125/synth/work
+	- Répertoire de travail de DesignCompiler pour effectuer la synthèse

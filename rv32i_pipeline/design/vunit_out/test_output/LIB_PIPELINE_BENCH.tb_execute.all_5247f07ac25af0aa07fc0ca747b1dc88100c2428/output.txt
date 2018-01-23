@@ -1,13 +1,9 @@
-# vsim -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf {-g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_execute(bench_arch) 
-# ** Note: (vsim-3812) Design is being optimized...
-# //  ModelSim SE-64 10.2c Jul 18 2013 Linux 3.2.0-4-amd64
-# //
-# //  Copyright 1991-2013 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //
-# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10 
+# End time: 17:26:34 on Jan 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 17:26:34 on Jan 23,2018
+# ** Warning: Design size of 12652 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10

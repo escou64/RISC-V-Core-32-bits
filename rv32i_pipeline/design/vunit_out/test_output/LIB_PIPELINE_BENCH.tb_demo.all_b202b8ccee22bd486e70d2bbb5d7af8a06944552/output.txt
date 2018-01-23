@@ -1,5 +1,10 @@
-# vsim -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -modelsimini /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -onfinish stop -quiet -t ps -wlf /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf {-g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /tp/xph3app/xph3app606/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_demo(bench_arch) 
-# ** Note: (vsim-3812) Design is being optimized...
+# End time: 17:26:34 on Jan 23,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 44
+# vsim -modelsimini /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 17:26:34 on Jan 23,2018
+# ** Warning: Design size of 13130 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -68,5 +73,5 @@
 #    Time: 0 ps  Iteration: 2  Instance: /tb_demo/pipeline1/pc1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 3  Instance: /tb_demo/pipeline1/pc1
-# Break in Subprogram vunit_stop at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /calcul/vunit/lib/python2.7/site-packages/vunit_hdl-2.2.1rc0-py2.7.egg/vunit/vhdl/core/src/stop_body_2008.vhd line 10 
+# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
