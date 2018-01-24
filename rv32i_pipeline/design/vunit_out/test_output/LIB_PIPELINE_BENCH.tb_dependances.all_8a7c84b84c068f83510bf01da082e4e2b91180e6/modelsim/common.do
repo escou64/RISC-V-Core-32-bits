@@ -22,11 +22,11 @@ proc _vunit_source_init_files_after_load {} {
 
 proc vunit_load {{vsim_extra_args ""}} {
     set vsim_failed [catch {
-        eval vsim ${vsim_extra_args} {-modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf {/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_dependances/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_dependances(bench_arch)   -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH}
+        eval vsim ${vsim_extra_args} {-modelsimini /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf {/media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_dependances/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/,tb path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_dependances(bench_arch)   -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH}
     }]
 
     if {${vsim_failed}} {
-       echo Command 'vsim ${vsim_extra_args} -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf {/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_dependances/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_dependances(bench_arch)   -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH' failed
+       echo Command 'vsim ${vsim_extra_args} -modelsimini /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf {/media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/modelsim/vsim.wlf} -quiet -t ps -onfinish stop  -g/tb_dependances/runner_cfg={"active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/,tb path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/"} LIB_PIPELINE_BENCH.tb_dependances(bench_arch)   -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH' failed
        echo Bad flag from vsim_extra_args?
        return 1
     }
@@ -125,7 +125,7 @@ proc vunit_compile {} {
     set cmd_show {/usr/bin/python -u run.py --compile}
     puts "Re-compiling using command ${cmd_show}"
 
-    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
+    set chan [open |[list {/usr/bin/python} {-u} {-c} {import sys;import subprocess;exit(subprocess.call(['/usr/bin/python', '-u', 'run.py', '--compile'], cwd='/media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design', bufsize=0, universal_newlines=True, stdout=sys.stdout, stderr=sys.stdout))}] r]
 
     while {[gets $chan line] >= 0} {
         puts $line

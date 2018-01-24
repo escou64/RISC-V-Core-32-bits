@@ -132,10 +132,13 @@ architecture bench_arch of tb_interactivedemo is
 			variable v_inst_line	: line;
 			variable v_inst			: std_logic_vector(c_NBITS - 1 downto 0);
 
-			variable v_test_arg_1		: integer := 75830;
-			variable v_test_arg_addr_1	: integer := 200;
-			variable v_test_arg_2		: integer := 19680;
-			variable v_test_arg_addr_2	: integer := 204;
+			-- The different parameters used for the PGCD calculation
+			-- The two values must be between 0 and 4.294.967.296
+			-- The calculation time is proportional to the difference between the two values
+			variable v_test_arg_1		: integer := 75830;				-- First value
+			variable v_test_arg_addr_1	: integer := 200;				-- First value address
+			variable v_test_arg_2		: integer := 19680;				-- Second value
+			variable v_test_arg_addr_2	: integer := 204;				-- Second value address
 			begin
 				test_runner_setup(runner, runner_cfg);
 				wait for QUARTER_PERIOD;
