@@ -91,12 +91,12 @@ architecture bench_arch of tb_writeback is
 
 				-- Verifications for differents value of register rd to write in register file
 				wait for HALF_PERIOD;
-				s_accm_inst <= "00000" & c_OPCODE32_LUI;																		--Instruction
-				s_accm_rd <= "00000000000000000000000000001000";																-- value of rd
+				s_accm_inst <= "00000" & c_OPCODE32_LUI;																		--Allocation of instruction
+				s_accm_rd <= "00000000000000000000000000001000";																-- Allocation of rd
 				wait for HALF_PERIOD;
-				assert s_regf_write = '1' report "Problem signal write output  " severity error;								-- Operation good for writing data
-				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;						-- Value of rd address 
-				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;	-- Value of data to write
+				assert s_regf_write = '1' report "Problem signal write output  " severity error;								-- Verification of the value of write signal
+				assert s_regf_rdselect = "00000" report "Problem signal rdselect output  " severity error;						-- Verification of the value of rd address 
+				assert s_regf_data = "00000000000000000000000000001000" report "Problem signal data output  " severity error;	-- Verification of the value of data to write
 
 				wait for HALF_PERIOD;
 				s_accm_inst <= "00001" & c_OPCODE32_AUIPC;

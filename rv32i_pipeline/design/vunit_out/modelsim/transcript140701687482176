@@ -1,0 +1,700 @@
+# do /home/gachetp/.local/lib/python2.7/site-packages/vunit/tcl_read_eval_loop.tcl
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_pipeline(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_pipeline/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:01 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/datas_in.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/iaddress.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/datas_out.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: Design size of 13151 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_pipeline/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_pipeline/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_pipeline/pipeline1/pc1
+# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 25 ns  Iteration: 0  Process: /tb_pipeline/line__77 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd
+# Fatal error in Process line__77 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd line 101
+# 
+# HDL call sequence:
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd 101 Process line__77
+# 
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd 101 return [address 0xf6bd463f] Process line__77
+# 
+# 
+# Surrounding code from 'see' command
+#   96 : 				-- Verifications for Reset
+#   97 : 				s_rstn <= '0';
+#   98 : 				wait for PERIOD;
+#   99 : 				s_rstn <= '1';
+#   100 : 				
+# ->101 : 				while not endfile(f_inst) loop
+#   102 : 					readline(f_inst,v_inst_line);
+#   103 : 					read(v_inst_line, v_inst);
+#   104 : 					s_imem_idata <= v_inst;
+#   105 : 
+# 
+# End time: 18:51:03 on Jan 24,2018, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 39
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_interactivedemo.all_a2419a2458684d576b23ba1cd9f5b6620da52e5e/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_interactivedemo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_interactivedemo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_interactivedemo.all_a2419a2458684d576b23ba1cd9f5b6620da52e5e/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:03 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo/pgcd.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: Design size of 13222 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_interactivedemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_interactivedemo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_interactivedemo/pipeline1/pc1
+# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo/pgcd.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 5 ns  Iteration: 0  Process: /tb_interactivedemo/line__131 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo_bench.vhd
+# Fatal error in Process line__131 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo_bench.vhd line 146
+# 
+# HDL call sequence:
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo_bench.vhd 146 Process line__131
+# 
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo_bench.vhd 146 return [address 0xf6bd50ff] Process line__131
+# 
+# 
+# Surrounding code from 'see' command
+#   141 : 				wait for QUARTER_PERIOD;
+#   142 : 				
+#   143 : 				-- Instruction Memory Initialization
+#   144 : 				s_test_writeinst	<= '1';
+#   145 : 				s_test_newinstaddr	<= (others => '0');
+# ->146 : 				while not endfile(f_inst) loop
+#   147 : 					readline(f_inst,v_inst_line);
+#   148 : 					read(v_inst_line, v_inst);
+#   149 : 					s_test_newinst <= v_inst;
+#   150 : 
+# 
+# End time: 18:51:03 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 44
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_alu.all_c379f9c4821ba209c2f798a940dbde6c22569ce2/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_alu(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_alu/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_alu.all_c379f9c4821ba209c2f798a940dbde6c22569ce2/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:03 on Jan 24,2018
+# ** Warning: Design size of 11484 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:03 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_writeback.all_328af63cfde7f6332e479c317871af30954f7203/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_writeback(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_writeback/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_writeback.all_328af63cfde7f6332e479c317871af30954f7203/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:03 on Jan 24,2018
+# ** Warning: Design size of 11699 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:04 on Jan 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_reg_integer.all_387a0226c3e38f597630c3cda9e6d2407d3ea39d/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_reg_integer(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_reg_integer/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_reg_integer.all_387a0226c3e38f597630c3cda9e6d2407d3ea39d/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:04 on Jan 24,2018
+# ** Warning: Design size of 11427 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:04 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_finaldemo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_finaldemo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_finaldemo.all_154520e2e2447f34c59cebc8cbe9042c6a60c965/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:04 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/pgcd_v2.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: Design size of 13183 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_finaldemo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_finaldemo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_finaldemo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_finaldemo/pipeline1/pc1
+# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo/pgcd_v2.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 5 ns  Iteration: 0  Process: /tb_finaldemo/line__122 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo_bench.vhd
+# Fatal error in Process line__122 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo_bench.vhd line 131
+# 
+# HDL call sequence:
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo_bench.vhd 131 Process line__122
+# 
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/finaldemo_bench.vhd 131 return [address 0xf6bd4ddf] Process line__122
+# 
+# 
+# Surrounding code from 'see' command
+#   126 : 				test_runner_setup(runner, runner_cfg);
+#   127 : 				wait for QUARTER_PERIOD;
+#   128 : 				
+#   129 : 				s_test_writeinst	<= '1';
+#   130 : 				s_test_newinstaddr	<= (others => '0');
+# ->131 : 				while not endfile(f_inst) loop
+#   132 : 					readline(f_inst,v_inst_line);
+#   133 : 					read(v_inst_line, v_inst);
+#   134 : 					s_test_newinst <= v_inst;
+#   135 : 
+# 
+# End time: 18:51:05 on Jan 24,2018, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 44
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_demo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_demo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_demo.all_b202b8ccee22bd486e70d2bbb5d7af8a06944552/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:05 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo/results.txt" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo/pc.txt" in r+ mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo
+# ** Warning: Design size of 13134 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_demo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_demo/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_demo/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_demo/pipeline1/pc1
+# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 25 ns  Iteration: 0  Process: /tb_demo/line__77 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd
+# Fatal error in Process line__77 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd line 98
+# 
+# HDL call sequence:
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd 98 Process line__77
+# 
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/demo_bench.vhd 98 return [address 0xf6bd458f] Process line__77
+# 
+# 
+# Surrounding code from 'see' command
+#   93 : 				-- Verifications for Reset
+#   94 : 				s_rstn <= '0';
+#   95 : 				wait for PERIOD;
+#   96 : 				s_rstn <= '1';
+#   97 : 				
+# ->98 : 				while not endfile(f_inst) loop
+#   99 : 					readline(f_inst,v_inst_line);
+#   100 : 					read(v_inst_line, v_inst);
+#   101 : 					s_imem_idata <= v_inst;
+#   102 : 
+# 
+# End time: 18:51:05 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 38
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_fetch.all_0dcd4905659bd441d8f7d4b4b8b19502951ce4f2/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_fetch(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_fetch/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_fetch.all_0dcd4905659bd441d8f7d4b4b8b19502951ce4f2/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:05 on Jan 24,2018
+# ** Warning: Design size of 11527 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:05 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_memory_access.all_1a2cef00fa7baacf013e65b088f9e6a0b558caad/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_memory_access(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_memory_access/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_memory_access.all_1a2cef00fa7baacf013e65b088f9e6a0b558caad/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:05 on Jan 24,2018
+# ** Warning: Design size of 11715 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:06 on Jan 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_decode.all_acbf876bf0c6ebb9edb8a6394d5c41476351caad/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_decode(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_decode/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_decode.all_acbf876bf0c6ebb9edb8a6394d5c41476351caad/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:06 on Jan 24,2018
+# ** Warning: Design size of 12870 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_decode/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 10 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 0  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 20 ns  Iteration: 1  Instance: /tb_decode/decode1
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:06 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 43
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_dependances(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_dependances/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_dependances.all_8a7c84b84c068f83510bf01da082e4e2b91180e6/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:06 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/dependances/daddress.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/dependances/dwrite.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/dependances/dsize.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances
+# ** Warning: Design size of 13157 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/dcache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/icache_controller1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/reg_integer1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/reg_integer1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dependances/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /tb_dependances/pipeline1/decode1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /tb_dependances/pipeline1/pc1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tb_dependances/pipeline1/pc1
+# Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# End time: 18:51:07 on Jan 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 38
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 18:51:07 on Jan 24,2018
+# ** Warning: Design size of 12660 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# ** Error: Problem signal rd output  
+#    Time: 705 ns  Iteration: 0  Process: /tb_execute/line__79 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd
+# Break in Process line__79 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 410
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd line 410
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/execute_bench.vhd 410 return [address 0xf6bd3484] Process line__79
+# 
+# 
+# Surrounding code from 'see' command
+#   405 : 				wait for HALF_PERIOD;
+#   406 : 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+#   407 : 				assert exec_jump = '1' report "Problem signal jump output  " severity error;
+#   408 : 				assert exec_branch = '0' report "Problem signal branch output  " severity error;
+#   409 : 				assert exec_rd = "00000000000000000000000000010100" report "Problem signal rd output  " severity error;
+# ->410 : 				assert exec_pc = "00000000000000000000000001101001" report "Problem signal rd output  " severity error;
+#   411 : 
+#   412 : 				wait for HALF_PERIOD;
+#   413 : 				dcde_inst <= "1111011" & "10101" & "00011" & c_FUNC3_BNE & "00010" & c_OPCODE32_BRANCH;
+#   414 : 				wait for HALF_PERIOD;
+# 
+# End time: 18:51:07 on Jan 24,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1

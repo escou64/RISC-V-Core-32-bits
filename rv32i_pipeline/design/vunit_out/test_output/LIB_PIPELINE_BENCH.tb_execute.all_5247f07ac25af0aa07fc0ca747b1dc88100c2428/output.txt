@@ -1,8 +1,8 @@
-# End time: 23:55:18 on Jan 23,2018, Elapsed time: 0:00:00
+# End time: 21:09:39 on Jan 24,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 38
 # vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_execute(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_execute/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_execute.all_5247f07ac25af0aa07fc0ca747b1dc88100c2428/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 23:55:19 on Jan 23,2018
-# ** Warning: Design size of 12656 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Start time: 21:09:39 on Jan 24,2018
+# ** Warning: Design size of 12662 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # Break in Subprogram vunit_stop at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
 # Stopped at /home/gachetp/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10

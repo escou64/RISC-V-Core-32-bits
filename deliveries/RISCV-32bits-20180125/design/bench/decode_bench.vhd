@@ -155,15 +155,15 @@ architecture bench_arch of tb_decode is
 				regf_write <= '0';
 
 				-- Verifications for different valid instructions
-				ftch_inst <= "0000000" & "00000" & "11111" & c_FUNC3_ADD & "01110" & c_OPCODE32_OP;
+				ftch_inst <= "0000000" & "00000" & "11111" & c_FUNC3_ADD & "01110" & c_OPCODE32_OP;							--Load instruction with add function
 				wait for HALF_PERIOD;
-				assert regf_rs1select = "11111" report "Problem to generate the register number !" severity error;
-				assert regf_rs2select = "00000" report "Problem to generate the register number !" severity error;
-				wait for HALF_PERIOD;
-				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;
-				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;
-				assert dcde_rs1 = "000000000000000000000000000011111" report "Problem in the register value !" severity error;
-				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;
+				assert regf_rs1select = "11111" report "Problem to generate the register number !" severity error;			--Verification of regf_rs1select
+				assert regf_rs2select = "00000" report "Problem to generate the register number !" severity error;			--Verification of regf_rs2select
+				wait for HALF_PERIOD;2
+				assert dcde_inst = ftch_inst report "Problem for instruction !" severity error;								-- Verification of dcde_instruction 
+				assert dcde_pc = ftch_pc report "Problem for pc !" severity error;												-- Verification of dcde_pc
+				assert dcde_rs1 = "000000000000000000000000000011111" report "Problem in the register value !" severity error;	-- Verification of dcde_rs1
+				assert dcde_rs2 = "000000000000000000000000000000000" report "Problem in the register value !" severity error;	-- Verification of dcde_rs2 
 				assert dcde_validity = '1' report "Problem about instruction validity !" severity error;
 
 				ftch_inst <= "0000000" & "10000" & "01110" & c_FUNC3_ADD & "01111" & c_OPCODE32_OP;

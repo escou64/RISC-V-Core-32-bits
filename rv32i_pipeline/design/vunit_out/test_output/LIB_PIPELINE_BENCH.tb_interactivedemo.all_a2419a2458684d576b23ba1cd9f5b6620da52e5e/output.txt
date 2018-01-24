@@ -1,7 +1,7 @@
-# End time: 23:55:15 on Jan 23,2018, Elapsed time: 0:00:01
+# End time: 21:09:35 on Jan 24,2018, Elapsed time: 0:00:00
 # Errors: 2, Warnings: 39
 # vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_interactivedemo.all_a2419a2458684d576b23ba1cd9f5b6620da52e5e/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_interactivedemo(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_interactivedemo/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_interactivedemo.all_a2419a2458684d576b23ba1cd9f5b6620da52e5e/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 23:55:15 on Jan 23,2018
+# Start time: 21:09:35 on Jan 24,2018
 # ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/interactivedemo/pgcd.txt" in r mode.
 # No such file or directory. (errno = ENOENT)
 #    Time: 0 ps  Iteration: 0  Instance: /tb_interactivedemo
