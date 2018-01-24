@@ -3,7 +3,3 @@
 2,0 ps,debug,,,Test Runner,Passed test runner setup phase exit gate.
 3,0 ps,debug,,,Test Runner,Entering test suite setup phase.
 4,0 ps,debug,,,Test Runner,Passed test suite setup phase entry gate.
-5,40805000 ps,debug,,,Test Runner,Entering test runner cleanup phase.
-6,40805000 ps,debug,,,Test Runner,Passed test runner cleanup phase entry gate.
-7,40805000 ps,debug,,,Test Runner,Passed test runner cleanup phase exit gate.
-8,40805000 ps,debug,,,Test Runner,Entering test runner exit phase.

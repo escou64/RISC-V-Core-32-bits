@@ -1,10 +1,19 @@
-# End time: 21:41:19 on Jan 24,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-# vsim -modelsimini /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_pipeline(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_pipeline/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/,tb path : /media/data/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
-# Start time: 21:41:19 on Jan 24,2018
-# ** Warning: Design size of 13147 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# vsim -modelsimini /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/modelsim/modelsim.ini -wlf /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/modelsim/vsim.wlf -quiet -t ps -onfinish stop LIB_PIPELINE_BENCH.tb_pipeline(bench_arch) -L vunit_lib -L osvvm -L LIB_PIPELINE -L LIB_PIPELINE_BENCH -g/tb_pipeline/runner_cfg="active python runner : true,enabled_test_cases : ,output path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/vunit_out/test_output/LIB_PIPELINE_BENCH.tb_pipeline.all_2d847d485141465fc37ed86d9bafffac8bf8b060/,tb path : /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/" 
+# Start time: 22:16:20 on Jan 24,2018
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/datas_in.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/iaddress.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/datas_out.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline
+# ** Warning: Design size of 13151 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_pipeline/pipeline1/dcache_controller1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -73,5 +82,28 @@
 #    Time: 0 ps  Iteration: 2  Instance: /tb_pipeline/pipeline1/pc1
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 3  Instance: /tb_pipeline/pipeline1/pc1
-# Break in Subprogram vunit_stop at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
-# Stopped at /home/escou64/.local/lib/python2.7/site-packages/vunit/vhdl/core/src/stop_body_2008.vhd line 10
+# ** Fatal: (vsim-7) Failed to open VHDL file "/home/escou64/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline/instructions.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 25 ns  Iteration: 0  Process: /tb_pipeline/line__77 File: /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd
+# Fatal error in Process line__77 at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd line 101
+# 
+# HDL call sequence:
+# Stopped at /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd 101 Process line__77
+# 
+# 
+# Stack trace result from 'tb' command
+#  /home/gachetp/Projects/RISC-V-Core-32-bits/rv32i_pipeline/design/bench/pipeline_bench.vhd 101 return [address 0xf6bd463f] Process line__77
+# 
+# 
+# Surrounding code from 'see' command
+#   96 : 				-- Verifications for Reset
+#   97 : 				s_rstn <= '0';
+#   98 : 				wait for PERIOD;
+#   99 : 				s_rstn <= '1';
+#   100 : 				
+# ->101 : 				while not endfile(f_inst) loop
+#   102 : 					readline(f_inst,v_inst_line);
+#   103 : 					read(v_inst_line, v_inst);
+#   104 : 					s_imem_idata <= v_inst;
+#   105 : 
+# 

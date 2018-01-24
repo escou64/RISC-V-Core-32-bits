@@ -101,10 +101,10 @@ architecture bench_arch of tb_execute is
 				dcde_rs1 <= "00000000000000000000000000000001";
 				dcde_rs2 <= "00000000000000000000000000000010";
 				wait for HALF_PERIOD;
-				assert exec_validity = '1' report "Problem signal validaty output  " severity error;						--Verification of good value of Validity output
-				assert exec_jump = '0' report "Problem signal jump output  " severity error;								--Verification of good value of jump output
-				assert exec_branch = '0' report "Problem signal branch output  " severity error;							--Verification of good value of branch output
-				assert exec_rd = "00000000000000000000000000000011" report "Problem signal rd output  " severity error;		--Verification of good value of rd output
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;					--Verification of the value of Validity output
+				assert exec_jump = '0' report "Problem signal jump output  " severity error;							--Verification of the value of jump output
+				assert exec_branch = '0' report "Problem signal branch output  " severity error;							--Verification of the value of branch output
+				assert exec_rd = "00000000000000000000000000000011" report "Problem signal rd output  " severity error;		--Verification of the value of rd output
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "11111" & "11111" & c_FUNC3_SH & "11110" & c_OPCODE32_STORE;
@@ -412,43 +412,69 @@ architecture bench_arch of tb_execute is
 
 				wait for HALF_PERIOD;
 				dcde_inst <= "0000000" & "10101" & "00011" & c_FUNC3_BNE & "00110" & c_OPCODE32_BRANCH;
+				dcde_pc <= "00000000000000000000000000010000";
 				dcde_rs1 <= "00000000000000000000000000000111";
 				dcde_rs2 <= "00000000000000000000000000000100";
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '1' report "Problem signal branch output  " severity error;
-		--		assert exec_pc = exec_pc + "00000000000000000000000000000110" report "Problem signal rd output  " severity error;
+				assert exec_pc = dcde_pc + "00000000000000000000000000000110" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
-				dcde_inst <= "0000000" & "00010" & "01100" & c_FUNC3_BGE & "00110" & c_OPCODE32_BRANCH;
+				dcde_inst <= "0000000" & "00010" & "01100" & c_FUNC3_BEQ & "01100" & c_OPCODE32_BRANCH;
+				dcde_pc <= "00000000000000000000000000010010";
+				dcde_rs1 <= "00000000000000000000000000000111";
+				dcde_rs2 <= "00000000000000000000000000000111";
+				wait for HALF_PERIOD;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+				assert exec_jump = '0' report "Problem signal jump output  " severity error;
+				assert exec_branch = '1' report "Problem signal branch output  " severity error;
+				assert exec_rd = dcde_pc + "00000000000000000000000000001100" report "Problem signal rd output  " severity error;
+
+				wait for HALF_PERIOD;
+				dcde_inst <= "0000000" & "00101" & "11111" & c_FUNC3_BLT & "00010" & c_OPCODE32_BRANCH;
+				dcde_pc <= "00000000000000000000000000010001";
+				dcde_rs1 <= "00000000000000000000000000000111";
+				dcde_rs2 <= "01000000000000000000000000000100";
+				wait for HALF_PERIOD;
+				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
+				assert exec_jump = '0' report "Problem signal jump output  " severity error;
+				assert exec_branch = '1' report "Problem signal branch output  " severity error;
+				assert exec_rd =dcde_pc + "000000000000000000000000000010" report "Problem signal rd output  " severity error;
+
+				wait for HALF_PERIOD;
+				dcde_inst <= "0000000" & "01110" & "01101" & c_FUNC3_BGE & "01101" & c_OPCODE32_BRANCH;
+				dcde_pc <= "00000000000000000000000000010010";
 				dcde_rs1 <= "01100000000000000000000000000111";
 				dcde_rs2 <= "00000000000000000000000000000100";
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '1' report "Problem signal branch output  " severity error;
---				assert exec_rd = "00000000000000000000000000000000" report "Problem signal rd output  " severity error;
+				assert exec_rd = dcde_pc + "00000000000000000000100000001100" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
-				dcde_inst <= "1111011" & "00100" & "00111" & c_FUNC3_BLTU & "01010" & c_OPCODE32_BRANCH;
+				dcde_inst <= "0000010" & "00100" & "00111" & c_FUNC3_BLTU & "00000" & c_OPCODE32_BRANCH;
+				dcde_pc <= "10000000000000000000000000011111";
 				dcde_rs1 <= "00000000000000000000000000000111";
 				dcde_rs2 <= "01000000000000000000000000000100";
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '1' report "Problem signal branch output  " severity error;
---				assert exec_rd = "00000000000000000000000000000000" report "Problem signal rd output  " severity error;
+				assert exec_rd =dcde_pc + "00000000000000000000000001000000" report "Problem signal rd output  " severity error;
 
 				wait for HALF_PERIOD;
-				dcde_inst <= "1111011" & "00011" & "00100" & c_FUNC3_BGEU & "11010" & c_OPCODE32_BRANCH;
+				dcde_inst <= "0000000" & "00011" & "00100" & c_FUNC3_BGEU & "11000" & c_OPCODE32_BRANCH;
+				dcde_pc <= "00110000000000000000000000010011";
 				dcde_rs1 <= "10000000000000000000000000000111";
 				dcde_rs2 <= "01000000000000000000000000000100";
 				wait for HALF_PERIOD;
 				assert exec_validity = '1' report "Problem signal validaty output  " severity error;
 				assert exec_jump = '0' report "Problem signal jump output  " severity error;
 				assert exec_branch = '1' report "Problem signal branch output  " severity error;
---				assert exec_rd = "00000000000000000000000000000000" report "Problem signal rd output  " severity error;
+				assert exec_rd =dcde_pc + "00000000000000000000000000011000" report "Problem signal rd output  " severity error;
 
 
 				
